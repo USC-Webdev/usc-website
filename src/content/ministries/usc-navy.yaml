@@ -3,6 +3,7 @@ menuLabel: USC Navy
 fullName: USC Navy
 abbreviation: NAVY
 summary: "The cross-ministry task group that runs raid progression content: the USC’s “progression raid team”."
+mark: ../../assets/images/ministries/usc-navy/mark.png
 order: 1
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.

@@ -12,7 +12,7 @@
 // Nothing is redrawn or recoloured: files are only trimmed, cropped out of the
 // supplied lockups and resized.
 import sharp from 'sharp';
-import { mkdirSync } from 'node:fs';
+import { copyFileSync, mkdirSync } from 'node:fs';
 
 const WHITE = '#FFFFFF';
 
@@ -81,6 +81,9 @@ for (const [abbr, [n, slug]] of Object.entries(sheets)) {
   await sharp(px, { raw: { width: cw, height: ch, channels: 4 } }).trim().resize({ width: 256, height: 256, fit: 'inside' }).png({ compressionLevel: 9 }).toFile(`src/assets/images/ministries/${slug}/mark.png`);
   console.log(abbr, box);
 }
+// The USC Navy uses the State Affairs mark (Noel, 24.11.2026). Each entry keeps
+// its own copy because Keystatic stores images per entry.
+copyFileSync('src/assets/images/ministries/state-affairs/mark.png', 'src/assets/images/ministries/usc-navy/mark.png');
 
 // Favicon, touch icon: the blue emblem, on white.
 const emblem = await sharp('USC Main Logo/RedBubble_USC_Logo_For_White_BG.png').trim().png().toBuffer();
