@@ -1,10 +1,13 @@
 import { config, collection, fields } from '@keystatic/core';
 
-// Phase 1: local mode with one throwaway collection.
-// Step 4 of Phase 1 switches this to:
-//   storage: { kind: 'github', repo: 'OWNER/NAME', branchPrefix: 'content/' }
+// GitHub mode: editors save to a content/... branch and open a pull request.
+// The scratch collection is a throwaway used for the Phase 1 deploy test.
 export default config({
-  storage: { kind: 'local' },
+  storage: {
+    kind: 'github',
+    repo: 'USC-Webdev/usc-website',
+    branchPrefix: 'content/',
+  },
   ui: {
     brand: { name: 'USC' },
   },

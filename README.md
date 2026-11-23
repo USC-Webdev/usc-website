@@ -31,4 +31,4 @@ Needed once Keystatic is in GitHub mode. Keystatic writes them to `.env` when th
 
 ## Contributing
 
-`main` is protected. Work on a branch, open a pull request, and merge with a merge commit (not squash).
+Never push to `main` directly (it is not protected by GitHub, so this is by convention). Work on a branch, open a pull request, and merge with a merge commit (not squash).
