@@ -76,12 +76,16 @@ const sections = [
     {
       backIssues.length > 0 && (
         <div class="back-issues">
-          <span class="label">Back issues</span>
-          {backIssues.map((n) => (
-            <PillLink href={newsletterHref(n.id)} size="sm">
-              {n.data.title}
-            </PillLink>
-          ))}
+          <h3 class="back-issues-title">Back issues</h3>
+          <ul class="back-issues-list">
+            {backIssues.map((n) => (
+              <li>
+                <PillLink href={newsletterHref(n.id)} size="sm">
+                  {n.data.title}
+                </PillLink>
+              </li>
+            ))}
+          </ul>
         </div>
       )
     }
@@ -166,14 +170,24 @@ const sections = [
     padding-bottom: var(--section);
   }
   .back-issues {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .back-issues-title {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: var(--track-action);
+    text-transform: uppercase;
+  }
+  .back-issues-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     gap: 10px;
-    padding-top: 28px;
-  }
-  .back-issues .label {
-    padding-right: 12px;
   }
   .video-row {
     display: flex;
