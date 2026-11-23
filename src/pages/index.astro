@@ -1,21 +1,25 @@
 ---
+// Phase 3: temporary check that every collection loads. Replaced by the
+// redirect to /home in Phase 4.
 import { getCollection } from 'astro:content';
+import { getSite } from '../lib/site';
 
-const entries = await getCollection('scratch');
+const { settings, nav } = await getSite();
+const counts = await Promise.all(
+  (['ministries', 'newsletters', 'newsUpdates', 'videos'] as const).map(async (k) => [k, (await getCollection(k)).length] as const),
+);
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
     <meta name="robots" content="noindex" />
     <title>United Space Confederation</title>
   </head>
   <body>
     <h1>United Space Confederation</h1>
-    <p>Phase 1 scaffold. The site is being rebuilt.</p>
-    <ul>
-      {entries.map((entry) => <li>{entry.data.title}</li>)}
-    </ul>
+    <p>The site is being rebuilt. Contact: {settings.contactEmail}</p>
+    <ul>{counts.map(([k, n]) => <li>{k}: {n}</li>)}</ul>
+    <ul>{nav.media.map((l) => <li>{l.label}</li>)}</ul>
   </body>
 </html>

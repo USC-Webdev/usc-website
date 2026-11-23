@@ -5,8 +5,8 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Read first:** `docs/build-plan.md` (the plan; its section 2 decisions are closed) and `docs/usc-mockup-a-reference.html` (visual source of truth for the Media Network page).
 - **Stack:** Astro 7, TypeScript strict, React (Keystatic admin only), Markdoc, Keystatic, `@astrojs/vercel`. Do not add other dependencies without asking Noel.
 - **Rendering:** public pages are prerendered. Only the Keystatic routes run as Vercel functions.
-- **Content:** every Keystatic schema in `keystatic.config.ts` has a matching schema in `src/content.config.ts`. Change both together.
-- **Images:** Keystatic image fields store under `src/assets/images/<collection>`; render with `astro:assets`. `npm run check-images` enforces 1.5 MB and 3840px limits.
+- **Content:** all entries are YAML; long text fields are Markdoc strings rendered by `src/lib/markdoc.ts`. Every Keystatic schema in `keystatic.config.ts` has a matching schema in `src/content.config.ts`. Change both together.
+- **Images:** Keystatic image fields store under `src/assets/images/<collection>/<slug>/<field path>/image.<ext>` (singletons: `src/assets/images/pages/<page>/...`), referenced from YAML as `../../assets/images/...`; render with `astro:assets`. Keystatic renames files to this layout on save, so keep migrated files in it too. `npm run check-images` enforces 1.5 MB and 3840px limits.
 - **Workflow:** one pull request per phase; merge commits only, never squash (Vercel Hobby deploys only commits authored by the account owner). Squash and rebase merges are disabled in the repo settings.
 - **`main` is protected:** pull requests required (no approval count), no force pushes, admins included. Only USC-Webdev should merge; a merge by an editor would be authored by them and blocked from deploying.
 - **The repo is public** (decided 23 Nov 2026) because GitHub Free only protects branches on public repos. Everything committed is world-readable, including commit author emails. The pre-publication history lives in the private `USC-Webdev/usc-website-private-archive`; do not make that repo public.
@@ -18,6 +18,8 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Ask Noel before** creating accounts, changing DNS, or changing repo visibility.
 
 ## Commands
+
+- `PUBLIC_KEYSTATIC_LOCAL=true npm run dev` – Keystatic edits local files instead of GitHub. Keystatic keeps unsaved drafts in the browser's IndexedDB; a stale draft can override the file on disk.
 
 - `npm run dev` – dev server at http://localhost:4321, admin at `/keystatic`
 - `npm run check` – `astro check`
