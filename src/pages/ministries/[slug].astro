@@ -1,0 +1,107 @@
+---
+// Template 5: Ministry. Hero with the ministry mark on Robot White, offices as
+// numbered rail blocks, gallery, work-in-progress notice when flagged.
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoverHero from '../../components/CoverHero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import RailBlock from '../../components/RailBlock.astro';
+import Prose from '../../components/Prose.astro';
+import Gallery from '../../components/Gallery.astro';
+import Notice from '../../components/Notice.astro';
+import MinistryMark from '../../components/MinistryMark.astro';
+import PillLink from '../../components/PillLink.astro';
+import NumberedSections from '../../components/NumberedSections.astro';
+import { getMinistries, ministryHref } from '../../lib/content';
+import { renderMarkdoc } from '../../lib/markdoc';
+
+export const getStaticPaths = (async () => {
+  const all = await getMinistries();
+  return all.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, prev: all[i - 1], next: all[i + 1] },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry, prev, next } = Astro.props;
+const m = entry.data;
+const offices = m.offices.map((o) => ({ heading: o.name, body: o.body }));
+// One word per line, keeping "and" with the word after it ("and Exploration").
+const lines = m.title.split(/\s+/).reduce<string[]>((acc, word) => {
+  if (acc.length && acc[acc.length - 1] === 'and') acc[acc.length - 1] = `and ${word}`;
+  else acc.push(word);
+  return acc;
+}, []);
+---
+
+<BaseLayout title={m.fullName} description={m.summary || undefined}>
+  <CoverHero
+    eyebrow={m.fullName}
+    edition={m.abbreviation}
+    lines={lines}
+    image={{ src: m.hero.image, alt: m.hero.alt, credit: m.hero.credit }}
+    size="small"
+    sections={[
+      { href: '#s-1', label: `1.0  ${m.abbreviation}` },
+      ...(offices.length ? [{ href: '#s-2', label: `2.0  ${m.officesHeading}` }] : []),
+    ]}
+  />
+
+  <section class="wrap block" id="s-1">
+    <div class="intro-head">
+      <span class="mark-tile">
+        <MinistryMark mark={m.mark ?? undefined} abbreviation={m.abbreviation} size={96} />
+      </span>
+      <SectionHead num="1.0" title={m.fullName} />
+    </div>
+    <RailBlock label={m.menuLabel} items={[m.abbreviation]}>
+      <Prose html={renderMarkdoc(m.overview)} />
+      {m.workInProgress && <Notice statement={m.workInProgressNote} />}
+    </RailBlock>
+  </section>
+
+  {
+    offices.length > 0 && (
+      <section class="wrap block" id="s-2">
+        <SectionHead num="2.0" title={m.officesHeading} />
+        <NumberedSections sections={offices} start={2} sub />
+        {m.closing && <Prose html={renderMarkdoc(m.closing)} />}
+      </section>
+    )
+  }
+
+  {
+    m.gallery.length > 0 && (
+      <div class="wrap block">
+        <Gallery items={m.gallery} />
+      </div>
+    )
+  }
+
+  <nav class="wrap block block-last pager" aria-label="Other ministries">
+    {prev && <PillLink href={ministryHref(prev.id)}><span aria-hidden="true">←</span> {prev.data.menuLabel}</PillLink>}
+    {next && <PillLink href={ministryHref(next.id)}>{next.data.menuLabel} <span aria-hidden="true">→</span></PillLink>}
+    <PillLink href="/ministries" variant="solid">All ministries</PillLink>
+  </nav>
+</BaseLayout>
+
+<style>
+  .intro-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px 32px;
+  }
+  .mark-tile {
+    background: var(--robot-white);
+    border: var(--rule);
+    padding: 14px;
+    margin-bottom: 28px;
+    display: inline-flex;
+  }
+  .pager {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+</style>

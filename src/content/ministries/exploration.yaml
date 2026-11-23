@@ -1,0 +1,34 @@
+title: Intelligence and Exploration
+menuLabel: Exploration
+fullName: Ministry of Intelligence and Exploration
+abbreviation: MIE
+summary: Research, intelligence and discovery.
+order: 3
+workInProgress: true
+workInProgressNote: More information will be posted as the game develops.
+hero:
+  image: ../../assets/images/ministries/exploration/hero/image.jpg
+  alt: In-game image for the Ministry of Intelligence and Exploration
+  credit: Jichael_Macksons
+overview: |
+  The Ministry of Intelligence and Exploration (MIE) is responsible for Research, Intelligence and Discovery. The exploration-centric needs of the USC are fulfilled here.
+
+  Surveying for resource deposits, salvage claims, discovering new jump points, finding ideal construction sites for outposts or settlements, scientific discoveries for new crafting opportunities, as well as scouting and intelligence gathering for threat assessments, not to mention Data-running to keep all that information flowing is under the purview of this Ministry. MIE also analyzes and guides the “geopolitics” of Star Citizen, constantly monitoring for threats and opportunities.
+
+  The Ministry's activities are currently administered by its 3 departments: The Office of Naval Intelligence, the Office of Cosmic Survey, and the Academy for Cosmic Research and Exploration.
+officesHeading: Departments
+offices:
+  - name: Office of Naval Intelligence
+    body: |
+      Oversees the intelligence gathering operations of the USC. This may entail simple scouting and recon missions, all the way to highly covert field operations. Activities also involve Search & Rescue and Data Running in the context of Intelligence gathering. The department maintains a Galactic Fact Book, a database of known organizations in the verse.
+  - name: Office of Cosmic Survey
+    body: |
+      The purview of this department is to survey and catalog the various opportunities that our Confederation can exploit. Finding jump points, surveying mining locations, prospecting interesting colonization sites, searching new salvage claims, or documenting where rare and unique harvestable can be seen is the bread and butter of this department. Data-running is also implied here to disseminate the gathered survey/prospecting information.
+  - name: Academy of Cosmic Research and Exploration
+    body: |
+      The Academy is in charge of extending the boundaries of our collective knowledge. It looks over a vast open-ended scope that may include but is not limited to: Organizing general scope exploration missions, pursuing scientific research to uncover new fabrication processes, uncovering new uses for Fauna or Flora, developing new farming or xeno-breeding methods, Studying spatial phenomena/anomalies and documenting any practical applications, etc.
+gallery:
+  - image: ../../assets/images/ministries/exploration/gallery/0/image.jpg
+    alt: Organization chart of the Ministry of Intelligence and Exploration
+    caption: ""
+    credit: ""

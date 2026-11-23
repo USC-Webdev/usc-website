@@ -1,0 +1,78 @@
+---
+// Template 4: Ministries index. Section heads, the ministries as index rows
+// with marks, org chart figure.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoverHero from '../../components/CoverHero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import RailBlock from '../../components/RailBlock.astro';
+import IndexRow from '../../components/IndexRow.astro';
+import Prose from '../../components/Prose.astro';
+import Gallery from '../../components/Gallery.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import CapsuleBand from '../../components/CapsuleBand.astro';
+import NumberedSections from '../../components/NumberedSections.astro';
+import JoinBand from '../../components/JoinBand.astro';
+import { getMinistries, getSingleton, ministryHref } from '../../lib/content';
+import { renderMarkdoc } from '../../lib/markdoc';
+
+const page = await getSingleton('ministriesIndex');
+const ministries = await getMinistries();
+const listNum = 1;
+const sectionStart = 2;
+const chartNum = sectionStart + page.sections.length;
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <CoverHero
+    eyebrow="United Space Confederation"
+    lines={page.heroLines}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    size="small"
+    sections={[
+      { href: '#s-1', label: `1.0  ${page.ministriesHeading}` },
+      ...page.sections.map((s, i) => ({ href: `#s-${sectionStart + i}`, label: `${sectionStart + i}.0  ${s.heading}` })),
+      { href: `#s-${chartNum}`, label: `${chartNum}.0  ${page.orgChartHeading}` },
+    ]}
+  />
+
+  <section class="wrap block" id={`s-${listNum}`}>
+    <SectionHead num={`${listNum}.0`} title={page.ministriesHeading} />
+    {
+      page.ministriesIntro && (
+        <RailBlock label="Cabinet">
+          <Prose html={renderMarkdoc(page.ministriesIntro)} />
+        </RailBlock>
+      )
+    }
+    <div class="rows">
+      {
+        ministries.map((m, i) => (
+          <IndexRow
+            num={`${listNum}.${i + 1}`}
+            title={m.data.fullName}
+            text={m.data.summary}
+            href={ministryHref(m.id)}
+            mark={{ image: m.data.mark ?? undefined, abbreviation: m.data.abbreviation }}
+            last={i === ministries.length - 1}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <NumberedSections sections={page.sections} start={sectionStart} />
+
+  <section class="wrap block block-last" id={`s-${chartNum}`}>
+    <SectionHead num={`${chartNum}.0`} title={page.orgChartHeading} />
+    {page.orgChart.length > 0 ? <Gallery items={page.orgChart} /> : <Placeholder label="USC organization chart image" ratio="16 / 7" />}
+  </section>
+
+  <CapsuleBand seed={2952} />
+  <JoinBand links={[{ href: '/leadership', label: 'Leadership' }]} />
+</BaseLayout>
+
+<style>
+  .rows {
+    padding-top: 40px;
+  }
+</style>

@@ -1,0 +1,45 @@
+---
+// Template 3: Long-form (Policies), grouped as internal and external.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CoverHero from '../components/CoverHero.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CapsuleBand from '../components/CapsuleBand.astro';
+import NumberedSections from '../components/NumberedSections.astro';
+import JoinBand from '../components/JoinBand.astro';
+import { getSingleton } from '../lib/content';
+
+const page = await getSingleton('policies');
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  dock={[
+    { href: '#s-1', label: '1.0 Internal' },
+    { href: '#s-2', label: '2.0 External' },
+  ]}
+>
+  <CoverHero
+    eyebrow="United Space Confederation"
+    lines={page.heroLines}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    size="small"
+    sections={[
+      { href: '#s-1', label: `1.0  ${page.internalHeading}` },
+      { href: '#s-2', label: `2.0  ${page.externalHeading}` },
+    ]}
+  />
+
+  <section class="wrap block" id="s-1">
+    <SectionHead num="1.0" title={page.internalHeading} />
+    <NumberedSections sections={page.internal} start={1} sub />
+  </section>
+
+  <section class="wrap block block-last" id="s-2">
+    <SectionHead num="2.0" title={page.externalHeading} />
+    <NumberedSections sections={page.external} start={2} sub />
+  </section>
+
+  <CapsuleBand seed={2951} />
+  <JoinBand links={[{ href: '/citizenship', label: 'Citizenship' }]} />
+</BaseLayout>

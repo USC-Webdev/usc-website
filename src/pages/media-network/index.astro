@@ -1,0 +1,240 @@
+---
+// Template 1: Media Network (Mockup A, "Cover").
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoverHero from '../../components/CoverHero.astro';
+import RailBlock from '../../components/RailBlock.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import IndexRow from '../../components/IndexRow.astro';
+import PillLink from '../../components/PillLink.astro';
+import CapsuleBand from '../../components/CapsuleBand.astro';
+import VideoCard from '../../components/VideoCard.astro';
+import ExhibitCard from '../../components/ExhibitCard.astro';
+import Notice from '../../components/Notice.astro';
+import Prose from '../../components/Prose.astro';
+import ClockObject from '../../components/objects/ClockObject.astro';
+import TalentObjects from '../../components/objects/TalentObjects.astro';
+import CoinStack from '../../components/objects/CoinStack.astro';
+import { getNewsletters, getSingleton, newsletterHref } from '../../lib/content';
+import { renderInline, renderMarkdoc } from '../../lib/markdoc';
+import { getSite } from '../../lib/site';
+
+const page = await getSingleton('mediaNetwork');
+const home = await getSingleton('home');
+const { settings } = await getSite();
+const newsletters = await getNewsletters();
+const [latest, ...backIssues] = newsletters;
+const news = (await getCollection('newsUpdates'))
+  .filter((n) => n.data.visible)
+  .sort((a, b) => a.data.order - b.data.order);
+const videos = (await getCollection('videos')).sort((a, b) => b.data.month.getTime() - a.data.month.getTime()).slice(0, 2);
+
+const rows = [
+  ...(latest ? [{ title: latest.data.title, text: latest.data.summary, href: newsletterHref(latest.id) }] : []),
+  ...news.map((n) => ({ title: n.data.title, text: n.data.summary, href: n.data.link })),
+];
+const channel = (label: string) => settings.channels.find((c) => c.label === label)?.href;
+const sections = [
+  { href: '#news', label: '1.0  News' },
+  { href: '#videos', label: '2.0  Videos' },
+  { href: '#pool', label: '3.0  Donation Pool' },
+  { href: '#hail', label: '4.0  Contact' },
+];
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  dock={[
+    { href: '#news', label: '1.0 News' },
+    { href: '#videos', label: '2.0 Videos' },
+    { href: '#pool', label: '3.0 Pool' },
+    { href: '#hail', label: '4.0 Contact' },
+  ]}
+>
+  <CoverHero
+    eyebrow={page.eyebrow}
+    edition={latest ? `Edition ${latest.data.quarter} ${latest.data.year}` : undefined}
+    kicker={page.heroKicker}
+    lines={page.heroLines}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    sections={sections}
+  />
+
+  <div class="wrap statement-block">
+    <RailBlock label={page.railLabel} items={page.railItems}>
+      <div class="rise stack">
+        <p class="statement" set:html={renderInline(page.statement)} />
+        {page.statementAside && <p class="aside-copy">{page.statementAside}</p>}
+      </div>
+    </RailBlock>
+  </div>
+
+  <section id="news" class="wrap news">
+    <SectionHead num="1.0" title={page.newsHeading} />
+    {rows.map((r, i) => <IndexRow num={`1.${i + 1}`} title={r.title} text={r.text} href={r.href} last={i === rows.length - 1} />)}
+    {
+      backIssues.length > 0 && (
+        <div class="back-issues">
+          <span class="label">Back issues</span>
+          {backIssues.map((n) => (
+            <PillLink href={newsletterHref(n.id)} size="sm">
+              {n.data.title}
+            </PillLink>
+          ))}
+        </div>
+      )
+    }
+  </section>
+
+  <CapsuleBand />
+
+  <section id="videos" class="dark-section on-dark">
+    <div class="wrap inner">
+      <SectionHead num="2.0" title={page.videosHeading} tone="dark">{page.videosAside}</SectionHead>
+      <div class="video-row">
+        {
+          videos.map((v, i) => (
+            <VideoCard
+              youtubeId={v.data.youtubeId}
+              title={v.data.title}
+              num={`2.${i + 1}`}
+              shape={i === 0 ? 'wide' : 'tall'}
+              offset={i === 1}
+              poster={v.data.poster ?? undefined}
+              posterAlt={v.data.posterAlt}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="pool" class="wrap pool">
+    <SectionHead num="3.0" title={page.poolHeading}>{page.poolAside}</SectionHead>
+    <ExhibitCard num="3.1" word="Time" color="topaz" index={0}>
+      <p>{page.time}</p>
+      <ClockObject slot="object" />
+    </ExhibitCard>
+    <ExhibitCard num="3.2" word="Talent" color="sunshade" index={1}>
+      <p>{page.talent}</p>
+      <TalentObjects slot="object" />
+    </ExhibitCard>
+    <ExhibitCard num="3.3" word="Treasure" color="zodiac" index={2}>
+      <div class="treasure">
+        <div class="treasure-col">
+          <span class="label">In game</span>
+          <p class="treasure-text">{page.treasureInGame}</p>
+        </div>
+        <div class="treasure-col">
+          <span class="label">Out of game</span>
+          <p class="treasure-text">{page.treasureOutOfGame}</p>
+        </div>
+      </div>
+      <div class="pill-row">
+        {channel('Patreon') && <PillLink href={channel('Patreon')!} variant="solid" tone="dark">Patreon</PillLink>}
+        {channel('Swag Store') && <PillLink href={channel('Swag Store')!} variant="outline" tone="dark">Swag Store</PillLink>}
+      </div>
+      <CoinStack slot="object" />
+    </ExhibitCard>
+    <Notice statement={page.noticeStatement}>
+      <Prose html={renderMarkdoc(page.noticeBody)} />
+    </Notice>
+  </section>
+
+  <section id="hail" class="dark-section on-dark">
+    <div class="hail rise">
+      <span class="hail-num" aria-hidden="true">4.0</span>
+      <h2 class="hail-title"><span class="visually-hidden">4.0 </span>{page.closingHeading}</h2>
+      <p class="hail-text">{page.closingText}</p>
+      <div class="pill-row center">
+        <PillLink href={settings.applicationUrl} variant="primary" size="lg">{home.ctaLabel}</PillLink>
+        {channel('Instagram') && <PillLink href={channel('Instagram')!} variant="outline" tone="dark">Instagram</PillLink>}
+        {channel('YouTube') && <PillLink href={channel('YouTube')!} variant="outline" tone="dark">YouTube</PillLink>}
+        <PillLink href={`mailto:${settings.contactEmail}`} variant="outline" tone="dark">Consul of Peace</PillLink>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .statement-block {
+    padding-top: clamp(64px, 9vw, 130px);
+    padding-bottom: clamp(64px, 9vw, 130px);
+  }
+  .news {
+    padding-bottom: var(--section);
+  }
+  .back-issues {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding-top: 28px;
+  }
+  .back-issues .label {
+    padding-right: 12px;
+  }
+  .video-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+  .pool {
+    padding-top: var(--section);
+    padding-bottom: var(--section);
+  }
+  .treasure {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    color: var(--robot-white);
+  }
+  .treasure-col {
+    flex: 1 1 260px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .treasure-col .label {
+    color: var(--white);
+  }
+  .treasure-text {
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+  }
+  .hail {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: clamp(80px, 11vw, 170px) var(--gutter) clamp(80px, 10vw, 150px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    text-align: center;
+  }
+  .hail-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: var(--fs-section);
+    line-height: 1;
+    color: var(--steel-grey);
+  }
+  .hail-title {
+    font-weight: 900;
+    font-size: clamp(1.9rem, 5.4vw, 4.9rem);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+  .hail-text {
+    max-width: 560px;
+    font-size: 19px;
+    color: var(--robot-white);
+  }
+  .center {
+    justify-content: center;
+  }
+</style>

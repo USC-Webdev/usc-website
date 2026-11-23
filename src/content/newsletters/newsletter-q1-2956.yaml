@@ -1,0 +1,1245 @@
+title: Newsletter Q1 2956
+quarter: Q1
+year: 2956
+published: 2956-03-31
+summary: The USC newsletter for Q1 2956.
+cover:
+  image: ../../assets/images/newsletters/newsletter-q1-2956/cover/image.jpg
+  alt: Cover image of Newsletter Q1 2956
+  credit: ""
+intro: |
+  NEWS FROM AROUND THE CONFEDERATION
+
+  Year 2956 - Quarter 1 - Issue 2956.1 - Build 4.6.0
+sections:
+  - heading: A Word From The Chancellor
+    kicker: ""
+    body: |
+      Good Day Citizens,
+
+      A strong start of the year on the legislative side as we've cemented and clarified several ambiguous elements of the constitution, We've formed a non-aggression pact with the People's Alliance of Nyx and we are now defining what scope of activities that our government should spent more of it's limited resources on (or expand upon). As we all know, much as the environment of the vers we live in, the United Space Confederation is also constantly in a state of evolution. Every day we are growing together and we are truly, one step at a time, making this nation of ours stronger and truer to our values.
+
+      I would like to take this opportunity to mention that the Senate is "your" forum for change or discourse. Often the Legislation and topic brought to the floor are initiated by Cabinet or the Chancellor (from discussions in private or inspired from conversations and experiences had in the vers' with fellow citizens.) But Indeed any of you are empowered to bring a topic forward to be debated and voted upon.
+
+      Should you have any proposal or piece of potential legislation that you would like to debate, I invite you to discuss it openly in ⁠usc-official or alternatively as a private message to myself and let us see how we can move the initiative forward. Should it be relevant, feasible and executable (or at the very least entertaining) You might be the proud author of your own piece of legislation that passes a vote in Senate. Therefore, leaving your very own mark on the USC for the success of all.
+
+      May the stars always shine in our favor,
+
+      **For Equality, Prosperity and Freedom**
+
+      Sincerely,
+
+      **Caylen Vyshir**
+
+      **Chancellor of the Senate**
+
+      **For Equality, Prosperity, and Freedom**
+
+      **Caylen Vyshir**
+
+      **Chancellor of the Senate**
+
+      United Space Confederation
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/0/gallery/0/image.jpg
+        alt: Image 1 from “A Word From The Chancellor”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Profiles In Courage
+    kicker: ""
+    body: |
+      _Notable Acts Of Bravery, Contribution And Integrity_
+
+      **Dinodel**
+
+      101 has created VoidLink, and it is awesome! It will surely become a valuable tool to support our group gameplay creation efforts.
+
+      Thank you 101!
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/1/gallery/0/image.jpg
+        alt: Image 1 from “Profiles In Courage”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Description
+    kicker: ""
+    body: |
+      VoidLink is our new custom VOIP solution for squad leads and commanders during large events.
+
+      It also works as a companion to Star Citizen by reading the game log file which is generated every time you play a session. VoidLink can then generate a mission debrief, summarising your play session, including events and missions, a galaxy map is also shown as part of this report which highlights planets and moons you have visited. Coming soon this map will also indicate where certain events happened, like mission completion, deaths etc.
+
+      VoidLink is available to everyone now, not just mission commanders and squad leaders, Your level of access is set t only use the tools (Mission debrief report generator, Mission report archive, Ship manifest and Hostile registry) within the app as default.
+
+      If you step up to be a squad lead during an event your permissions can be changed by an admin to allow you to have full access.oidLink is our new custom VOIP solution for squad leads and commanders during large events.
+
+      It also works as a companion to Star Citizen by reading the game log file which is generated every time you play a session. VoidLink can then generate a mission debrief, summarising your play session, including events and missions, a galaxy map is also shown as part of this report which highlights planets and moons you have visited. Coming soon this map will also indicate where certain events happened, like mission completion, deaths etc.
+    gallery: []
+  - heading: Features
+    kicker: ""
+    body: |
+      Multi-channel PTT Voip for comms - Voice transmission to specific channels within VoidLink and Discord. Immersive push button commands to inform users of your squads status, or give orders.
+
+      Mission Report generator - Generates a mission report for your current/last gameplay session by reading your game log. If the setting is enabled VoidLink will take automated screenshots at key moments, triggered by the game log. For example you accept or complete a mission, you are killed or attacked. These images are used to create a more detailed report and hopefully soon populate the Hostile Registry with hostile player names.
+
+      Mission Log Archive - see your previously generated reports and view the galaxy map.
+
+      Mission planner - for use during an event with multiple objectives. Commanders can create an objective list which is displayed to all users of VL, objects can be ticked off as the mission progresses. This objective list also forms part of a mission report.
+
+      Cargo Manifest - Each squad can enter their ships payload or any important items they may be responsible for. Other users can then view who has what rather than asking around clogging comms.
+
+      Hostile Registry (still in development) - Users can enter gamer tags of other troublesome players who commit crimes against us or are general threat. VoidLink should also populate this from any dynamic screenshots taken that include the hostile player's name. Users can enter hostile to the list either in app or via a Discord command.
+
+      Discord integration - VoidLink can mute/deafen you in Discord automatically when you are transmitting voice in VoidLink. A number of Discord bots can be summoned to receive and playback Voip and commands for users in Discord.
+
+      Fleet Report - If a group of players are using VoidLink for an event or operation all users can upload their game log file to the VoidLink server. The commander can then generate a fleet report which will include details from everyone's experience.
+
+      Patholo
+    gallery: []
+  - heading: Welcome New Citizens!
+    kicker: ""
+    body: |
+      THE USC IS PROUD TO WELCOME THE FOLLOWING NEW CITIZENS TO THE UNITED SPACE CONFEDERATION!
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/0/image.jpg
+        alt: Image 1 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/1/image.jpg
+        alt: Image 2 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/2/image.jpg
+        alt: Image 3 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/3/image.jpg
+        alt: Image 4 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/4/image.jpg
+        alt: Image 5 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/5/image.jpg
+        alt: Image 6 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/6/image.jpg
+        alt: Image 7 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/7/image.jpg
+        alt: Image 8 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/8/image.jpg
+        alt: Image 9 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/9/image.jpg
+        alt: Image 10 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/10/image.jpg
+        alt: Image 11 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/11/image.jpg
+        alt: Image 12 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/12/image.jpg
+        alt: Image 13 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/13/image.jpg
+        alt: Image 14 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/14/image.jpg
+        alt: Image 15 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/15/image.jpg
+        alt: Image 16 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/16/image.jpg
+        alt: Image 17 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/17/image.jpg
+        alt: Image 18 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/18/image.jpg
+        alt: Image 19 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/19/image.jpg
+        alt: Image 20 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/20/image.jpg
+        alt: Image 21 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/21/image.jpg
+        alt: Image 22 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/22/image.jpg
+        alt: Image 23 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/23/image.jpg
+        alt: Image 24 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/24/image.jpg
+        alt: Image 25 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/25/image.jpg
+        alt: Image 26 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/26/image.jpg
+        alt: Image 27 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/4/gallery/27/image.jpg
+        alt: Image 28 from “Welcome New Citizens!”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Operation Kurofune
+    kicker: Featured Events
+    body: |
+      _A Few In-Game & Out Of Game Events Our Members Created And Participated In_
+
+      Due to the continued shadow blockade of Levski by the UEE, which has been slowly depleting the already limited supplies of the Peoples Alliance, the United Space Confederation (USC) decided to dispatch a relief convoy to Levski, delivering much-needed aid. To achieve this, Operation Kurofune was launched under the joint auspices of the Ministry of Interstellar Commerce (MIC) and the Ministry of Security Services (MSS).
+
+      When first conceived, the convoy was not expected to encounter any significant resistance. However, following [the Massacre of the Expeditionary Fleet at the Nyx Gateway](https://thecitizencompass.com/2025/12/01/massacre-at-the-nyx-gateway-mie-expedition-ambushed/), plans were rapidly revised and MSS involvement was significantly increased. The loss of the expeditionary fleet was already a severe blow, and its full consequences had yet to unfold—losing an entire supply convoy on top of that would be catastrophic.
+
+      Follow this link to read more and to watch Etow's journalistic video: [https://thecitizencompass.com/2025/12/13/operation-kurofune-successful-resupply-of-levski/](https://thecitizencompass.com/2025/12/13/operation-kurofune-successful-resupply-of-levski/)
+
+      PSA: All members are allowed and encouraged to create group gameplay events. Reach out to any member of the admin team to learn more!
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/5/gallery/0/image.jpg
+        alt: Image 1 from “Operation Kurofune”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Featured Screenshots
+    kicker: ""
+    body: |
+      _Here Are Only A Few Of The Fantastic Screenshots Our Members Captured_
+
+      Jichael_Mackson's Squad getting ready for action.
+
+      Ilucide preparing to break atmo.
+
+      Baron taking a well deserved break! :)
+
+      YOU MAY FIND THE CATALOG OF USC MEMBER DISCORD SUBMISSIONS IN THE [SCREENSHOTS FOLDER](https://drive.google.com/drive/folders/1FX-bkZfCW1u-tjj661MyiECNOm3baMOU?usp=sharing)
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/6/gallery/0/image.jpg
+        alt: Image 1 from “Featured Screenshots”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/6/gallery/1/image.jpg
+        alt: Image 2 from “Featured Screenshots”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/6/gallery/2/image.jpg
+        alt: Image 3 from “Featured Screenshots”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Featured Celebrations
+    kicker: ""
+    body: |
+      _In-Game, Community Or USC Celebrations_
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/7/gallery/0/image.jpg
+        alt: Image 1 from “Featured Celebrations”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Day of the Vara Star Citizen
+    kicker: ""
+    body: |
+      Day of the Vara is a holiday celebrated in the United Empire of Earth (UEE) annually on October 27th. The holiday involves public festivals adorned with decorations in black and green and private gatherings convened to remember and honor the dead.
+
+      Celebrants dress up as people who have passed away or in other costumes and swap scary stories, especially pertaining to mysterious incidents in space. It is seen by Humans as a day that gives equal weight to the joy of life and the macabre.
+
+      Read more at [Galactapedia](https://robertsspaceindustries.com/galactapedia/article/RkGQqpJwGp-day-of-the-vara)
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/8/gallery/0/image.jpg
+        alt: Image 1 from “Day of the Vara Star Citizen”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Foundation Festival Star Citizen
+    kicker: ""
+    body: |
+      The origins of the IAE trace back to the desolate plains of Castor, within the Corel system. Audrey Timmerman, an avid spacecraft enthusiast, orchestrated the first assembly of likeminded pioneers for test flights and technical exchange. Inspired by her stint in the Navy, where she encountered Xi’an technology, Timmerman sought to push the boundaries of spacecraft engineering.
+
+      The inaugural flight of her experimental ship, Poby, was a setback rather than a success, yet it ignited a tradition that would endure through centuries. Despite a power surge disabling several of Poby’s thrusters, the event set the stage for what would become the universe’s foremost aerospace exhibition. Over the following years, local businessman Steffon Dillard recognized the potential of the gathering, sponsoring it and branding it as the Intergalactic Aerospace Expo. This pivotal partnership marked the beginning of the event’s transformation from a grassroots meeting to a formalized showcase.
+
+      Read more at [Citizen History](https://citizen-history.com/article/the-intergalactic-aerospace-expo-iae)
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/9/gallery/0/image.jpg
+        alt: Image 1 from “Foundation Festival Star Citizen”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Coramor Star Citizen
+    kicker: ""
+    body: |
+      In-Lore History: Based on the tragic 25th-century story of Yuri Ilyin, who spent his life searching for his lover Corazon Tan after a jump point collapsed, leaving her stranded.
+
+      Coramor Activities: Players often participate in themed activities, such as wearing red/pink, trading specially marked items, and taking romantic scenic tours of the, which is the theme of the holiday.
+
+      Rewards & Sales: The event brings back ships like the Heartseeker and offers themed items like plushies, armor, and weapon skins.
+
+      Referral Bonuses: During the event, special gifts are frequently offered for using referral codes, such as special armor sets or ship paints, such as the HoverQuad with love-struck paint.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/10/gallery/0/image.jpg
+        alt: Image 1 from “Coramor Star Citizen”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Constitution Day USC
+    kicker: ""
+    body: |
+      January 9th 2949 is the day the USC ratified its original constitution, officially resolving to call Terra home and formulate the current structure of the government and our society as a collection of independent contractors offering out of our own volition, "time, talent and treasure" for the betterment of our society.
+
+      Constitution day is usually spent with family and friends. Also, although citizens can do this at any time in the year, It is customary on this day to write a letter to a citizen's constituent senators to make sure that his family's wishes and concerns are properly voiced at the Senate. Citizens also sometimes take the opportunity to participate in various community volunteer activities demonstrating the USC's citizens willingness to support each other in times of need.
+    gallery: []
+  - heading: Featured Real Life Events
+    kicker: ""
+    body: |
+      _Here Are Only A Few Of The Interesting Real Life Moments Our Members Shared:_
+
+      Maxwell shared a funny!
+
+      Ogi playing SETI.
+
+      Bar's Co-Pilot!
+
+      CptNeptune's cat!
+
+      Indernet introduced us to 'Dog'.
+
+      Dekan's crew. :)
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/12/gallery/0/image.jpg
+        alt: Image 1 from “Featured Real Life Events”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/12/gallery/1/image.jpg
+        alt: Image 2 from “Featured Real Life Events”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/12/gallery/2/image.jpg
+        alt: Image 3 from “Featured Real Life Events”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/12/gallery/3/image.jpg
+        alt: Image 4 from “Featured Real Life Events”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/12/gallery/4/image.jpg
+        alt: Image 5 from “Featured Real Life Events”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/12/gallery/5/image.jpg
+        alt: Image 6 from “Featured Real Life Events”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Looking Forward
+    kicker: ""
+    body: |
+      _A Look At Upcoming Events, Missions And Operations For USC Members To Enjoy!_
+
+      USC Meta Events:
+
+      Events and contests that will roll on an annual schedule of four quarters.
+
+      Each quarter is hosted by one of the Ministries as listed below. The hosting Ministry will introduce a theme and post various activities for members to participate in.
+
+      - Q4 2025 - Intelligence and Exploration Ministry - Operation STARFORGE
+      - Q1 2026- Interstellar Commerce Ministry - Operation TBD
+      - Q2 2026- Security Services Ministry - Operation TBD
+      - Q3 2026- Engineering and Support - Operation TBD
+
+      Each quarter will have activities, events, and/or tasks that fall within the theme and gameplay of Star Citizen. Some events may be in the form of contests, in which members must participate in to earn ‘points’. For contests, all citizens can participate to earn points by participating in group gameplay activities. Points reset every quarter. Each activity may have different ranges of points that can be earned. Refer to the 'Events' channel on the USC Discord for more information.
+    gallery: []
+  - heading: Help Wanted
+    kicker: ""
+    body: |
+      _Ways You Can Have Fun And Contribute Your Talents To The USC!_
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/14/gallery/0/image.jpg
+        alt: Image 1 from “Help Wanted”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/14/gallery/1/image.jpg
+        alt: Image 2 from “Help Wanted”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Minister Of Interstellar Commerce
+    kicker: ""
+    body: |
+      If you are a long term member and feel like the above description is a good fit, please reach out to a member of the Cabinet. We're looking to have this position filled in 1Q2956
+
+      Thanks!
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/15/gallery/0/image.jpg
+        alt: Image 1 from “Minister Of Interstellar Commerce”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Editor
+    kicker: Got Media?
+    body: |
+      **Confederation Media Network**
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - CMN is the Media Team for the United Space Confederation.
+      - They produce content for our social media sites and to aid in recruitment.
+      - The Editor provides a vision and review and oversight of the following duties.
+      - Create one video a month (for example).
+      - Create graphics to support the website and recruitment threads.
+      - Showcase our activity and achievements via various social and member sites.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/16/gallery/0/image.jpg
+        alt: Image 1 from “Editor”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/16/gallery/1/image.jpg
+        alt: Image 2 from “Editor”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Group Gameplay Content
+    kicker: ""
+    body: |
+      Special spotlight on some of our members that have created some phenomenal group gameplay content for all of us to enjoy! Thank you, hours of fun and gigabytes of video & images created.
+
+      - Our very own EtowTheSaltyCat has created a tabloid that creates a lore and backstory for the USC.
+
+      **Check it out at: The Citizen Compass**
+
+      A link to the Citizen Compass will be added to the USC website menu as well.
+
+      - Every member is allowed and encouraged to create groups. So feel free to create an event, or simply invite your orgmates to crew a seat on your ship during your next mission!
+      - Member Created Events
+
+      2955Q4 and 2956Q1 has seen a wonderful increase in membership, and group activity around the curated CIG events. Group gameplay creation helped with the events, as well as spontaneous grouping in game.
+
+      This is one of the foundational objectives of the USC leadership, and it is very redeeming to see the strategic plan bearing fruit. We thank all of you for your contributions to making this our Star Citizen place!
+
+      Pacth 4.7 looks promising in regards to group game play, and we look forward to playing engineering and fleet balance.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/17/gallery/0/image.jpg
+        alt: Image 1 from “Group Gameplay Content”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/17/gallery/1/image.jpg
+        alt: Image 2 from “Group Gameplay Content”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/17/gallery/2/image.jpg
+        alt: Image 3 from “Group Gameplay Content”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/17/gallery/3/image.jpg
+        alt: Image 4 from “Group Gameplay Content”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: "POLICY UPDATE: USC Embassy Moves To Seperate Discord Channel"
+    kicker: ""
+    body: |
+      Dear Citizens,
+
+      Due to security concerns regarding external orgs being present on the USC Discord, Leadership opened a seperate Discord channel that creates an air-gap as a layer of precaution.
+
+      Ogi has stepped up to lead the Embassy, and we're excited to see momentum in terms of relationship building and org + org group gameplay creation.
+    gallery: []
+  - heading: 4Q2955 & 1Q2956 Senate Votes
+    kicker: ""
+    body: |+
+      
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/19/gallery/0/image.jpg
+        alt: Image 1 from “4Q2955 & 1Q2956 Senate Votes”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/19/gallery/1/image.jpg
+        alt: Image 2 from “4Q2955 & 1Q2956 Senate Votes”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/19/gallery/2/image.jpg
+        alt: Image 3 from “4Q2955 & 1Q2956 Senate Votes”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Private Citizen Trade Enterprises vis a vis USC Government Trade Opportunities OCT 2955 (Closed)
+    kicker: ""
+    body: |
+      October:
+
+      Good Day Dear @Citizens,
+
+      Another topic now comes to a close and here are the results!
+
+      Question 1:
+
+      On the question asking what we should do when on official USC mission with rare loot obtained and found.
+
+      76.47% Have indicated that the redistribution of the loot should be done using a Random Number Generator Method to keep things fair and equitable.
+
+      23.53% Desired to have all rare loot be allocated to the USC Org treasury.
+
+      **Questions 2a**
+
+      This questions seeked to clarify if a set percentage of our treasury should be earmarked for trade and if so, how much.
+
+      The responses reflected a nice spread across all possibilities however the two highest responses were as follows:
+
+      50% Of votes advised that no guidelines should be hard set and that it would be at the discretion of individual traders. For the USC Treasury, at the discretion of the Minister of MIC as well as the Director of the Treasury and fleet Logistics.
+
+      27.78% Wishes to set a percentage of 25% of USC inventory exclusively to trade and advised the same for private USC traders.
+
+      **Question 2b**
+
+      Now arguably the question that stirred the most discussion, How much of a discount should be considered fair when MIC sells from the org treasury to USC Citizens.
+
+      The two top answers were as follows:
+
+      50% Have indicated that our citizens should receive a 25% discount from market rate on loot sold from the org vaults.
+
+      36.36% Would like that have seen a deeper discount at 35%.
+
+      There you have it. I would like to thank all of you once again in assisting to make this the best ORG in the vers' It is though all your contributions, whether by organizing/participating in events, fostering constructive discussions, producing works of creative art and also by excessing your right as citizens to vote ont these topics which help us shape our organization to be a place that is home to us all.
+
+      With the close of this topic, I am announcing that it is also bringing my current term as your Chancellor to a close. Announcing the results of the last poll of the term always leaves me with mixed feeling of accomplishment but also of feeling that so much more work is yet to be done...
+
+      As is customary, I can neither confirm or deny if I will be putting my candidacy again for another two years. A communication will be sent out from Cabinet in the next few days.
+
+      Until then, Thank you for the trust and honor you have given me to be your Chancellor this past 2 years. I am truly blessed to be part of this Organization and regardless of that lies ahead, I am confident that we are heading in the right direction.
+
+      With most sincere regards,
+
+      **Caylen Vyshir**
+
+      Lifting my hat to all of you one last time (for this term) as your Chancellor.
+
+      May the stars always shine in our favor.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/20/gallery/0/image.jpg
+        alt: Image 1 from “Private Citizen Trade Enterprises vis a vis USC Government Trade Opportunities OCT 2955 (Closed)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: The USC Bird is Chosen! DEC 2955 (Closed)
+    kicker: ""
+    body: |
+      Members chose the Hawk to become the official mascot of the United Space Confederation.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/21/gallery/0/image.jpg
+        alt: Image 1 from “The USC Bird is Chosen! DEC 2955 (Closed)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Prime Minister Elections for First Half 2956 DEC 2955 (Closed)
+    kicker: ""
+    body: |
+      Good Day Dear @Citizen s,
+
+      The voting for our next prime minister has concluded and I am here to inform you all that @MaxwellStiles (UTC-5) will be our next PM starting first thing the first of January.
+
+      His term will be for a duration of 6 months, ending on June 30th 2956.
+
+      Max will still hold his Directorship at the Office of Naval Planning unless he plans to delegate (at his discretion and approval of the Minister of MSS) the task while serving as PM.
+
+      Please join me in wishing Max success in his new role! May we all benefit from his tenure and the USC better for it.
+
+      We would also of course like to thank @Kaïn (UTC+1) very much for his contributions during his interim tenure as PM.
+
+      We see that his initiative with the new USC private enterprises is already starting to bare fruit.
+
+      Do stay tuned in about 11 days for the first Senate Session of 2956.
+
+      To all I wish you a very happy new year, with best wishes of prosperity, happiness and health to you and all your loved ones.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/22/gallery/0/image.jpg
+        alt: Image 1 from “Prime Minister Elections for First Half 2956 DEC 2955 (Closed)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/22/gallery/1/image.jpg
+        alt: Image 2 from “Prime Minister Elections for First Half 2956 DEC 2955 (Closed)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/22/gallery/2/image.jpg
+        alt: Image 3 from “Prime Minister Elections for First Half 2956 DEC 2955 (Closed)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/22/gallery/3/image.jpg
+        alt: Image 4 from “Prime Minister Elections for First Half 2956 DEC 2955 (Closed)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: USC Constitution Review and Amendments JAN 2956 (Closed)
+    kicker: ""
+    body: |
+      Dear @Citizen , due to an oversight brought to my attention by @EtowTheSaltyCat (UTC+1) , I am considering making the slight adjustment as follows for Proposal 1.
+
+      "New Cabinet Ministers (Including the Prime Minister) will need to have their nomination confirmed by at least 2/3s of existing Cabinet Members and need to pass a 75% vote from Senate (51% for the Prime Minister) in order to claim that title. In the case of Cabinet Consuls, the Consul of Peace is selected as informed by Article III Section 4 by Cabinet from within Cabinet and requires a unanimous vote. The Consul of War is selected as informed by Article III Section 3 and requires a 75% Vote from the "Leadership of the Confederation Navy""
+
+      The reason for the edit is that in the case of an election with two or more candidates for PM, the 75% threshold would be very excessively difficulty to reach... Seeing the temporary nature of the Prime Minister Role, a simple majority seems acceptable.
+
+      As it is not customary to change the wording of any votes when the polls have been published, I would like to get at least 10 Thumbs up reactions to this message. If I do get them, I will modify the text as indicated and will notify everyone so that they may change their votes if so desired.
+
+      Senate Topic Final Results Report:
+
+      Ladies and gentlemen, after some indeed very passionate debates, we now have the results of this year's constitution amendment votes.
+
+      Just a quick reminder on the proceedings, a vote for 75% to agree on a proposed change is required to validate and ratify that change in the Constitution.
+
+      Only the votes to Agree and disagree count towards the total. Abstentions are only counted towards Quorum which was set at 25 for all proposals.
+
+      All proposals have met the Quorum so Let us get right into the results:
+
+      **First, on change proposal 1: PASSED**
+
+      with 26 total votes:
+
+      77% (20/26) Has Agreed. The motion passes.
+
+      What does this mean? TLDR It means that now new aspiring cabinet members will require the approval of 2/3s of the existing cabinet to be nominated and then require at least a 75% approval from our citizens to be able to be confirmed for that role. (only 51% for the Prime Minister). The consul of peace will need to be unanimously selected by the cabinet and the consul of war will require a 75% approval from the Leadership of the Confederation Navy.
+
+      **On change Proposal 2: PASSED**
+
+      with a 100% approval rate (37 votes in favor) The motion also passes.
+
+      What does this mean? TLDR, Individual Cabinet members will only get 1 vote within Cabinet even if they are filling in in interim for an empty seat. They will only have one official job and will never be able to hold two seats permanently.
+
+      **On Change Proposal 3: PASSED**
+
+      Again with a 100% Approval rate (34 votes in favor) This one also passes.
+
+      What does this mean? TLDR, MIC has now a more precise list of responsibilities namely: Trade, Business Management, Hospitality, Sports Entertainment (and gambling), logistics (Transportation of both goods and people), Management of the USC treasury, financing, and taxation.
+
+      And last but not least...
+
+      **Change Proposal 4: REJECTED**
+
+      With 34 total votes,
+
+      Only 68% (23/34 in favor) Have agreed and thus not reaching the necessary 75% approval to pass the motion. This motion fails
+
+      What does this mean? TLDR, The move of Salvage and Mining activities will remain at the status quo under MES. Although this change has been passed by a previous senate vote, It's passing into the constitution has failed thus indicating that a strong contingent of our citizens reject this change. More discussions and polish will be required on this motion in order for it to find it's way officially within MIC...
+
+      Call this a filibuster if you will but I encourage you to see this as chance for us to get back to the discussion table to polish a bit more this rough edge. Hopefully into something that works for the greater majority in the future.
+
+      I will make the necessary changes in "The big book" and update the document according to these results.
+
+      Stay tuned for the next topic in a bout one week's time.
+
+      I wish you all a great day!
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/23/gallery/0/image.jpg
+        alt: Image 1 from “USC Constitution Review and Amendments JAN 2956 (Closed)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Proposal for a Formal Alliance with the "People's Alliance" of NYX FEB 2956 (Closed)
+    kicker: ""
+    body: |
+      Dear @Citizen of the USC,
+
+      As this new topic comes to a close, The results thus follows:
+
+      On the matter of forming a partnership with the People's alliance of Nyx, The USC has voted in Favor of a limited agreement in the form of a non-aggression pact and Military treaty which includes select protection agreements. This had gathered 50% of the votes.
+
+      Adding the 42.5% votes that were in favor a complete alliance, we largely surpass the 60% needed to move forward on a treaty or agreement with a foreign Organization as prescribed in Article II, Section 6 which requires at least 60% in favor.
+
+      The form that this agreement would take, I would like to reiterate, would be the non-aggression pact as it is the camp that had the majority of votes between the two camps in favor of some sort of treaty.
+
+      I would like to wish you all a good day
+    gallery: []
+  - heading: Ministry Round Up
+    kicker: ""
+    body: |+
+      
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/25/gallery/0/image.jpg
+        alt: Image 1 from “Ministry Round Up”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/25/gallery/1/image.jpg
+        alt: Image 2 from “Ministry Round Up”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: From The Minister Of Security - MSS
+    kicker: ""
+    body: |
+      **Twilly Frost**
+
+      **Ministry of Security Services**
+
+      Greeting Citizens!
+
+      This past quarter saw a lull in activity across the board as Star Citizen struggles to get its PU legs steady for 2026, while CIG continues its mad sprint to Squadron 42 later this year (allegedly). This project has always been about peaks and valleys, bursts of fresh excitement followed by periods of 'hurry up and wait'.
+
+      4.7 brings a new opportunity for the MSS to get its hands dirty, as armor comes into play and the light fighter meta finally (maybe) gets kicked to the proverbial curb. Gone are the days of mindless orbiting whilst holding out for the end of a hardly-fought battle of attrition. No more strapping on laser repeaters by default.
+
+      Under the armor paradigm we will see a new role for fighters emerge, a focus on sub-system targeting, anti-torpedo and anti-bomber tactics. And, of course, as an anti-fighter screen. Fighters will escort larger ships with the mandate of keeping said components safe from other fighters.
+
+      Weapons loadouts will be integral to the success of a mission. Together with ONI, the MSS will test these new systems under fire, and be tasked with creating new meta suggestions and effective counters for various scenarios, starting with the Carrier Operations event being held by the Office of Fleet Planning.
+
+      This next quarter will prove to be an interesting one for space combat. Strap on your best loadout and lets get to blowing things up for science!
+
+      One last thing - the Director of Marines position is still available for anyone with a year of citizenship and a desire to coordinate and create content for all things FPS. If you have the desire and motivation, your time of citizenship may be negotiable.
+
+      ad astra in proelium
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/26/gallery/0/image.jpg
+        alt: Image 1 from “From The Minister Of Security - MSS”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/26/gallery/1/image.jpg
+        alt: Image 2 from “From The Minister Of Security - MSS”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: MSS Directors
+    kicker: ""
+    body: |
+      MSS DIRECTORS ARE SEEKING TO HAVE SEVERAL ROLES FILLED. ARE YOU READY FOR ACTION? SIGN UP TODAY?!
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/27/gallery/0/image.jpg
+        alt: Image 1 from “MSS Directors”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Confederation Law Civil Protectorate (CLCP)
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - Oversees the generation of bounty hunting missions, nonlethal apprehension and "confiscation" missions, suspect investigations, private detective work and investigation of contraband and controlled substances.
+      - Will Track the participation in the mission types listed above.
+      - Manage 3rd party bounty hunting contracts (contracts given to non-USC members)
+      - Will ensure that contractual obligations initiated with or between USC Citizen are fulfilled and if needed kept secure and safe.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/28/gallery/0/image.jpg
+        alt: Image 1 from “Confederation Law Civil Protectorate (CLCP)”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Department Marine Corps
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - Oversees the generation of Navy and Civilian Contractor CQB operations on foot, on planetary surface, breach operations, personal security details, mechanized land operations and dropship activities.
+      - Tracks participation in the mission types listed above
+      - If deemed necessary and appropriate, coordinate with the consul of war on the management of patrol schedules or "Fast Response Unit" Rosters and schedules or similar.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/29/gallery/0/image.jpg
+        alt: Image 1 from “Department Marine Corps”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Office Fleet Planning
+    kicker: ""
+    body: |
+      **Director Maxwell Stiles**
+
+      Hello Citizens and Residents of the USC.
+
+      This past quarter didn’t see much activity from my office due to the lack of new content and the game feeling a bit stale for me. However, I now find myself with passions reignited with the promise of massive changes to space combat, thanks to changes to ship armor and radar coming with SC LIVE version Alpha 4.7.
+
+      Starting with an event titled “Carrier Operations” I will be starting a series of events that will serve as learning opportunities for us to do a trial by fire and see which squad or fleet doctrines, carry the greatest weight for an org of our size, at least for the foreseeable future as all of this is subject to change whenever Chris Roberts chooses.
+
+      Training will revolve around two major pillars. First one being, using fighters alongside bigger ships to take on targets with maximum efficiency. This means highly focused and high-level coordination. Second pillar will center around field logistics and learning how to quickly refit our fighters in the middle of a fight through the use of a carrier in order to quickly adapt to the threats we find ourselves facing.
+
+      I look forward to working with all of you to achieve great things in the next quarter and beyond.
+
+      Sincerely,
+
+      **Maxwell Stiles**
+
+      Director Office of Fleet Planning
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/30/gallery/0/image.jpg
+        alt: Image 1 from “Office Fleet Planning”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/30/gallery/1/image.jpg
+        alt: Image 2 from “Office Fleet Planning”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: From The Minister Of Exploration
+    kicker: ""
+    body: |
+      **Quintero**
+
+      Citizens,
+
+      It feels like the last couple of months flew by with quantum travel speed…
+
+      The verse felt a little quieter, especially with the usual cranky holiday and new year’s patches.
+
+      But we are glad to have used the slower pace for pushing out a few “memorable” events, as well as looking inward to do some house cleaning and prep work for some things to be announced in the future. We want to use the chance to remind everyone here about the recent Security advisory, we have published on January 23rd , on “Counterintelligence and Operational Security”.
+
+      Please take a look at the Discord Citizen Announcement channel and help us keep the USC a safe space.
+
+      We are also glad to have seen some reinforcements in our MIE ranks from new citizens and were excited to see many explorers of you charting out Nyx after its launch and giving Pyro and its beauty a little bit more explorational focus – while Stanton was moaning under the traffic of the free fly and Alliance Aid.
+
+      Having said that, lets revisit what happened in MIE during late Q4 and Q1:
+
+      Starting with Operations Starforge – with special shoutout to our Citizen “Bar” for organizing -
+
+      about 36 members participated across the 3 phases to identify Frontier Fighter plans, cripple their facilities, and finally to take down their leader.
+
+      In the end, this event ran for a few weeks and, most importantly, members had fun and extra incentive (total of 150+mill aUEC of bounty have been awarded) to engage in content they might not have otherwise tried out.
+
+      Followed by Operation Silent Cinder, our mettle was yet again tested when we planned to take down the Apex Valakkar on Pyro I. We learned once more that the Lazarus hub is not just a continued bug fest, but also operational security cannot be taken seriously enough. Nonetheless we have come out stronger from the experience and took a lot of good lessons to refine our future practices.
+
+      One clear highlight for MIE but also the USC was surely Operation Padua Redemption – with a special shoutout to our Citizen “Etow” for organizing and planning.
+
+      This was our first-in-a-long-time Org-vs-Org event, ending in an amazing live scavenger hunt competition with the Elysian Alliance across Stanton and Pyro.
+
+      We know Etow is already planning a “second season” with Elya so we are more than excited to see the story unfold further in the coming months.
+
+      In addition, we had a lot of fun in our very first “Outpost Conquest” FPS Practice event in Pyro on Fuego, which offered us a good baseline for what is possible in the game when it comes to live FPS and where things might still be a bit “wonky”. (edited)Thursday, March 5, 2026 11:04 PM
+
+      Last but not least, we want to highlight – although not being MIE led or Ministry exclusive – that we are shifting gears to have the USC ready to participate in the next Daymar Rally in 2957. As a result will be looking for willing explorers to help us chart out courses and tracks across the verse where we can train in peace in the coming months. We will share more information and Task Orders soon!
+
+      Thank you for your contributions and efforts to the USC in the last months and we are hoping for a great year of Exploration and Intelligence gameplay ahead of us.
+
+      **Fly safe**
+
+      Quintero & Jichael
+    gallery: []
+  - heading: MIE Directors
+    kicker: ""
+    body: |
+      MIE DIRECTORS WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE PLANNING TO DO WITHIN THEIR DEPARTMENTS! HERE ARE ONLY A FEW OF THE INTERESTING GOALS AND OBJECTIVES THEY ARE COOKING UP:
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/32/gallery/0/image.jpg
+        alt: Image 1 from “MIE Directors”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Academy of Cosmic Research & Exploration
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - Oversee and ensure the generation of Scientific and exploration missions.
+      - Track participation in the mission types listed above.
+      - Remain up to date with the latest developments in the universe and provide summaries and potential consequences as a pre-patch release (moving to monthly as development picks up) report to the Minister of Intelligence.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/33/gallery/0/image.jpg
+        alt: Image 1 from “Academy of Cosmic Research & Exploration”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Office Cosmic Survey
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - Oversee and ensure the generation of Surveying Missions.
+      - Oversee and ensure the generation of data running missions.
+      - Track participation in the mission types listed above.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/34/gallery/0/image.jpg
+        alt: Image 1 from “Office Cosmic Survey”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Office Naval Intelligence
+    kicker: ""
+    body: |
+      Director Jichael Mackson
+
+      - Oversees and ensure the generation of Recon Missions, covert missions as well as Search and Rescue Missions.
+      - Tracks participation in the mission types listed above.
+      - Coordinates with the Office of Diplomatic Support to develop and maintain the USC version of the CIA World Factbook.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/35/gallery/0/image.jpg
+        alt: Image 1 from “Office Naval Intelligence”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/35/gallery/1/image.jpg
+        alt: Image 2 from “Office Naval Intelligence”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/35/gallery/2/image.jpg
+        alt: Image 3 from “Office Naval Intelligence”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: A Word From The Minister Of Commerce
+    kicker: ""
+    body: |
+      Zan (Interim)
+
+      Hello to all you traders, haulers and collectors of aUEC out there,
+
+      Supported by the Ministry of Interstellar Commerce, you've probably been knocking out more hauling contracts than ever before. The revisited Argo Raft and Regen Crisis events have given us a lot of opportunities to get behind the stick and move tonnes of goods. But besides that the player market for top tier ship components and rare resources has been booming.
+
+      This has me looking forward to how we can carve out a piece of that market as the USC and become a reliable supplier of some of these goods. Until Org tools come into the game, our amazing members like Ehriqhck are using their tech magic skills to support us with tools like [E.I.M.S](https://interstellarcommerce.app/public/). or our internal trading hub. And we can't forget about our external trade partners over at [UEXCORP](https://uexcorp.space/), who are opening up true Interstellar Commerce.
+
+      Keep on trucking and earning,
+
+      Dr. Daesang Zaen, Interim minister of MIC
+    gallery: []
+  - heading: MIC Directors
+    kicker: ""
+    body: |
+      MIC WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE LOOKING FOR MEMBERS THAT ARE INTERESTED IN SIGNING UP!
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/37/gallery/0/image.jpg
+        alt: Image 1 from “MIC Directors”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Department Travel & Hospitality
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - Oversees the creation of VIP and Economy class people transportation missions.
+      - Organizes racing events/missions and manages the USC's official racing teams.
+      - Tracks the participation in these missions
+      - Manages event planning with the assistance of other departments as needed.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/38/gallery/0/image.jpg
+        alt: Image 1 from “Department Travel & Hospitality”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Office Treasury & Fleet Logistics
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - Operate and manage the USC Central Bank (USCCB).
+      - Manage loans to USC members and or/external governments.
+      - Track USC organizational finances, revenues and expenses.
+      - Commission official missions for revenue generation of the ORG.
+      - Track participation in these revenue generation missions.
+      - Observe the governorship and proper resource management of outposts/space station/ships.
+      - Manage tax collection.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/39/gallery/0/image.jpg
+        alt: Image 1 from “Office Treasury & Fleet Logistics”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Office Trade & Commodities
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - Oversee and ensure the generation of Trade Convoy and Commodity Trading Missions.
+      - Operate ship and outpost trading markets
+      - Coordinate with MES for resale of inventory and/or raw resources on the open market.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/40/gallery/0/image.jpg
+        alt: Image 1 from “Office Trade & Commodities”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/40/gallery/1/image.jpg
+        alt: Image 2 from “Office Trade & Commodities”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: A Word From The Minister Of Engineering
+    kicker: ""
+    body: |
+      **Zan**
+
+      Greetings from our favourite support crew in MES,
+
+      While the Ministry has had a brief revival with the appearance of the RSI Apollo ship line, the impact from the Regen Crisis seems barely noticeable for medical personnel. Medgel shortages have inflated the market and the cost of revivals has gone through the roof but we still haven't seen any significant increase in medical beacons or rescue requests. This does leave Siren and her team enough room to support all of our troops in the field on the various operations and expeditions that the USC has been launching lately.
+
+      As for Engineering and crafting, it seems to be a waiting game but the recent leaks have reopened the Hopium valves and the future looks quite promising with Engineering T0 being actively developed, hopefully we'll see some of it appear in the PU in 2026. I for one can't wait to be putting out fires, replacing fuses, fixing components and running around like a headless chicken trying to keep your capital ships up and running in the heat of battle.
+
+      Unfortunately our Director of Engineering, Shaka, has to step down due to real life priorities. So I want to use these few last lines to wish him the best and thank him for his great ideas. hopefully he'll be able to return to us at some point to continue working on his vision for an integrated Rapid Response unit.
+
+      See you out in the asteroid fields,
+
+      Dr. Daesang Zaen, minister of MES
+    gallery: []
+  - heading: MES Directors
+    kicker: ""
+    body: |
+      _Here Are Only A Few Of The Interesting Goals And Objectives They Are Cooking Up:_
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/42/gallery/0/image.jpg
+        alt: Image 1 from “MES Directors”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Confederation Health Services
+    kicker: ""
+    body: |
+      **Director Fallon "Siren" Carter**
+
+      RSI Apollo Medivac & Apollo Triage Enter Service (ROLLOVER ARTICLE - DUE TO MEDICAL UPDATES)
+
+      After much anticipation, Roberts Space Industries has officially rolled out the RSI Apollo Medivac and RSI Apollo Triage to the civilian and organizational fleets across the ‘verse. These long-awaited medical ships, renowned for their versatility, efficiency, and field-ready design, have now made their way into USC’s expanding medical division.
+
+      While the Apollo-class vessels have formally entered service, our USC fleet has only just begun receiving the first units from the latest production run. Each ship is undergoing extensive inspection and outfitting to ensure compliance with both USC standards and RSI’s advanced medical protocols. From hull integrity checks to medbay calibration, our engineering and medical teams are leaving nothing to chance.
+
+      However, full operational readiness will require additional funding and logistical support. These new vessels are state-of-the-art but demand substantial resources to stock, maintain, and crew effectively. Efforts are currently underway to secure the appropriate funding and MedGel supplies needed to ensure each Apollo is fully mission-ready, from triage stabilization kits to emergency evac supplies with both Tier 1 and Tier 2 facilities available.
+
+      Until then, the Apollo Medivac and Apollo Triage stand as symbols of USC’s unwavering commitment to life-saving response across the stars. Their arrival marks the next step in our ongoing mission: to bring hope and healing to even the most remote frontiers.
+
+      While the above ships represent a significant enhancement to USC’s field of medical capability, it is important to note that current assets are not yet fully mission-ready, so it is with my firmest belief that we need to ensure our members have the necessary trauma impact readiness and necessary pharmaceuticals on hand for all ongoing missions. Personnel are advised to familiarize themselves with each medication’s properties and proper application.
+
+      #### HEMOZAL (Red Label)
+
+      **Primary Function: Hemostatic and Revitalization Agent**
+
+      Hemozal is the frontline compound for treating active hemorrhage and critical trauma. It stops bleeding, restores patient health to their current maximum threshold, and can revive those in incapacitated states when administered promptly. Due to its potency, dosage regulation is essential to prevent circulatory shock.
+
+      #### DEXEMATRINE (Purple Label)
+
+      **Primary Function: Neuromuscular Stabilizer**
+
+      Designed to relieve muscle fatigue and concussion symptoms, Dexematrine is recommended for personnel suffering from blunt-force trauma or extended exertion in the field. It promotes neurological clarity and muscular recovery, allowing soldiers to regain operational focus rapidly.
+
+      #### ROXAPHEN (Green Label)
+
+      **Primary Function: Motor Function Support Agent**
+
+      Roxaphen is utilized to alleviate impairments affecting limb movement, particularly from fractures, sprains, or deep tissue injury. It reduces localized pain and inflammation, improving the patient’s mobility and dexterity for short-term operational readiness.
+
+      #### STEROGEN (Orange Label)
+
+      **Primary Function: Respiratory and Muscular Recovery Agent**
+
+      Sterogen mitigates symptoms caused by chest trauma, muscular weakness, and respiratory distress. Often paired with oxygen therapy, it stabilizes breathing and restores muscle efficiency following blunt or concussive impacts to the torso.
+
+      #### RESURGERA (Blue Label)
+
+      **Primary Function: Biochemical Detoxification Agent**
+
+      Resurgera serves to reduce Blood Drug Level (BDL) accumulation and counteract symptoms of overdose or toxic shock. It should be administered under controlled conditions, particularly in cases of multiple stimulant or painkiller use.
+
+      #### CANOIODIDE (Yellow Label)
+
+      **Primary Function: Anti-Radiation Compound**
+
+      Canoiodide is the designated treatment for radiation exposure and contamination symptoms. It binds to harmful isotopes and assists the body in purging them through natural metabolic processes. Repeated doses may be required depending on exposure severity.
+
+      Medical Division Advisory:
+
+      All Apollo-class Medivac and Triage vessels are to maintain an adequate stock of the above compounds as part of their emergency inventory. Field medics are reminded that drug interactions remain a primary cause of treatment failure, administer with precision, and log all dosages to the ship’s medical record system.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/43/gallery/0/image.jpg
+        alt: Image 1 from “Confederation Health Services”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/43/gallery/1/image.jpg
+        alt: Image 2 from “Confederation Health Services”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Department of Industrial Engineering
+    kicker: ""
+    body: |
+      **Director Ridge Six**
+
+      The upcoming 4.7 patch introduces one of the most anticipated systems in Star Citizen - Crafting. With the arrival of the RediMake Item Fabricator, players can now craft a variety of FPS equipment, including armor, weapons, and ammunition. This marks the first phase of what will eventually become a much broader manufacturing system in the game.
+
+      The RediMake Fabricator can be found in the "Other" category via the Freight Management kiosk in your hangar (simply search for "fab"). If you cannot see one there, they can be purchased at L1/L2 refinery stations, as well as refineries in Pyro and Nyx.
+
+      Crafting begins with acquiring blueprints. In the current 4.7 PTU implementation, blueprints are earned as rewards for completing specific missions. A very helpful resource for tracking these rewards is https://scmdb.net/, which includes a blueprint category filter that shows which missions grant specific blueprints. As with everything in development, these systems are subject to change as CIG continues refining the feature.
+
+      At present, blueprints are not physical items that can be traded between players (unfortunately, in my opinion). Instead, they are tied directly to your character once earned. The only way to view which blueprints you currently own is by accessing the crafting tab within a Fabricator UI. Hopefully in the future we will see a more convenient system—such as viewing blueprints through the MobiGlas—but for now the Fabricator serves as the central hub for crafting management. Selecting a blueprint in the crafting tab of the Fabricator UI displays what materials are needed in order to craft that item.
+
+      The Fabricator is also capable of dismantling armor and weapons. To do this, players must attach items onto the Fabricator’s internal grid, close the unit, and use the dismantling tab in the interface. Dismantling provides you with a small portion of the materials used to create those items. Material quality ratings with dismantling have shifted several times during the Tech Preview and PTU cycles, so we will see how those values settle once 4.7 reaches LIVE.
+
+      Depending on the blueprint, crafting may require materials with a minimum quality rating, so be mindful of that. All required materials—refined ores and gems—must be stored in local inventory, as the Fabricator pulls directly from that storage when crafting items. Once an item is completed, it can either be delivered to the Fabricator’s grid or directly to local inventory.
+
+      Patch 4.7 also brings significant updates to mining, which will play a major role in supplying the materials needed for crafting. Rock and asteroid compositions have been reworked to include multiple ores and materials, along with varying amounts of inert material. Each resource within a rock now has its own quality rating (except inert material), which becomes visible after scanning.
+
+      Rocks and asteroids can appear in clusters, with each rock sharing the same material types but differing in quality levels. Miners will also notice several quality-of-life improvements: The dominant material in a rock can now be identified from several kilometers away, and unknown signals can be scanned from long distances to determine their composition before approaching. Additionally, the updated star map now displays the types of minable resources present on planets and moons when selected. Together, these changes dramatically improve resource discovery and reduce the time spent scanning individual rocks while mining.
+
+      Crafting in 4.7 represents only the first phase of a much larger industrial gameplay loop. While we can currently produce armor and weapons, the system will undoubtedly expand in future patches to include a much wider range of equipment and manufacturing capabilities.
+
+      The future of industrial gameplay in Star Citizen—mining, refining, and crafting—is looking very bright with 4.7.
+
+      For USC citizens who want a walkthrough of these systems, I’ve also created a video overview covering the new Fabricator, crafting workflow, and mining updates. I hope you find it helpful as you begin exploring these new mechanics. - [https://www.youtube.com/watch?v=LZmsuq9sr_o](https://www.youtube.com/watch?v=LZmsuq9sr_o)
+
+      **RidgeSix**
+
+      **Director of Industrial Engineering**
+
+      Role Description:
+
+      - Oversee the generation of mining and salvage missions.
+      - Track participation in the mission types listed above.
+      - Provide advice and support for citizens. considering placing claims on real estate, and track USC citizen-owned areas.
+      - Oversee & ensure generation of base building missions and support.
+      - Advise the USC on the path to being ready to engage in base building and establishing a true USC territorial foothold.
+      - Oversees the activities that provides the USC with crafted and/or improved vehicles, components & equipment.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/44/gallery/0/image.jpg
+        alt: Image 1 from “Department of Industrial Engineering”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/44/gallery/1/image.jpg
+        alt: Image 2 from “Department of Industrial Engineering”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Office of Fleet Engineering
+    kicker: ""
+    body: |
+      **Fleet Engineering Director - Farrister**
+
+      Role Description:
+
+      - Oversee & ensure generation of repair and refueling support mission content. Typically, as a supporting role in a larger mission.
+      - Assess USC naval needs for engineering process improvements.
+      - Assess USC naval load-out effectiveness & recommend optimizations to navy leadership.
+
+      Almost unexpectedly, Q1 was the first full quarter we had with basic engineering gameplay. Much still needs to be done, including tuning the system, but we have started to experiment with a content agenda.
+
+      Farrister released an initial guide to engineering video, which forms the foundations of how we expect to interact with engineering at an operational level. And we ran our first dedicated engineering event, to practice fighting some fires and fixing things.
+
+      Sadly due to the system still being in it's infancy, we didn't do much fixing, but did have plenty of fun. In the coming quarter, expect to see more of this, especially as we prepare for missions into Rock Breaker and potentially later in the year, the Tactical Strike Groups
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/45/gallery/0/image.jpg
+        alt: Image 1 from “Office of Fleet Engineering”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/45/gallery/1/image.jpg
+        alt: Image 2 from “Office of Fleet Engineering”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: A Word From The Minister Of State Affairs
+    kicker: ""
+    body: |
+      **Landscaper**
+
+      Hey Y’all!!
+
+      The USC is off to a great start in the new year! A special "Thank You" to all of you, the membership, for helping out and participating! Here are the highlights of just a few of the awesome events, contributions and shenanigans during this quarter:
+
+      **Main Topic**
+
+      RidgeSix accepted the Director of Industrial Engineering role. His contributions are having an immediate impact, and we look forward to his content as the gameplay develops. Thank you Ridge.
+
+      Ogi accepted the Director of the Office of Diplomatic Affairs. He is highly regarded around the org, he is organizing and managing the new external embassy Discord. The USC looks forward to his community relations efforts.
+
+      Group Gameplay Creation:
+
+      As mentioned in the newsletter section above, the strategy of allowing members to create group gameplay content is gaining traction. 2956 looks promising with crafting, salvaging and fleet rebalance on the horizon in patch 4.7.
+
+      USC Lore and Roleplay:
+
+      While the USC doesn’t impose role play, tying in the USC’s backstory with the storyline that CIG is developing is a great opportunity some of our members are leveraging for the eventual enjoyment of all members.
+
+      Etow the Salty Cat has volunteered to update the USC Handbook. Looking forward to that! Etow and I will work on the next newsletter so that I can get it out on time.
+
+      Mentoring:
+
+      If you’re new to the game, or returning, feel free to check out the Mentoring channel on the USC Discord. Just giving a bit of advice, or taking a player under your wing is most appreciated!
+
+      On Boarding:
+
+      We could use some help with On-Boarding. While not as simple as mentoring, any help you could afford is appreciated.
+
+      Special thanks to Wendigo and Gravitas for signing up to help. But we certainly need more help plz!
+
+      Ministries:
+
+      We still have many vacant leadership roles, including the Minister of Interstellar Commerce. We have to get these filled so our members' group gameplay activities are properly supported. Reach out to Landscaper today to discuss your interest, I’m happy to help. We’re super excited to see these roles develop as we get closer to the launch of 1.0.
+
+      Every contribution, regardless of size, is helping the USC to be the place where we all can enjoy Star Citizen together as a group. We are now seeing good momentum and are so excited to support all that you contribute to your organization.
+
+      **“Let’s Fly.”**
+
+      Keep an eye on our Discord server for announcements, upcoming events, and ways you can contribute to the USC!
+    gallery: []
+  - heading: MSA Directors
+    kicker: ""
+    body: |
+      MSA DIRECTORS WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE PLANNING TO DO WITHIN THEIR DEPARTMENTS! HERE ARE ONLY A FEW OF THE INTERESTING GOALS AND OBJECTIVES THEY ARE COOKING UP:
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/47/gallery/0/image.jpg
+        alt: Image 1 from “MSA Directors”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Confederation Media Network
+    kicker: ""
+    body: |
+      Director (Role Open)
+
+      Consider applying for this role today!
+
+      Role Description:
+
+      - CMN is the Media Team for the United Space Confederation.
+      - They produce content for our social media sites and to aid in recruitment.
+      - The Editor provides a vision and review and oversight of the following duties.
+      - Create one video a month (for example).
+      - Create graphics to support the website and recruitment threads.
+      - Showcase our activity and achievements.
+    gallery: []
+  - heading: Office Diplomatic Support
+    kicker: ""
+    body: |
+      **Director Ogi**
+
+      I feel as if I'm almost obligated to start my update with the Obi-Wan "Hello there" GIF. I apologize in advance for the Wall of Text, but hey, it’s my introduction to you all as a purple.
+
+      For those of you who don't know me, I am Ogi_the_Great. I am a long-time citizen in the USC, having joined sometime in 2014. I have recently stepped up to become the head of our Office of Diplomatic Support (but I will be trying to think of a cool name both for myself, and my office).
+
+      For those of you who know me, you may be surprised by my decision to do this. I will be the first to admit my many flaws, including being blunt and sometimes oblivious to subtlety. If that is the case, why did I step into this position? Continue on, dear reader, and I will let you know!
+
+      The main inciting event came from a failure of our organization’s diplomatic policies and leadership tasking. An event that happened in February where I was part of an operation ended in a very dissatisfying manner. Frankly, we were griefed, and the reason why we were griefed is because we were effectively infiltrated by an organization that we had no business dealing with in the first place. That is the failure of policy, and several members of our org that I was close to left because of that failure. The failure of leadership tasking is that we have not had a primary diplomat for something close to a decade now; I am a firm believer that you can only ask someone to do their best with what they have to offer, and having one of our leadership team wear the diplomatic hat (which is almost entirely unaligned with every other leadership role) while juggling life and their stated org responsibilities is, my eyes, unreasonable. That made me start to think about if I wanted to take charge of our diplomatic affairs, and here is my reasoning for why I ultimately chose to do so:
+
+      First, I am not entirely bad at talking with people, and generally enjoy it. Especially when it comes to things people are passionate about. I firmly believe that familiarity does not breed contempt, it breeds affection. I would like to serve as an envoy to other orgs and play alongside their members, and I want them to think “Hey, Ogi is a cool dude, the USC is full of cool people too.” I would like to be able to extend that to joint operations, both planned and ad-hoc, with other orgs, but that is a long-term plan.
+
+      Second, my primary mode of enjoying Star Citizen is through collaborative pursuits, but I have a significant amount of education on the use of force throughout history (if you’ve seen the “Brace yourself, Ogi is about to rant about military history and theory” meme on our server, that’s why). I view warfare with other orgs as a last resort, but sometimes it is necessary. I would much rather do cool, fun things with other orgs that make us both money and resources, but if we must let slip the dogs of war, I would prefer to do so with allies on our flanks made strong by our collaboration.
+
+      Third, remember that we are a government, albeit one in exile, and the chief instruments of national power can be abbreviated by DIME: Diplomatic, Intelligence, Military, Economic.
+
+      Role Description:
+
+      - Coordinate with ONI to produce something like the “CIA World Factbook” for Star Citizen, with a biannual review of old entries.
+      - Recommend organizations and alliances to the Cabinet to be reached out to for closer relations.
+      - Recommend small family groups and single crews to reach out to bring under the USC umbrella.
+      - Maintain a presence in any groups you are assigned to as the official USC Envoy.
+    gallery:
+      - image: ../../assets/images/newsletters/newsletter-q1-2956/sections/49/gallery/0/image.jpg
+        alt: Image 1 from “Office Diplomatic Support”, Newsletter Q1 2956
+        caption: ""
+        credit: ""
+  - heading: Office Immigration & Resettlement
+    kicker: ""
+    body: |
+      Director Kain (On Vacation)
+
+      The USC recruitment team is pleased to announce that the org's membership has grown by 31 citizens and even more residents.
+
+      We are also looking for help with Onboarding to help lighten the load on our current staff. Please consider helping out.
+
+      Thanks!
+    gallery: []

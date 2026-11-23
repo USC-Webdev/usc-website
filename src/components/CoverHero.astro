@@ -16,6 +16,9 @@ interface Props {
   size?: 'full' | 'small';
 }
 const { eyebrow, edition, kicker, lines, image, sections = [], size = 'full' } = Astro.props;
+// Shrink the title so its longest line fits the page width (Orbitron 900 caps are about 1em wide).
+const longest = Math.max(...lines.map((l) => l.length), 1);
+const fit = `calc((min(100vw, 1392px) - 48px) / ${(longest * 1.04).toFixed(2)})`;
 const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit}` : undefined;
 ---
 
@@ -52,7 +55,7 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
         }
         {creditText && <figcaption class="credit">{creditText}</figcaption>}
       </figure>
-      <h1 class="title">
+      <h1 class="title" style={`--fit: ${fit}`}>
         {kicker && <span class="kicker">{kicker}</span>}
         {lines.map((line) => <span class="line">{line}</span>)}
       </h1>
@@ -75,6 +78,7 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
   }
   .eyebrow {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 16px;
     letter-spacing: 0.14em;
@@ -147,7 +151,7 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
     color: var(--white);
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: var(--fs-hero);
+    font-size: min(var(--fs-hero), var(--fit));
     line-height: 1.02;
     letter-spacing: var(--track-display);
     text-transform: uppercase;
@@ -156,7 +160,7 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
     overflow-wrap: anywhere;
   }
   .small .title {
-    font-size: clamp(2.2rem, 8vw, 7.4rem);
+    font-size: min(clamp(2.2rem, 8vw, 7.4rem), var(--fit));
   }
   .kicker {
     display: block;

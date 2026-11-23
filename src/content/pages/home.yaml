@@ -1,0 +1,51 @@
+title: Home
+description: The United Space Confederation is a Star Citizen player organization built on equality, prosperity and freedom.
+eyebrow: Star Citizen player organization
+heroKicker: Welcome to the
+heroLines:
+  - United
+  - Space
+  - Confederation
+hero:
+  image: ../../assets/images/pages/home/hero/image.jpg
+  alt: A USC ship in flight
+  credit: Sir_Duck
+introHeading: Organization Overview
+intro: |
+  Our collective goal for the philosophies and values of the United Space Confederation is to create a prosperous faction in an uncertain Star Citizen universe with a forward-thinking government that cares about the well-being of its citizens rather than expanding its own power, wealth, and influence. In pursuit of these ideals, the United Space Confederation does not aim to become the biggest, most powerful, or even most influential organization in Star Citizen. Our primary directive is to provide a fun and prosperous faction experience while fostering a strong and enthusiastic community. Following our philosophies and values, we hope to leave our unique mark on Star Citizen’s history.
+
+  The United Space Confederation (USC) was conceived as an organization that would offer something for everyone, set in an environment that maintains fun group gameplay experiences as the top priority. In keeping with the very high standards that Cloud Imperium Games has already set, the founders of the USC likewise set out to create an in-game faction that would integrate well into the established Star Citizen universe while maintaining its own style and theme, as well as allowing its citizens the freedom to immerse themselves in the game however they wish. We are proud to continue that tradition to this day. As you explore the USC, you will see this dedication to lore and immersion throughout many in-fiction content, backstories, and membership contributions.
+
+  Since USC’s founding in 2013, we have stayed true to our original vision while continuously updating and improving the tools and platforms necessary to contribute to creating group gameplay content that all citizens may enjoy.
+philosophyHeading: Our Collective Philosophy
+philosophy:
+  - title: We Stand By Our Values
+    text: Equality, Prosperity, Freedom – All citizens are valued parts of the USC and have the ability to help shape the organization.
+  - title: Play How You Want
+    text: No enforced playtime requirements or strict roles mean that you can play Star Citizen however you want to.
+  - title: Dedicated Leadership
+    text: A diverse set of backgrounds, life experience, and experience with previous guilds offers USC leadership a wealth of information from which to draw. These citizens have dedicated years of time to their positions; you can count on them to keep USC’s best interests at heart.
+  - title: Community Emphasis
+    text: Our community is the focus of the USC. We actively encourage citizens to give us suggestions and feedback to enable the organization to improve constantly. Artwork, videos, fan fiction, or role-play, we love to see it all! All citizens of the USC are considered 'group gameplay content creators.' Seeing how much the USC has changed and improved thanks to citizen contributions is awesome. That’s why our emphasis is focused on the community; only with a strong community can we achieve great feats in the Star Citizen universe.
+community:
+  - heading: Active Community
+    railLabel: ""
+    body: |
+      The USC looks to accommodate everyone’s play styles and time restraints. We understand that everyone has a life outside of Star Citizen, and because of this, we have no set gameplay time requirements per week – your real life comes first.
+
+      However, to stay an active USC Citizen once Star Citizen launches, we expect all our Citizens to contribute meaningfully. We expect USC Citizens to use their playtime, whenever or however long it might be, in a meaningful way that benefits them and the United Space Confederation. We will not tolerate people using group resources for purely personal gain.
+
+      We will set up group activities in-game and real life, and all members are encouraged to participate and set up self-created opportunities on the USC shared calendar.
+  - heading: Mature and Respectful
+    railLabel: ""
+    body: |
+      Citizens of the USC are all treated equally and with respect by the leaders, and citizens are expected to behave the same way toward each other. The USC acknowledges that gamers come from diverse backgrounds and use video games to escape the stresses of real life. Because of this, the USC aims to provide a pleasant, drama-free environment for citizens to enjoy playing Star Citizen. As such, only polite, mature, and responsible candidates must apply for USC Citizenship. It is recommended that applicants be over the age of 18. Exceptions may be made on a case-by-case basis.
+
+      Overall, you will be judged based on your personality and the treatment of others in the community, not your age. The USC operates on a zero-tolerance policy for needless drama, and Citizens who are found disturbing the peace are subject to immediate loss of USC Citizenship. If you have a direct problem with another member, please get in touch with an Outreach Officer or Consul member to help deal with the situation.
+  - heading: Diverse Citizen Base
+    railLabel: ""
+    body: |
+      We are open to all English-speaking members, whether native or as a second language, regardless of time zone. We currently have members who represent countries from around the globe!
+ctaHeading: Does the USC’s vision coincide with your own?
+ctaText: Read the Vision and the Citizen Policies, then start the application process.
+ctaLabel: Apply for citizenship

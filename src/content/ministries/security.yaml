@@ -3,20 +3,32 @@ menuLabel: Security
 fullName: Ministry of Security Services
 abbreviation: MSS
 summary: The general security of USC interests and the combat preparedness of the Confederation.
-mark: null
 order: 2
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
   image: ../../assets/images/ministries/security/hero/image.jpg
-  alt: USC ships in formation above a planet
+  alt: In-game image for the Ministry of Security Services
   credit: Hadwin
 overview: |
   The Ministry of Security Services (MSS) is responsible for the general security of USC interests and the combat preparedness of the Confederation.
+
+  There can be no Prosperity if we cannot protect our values and way of life. Thus, the protection of our citizens, assets, trade routes, civil protection, and policing, as well as the setup of ad hoc militias and/or bounty-hunting outfits, is all under the purview of this ministry. Whether it's ship combat operations, on-foot CQB combat operations, lethal or non-lethal apprehension, or other security needs, it’s in the MSS’s wheelhouse.
+
+  The Ministry's activities are currently administered by Its 3 departments: The Office of Naval Planning, the USC Marine Corps, and the Law and Civil Protectorate.
 officesHeading: Departments
 offices:
   - name: Office of Naval Planning
     body: |
-      Oversees Ship Combat readiness by overseeing capital ship operations, Fighter squadron missions and assignments, and other general ship defensive/offensive tactical operations.
-closing: ''
-gallery: []
+      Oversees Ship Combat readiness by overseeing capital ship operations, Fighter squadron missions and assignments, and other general ship defensive/offensive tactical operations. Coordination of regional militia fleets also falls under the purview of this Department.
+  - name: USC Marine Corps
+    body: |
+      Oversees Close Quarter Combat (CQB) Operations, whether on foot or in EVA. This could be either as part of a capital ship security detail, ground assault/defense force, or breaching activities. The Marine Corps is also responsible for Mechanized Planetary/Space Operations and Dropship activities.
+  - name: Law and Civil Protectorate
+    body: |
+      Oversees Civil Law and Order within the Confederation by managing the USC's internal Bounty Hunters guild. Mainly in charge of tracking and apprehending suspects, It will also engage in investigations, contract enforcement, and the confiscation/destruction of contraband and controlled substances.
+gallery:
+  - image: ../../assets/images/ministries/security/gallery/0/image.jpg
+    alt: Organization chart of the Ministry of Security Services
+    caption: ""
+    credit: ""

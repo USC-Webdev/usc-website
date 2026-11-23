@@ -1,0 +1,31 @@
+title: USC Navy
+menuLabel: USC Navy
+fullName: USC Navy
+abbreviation: NAVY
+summary: "The cross-ministry task group that runs raid progression content: the USC’s “progression raid team”."
+order: 1
+workInProgress: true
+workInProgressNote: More information will be posted as the game develops.
+hero:
+  image: ../../assets/images/ministries/usc-navy/hero/image.jpg
+  alt: In-game image for the USC Navy
+  credit: Sir_Duck
+overview: |
+  Overview: The Navy is a cross-ministered task group composed of citizens who commit to helping USC achieve our common strategic goals. The USC Navy executes raid progression group content in the game.
+
+  In traditional MMO terms, the USC Navy is the “progression raid team” of our guild. While we are inclusive for all types of players (who can run the full spectrum from 'ultra casual' to 'hardcore') to do so and still achieve success at activities that push the skill envelope, we need an internal team that is willing and able to put in the work acquiring the skills needed to push top tier content.
+
+  Navy personnel are not awarded special privileges outside Navy operations to counter elitism but are recognized as top at their craft and skill.
+
+  It is understood that the Navy cannot survive without our regular citizen's economic activity, and our citizens realize that Star Citizen will always have the potential for PVP in all scenarios; thus, a symbiotic productive relationship is heavily promoted.
+
+  Important components of the Navy are The Navy Council and N-COAT, but they are by no means the only ones. The Navy is a dynamic body that forms and/or disbands groups, squadrons, and teams as needed to accomplish its goals and objectives.
+officesHeading: Navy bodies
+offices:
+  - name: The Navy Council
+    body: |
+      The Navy council is composed of the Consul of War, the Navy Liaison Directors, and the Cabinet and Chancellor to observe and advise. The meticulous execution details of Navy operations are carefully planned and discussed within this group to produce Cross Ministry Navy Task Orders for execution.
+  - name: N-COAT
+    body: |
+      Navy Core Operations and Training (N-COAT) is: the Navy's Official Training Academy. It focuses on raid progression training and proficiency accreditation in the various skills required to perform as well as execute Navy operations.
+gallery: []

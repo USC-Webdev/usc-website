@@ -1,0 +1,46 @@
+---
+// Template 3: Long-form (Leadership).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CoverHero from '../components/CoverHero.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Gallery from '../components/Gallery.astro';
+import CapsuleBand from '../components/CapsuleBand.astro';
+import NumberedSections from '../components/NumberedSections.astro';
+import JoinBand from '../components/JoinBand.astro';
+import { getSingleton } from '../lib/content';
+
+const page = await getSingleton('leadership');
+const rolesNum = page.sections.length + 1;
+const roles = page.roles.map((r) => ({ heading: r.name, body: r.description }));
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <CoverHero
+    eyebrow="United Space Confederation"
+    lines={page.heroLines}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    size="small"
+    sections={[
+      ...page.sections.map((s, i) => ({ href: `#s-${i + 1}`, label: `${i + 1}.0  ${s.heading}` })),
+      { href: `#s-${rolesNum}`, label: `${rolesNum}.0  ${page.rolesHeading}` },
+    ]}
+  />
+
+  <NumberedSections sections={page.sections} />
+
+  {
+    page.chart.length > 0 && (
+      <div class="wrap block">
+        <Gallery items={page.chart} />
+      </div>
+    )
+  }
+
+  <section class="wrap block block-last" id={`s-${rolesNum}`}>
+    <SectionHead num={`${rolesNum}.0`} title={page.rolesHeading} />
+    <NumberedSections sections={roles} start={rolesNum} sub />
+  </section>
+
+  <CapsuleBand seed={2950} />
+  <JoinBand links={[{ href: '/ministries', label: 'Ministries' }]} />
+</BaseLayout>
