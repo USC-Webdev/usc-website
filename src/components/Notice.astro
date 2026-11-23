@@ -1,0 +1,55 @@
+---
+// 2px border, Ruby bar, Orbitron statement, body text.
+interface Props {
+  statement: string;
+}
+const { statement } = Astro.props;
+---
+
+<div class="notice" role="note">
+  <div class="lead">
+    <span class="bar" aria-hidden="true"></span>
+    <p class="statement">{statement}</p>
+  </div>
+  <div class="body">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .notice {
+    position: relative;
+    background: var(--robot-white);
+    color: var(--blue-zodiac);
+    border: 2px solid var(--blue-zodiac);
+    padding: clamp(28px, 4vw, 56px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 56px;
+    align-items: flex-end;
+  }
+  .lead {
+    flex: 2 1 420px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .bar {
+    width: 96px;
+    height: 8px;
+    background: var(--ruby-red);
+  }
+  .statement {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.7rem, 3.8vw, 3.4rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+  .body {
+    flex: 1 1 320px;
+    min-width: 0;
+    font-size: 18px;
+  }
+</style>

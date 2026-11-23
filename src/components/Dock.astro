@@ -1,0 +1,107 @@
+---
+// Floating section nav, bottom centre. Highlights the section in view.
+// Labels are "1.0 News" style; on narrow screens only the number shows and
+// the word stays available to screen readers.
+interface Props {
+  items: { href: string; label: string }[];
+}
+const { items } = Astro.props;
+const split = (label: string) => {
+  const m = label.match(/^(\d+\.\d+)\s+(.*)$/);
+  return m ? { num: m[1], word: m[2] } : { num: '', word: label };
+};
+---
+
+<nav class="dock" aria-label="On this page" data-dock>
+  {
+    items.map((item) => {
+      const { num, word } = split(item.label);
+      return (
+        <a href={item.href}>
+          {num && <span class="num">{num}</span>}
+          <span class="word">{word}</span>
+        </a>
+      );
+    })
+  }
+</nav>
+
+<script>
+  const dock = document.querySelector<HTMLElement>('[data-dock]');
+  if (dock && 'IntersectionObserver' in window) {
+    const links = [...dock.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')];
+    const targets = links
+      .map((link) => document.getElementById(link.hash.slice(1)))
+      .filter((el): el is HTMLElement => el !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          for (const link of links) {
+            if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'true');
+            else link.removeAttribute('aria-current');
+          }
+        }
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    );
+    targets.forEach((t) => observer.observe(t));
+  }
+</script>
+
+<style>
+  .dock {
+    position: sticky;
+    bottom: 16px;
+    z-index: 20;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 24px auto;
+    background: var(--robot-white);
+    border: var(--rule);
+    border-radius: var(--r-control);
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: var(--track-action);
+    text-transform: uppercase;
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: 44px;
+    min-width: 48px;
+    padding: 0 18px;
+    border-radius: var(--r-control);
+    text-decoration: none;
+    color: var(--blue-zodiac);
+  }
+  a[aria-current] {
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  a[aria-current]:focus-visible {
+    outline-color: var(--blue-zodiac);
+  }
+  @media (max-width: 560px) {
+    a {
+      min-height: 48px;
+      padding: 0 12px;
+    }
+    .num + .word {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  }
+</style>

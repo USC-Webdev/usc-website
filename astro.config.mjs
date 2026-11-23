@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
@@ -12,5 +12,31 @@ import keystatic from '@keystatic/astro';
 export default defineConfig({
   site: 'https://www.unitedspaceconfederation.org',
   integrations: [react(), markdoc(), keystatic()],
-  adapter: vercel(),
+  adapter: vercel({ imageService: false }),
+  // Images are optimized at build time by astro:assets (sharp), not by
+  // Vercel's runtime image service.
+  image: {
+    responsiveStyles: false,
+  },
+  // Fonts are downloaded at build time and self-hosted from the site.
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: 'Orbitron',
+      cssVariable: '--font-orbitron',
+      weights: [400, 500, 700, 900],
+      styles: ['normal'],
+      subsets: ['latin'],
+      fallbacks: ['sans-serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Source Serif 4',
+      cssVariable: '--font-serif',
+      weights: [400, 600, 700],
+      styles: ['normal', 'italic'],
+      subsets: ['latin', 'latin-ext'],
+      fallbacks: ['Georgia', 'serif'],
+    },
+  ],
 });

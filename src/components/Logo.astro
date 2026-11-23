@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import logoFormat1 from '../assets/brand/Logos_on_White_Main_Logo_USC_Format1_W.png';
+
+// Only the blue-on-white logo exists so far. On Blue Zodiac it sits on a white
+// plate (the brand allows the logo on the white brand colour) and is marked as
+// a placeholder until the white-on-Blue-Zodiac file is supplied.
+interface Props {
+  variant: 'header' | 'footer';
+}
+const { variant } = Astro.props;
+const height = variant === 'header' ? 64 : 96;
+---
+
+{
+  variant === 'header' ? (
+    <span class="plate" data-placeholder="White logo for Blue Zodiac (Format 1)">
+      <Image src={logoFormat1} alt="United Space Confederation" height={height} densities={[1, 2]} loading="eager" />
+      <span class="ph-badge">Placeholder</span>
+    </span>
+  ) : (
+    <Image src={logoFormat1} alt="United Space Confederation" height={height} densities={[1, 2]} class="footer-logo" />
+  )
+}
+
+<style>
+  .plate {
+    position: relative;
+    display: block;
+    background: var(--white);
+    padding: 10px 14px;
+  }
+  .plate img {
+    height: 44px;
+    width: auto;
+  }
+  .plate .ph-badge {
+    position: absolute;
+    right: -6px;
+    bottom: -10px;
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  .footer-logo {
+    height: 96px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  @media (min-width: 720px) {
+    .plate img {
+      height: 52px;
+    }
+  }
+</style>

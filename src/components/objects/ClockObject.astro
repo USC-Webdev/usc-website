@@ -1,0 +1,48 @@
+---
+// Decorative clock for the Time card. The hands turn.
+---
+
+<div class="clock">
+  <div class="hand long"></div>
+  <div class="hand short"></div>
+  <div class="hub"></div>
+</div>
+
+<style>
+  .clock {
+    position: relative;
+    width: min(280px, 70vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--robot-white);
+  }
+  .hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    width: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+  }
+  .long {
+    height: 40%;
+    background: var(--blue-zodiac);
+    animation: usc-spin 9s linear infinite;
+  }
+  .short {
+    height: 26%;
+    background: var(--ruby-red);
+    animation: usc-spin 54s linear infinite;
+  }
+  .hub {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 26px;
+    height: 26px;
+    margin: -13px 0 0 -13px;
+    border-radius: 50%;
+    background: var(--blue-zodiac);
+  }
+</style>

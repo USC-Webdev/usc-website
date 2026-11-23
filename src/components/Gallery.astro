@@ -1,0 +1,38 @@
+---
+import Figure from './Figure.astro';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  items: { image: ImageMetadata; alt: string; caption?: string; credit?: string }[];
+}
+const { items } = Astro.props;
+const single = items.length === 1;
+---
+
+{
+  items.length > 0 && (
+    <div class:list={['gallery', { single }]}>
+      {items.map((item) => (
+        <Figure
+          src={item.image}
+          alt={item.alt}
+          caption={item.caption}
+          credit={item.credit}
+          sizes={single ? '(min-width: 1100px) 800px, 100vw' : '(min-width: 900px) 420px, 100vw'}
+        />
+      ))}
+    </div>
+  )
+}
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .gallery.single {
+    grid-template-columns: 1fr;
+  }
+</style>

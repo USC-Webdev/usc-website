@@ -1,0 +1,63 @@
+---
+// Capsule <button>, same look as PillLink.
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'button'> {
+  variant?: 'primary' | 'solid' | 'outline';
+  tone?: 'light' | 'dark';
+}
+const { variant = 'outline', tone = 'light', class: className, type = 'button', ...rest } = Astro.props;
+---
+
+<button type={type} class:list={['btn', variant, tone, className]} {...rest}>
+  <slot />
+</button>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: var(--target-min);
+    padding: 0 24px;
+    border: 1px solid transparent;
+    border-radius: var(--r-control);
+    background: transparent;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: var(--track-action);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.25s;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  .primary {
+    background: var(--ruby-red);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .solid.dark {
+    background: var(--white);
+    color: var(--blue-zodiac);
+  }
+  .solid.light {
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  .outline.light {
+    border-color: var(--blue-zodiac);
+    color: var(--blue-zodiac);
+  }
+  .outline.dark {
+    border-color: var(--robot-white);
+    color: var(--white);
+  }
+  .dark:focus-visible {
+    outline-color: var(--white);
+  }
+</style>

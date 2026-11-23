@@ -1,0 +1,99 @@
+---
+// Sticky stacking card (Time, Talent, Treasure). Cards sit 20px apart and pile
+// up on scroll. The "object" slot holds a decorative, aria-hidden object.
+interface Props {
+  num: string;
+  word: string;
+  color: 'topaz' | 'sunshade' | 'zodiac';
+  index: number;
+}
+const { num, word, color, index } = Astro.props;
+---
+
+<article class:list={['card', color, { 'on-dark': color === 'zodiac' }]} style={`--stack:${16 + index * 20}px`}>
+  <div class="copy">
+    <span class="num">{num}</span>
+    <div class="body">
+      <h3 class="word">{word}</h3>
+      <slot />
+    </div>
+  </div>
+  <div class="object" aria-hidden="true">
+    <slot name="object" />
+  </div>
+</article>
+
+<style>
+  .card {
+    position: sticky;
+    top: var(--stack);
+    min-height: 520px;
+    padding: clamp(28px, 4vw, 56px);
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: stretch;
+    border-radius: var(--r-panel);
+  }
+  /* Topaz and Sunshade take Blue Zodiac text only (brand rule). */
+  .topaz {
+    background: var(--topaz);
+    color: var(--blue-zodiac);
+  }
+  .sunshade {
+    background: var(--sunshade);
+    color: var(--blue-zodiac);
+  }
+  .zodiac {
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  .copy {
+    flex: 2 1 420px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .zodiac .num {
+    color: var(--robot-white);
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .word {
+    font-weight: 900;
+    font-size: clamp(3.2rem, 10vw, 9rem);
+    line-height: 0.95;
+    overflow-wrap: anywhere;
+  }
+  .zodiac .word {
+    font-size: clamp(2.6rem, 8.4vw, 7.6rem);
+  }
+  .body :global(p) {
+    max-width: 480px;
+    font-size: 21px;
+    line-height: 1.45;
+  }
+  .object {
+    flex: 1 1 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+  @media (max-width: 600px) {
+    .card {
+      min-height: 0;
+    }
+  }
+</style>

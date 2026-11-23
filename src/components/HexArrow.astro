@@ -1,0 +1,26 @@
+---
+interface Props {
+  size?: number;
+}
+const { size = 60 } = Astro.props;
+---
+
+<svg
+  aria-hidden="true"
+  width={size}
+  height={(size * 54) / 60}
+  viewBox="0 0 60 54"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  class="hex-arrow"
+>
+  <path d="M16 2 H44 L58 27 L44 52 H16 L2 27 Z"></path>
+  <path d="M24 33 L36 21 M27 21 H36 V30"></path>
+</svg>
+
+<style>
+  .hex-arrow {
+    flex: 0 0 auto;
+  }
+</style>

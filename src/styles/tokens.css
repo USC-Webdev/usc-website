@@ -1,0 +1,35 @@
+/* USC design tokens (build plan section 6). Fonts are self-hosted by Astro's
+   fonts API; --font-orbitron and --font-serif are set by <Font>. */
+:root {
+  --blue-zodiac: #1b2e59;
+  --robot-white: #e1dddf;
+  --white: #ffffff;
+  --ruby-red: #ee302a;
+  --topaz: #00b1b8;
+  --clover-green: #38a648;
+  --sunshade: #f8991d;
+  --steel-grey: #718396;
+
+  --font-display: var(--font-orbitron), 'Orbitron', sans-serif;
+  --font-body: 'Sitka Text', 'Sitka Small', Sitka, var(--font-serif), 'Source Serif 4', Georgia, serif;
+
+  --track-display: 0.04em;
+  --track-action: 0.08em;
+  --track-label: 0.16em;
+
+  --rule: 1px solid var(--blue-zodiac);
+  --rail: 220px;
+  --r-control: 999px;
+  --r-panel: 0;
+
+  --page-max: 1392px;
+  --gutter: 24px;
+  --section: clamp(72px, 9vw, 130px);
+  --target-min: 48px;
+
+  --fs-hero: clamp(2.5rem, 12.2vw, 11.2rem);
+  --fs-section: clamp(1.9rem, 4.8vw, 4.2rem);
+  --fs-h3: clamp(1.4rem, 3.1vw, 2.8rem);
+  --fs-body: 17px;
+  --fs-label: 12px;
+}

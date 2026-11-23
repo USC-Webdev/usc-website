@@ -1,0 +1,96 @@
+---
+// Capsule control. One "primary" (Ruby Red) per page.
+interface Props {
+  href: string;
+  variant?: 'primary' | 'solid' | 'outline';
+  tone?: 'light' | 'dark';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+const { href, variant = 'outline', tone = 'light', size = 'md', class: className } = Astro.props;
+const external = /^https?:\/\//.test(href);
+---
+
+<a
+  href={href}
+  class:list={['pill', variant, tone, size, className]}
+  {...external ? { rel: 'noopener' } : {}}
+>
+  <slot />
+</a>
+
+<style>
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: var(--target-min);
+    padding: 0 24px;
+    border: 1px solid transparent;
+    border-radius: var(--r-control);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: var(--track-action);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.25s, background-color 0.25s, color 0.25s;
+  }
+  .pill:hover {
+    transform: scale(1.05);
+  }
+  .sm {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-transform: none;
+    padding: 0 22px;
+  }
+  .lg {
+    min-height: 64px;
+    padding: 0 40px;
+    font-size: 20px;
+  }
+  /* Primary: Ruby Red with bold white text at 19px or more (brand rule). */
+  .primary {
+    background: var(--ruby-red);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .primary:hover {
+    color: var(--white);
+  }
+  .solid.dark {
+    background: var(--white);
+    color: var(--blue-zodiac);
+  }
+  .solid.dark:hover {
+    color: var(--blue-zodiac);
+  }
+  .solid.light {
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  .solid.light:hover {
+    color: var(--white);
+  }
+  .outline.light {
+    border-color: var(--blue-zodiac);
+    color: var(--blue-zodiac);
+  }
+  .outline.dark {
+    border-color: var(--white);
+    color: var(--white);
+  }
+  .outline.dark:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .dark:focus-visible {
+    outline-color: var(--white);
+  }
+</style>
