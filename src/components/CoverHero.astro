@@ -19,6 +19,9 @@ const { eyebrow, edition, kicker, lines, image, sections = [], size = 'full' } =
 // Shrink the title so its longest line fits the page width (Orbitron 900 caps are about 1em wide).
 const longest = Math.max(...lines.map((l) => l.length), 1);
 const fit = `calc((min(100vw, 1392px) - 48px) / ${(longest * 1.04).toFixed(2)})`;
+const srcWidth = image?.src?.width ?? 0;
+const heroWidths = [640, 960, 1280, 1920, 2560].filter((w) => w <= srcWidth);
+if (heroWidths.length === 0 && srcWidth) heroWidths.push(srcWidth);
 const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit}` : undefined;
 ---
 
@@ -43,8 +46,8 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
               src={image.src}
               alt={image.alt}
               formats={['avif', 'webp']}
-              widths={[320, 480, 640, 880]}
-              sizes="(min-width: 1420px) 440px, 31vw"
+              widths={heroWidths}
+              sizes="100vw"
               loading="eager"
               fetchpriority="high"
               class="photo"
@@ -72,6 +75,7 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
 
 <style>
   .hero {
+    container-type: inline-size;
     background: var(--blue-zodiac);
     color: var(--white);
     padding-bottom: 32px;
@@ -109,19 +113,16 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
   .small .stage {
     min-height: clamp(300px, 34vw, 480px);
   }
+  /* Full-bleed image behind the title, edge to edge of the hero (cqw excludes the scrollbar). */
   .frame {
     position: absolute;
     left: 50%;
     top: 0;
     bottom: 0;
-    margin: 0 0 0 clamp(-220px, -15.5vw, -110px);
-    width: clamp(220px, 31vw, 440px);
+    width: 100cqw;
+    margin: 0 0 0 -50cqw;
     overflow: hidden;
     background: var(--steel-grey);
-  }
-  .small .frame {
-    margin-left: clamp(-160px, -11vw, -90px);
-    width: clamp(180px, 22vw, 320px);
   }
   .frame :global(.photo) {
     width: 100%;
