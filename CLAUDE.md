@@ -10,6 +10,7 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Workflow:** one pull request per phase; merge commits only, never squash (Vercel Hobby deploys only commits authored by the account owner). Squash and rebase merges are disabled in the repo settings.
 - **`main` is not protected.** GitHub Free does not allow branch protection on a private repo, and Noel chose on 23 Nov 2026 to keep the repo private and unprotected. Never push to `main` directly; always go through a pull request.
 - **Accounts:** the repo and Vercel project belong to the USC webdev account. Commits in this repo must be authored with that account's email.
+- **Hosting:** Vercel project `usc-website` (team `usc-webdev`), connected to `USC-Webdev/usc-website`. Temporary production URL: https://usc-website-nine.vercel.app. The four Keystatic variables are set for Production and Preview.
 - **Never commit `.env`.** Required variables are listed in `README.md`.
 - **Ask Noel before** creating accounts, changing DNS, or changing repo visibility.
 
