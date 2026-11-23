@@ -8,7 +8,8 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Content:** every Keystatic schema in `keystatic.config.ts` has a matching schema in `src/content.config.ts`. Change both together.
 - **Images:** Keystatic image fields store under `src/assets/images/<collection>`; render with `astro:assets`. `npm run check-images` enforces 1.5 MB and 3840px limits.
 - **Workflow:** one pull request per phase; merge commits only, never squash (Vercel Hobby deploys only commits authored by the account owner). Squash and rebase merges are disabled in the repo settings.
-- **`main` is not protected.** GitHub Free does not allow branch protection on a private repo, and Noel chose on 23 Nov 2026 to keep the repo private and unprotected. Never push to `main` directly; always go through a pull request.
+- **`main` is protected:** pull requests required (no approval count), no force pushes, admins included. Only USC-Webdev should merge; a merge by an editor would be authored by them and blocked from deploying.
+- **The repo is public** (decided 23 Nov 2026) because GitHub Free only protects branches on public repos. Everything committed is world-readable, including commit author emails. The pre-publication history lives in the private `USC-Webdev/usc-website-private-archive`; do not make that repo public.
 - **Accounts:** the repo and Vercel project belong to the USC webdev account. Commits in this repo must be authored with that account's email.
 - **Hosting:** Vercel project `usc-website` (team `usc-webdev`), connected to `USC-Webdev/usc-website`. Temporary production URL: https://usc-website-nine.vercel.app. The four Keystatic variables are set for Production and Preview.
 - **Never commit `.env`.** Required variables are listed in `README.md`.
@@ -21,6 +22,11 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - `npm run build` – production build
 - `npm run check-images` – image size guard
 
-## Phase 1 collaboration test
+## Phase 1 collaboration test (run 23 Nov 2026)
 
-Not run yet. Record the result here (does a merge commit by the owner of an editor's Keystatic pull request deploy to production?).
+Owner account: USC-Webdev. Editor account: nwalling (write access). Run on the repo while it was private and unprotected.
+
+- **Owner merge commit deploys.** An editor's commit on a `content/` branch, merged by USC-Webdev with a merge commit, deployed to production.
+- **Editor commits do not deploy on their own.** The editor's branch got no preview ("Deployment was blocked"), and an editor commit made straight to `main` was also blocked. Expect no Vercel previews on editor branches.
+- **Keystatic only forces a branch when `main` is protected.** `branchPrefix` just prefixes the names of branches created in the branch picker. On an unprotected `main`, a save commits to `main`. With protection, GitHub rejects the commit and Keystatic prompts the editor to create a new branch. This is why the repo is public and protected.
+- **Keystatic login works on the deployed site** for both accounts.
