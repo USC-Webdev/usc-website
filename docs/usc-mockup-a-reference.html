@@ -1,0 +1,313 @@
+<!-- USC Mockup A (Cover): reference markup for the Media Network page. Exported from a design canvas. Ignore support.js, <x-dc>, <sc-if> and {{ }} bindings. /_blob/ image addresses are canvas assets and will not resolve: 2095af... is the white logo on Blue Zodiac, c7eb2e... the blue logo on Robot White, 3d9b0f/77a012/d0b45f/eb8b50/1aaf5b the Security, Exploration, Commerce, Engineering and State Affairs ministry marks. -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>USC Media Network</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E1DDDF}
+a{color:#1B2E59}a:hover{color:#EE302A}
+.row{color:#1B2E59;transition:background .3s,color .3s,padding .3s}
+.row:hover{background:#1B2E59;color:#FFFFFF;padding-left:28px;padding-right:28px}
+.pill{transition:transform .25s}.pill:hover{transform:scale(1.05)}
+@keyframes usc-spin{to{transform:rotate(360deg)}}
+@keyframes usc-marq{to{transform:translateX(-50%)}}
+@keyframes usc-bob{50%{transform:translateY(-14px)}}
+@keyframes usc-blink{50%{opacity:.2}}
+@keyframes usc-slide{from{transform:translateX(0)}to{transform:translateX(-160px)}}
+@keyframes usc-rise{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){
+.rise{animation:usc-rise linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="background: #E1DDDF; color: #1B2E59; font-family: 'Sitka Text', 'Sitka Small', Sitka, 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.6">
+
+<div style="background: #1B2E59; color: #FFFFFF">
+<header style="max-width: 1392px; margin: 0 auto; padding: 24px 24px 8px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px">
+<a href="https://www.unitedspaceconfederation.org/" style="display: block; padding: 8px 8px 8px 0"><img src="/_blob/2095afe57a6c0ccc02a5f43b688586e1" alt="United Space Confederation" style="display: block; height: 64px; width: auto"></a>
+<div style="display: flex; gap: 10px; align-items: center">
+<button type="button" class="pill" onClick="{{ toggle }}" aria-expanded="{{ open }}" style="border: 1px solid #E1DDDF; background: transparent; color: #FFFFFF; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 0 24px; height: 48px; border-radius: 999px; cursor: pointer">{{ menuLabel }}</button>
+<a class="pill" href="https://forms.gle/zfYYm6SCNMQfhEMWA" style="display: flex; align-items: center; background: #FFFFFF; color: #1B2E59; text-decoration: none; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 0 24px; height: 48px; border-radius: 999px">Application + Discord</a>
+</div>
+</header>
+
+<sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Primary" style="max-width: 1392px; margin: 0 auto; padding: 16px 24px 8px">
+<div style="background: #E1DDDF; color: #1B2E59; padding: clamp(24px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 32px 56px">
+<div style="flex: 2 1 380px; min-width: 0; display: flex; flex-direction: column; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.7rem, 3.8vw, 3.2rem); line-height: 1.25">
+<a href="#" style="text-decoration: none">Home</a>
+<a href="#" style="text-decoration: none">Our Vision</a>
+<a href="#" style="text-decoration: none">Leadership</a>
+<a href="#" style="text-decoration: none">Policies</a>
+<a href="#" style="text-decoration: none">Citizenship</a>
+<a href="#" aria-current="page" style="text-decoration: none; border-bottom: 6px solid #EE302A; align-self: flex-start">Media Network</a>
+</div>
+<div style="flex: 1.2 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 2px; border-left: 1px solid #1B2E59; padding-left: 24px">
+<span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding-bottom: 10px">Ministries</span>
+<a href="#" style="display: flex; align-items: center; gap: 14px; text-decoration: none; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; min-height: 52px"><span style="width: 52px; display: flex; justify-content: center"><svg aria-hidden="true" width="44" height="40" viewBox="0 0 44 40" fill="none" stroke="#1B2E59" stroke-width="3"><path d="M12 2 H32 L42 20 L32 38 H12 L2 20 Z"></path></svg></span>USC Navy</a>
+<a href="#" style="display: flex; align-items: center; gap: 14px; text-decoration: none; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; min-height: 52px"><img src="/_blob/3d9b0fb5c770074f98c749bc0b3c5fa9" alt="" style="width: 52px; height: auto">Security</a>
+<a href="#" style="display: flex; align-items: center; gap: 14px; text-decoration: none; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; min-height: 52px"><img src="/_blob/77a012b24f1abc56e0b23ff9abd286bb" alt="" style="width: 52px; height: auto">Exploration</a>
+<a href="#" style="display: flex; align-items: center; gap: 14px; text-decoration: none; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; min-height: 52px"><img src="/_blob/d0b45f7f7a2727faa9283cc06b997447" alt="" style="width: 52px; height: auto">Commerce</a>
+<a href="#" style="display: flex; align-items: center; gap: 14px; text-decoration: none; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; min-height: 52px"><img src="/_blob/eb8b50b0aa4206fbded0fcbad3ea635d" alt="" style="width: 52px; height: auto">Engineering</a>
+<a href="#" style="display: flex; align-items: center; gap: 14px; text-decoration: none; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; min-height: 52px"><img src="/_blob/1aaf5b66ffb2c4af56a9f185bdaab810" alt="" style="width: 52px; height: auto">State Affairs</a>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 2px; border-left: 1px solid #1B2E59; padding-left: 24px">
+<span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding-bottom: 10px">Media Network</span>
+<a href="#" style="text-decoration: none; padding: 9px 0">The Citizen Compass</a>
+<a href="#" style="text-decoration: none; padding: 9px 0">Newsletter Q3 2956</a>
+<a href="#" style="text-decoration: none; padding: 9px 0">Newsletter Q2 2956</a>
+<a href="#" style="text-decoration: none; padding: 9px 0">Newsletter Q1 2956</a>
+<a href="#" style="text-decoration: none; padding: 9px 0">Newsletter Q4 2955</a>
+<a href="#" style="text-decoration: none; padding: 9px 0">Newsletter Q3 2955</a>
+</div>
+</div>
+</nav>
+</sc-if>
+
+<section style="max-width: 1392px; margin: 0 auto; padding: 0 24px 32px">
+<div style="display: flex; justify-content: space-between; gap: 16px; font-size: 12px; letter-spacing: 0.14em; padding: 16px 0 24px"><span>Confederation Media Network</span><span style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #EE302A; animation: usc-blink 1.4s steps(2) infinite"></span>Edition Q3 2956</span></div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: clamp(380px, 48vw, 690px)">
+<figure aria-label="In game image by USC-Citizen: Hadwin" style="position: absolute; left: 50%; top: 0; bottom: 0; margin: 0 0 0 clamp(-220px, -15.5vw, -110px); width: clamp(220px, 31vw, 440px); background: repeating-linear-gradient(135deg, #718396 0 18px, #647589 18px 36px); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px; box-sizing: border-box">
+<span style="font-size: 12px; letter-spacing: 0.1em; color: #FFFFFF; max-width: 80%">[ In-game image by USC-Citizen: Hadwin ]</span>
+</figure>
+<h1 style="position: relative; margin: 0; color: #FFFFFF; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(2.5rem, 12.2vw, 11.2rem); line-height: 1.02; letter-spacing: 0.04em; text-transform: uppercase; -webkit-text-stroke: 0.05em #1B2E59; paint-order: stroke fill">
+<span style="display: block; font-weight: 500; font-size: 0.2em; letter-spacing: 0.5em; padding-bottom: 0.6em; -webkit-text-stroke: 0.14em #1B2E59">Confederation</span>
+<span style="display: block">Media</span>
+<span style="display: block">Network</span>
+</h1>
+</div>
+<nav aria-label="Sections" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 24px; padding-top: 24px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase">
+<a href="#news" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">1.0 &nbsp; News</a>
+<a href="#videos" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">2.0 &nbsp; Videos</a>
+<a href="#pool" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">3.0 &nbsp; Donation Pool</a>
+<a href="#hail" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">4.0 &nbsp; Contact</a>
+</nav>
+</section>
+</div>
+
+<section style="max-width: 1392px; margin: 0 auto; padding: clamp(64px, 9vw, 130px) 24px; display: flex; flex-wrap: wrap; gap: 32px 0">
+<div style="flex: 0 0 220px; border-right: 1px solid #1B2E59; margin-right: 40px; padding-right: 24px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; letter-spacing: 0.14em">
+<span style="text-transform: uppercase; padding-bottom: 28px">CMN &nbsp;|&nbsp; USC</span>
+<span>0.1 &nbsp; Who we are</span><span>0.2 &nbsp; What we make</span><span>0.3 &nbsp; Why</span>
+</div>
+<div class="rise" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 500; font-size: clamp(1.4rem, 3vw, 2.7rem); line-height: 1.28">The media broadcasting and social media team for the USC. We produce the org's literature: <span style="font-weight: 900">newsletters, brochures, newscasts.</span> We make its <span style="font-weight: 900">social media content.</span> All of it supports <span style="font-weight: 900">recruitment, marketing and communication.</span></p>
+<p style="margin: 0; max-width: 520px">It's a big 'verse, and somebody has to write it down. We also answer to "the people with the newsletter".</p>
+</div>
+</section>
+
+<section id="news" style="max-width: 1392px; margin: 0 auto; padding: 0 24px clamp(72px, 9vw, 130px)">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 32px; padding-bottom: 28px; font-family: 'Orbitron', sans-serif; font-size: clamp(1.9rem, 4.8vw, 4.2rem); line-height: 1.1">
+<span style="font-weight: 900">1.0</span>
+<h2 style="margin: 0; font-weight: 500; font-size: 1em">Notable News Updates</h2>
+</div>
+<a class="row" href="#" style="border-top: 1px solid #1B2E59; padding-top: 26px; padding-bottom: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 40px; text-decoration: none">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; flex: 0 0 48px">1.1</span>
+<span style="flex: 3 1 420px; min-width: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 3.1vw, 2.8rem); line-height: 1.1">Newsletter Q3 2956</span>
+<span style="flex: 1 1 260px; min-width: 0">The latest USC newsletter. A whole quarter, in less time than a quantum jump.</span>
+<svg aria-hidden="true" width="60" height="54" viewBox="0 0 60 54" fill="none" stroke="currentColor" stroke-width="2" style="flex: 0 0 60px"><path d="M16 2 H44 L58 27 L44 52 H16 L2 27 Z"></path><path d="M24 33 L36 21 M27 21 H36 V30"></path></svg>
+</a>
+<a class="row" href="#" style="border-top: 1px solid #1B2E59; padding-top: 26px; padding-bottom: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 40px; text-decoration: none">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; flex: 0 0 48px">1.2</span>
+<span style="flex: 3 1 420px; min-width: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 3.1vw, 2.8rem); line-height: 1.1">The Citizen Compass</span>
+<span style="flex: 1 1 260px; min-width: 0">The USC's lore and backstory tabloid. History, as told by people who were nearby.</span>
+<svg aria-hidden="true" width="60" height="54" viewBox="0 0 60 54" fill="none" stroke="currentColor" stroke-width="2" style="flex: 0 0 60px"><path d="M16 2 H44 L58 27 L44 52 H16 L2 27 Z"></path><path d="M24 33 L36 21 M27 21 H36 V30"></path></svg>
+</a>
+<a class="row" href="https://robertsspaceindustries.com/orgs/SENATE" style="border-top: 1px solid #1B2E59; padding-top: 26px; padding-bottom: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 40px; text-decoration: none">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; flex: 0 0 48px">1.3</span>
+<span style="flex: 3 1 420px; min-width: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 3.1vw, 2.8rem); line-height: 1.1">Galactic Senate</span>
+<span style="flex: 1 1 260px; min-width: 0">The USC joined the Galactic Senate on 01.10.2950.</span>
+<svg aria-hidden="true" width="60" height="54" viewBox="0 0 60 54" fill="none" stroke="currentColor" stroke-width="2" style="flex: 0 0 60px"><path d="M16 2 H44 L58 27 L44 52 H16 L2 27 Z"></path><path d="M24 33 L36 21 M27 21 H36 V30"></path></svg>
+</a>
+<a class="row" href="https://www.redbubble.com/people/LandscaperUSC/explore" style="border-top: 1px solid #1B2E59; border-bottom: 1px solid #1B2E59; padding-top: 26px; padding-bottom: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 40px; text-decoration: none">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; flex: 0 0 48px">1.4</span>
+<span style="flex: 3 1 420px; min-width: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 3.1vw, 2.8rem); line-height: 1.1">New Logo on Merch</span>
+<span style="flex: 1 1 260px; min-width: 0">The new logo design is available on merchandise at the USC Swag Store.</span>
+<svg aria-hidden="true" width="60" height="54" viewBox="0 0 60 54" fill="none" stroke="currentColor" stroke-width="2" style="flex: 0 0 60px"><path d="M16 2 H44 L58 27 L44 52 H16 L2 27 Z"></path><path d="M24 33 L36 21 M27 21 H36 V30"></path></svg>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 28px">
+<span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding-right: 12px">Back issues</span>
+<a class="pill" href="#" style="border: 1px solid #1B2E59; text-decoration: none; border-radius: 999px; padding: 11px 22px">Newsletter Q2 2956</a>
+<a class="pill" href="#" style="border: 1px solid #1B2E59; text-decoration: none; border-radius: 999px; padding: 11px 22px">Newsletter Q1 2956</a>
+<a class="pill" href="#" style="border: 1px solid #1B2E59; text-decoration: none; border-radius: 999px; padding: 11px 22px">Newsletter Q4 2955</a>
+<a class="pill" href="#" style="border: 1px solid #1B2E59; text-decoration: none; border-radius: 999px; padding: 11px 22px">Newsletter Q3 2955</a>
+</div>
+</section>
+
+<!-- CAPSULE BAND: full-width Blue Zodiac strip, height clamp(180px, 22vw, 300px), overflow hidden. Inside: a block rotated -38deg holding 7 flex rows (gap 22px) of capsules, each 46px high, border-radius 999px, widths 70 to 260px. About 42% of capsules use #EE302A, #00B1B8, #38A648, #F8991D or #718396; the rest are rgba(255,255,255,0.08). Rows drift 160px with alternating direction over 40 to 82s. -->
+
+<section id="videos" style="background: #1B2E59; color: #FFFFFF">
+<div style="max-width: 1392px; margin: 0 auto; padding: clamp(56px, 7vw, 100px) 24px clamp(72px, 10vw, 140px); display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 32px; font-family: 'Orbitron', sans-serif; font-size: clamp(1.9rem, 4.8vw, 4.2rem); line-height: 1.1">
+<span style="font-weight: 900; color: #718396">2.0</span>
+<h2 style="margin: 0; font-weight: 500; font-size: 1em">Videos of the Month</h2>
+</div>
+<p style="margin: 0 0 8px; color: #E1DDDF">Presented by the CMN and Farrister.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<a href="https://www.youtube.com/watch?v=tG4SH-YrN3k" style="flex: 1.45 1 380px; min-width: 0; text-decoration: none; color: #FFFFFF; display: flex; flex-direction: column; gap: 16px">
+<span style="aspect-ratio: 16 / 10; border: 1px solid #718396; background: rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; justify-content: space-between; padding: 22px">
+<span style="display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase"><span>2.1</span><span>YouTube</span></span>
+<span class="pill" style="align-self: center; background: #FFFFFF; color: #1B2E59; border-radius: 999px; padding: 18px 30px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><svg aria-hidden="true" width="14" height="16" viewBox="0 0 14 16"><path d="M0 0 L14 8 L0 16 Z" fill="#EE302A"></path></svg>Play</span>
+<span style="height: 1px; background: #718396"></span>
+</span>
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 22px">[Video title 01]</span>
+</a>
+<a href="https://www.youtube.com/watch?v=Eurqia0gXkM" style="flex: 1 1 300px; min-width: 0; margin-top: clamp(0px, 9vw, 130px); text-decoration: none; color: #FFFFFF; display: flex; flex-direction: column; gap: 16px">
+<span style="aspect-ratio: 4 / 5; border: 1px solid #718396; background: rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; justify-content: space-between; padding: 22px">
+<span style="display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase"><span>2.2</span><span>YouTube</span></span>
+<span class="pill" style="align-self: center; background: #FFFFFF; color: #1B2E59; border-radius: 999px; padding: 18px 30px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><svg aria-hidden="true" width="14" height="16" viewBox="0 0 14 16"><path d="M0 0 L14 8 L0 16 Z" fill="#EE302A"></path></svg>Play</span>
+<span style="height: 1px; background: #718396"></span>
+</span>
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 22px">[Video title 02]</span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="pool" style="max-width: 1392px; margin: 0 auto; padding: clamp(72px, 9vw, 130px) 24px 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px; padding-bottom: 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 32px; font-family: 'Orbitron', sans-serif; font-size: clamp(1.9rem, 4.8vw, 4.2rem); line-height: 1.1">
+<span style="font-weight: 900">3.0</span>
+<h2 style="margin: 0; font-weight: 500; font-size: 1em">USC Donation Pool</h2>
+</div>
+<p style="margin: 0 0 8px; max-width: 380px">Three ways to contribute. Only one of them involves money, and that one is optional.</p>
+</div>
+
+<article style="position: sticky; top: 16px; background: #00B1B8; color: #1B2E59; min-height: 520px; box-sizing: border-box; padding: clamp(28px, 4vw, 56px); margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
+<div style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px">3.1</span>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h3 style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(3.2rem, 10vw, 9rem); line-height: 0.95">Time</h3>
+<p style="margin: 0; max-width: 480px; font-size: 21px; line-height: 1.45">Playtime is not mandatory, but the org relies on its members' participation. The USC has a one-org policy.</p>
+</div>
+</div>
+<div aria-hidden="true" style="flex: 1 1 280px; display: flex; align-items: center; justify-content: center">
+<div style="position: relative; width: 280px; height: 280px; border-radius: 50%; background: #E1DDDF">
+<div style="position: absolute; left: 50%; top: 50%; width: 10px; height: 112px; margin: -112px 0 0 -5px; border-radius: 5px; background: #1B2E59; transform-origin: 50% 100%; animation: usc-spin 9s linear infinite"></div>
+<div style="position: absolute; left: 50%; top: 50%; width: 10px; height: 74px; margin: -74px 0 0 -5px; border-radius: 5px; background: #EE302A; transform-origin: 50% 100%; animation: usc-spin 54s linear infinite"></div>
+<div style="position: absolute; left: 50%; top: 50%; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: #1B2E59"></div>
+</div>
+</div>
+</article>
+
+<article style="position: sticky; top: 36px; background: #F8991D; color: #1B2E59; min-height: 520px; box-sizing: border-box; padding: clamp(28px, 4vw, 56px); margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
+<div style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px">3.2</span>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h3 style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(3.2rem, 10vw, 9rem); line-height: 0.95">Talent</h3>
+<p style="margin: 0; max-width: 480px; font-size: 21px; line-height: 1.45">Members contribute their skills, such as commerce, diplomacy and engineering, toward the group's goals.</p>
+</div>
+</div>
+<div aria-hidden="true" style="flex: 1 1 280px; display: flex; align-items: center; justify-content: center; gap: 18px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; animation: usc-bob 5s ease-in-out infinite"><div style="width: 96px; height: 96px; border-radius: 50%; background: #1B2E59"></div><span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase">Commerce</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; animation: usc-bob 5s ease-in-out -1.6s infinite"><div style="width: 104px; height: 92px; background: #E1DDDF; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%)"></div><span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase">Diplomacy</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; animation: usc-bob 5s ease-in-out -3.2s infinite"><div style="width: 104px; height: 96px; background: #EE302A; clip-path: polygon(50% 0, 100% 100%, 0 100%)"></div><span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase">Engineering</span></div>
+</div>
+</article>
+
+<article style="position: sticky; top: 56px; background: #1B2E59; color: #FFFFFF; min-height: 520px; box-sizing: border-box; padding: clamp(28px, 4vw, 56px); margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
+<div style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; color: #E1DDDF">3.3</span>
+<div style="display: flex; flex-direction: column; gap: 24px">
+<h3 style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(2.6rem, 8.4vw, 7.6rem); line-height: 0.95">Treasure</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 40px; color: #E1DDDF">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #FFFFFF">In game</span><p style="margin: 0; line-height: 1.5">After official launch, a standard tax will fund org assets such as capital ships. A Javelin, for example, does not buy itself.</p></div>
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #FFFFFF">Out of game</span><p style="margin: 0; line-height: 1.5">Patreon donations support general needs. Merch purchases send 20% to the general support fund. Non-monetary donations such as stickers and printed works are also accepted. Out-of-game donations fund meetups, social media and member rewards.</p></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a class="pill" href="https://www.patreon.com/UnitedSpaceConfederation" style="background: #FFFFFF; color: #1B2E59; text-decoration: none; border-radius: 999px; padding: 14px 26px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">Patreon</a>
+<a class="pill" href="https://www.redbubble.com/people/LandscaperUSC/explore" style="border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; border-radius: 999px; padding: 13px 26px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">Swag Store</a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" style="flex: 1 1 240px; display: flex; flex-direction: column; align-items: center; justify-content: center">
+<div style="width: 220px; height: 70px; border-radius: 50%; background: #F8991D; border: 3px solid #1B2E59; position: relative; z-index: 5; animation: usc-bob 4s ease-in-out infinite"></div>
+<div style="width: 220px; height: 70px; border-radius: 50%; background: #F8991D; border: 3px solid #1B2E59; margin-top: -44px; position: relative; z-index: 4"></div>
+<div style="width: 220px; height: 70px; border-radius: 50%; background: #F8991D; border: 3px solid #1B2E59; margin-top: -52px; position: relative; z-index: 3"></div>
+<div style="width: 220px; height: 70px; border-radius: 50%; background: #F8991D; border: 3px solid #1B2E59; margin-top: -52px; position: relative; z-index: 2"></div>
+<div style="width: 220px; height: 70px; border-radius: 50%; background: #F8991D; border: 3px solid #1B2E59; margin-top: -52px; position: relative; z-index: 1"></div>
+</div>
+</article>
+
+<div role="note" style="position: relative; background: #E1DDDF; border: 2px solid #1B2E59; padding: clamp(28px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: 20px 56px; align-items: flex-end">
+<div style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span aria-hidden="true" style="width: 96px; height: 8px; background: #EE302A"></span>
+<p style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.7rem, 3.8vw, 3.4rem); line-height: 1.1">Membership never requires payment.</p>
+</div>
+<p style="margin: 0; flex: 1 1 320px; min-width: 0; font-size: 18px">Donations are voluntary and confidential. Anyone asking for donations on the USC's behalf should be reported to the <a href="mailto:consulofpeace@unitedspaceconfederation.org">Consul of Peace</a>.</p>
+</div>
+<div style="height: clamp(72px, 9vw, 130px)"></div>
+</section>
+
+<section id="hail" style="background: #1B2E59; color: #FFFFFF">
+<div class="rise" style="max-width: 1240px; margin: 0 auto; padding: clamp(80px, 11vw, 170px) 24px clamp(80px, 10vw, 150px); display: flex; flex-direction: column; align-items: center; gap: 36px; text-align: center">
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.9rem, 4.8vw, 4.2rem); line-height: 1; color: #718396">4.0</span>
+<h2 style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.9rem, 5.4vw, 4.9rem); line-height: 1.12">Thank you for your time, talent and treasure.</h2>
+<p style="margin: 0; max-width: 560px; font-size: 19px; color: #E1DDDF">Follow the USC on Instagram and YouTube. Questions and feedback go to the Consul of Peace. Citizenship applications go through the application form.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<a class="pill" href="https://forms.gle/zfYYm6SCNMQfhEMWA" style="background: #EE302A; color: #FFFFFF; text-decoration: none; border-radius: 999px; padding: 22px 40px; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase">Apply for citizenship</a>
+<a class="pill" href="https://www.instagram.com/theunitedspaceconfederation" style="border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; border-radius: 999px; padding: 21px 34px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center">Instagram</a>
+<a class="pill" href="https://www.youtube.com/channel/UCR7NViQANVRSMB84wMFCS-A" style="border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; border-radius: 999px; padding: 21px 34px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center">YouTube</a>
+<a class="pill" href="mailto:consulofpeace@unitedspaceconfederation.org" style="border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; border-radius: 999px; padding: 21px 34px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; display: flex; align-items: center">Consul of Peace</a>
+</div>
+</div>
+</section>
+
+<nav aria-label="On this page" style="position: sticky; bottom: 16px; z-index: 20; width: fit-content; max-width: calc(100% - 24px); margin: 24px auto; background: #E1DDDF; border: 1px solid #1B2E59; border-radius: 999px; padding: 5px; display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase">
+<a href="#news" style="text-decoration: none; padding: 13px 18px; border-radius: 999px">1.0 News</a>
+<a href="#videos" style="text-decoration: none; padding: 13px 18px; border-radius: 999px">2.0 Videos</a>
+<a href="#pool" style="text-decoration: none; padding: 13px 18px; border-radius: 999px">3.0 Pool</a>
+<a href="#hail" style="color: #FFFFFF; background: #1B2E59; text-decoration: none; padding: 13px 20px; border-radius: 999px">4.0 Contact</a>
+</nav>
+
+<footer style="background: #E1DDDF; border-top: 1px solid #1B2E59; overflow: hidden">
+<div style="max-width: 1392px; margin: 0 auto; padding: 56px 24px 24px; display: flex; flex-wrap: wrap; gap: 32px 56px; justify-content: space-between; align-items: flex-start">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="padding: 20px 20px 20px 0"><img src="/_blob/c7eb2edd91af48f6c4a732a28a8bd42f" alt="United Space Confederation" style="display: block; height: 96px; width: auto; max-width: 100%"></div>
+<span style="font-family: 'Orbitron', sans-serif; font-weight: 400; font-size: 15px; letter-spacing: 0.14em">EQUALITY.PROSPERITY.FREEDOM</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; border-left: 1px solid #1B2E59; padding-left: 24px">
+<span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding-bottom: 6px">Channels</span>
+<nav aria-label="Channels" style="display: flex; flex-wrap: wrap; gap: 0 24px; max-width: 420px">
+<a href="https://www.youtube.com/channel/UCR7NViQANVRSMB84wMFCS-A" style="padding: 11px 0">YouTube</a>
+<a href="https://www.instagram.com/theunitedspaceconfederation" style="padding: 11px 0">Instagram</a>
+<a href="https://twitter.com/usc_starcitizen" style="padding: 11px 0">X / Twitter</a>
+<a href="https://www.patreon.com/UnitedSpaceConfederation" style="padding: 11px 0">Patreon</a>
+<a href="https://www.redbubble.com/people/LandscaperUSC/explore" style="padding: 11px 0">Swag Store</a>
+<a href="https://robertsspaceindustries.com/orgs/SENATE" style="padding: 11px 0">Galactic Senate</a>
+</nav>
+<a href="mailto:consulofpeace@unitedspaceconfederation.org" style="padding: 11px 0">consulofpeace@unitedspaceconfederation.org</a>
+</div>
+</div>
+<div aria-hidden="true" style="white-space: nowrap; overflow: hidden; padding: 16px 0 28px">
+<div style="display: inline-block; animation: usc-marq 50s linear infinite; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(3rem, 9vw, 8.4rem); line-height: 1.1; letter-spacing: 0.02em; color: transparent; -webkit-text-stroke: 2px #1B2E59">UNITED SPACE CONFEDERATION &nbsp;/&nbsp; UNITED SPACE CONFEDERATION &nbsp;/&nbsp; </div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"menuOpen":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":7400}}'>
+class Component extends DCLogic {
+renderVals() {
+var open = (this.state && this.state.open != null) ? this.state.open : (this.props.menuOpen ?? false);
+var self = this;
+return {
+open: open,
+menuLabel: open ? 'Close' : 'Menu',
+toggle: function () { self.setState({ open: !open }); }
+};
+}
+}
+</script>
+</body>
+</html>

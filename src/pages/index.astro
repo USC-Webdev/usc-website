@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('scratch');
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex" />
+    <title>United Space Confederation</title>
+  </head>
+  <body>
+    <h1>United Space Confederation</h1>
+    <p>Phase 1 scaffold. The site is being rebuilt.</p>
+    <ul>
+      {entries.map((entry) => <li>{entry.data.title}</li>)}
+    </ul>
+  </body>
+</html>

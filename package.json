@@ -1,0 +1,32 @@
+{
+  "name": "usc-website",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "check-images": "node scripts/check-images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdoc": "^2.1.5",
+    "@astrojs/react": "^7.1.9",
+    "@astrojs/vercel": "^11.0.22",
+    "@keystatic/astro": "^6.0.0",
+    "@keystatic/core": "^0.6.10",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^7.4.13",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^6.0.3"
+  }
+}
