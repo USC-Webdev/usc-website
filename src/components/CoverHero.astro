@@ -38,7 +38,7 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
         )
       }
     </div>
-    <div class="stage">
+    <div class="stage" title={creditText}>
       <figure class="frame">
         {
           image?.src ? (
@@ -145,6 +145,14 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
     letter-spacing: 0.1em;
     line-height: 1.4;
     padding: 4px 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  /* The credit is hover text: shown while the pointer is over the hero.
+     It stays in the page for screen readers, and in the title tooltip. */
+  .stage:hover .credit,
+  .stage:focus-within .credit {
+    opacity: 1;
   }
   .title {
     position: relative;

@@ -13,7 +13,7 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Accounts:** the repo and Vercel project belong to the USC webdev account. Commits in this repo must be authored with that account's email.
 - **Hosting:** Vercel project `usc-website` (team `usc-webdev`), connected to `USC-Webdev/usc-website`. Temporary production URL: https://usc-website-nine.vercel.app. The four Keystatic variables are set for Production and Preview.
 - **Placeholders:** missing assets (white logo, ministry marks, hero images, video titles) render through `Placeholder.astro`, `MinistryMark.astro` or a `.ph-badge`, and carry `data-placeholder`. Before launch, `grep -r data-placeholder dist/` must come back empty.
-- **Design system:** components in `src/components/`, shown on `/styleguide` (noindex). Tokens in `src/styles/tokens.css`. Fonts self-hosted through Astro's `fonts` config.
+- **Design system:** components in `src/components/`, shown on `/styleguide` (noindex). Tokens in `src/styles/tokens.css`. Fonts self-hosted through Astro's `fonts` config: Orbitron for display, Exo 2 for body text (Noel's choice, replacing the brand guide's Sitka/Source Serif 4).
 - **Never commit `.env`.** Required variables are listed in `README.md`.
 - **Ask Noel before** creating accounts, changing DNS, or changing repo visibility.
 

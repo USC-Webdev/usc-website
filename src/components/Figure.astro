@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
-// Astro Image + caption + "In game image by USC-Citizen: NAME" credit line.
+// Astro Image + caption. The "In game image by USC-Citizen: NAME" credit is
+// hover text over the image (and the title tooltip); screen readers still get it.
 interface Props {
   src: ImageMetadata;
   alt: string;
@@ -14,18 +15,15 @@ interface Props {
 const { src, alt, caption, credit, sizes = '(min-width: 1392px) 900px, 100vw', eager = false } = Astro.props;
 const widths = [480, 960, 1440, 1920].filter((w) => w <= src.width);
 if (widths.length === 0) widths.push(src.width);
+const creditText = credit ? `In game image by USC-Citizen: ${credit}` : undefined;
 ---
 
 <figure class="figure">
-  <Image src={src} alt={alt} widths={widths} sizes={sizes} loading={eager ? 'eager' : 'lazy'} class="img" />
-  {
-    (caption || credit) && (
-      <figcaption>
-        {caption && <span class="caption">{caption}</span>}
-        {credit && <span class="credit label">In game image by USC-Citizen: {credit}</span>}
-      </figcaption>
-    )
-  }
+  <div class="media" title={creditText}>
+    <Image src={src} alt={alt} widths={widths} sizes={sizes} loading={eager ? 'eager' : 'lazy'} class="img" />
+    {creditText && <span class="credit">{creditText}</span>}
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
 </figure>
 
 <style>
@@ -40,15 +38,27 @@ if (widths.length === 0) widths.push(src.width);
     width: 100%;
     height: auto;
   }
+  .media {
+    position: relative;
+  }
   figcaption {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
     font-size: 15px;
   }
   .credit {
-    font-size: 11px;
-    text-transform: none;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+    background: var(--blue-zodiac);
+    color: var(--white);
+    font-size: 12px;
     letter-spacing: 0.1em;
+    line-height: 1.4;
+    padding: 4px 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .media:hover .credit {
+    opacity: 1;
   }
 </style>
