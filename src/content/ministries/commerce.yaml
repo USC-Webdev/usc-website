@@ -1,0 +1,34 @@
+title: Interstellar Commerce
+menuLabel: Commerce
+fullName: Ministry of Interstellar Commerce
+abbreviation: MIC
+summary: The business and money side of the USC, and general asset management.
+order: 4
+workInProgress: true
+workInProgressNote: More information will be posted as the game develops.
+hero:
+  image: ../../assets/images/ministries/commerce/hero/image.jpg
+  alt: In-game image for the Ministry of Interstellar Commerce
+  credit: Baron
+overview: |
+  The business and money side of the USC, as well as general asset management, is handled by the Ministry of Interstellar Commerce (MIC). The MIC is, like all our Ministries, a vital part of the USC’s operations.
+
+  MIC is responsible for tracking USC's organizational finances, revenues, and expenses, and setting budgetary goals and policies. It executes its resource-gathering and profit-generating goals by overseeing the coordination of heavy mining and salvage operations, and coordinates the movement of things and people via trade runs and people transportation services. All this, not to mention managing the lucrative space racing sports industry within the USC.
+
+  Its 3 departments currently administer the Ministry's activities: The Office of Treasury and Fleet Logistics, the Office of Trade and Commodities, and the Department of Travel and Hospitality.
+officesHeading: Departments
+offices:
+  - name: Office of Treasury and Fleet Logistics
+    body: |
+      To put it, the OTFL is the heart of the USC. It pumps necessary resources to where they need to be. Managing the Org Bank and its coffers ensures that credits are allocated wisely. By pulling from its warehouses, it delivers equipment, vehicles, fuel, supplies, and resources to far-flung outposts that require it. It also fuels our building projects by allocating and providing necessary raw resources to our engineers and builders. On the other hand, this department also manages taxation and resource stockpiling for the greater good of the USC.
+  - name: Office of Trade and Commodities
+    body: |
+      The industrial center of the USC oversees the main money-producing activities of the Confederation. Namely, heavy mining, salvage, trade, and logistics. This department also works hand in hand with other Ministries, such as MES, to sell crafted inventory and raw resources on the open market, with MIE to sell information of value, etc. The operation of ship-based or outpost-based markets is also handled here.
+  - name: Department of Travel and Hospitality
+    body: |
+      The department is in charge of the exciting world of travel and entertainment. It oversees VIP and economy class people transportation services as well as the adrenalin-pumping Space Race Entertainment Industry. General event planning is also handled by this department, which may act with the Department of Diplomatic Support if any "Game" assistance is needed in the form of proper VIP Transportation services and catering.
+gallery:
+  - image: ../../assets/images/ministries/commerce/gallery/0/image.jpg
+    alt: Organization chart of the Ministry of Interstellar Commerce
+    caption: ""
+    credit: ""

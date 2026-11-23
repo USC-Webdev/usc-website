@@ -95,6 +95,7 @@ const ourVision = defineCollection({
       ideas: prose(),
       creedHeading: text(),
       creed: titledItems(),
+      closing: prose(),
     }),
 });
 

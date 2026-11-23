@@ -1,0 +1,43 @@
+/* Page-level layout shared by the templates. */
+.block {
+  padding-top: var(--section);
+}
+.block-last {
+  padding-bottom: var(--section);
+}
+.dark-section {
+  background: var(--blue-zodiac);
+  color: var(--white);
+}
+.dark-section .inner {
+  padding-top: clamp(56px, 7vw, 100px);
+  padding-bottom: clamp(72px, 10vw, 140px);
+}
+.statement {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 3vw, 2.7rem);
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+.statement strong {
+  font-weight: 900;
+}
+.aside-copy {
+  max-width: 520px;
+}
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.kicker-label {
+  display: block;
+  padding-bottom: 10px;
+}

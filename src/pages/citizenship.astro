@@ -1,0 +1,82 @@
+---
+// Template 7a: Citizenship. Small hero, body, one primary action.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CoverHero from '../components/CoverHero.astro';
+import SectionHead from '../components/SectionHead.astro';
+import RailBlock from '../components/RailBlock.astro';
+import Prose from '../components/Prose.astro';
+import PillLink from '../components/PillLink.astro';
+import VideoCard from '../components/VideoCard.astro';
+import CapsuleBand from '../components/CapsuleBand.astro';
+import { getSingleton } from '../lib/content';
+import { renderMarkdoc } from '../lib/markdoc';
+import { getSite } from '../lib/site';
+
+const page = await getSingleton('citizenship');
+const { settings } = await getSite();
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  dock={[
+    { href: '#s-1', label: '1.0 Rules' },
+    { href: '#apply', label: '2.0 Apply' },
+  ]}
+>
+  <CoverHero
+    eyebrow="United Space Confederation"
+    lines={page.heroLines}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    size="small"
+    sections={[
+      { href: '#s-1', label: `1.0  ${page.rulesHeading}` },
+      { href: '#apply', label: `2.0  ${page.ctaHeading}` },
+    ]}
+  />
+
+  <div class="wrap block">
+    <RailBlock label="Citizenship">
+      <Prose html={renderMarkdoc(page.intro)} class="lead" />
+    </RailBlock>
+  </div>
+
+  <section class="wrap block block-last" id="s-1">
+    <SectionHead num="1.0" title={page.rulesHeading} />
+    <RailBlock label="Rules">
+      <Prose html={renderMarkdoc(page.rules)} />
+    </RailBlock>
+  </section>
+
+  <CapsuleBand seed={2957} />
+
+  <section class="dark-section on-dark" id="apply">
+    <div class="wrap inner">
+      <SectionHead num="2.0" title={page.ctaHeading} tone="dark" />
+      <div class="apply">
+        {page.videoId && <VideoCard youtubeId={page.videoId} title={page.videoTitle} num="2.1" />}
+        <div class="apply-action">
+          <PillLink href={settings.applicationUrl} variant="primary" size="lg">{page.ctaLabel}</PillLink>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    font-size: clamp(19px, 1.6vw, 22px);
+  }
+  .apply {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .apply-action {
+    flex: 1 1 260px;
+    display: flex;
+    justify-content: center;
+  }
+</style>

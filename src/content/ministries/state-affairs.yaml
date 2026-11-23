@@ -1,0 +1,34 @@
+title: State Affairs
+menuLabel: State Affairs
+fullName: Ministry of State Affairs
+abbreviation: MSA
+summary: "Out-of-game support and content creation: diplomacy, immigration and the CMN."
+order: 6
+workInProgress: true
+workInProgressNote: More information will be posted as the game develops.
+hero:
+  image: ../../assets/images/ministries/state-affairs/hero/image.jpg
+  alt: In-game image for the Ministry of State Affairs
+  credit: Kil-Roy
+overview: |
+  The Ministry of State Affairs (MSA) is an 'Out of Game Support and Content Creation' entity responsible for the crucial activities required outside of the game. Activities such as recruitment efforts, social media content creation, and diplomatic relations.
+
+  MSA is also responsible for the real-life administration of our real-life Org assets, safeguarding our real-life communication platforms data servers, and executing organizational directives, i.e., supporting group gameplay content creation, fundraising of real-life monies for real-world events such as attendance to Citizencon and Bar Citizens as well as hosting in-game & out of game events and contests.
+
+  The Ministry's activities are currently administered by its three departments: the Office of Diplomatic Support, the Office of Immigration and Resettlement, and the Confederation Media Network.
+officesHeading: Departments
+offices:
+  - name: Office of Diplomatic Support
+    body: |
+      This department is our organization's official diplomatic body. Its vetted diplomats are veteran members of our community and are tasked with keeping channels of communication open to key allies and stakeholders. Along with ONI, it maintains a database of in-game organizations that are assessed about our values and objectives to further mutual objectives or assess metagaming threats.
+  - name: Office of Immigration and Resettlement
+    body: |
+      The official "Human Resources" Department of the USC is given the hard yet very important task of promoting the organization for prospective new citizens (via Spectrum Forums, Events, digital media, etc.), assessing their suitability by managing the onboarding process, and receiving and communicating any citizen complaints to the leadership so that they can be handled in the most equitable way possible.
+  - name: Confederation Media Network
+    body: |
+      The CMN is the out-of-game content creation team. They produce content for our various social media sites and platforms to aid in the recruitment and promotion of the organization. Various digital content may be produced, such as Video, Audio, or digital print media. They also may engage in online or offline sanctioned PR activities.
+gallery:
+  - image: ../../assets/images/ministries/state-affairs/gallery/0/image.jpg
+    alt: Organization chart of the Ministry of State Affairs
+    caption: ""
+    credit: ""

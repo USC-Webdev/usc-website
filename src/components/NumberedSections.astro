@@ -1,0 +1,49 @@
+---
+import SectionHead from './SectionHead.astro';
+import RailBlock from './RailBlock.astro';
+import Prose from './Prose.astro';
+import { renderMarkdoc } from '../lib/markdoc';
+
+// Content sections as numbered rail blocks: "1.0 Heading", rail label, prose.
+interface Props {
+  sections: { heading: string; railLabel?: string; body: string }[];
+  start?: number;
+  sub?: boolean;
+  idPrefix?: string;
+}
+const { sections, start = 1, sub = false, idPrefix = 's' } = Astro.props;
+const num = (i: number) => (sub ? `${start}.${i + 1}` : `${start + i}.0`);
+---
+
+{
+  sections.map((s, i) =>
+    sub ? (
+      <div class="sub" id={`${idPrefix}-${start}-${i + 1}`}>
+        <RailBlock label={num(i)} items={s.railLabel ? [s.railLabel] : []}>
+          <h3 class="sub-title">{s.heading}</h3>
+          <Prose html={renderMarkdoc(s.body)} />
+        </RailBlock>
+      </div>
+    ) : (
+      <section class="wrap block" id={`${idPrefix}-${start + i}`}>
+        <SectionHead num={num(i)} title={s.heading} />
+        <RailBlock label={s.railLabel || 'USC'}>
+          <Prose html={renderMarkdoc(s.body)} />
+        </RailBlock>
+      </section>
+    ),
+  )
+}
+
+<style>
+  .sub {
+    border-top: var(--rule);
+    padding: 32px 0;
+  }
+  .sub-title {
+    font-weight: 900;
+    font-size: var(--fs-h3);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+</style>

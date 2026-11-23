@@ -12,6 +12,10 @@ import keystatic from '@keystatic/astro';
 export default defineConfig({
   site: 'https://www.unitedspaceconfederation.org',
   integrations: [react(), markdoc(), keystatic()],
+  // /home stays the canonical home page (it is the existing URL).
+  redirects: {
+    '/': '/home',
+  },
   adapter: vercel({ imageService: false }),
   // Images are optimized at build time by astro:assets (sharp), not by
   // Vercel's runtime image service.

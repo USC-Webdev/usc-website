@@ -1,0 +1,34 @@
+title: Engineering and Support
+menuLabel: Engineering
+fullName: Ministry of Engineering and Support
+abbreviation: MES
+summary: All operational support activities within the Confederation.
+order: 5
+workInProgress: true
+workInProgressNote: More information will be posted as the game develops.
+hero:
+  image: ../../assets/images/ministries/engineering/hero/image.jpg
+  alt: In-game image for the Ministry of Engineering and Support
+  credit: Jensys
+overview: |
+  The Ministry of Engineering and Support (MES) is responsible for all operational support activities within the USC.
+
+  Activities like repairing, rearming, and refueling, as well as overseeing civil engineering contracts like resource gathering via mining or salvage operations, manufacturing, and base building, are all coordinated here. Another important responsibility is the administration of our Medical Services, training our medical and first responder personnel, and maintaining our healthcare capacity at peak efficiency.
+
+  Its departments currently administer the Ministry's activities: The Office of Fleet Engineering, The Confederation Health Services, and the Department of Industrial Engineering.
+officesHeading: Departments
+offices:
+  - name: Office of Fleet Engineering
+    body: |
+      The Office of Fleet Engineering provides recovery, repair, refueling, and re-arming services to the USC. Whether it be part of a large or capital ship crew, as part of an outpost ship garage, or a construction site, the Fleet Engineer will get you out of a tough spot. The Office of Fleet Engineering is also responsible for documenting the best loadouts/ship components for any situation that might arise.
+  - name: Confederation Health Services
+    body: |
+      Confederation Health Services employs and supports all official medical personnel within the USC, including doctors, nurses, hospital personnel, field medics, and combat medics. It will also maintain all medical equipment, vehicles, or buildings required to provide state-of-the-art care for our citizens.
+  - name: Department of Industrial Engineering
+    body: |
+      The Department of Industry is responsible for resource gathering & recycling in space and on planetary surfaces, the maintenance, upgrading & construction of public infrastructure, assets & consumables, and the technological development & innovation within the USC.
+gallery:
+  - image: ../../assets/images/ministries/engineering/gallery/0/image.jpg
+    alt: Organization chart of the Ministry of Engineering and Support
+    caption: ""
+    credit: ""

@@ -1,0 +1,89 @@
+title: Leadership
+description: "How the USC is led: the Cabinet, the Consuls, the Ministers, the Prime Minister and the Citizen Senate."
+heroLines:
+  - Leader
+  - ship
+hero:
+  image: ../../assets/images/pages/leadership/hero/image.jpg
+  alt: USC citizens gathered in a hangar
+  credit: Hadwin
+sections:
+  - heading: Leadership Philosophy
+    railLabel: ""
+    body: |
+      The general leadership philosophy in the United Space Confederation is that organizational leadership positions are not positions of privilege but rather positions of duty. While there should be plenty to keep people busy playing the game solo, generating content for group play beyond the pre-scripted missions made by CIG takes people willing to put in the work to plan and lead that content.
+
+      Officer positions are not given out frivolously in the USC, and these positions are filled based on specific needs. Positions may be created based on an anticipated need but held empty until that need actually materializes. Empty positions do not mean that no one qualified can be found. Still, it is to avoid a needlessly top-heavy structure where positions are filled without expecting activity.
+
+      While some people are in elevated positions, they are there for the benefit of USC and to promote a fun gameplay experience for all citizens. While parts of our organization may emulate a military group, we are not one and do not intend to behave as such outside of military encounters in the game. We value all our citizens equally, regardless of officer position. You are all a valuable part of our community, and the USC would be nothing without all of our citizens.
+  - heading: General Structure
+    railLabel: ""
+    body: |
+      The USC Leadership comprises multiple interlinking parts emulating a governmental structure that ensures accountability to its citizens. Fundamentally, it's organized into two groups: The Cabinet and the Senate.
+
+      #### Cabinet
+
+      The Cabinet is the primary executive organ for the organization. It may also be referred to as the executive branch of our Government.
+
+      It is comprised of 5 Ministers and 2 Consuls where Ministers are generally in charge of creating and encouraging in-game content/activities as follows:
+
+      - Minister of Security Services (MSS)
+      - Minister of Intelligence and Exploration (MIE)
+      - Minister of Interstellar Commerce (MIC)
+      - Minister of Engineering and Support (MES)
+      - The Prime Minister*
+
+      *(A special rotating minister is voted in periodically amongst our citizens to keep the leadership fresh with new energy and ideas.)
+
+      The Chancellor and Prime Minister are primarily tasked with strategic direction (what to do), while the Ministers are primarily tasked with implementation (how to do it).
+
+      USC Membership is:
+
+      - The Senate. A voting body that deliberates on some policies provides a context for some Roleplay, as well as elects a Prime Minister to the Cabinet, who has the responsibility to break ties in Cabinet votes when the situation demands it, and they vote on the Chancellor.
+rolesHeading: Roles
+roles:
+  - name: Consuls
+    description: |
+      Strategically, the two main priorities for securing our future are military and economic. To this end, there are two Consuls, one tasked with achieving each of these, sometimes mutually exclusive, priorities.
+
+      The Consul of War (aka The Grand Admiral of The USC Navy) is responsible for the military strategic vision of the USC. They are charged with guiding the defense of the USC and planning any military offensive goals, both immediate and long-term. The citizens' membership selects them, and they are the official leaders of the Navy. The Navy will handle our version of 'hardcore' gameplay activities, i.e., 'raids' and org group 'missions.' The Navy is responsible for organizing high-level events specially created to help achieve organizational objectives as directed by the Cabinet.
+
+      The Consul of Peace (aka The Minister of State Affairs) is responsible for the recruitment, media relations, and diplomatic vision of the USC. They are charged with ensuring the stability of the USC by safeguarding the various communication platforms and maintaining our overall economic health and security.
+
+      These positions are permanent once selected, and vacancies are filled by the Cabinet from among interested applicants.
+  - name: Ministers
+    description: |
+      The remaining members of the Cabinet are the Ministers who direct the Ministries of the USC government: the [Ministry of Security Services](/ministries/usc-navy) (MSS), the Ministry of Interstellar Commerce (MIC), the Ministry of Intelligence and Exploration (MIE), and the [Ministry of Engineering and Support](/ministries/engineering).
+
+      Details on each ministry can be found on their [respective pages](/ministries). As a group, the Ministers' job is to implement the Consuls' strategic goals and the Prime Minister's near-term goals. The Ministers are also responsible for ensuring a healthy activity level in the content areas of their Ministry in the game. If players are content with the CIG-provided missions, this could be as simple as helping coordinate event times for larger activities. If the CIG content grows stale, the Ministers must plan some USC-run content events instead.
+
+      Once selected, These positions are permanent, and the Cabinet fills vacancies among interested applicants.
+  - name: Prime Minister
+    description: |
+      The Prime Minister serves two very useful purposes.
+
+      First, the Prime Minister ensures USC members have a voice in decision-making. They provide leadership with fresh ideas without jeopardizing continuity or creating undue chaos.
+
+      Second, the Prime Minister's election creates an environment of "campaign promises" that provides a way for capturing the near-term priorities for tasks to accomplish as a group. The Prime Minister serves six (6) month terms and is limited to two (2) concurrent terms.
+  - name: Citizen Senate
+    description: |
+      The Citizen Senate is a complex organ in the governmental body of the United Space Confederation.
+
+      Once someone is accepted into the USC as a citizen, they automatically become part of the Citizen Senate. This branch of the USC hierarchy is where all members have a voice in major decisions that affect the organization.
+
+      Ensuring that these proceedings proceed in a structured way is the Chancellor, who impartially prepares the topics at hand, manages the tally of votes and records the results. The Chancellor also ensures that the constitution is followed to the letter should conflict resolution be needed.
+
+      For those with an RP inclination, the Senate also plays an important RP role, providing a setting for RP debate and deliberation of topics and serving as a method for these "Senators" to clearly escalate issues that need to be resolved beyond just discussing them in the forums or Discord where they may get missed as idle chatter.
+
+      Since the USC is envisioned as a full government-in-exile, our "Citizens" include thousands, perhaps millions, of simulated people who exist only in the background simulations of the Star Citizen universe. All of our "real" players, all of our human members, are by definition in a special and privileged class of "Citizens," and this is reflected in their automatic membership in the Senate and their ability to, in the RP channels or the forums, escalate topics for debate and deliberation and potentially becoming new policy.
+
+      The Senate has three other important roles:
+
+      - The Senate serves as the primary legislative branch of our government and includes all our citizens (Cabinet members and citizens are equals here).
+      - The Senate discusses, debates, and votes on topics and motions brought forward by our Citizens. The results of these deliberations and votes are then escalated to the Cabinet for execution.
+      - The responsibility for the proper functioning of the Senate, its voting process, and its operations is entrusted to an elected Citizen:
+chart:
+  - image: ../../assets/images/pages/leadership/chart/0/image.jpg
+    alt: "USC organization chart: the Cabinet above the Chancellor, the five ministries, the Navy and the Prime Minister"
+    caption: The USC organization chart.
+    credit: ""

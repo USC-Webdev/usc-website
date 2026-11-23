@@ -1,0 +1,60 @@
+---
+import PillLink from './PillLink.astro';
+import { getSingleton } from '../lib/content';
+import { getSite } from '../lib/site';
+
+// Closing call to action on Blue Zodiac. Copy comes from the Home entry's
+// closing fields so it is edited in one place. Holds the page's one primary
+// (Ruby Red) action.
+interface Props {
+  id?: string;
+  links?: { href: string; label: string }[];
+}
+const { id = 'join', links = [] } = Astro.props;
+const home = await getSingleton('home');
+const { settings } = await getSite();
+---
+
+<section class="join dark-section on-dark" id={id}>
+  <div class="inner-join rise">
+    <h2 class="title">{home.ctaHeading}</h2>
+    {home.ctaText && <p class="text">{home.ctaText}</p>}
+    <div class="pill-row center">
+      <PillLink href={settings.applicationUrl} variant="primary" size="lg">{home.ctaLabel}</PillLink>
+      {
+        links.map((l) => (
+          <PillLink href={l.href} variant="outline" tone="dark">
+            {l.label}
+          </PillLink>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .inner-join {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: clamp(80px, 11vw, 170px) var(--gutter) clamp(80px, 10vw, 150px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    text-align: center;
+  }
+  .title {
+    font-weight: 900;
+    font-size: clamp(1.9rem, 5.4vw, 4.9rem);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+  .text {
+    max-width: 560px;
+    font-size: 19px;
+    color: var(--robot-white);
+  }
+  .center {
+    justify-content: center;
+  }
+</style>

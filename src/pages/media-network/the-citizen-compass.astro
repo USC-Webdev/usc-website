@@ -1,0 +1,52 @@
+---
+// Template 7b: The Citizen Compass. Small hero, body, one primary action.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoverHero from '../../components/CoverHero.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import RailBlock from '../../components/RailBlock.astro';
+import Prose from '../../components/Prose.astro';
+import PillLink from '../../components/PillLink.astro';
+import { getSingleton } from '../../lib/content';
+import { renderMarkdoc } from '../../lib/markdoc';
+
+const page = await getSingleton('citizenCompass');
+const media = await getSingleton('mediaNetwork');
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <CoverHero
+    eyebrow={media.eyebrow}
+    kicker="The"
+    lines={page.heroLines}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    size="small"
+  />
+
+  <div class="wrap block">
+    <RailBlock label={page.title}>
+      <p class="statement rise">{page.banner}</p>
+      {page.siteUrl && (
+        <div class="pill-row">
+          <PillLink href={page.siteUrl} variant="primary" size="lg">{page.siteLabel}</PillLink>
+        </div>
+      )}
+    </RailBlock>
+  </div>
+
+  <section class="wrap block">
+    <SectionHead num="1.0" title={page.overviewHeading} />
+    <RailBlock label="CMN  |  USC">
+      <Prose html={renderMarkdoc(page.overview)} />
+    </RailBlock>
+  </section>
+
+  <section class="wrap block block-last">
+    <SectionHead num="2.0" title={page.contactHeading} />
+    <RailBlock label="Contact">
+      <Prose>
+        <p>{page.contactText}</p>
+        {page.contactEmail && <p><a href={`mailto:${page.contactEmail}`}>{page.contactEmail}</a></p>}
+      </Prose>
+    </RailBlock>
+  </section>
+</BaseLayout>

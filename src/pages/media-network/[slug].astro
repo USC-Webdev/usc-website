@@ -1,0 +1,187 @@
+---
+// Template 6: Newsletter. Cover hero with quarter and year, sticky section
+// list in the rail, sections as prose with galleries, previous/next links.
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoverHero from '../../components/CoverHero.astro';
+import Prose from '../../components/Prose.astro';
+import Gallery from '../../components/Gallery.astro';
+import PillLink from '../../components/PillLink.astro';
+import { getNewsletters, getSingleton, newsletterHref, formatDate } from '../../lib/content';
+import { renderMarkdoc } from '../../lib/markdoc';
+
+export const getStaticPaths = (async () => {
+  const all = await getNewsletters();
+  return all.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, newer: all[i - 1], older: all[i + 1] },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry, newer, older } = Astro.props;
+const n = entry.data;
+const media = await getSingleton('mediaNetwork');
+const sections = n.sections.map((s, i) => ({ ...s, id: `section-${i + 1}`, num: `${i + 1}.0`, html: renderMarkdoc(s.body) }));
+---
+
+<BaseLayout title={n.title} description={n.summary || undefined}>
+  <CoverHero
+    eyebrow={media.eyebrow}
+    edition={`Published ${formatDate(n.published)}`}
+    kicker={n.title.replace(/\s*(Q[1-4])\s*\d{4}$/, '')}
+    lines={[n.quarter, String(n.year)]}
+    image={{ src: n.cover.image, alt: n.cover.alt, credit: n.cover.credit }}
+    size="small"
+  />
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label="Sections in this issue">
+      <span class="label toc-label">{n.title}</span>
+      <ol>
+        {
+          sections.map((s) => (
+            <li>
+              <a href={`#${s.id}`}>
+                <span class="toc-num">{s.num}</span> {s.heading}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+    <div class="issue">
+      {n.intro && <Prose html={renderMarkdoc(n.intro)} class="intro" />}
+      {
+        sections.map((s) => (
+          <section class="issue-section" id={s.id} aria-labelledby={`${s.id}-h`}>
+            {s.kicker && <span class="label kicker-label">{s.kicker}</span>}
+            <h2 class="issue-heading" id={`${s.id}-h`}>
+              <span class="issue-num">{s.num}</span> {s.heading}
+            </h2>
+            {s.html && <Prose html={s.html} />}
+            <Gallery items={s.gallery} />
+          </section>
+        ))
+      }
+      <nav class="pager" aria-label="Other issues">
+        {
+          older && (
+            <PillLink href={newsletterHref(older.id)}>
+              <span aria-hidden="true">←</span> {older.data.title}
+            </PillLink>
+          )
+        }
+        {
+          newer && (
+            <PillLink href={newsletterHref(newer.id)}>
+              {newer.data.title} <span aria-hidden="true">→</span>
+            </PillLink>
+          )
+        }
+        <PillLink href="/media-network" variant="solid">Media Network</PillLink>
+      </nav>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 0;
+    padding-top: var(--section);
+    padding-bottom: var(--section);
+  }
+  .toc {
+    flex: 0 0 var(--rail);
+    max-width: 100%;
+    border-right: var(--rule);
+    margin-right: 40px;
+    padding-right: 24px;
+    position: sticky;
+    top: 16px;
+    align-self: flex-start;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .toc-label {
+    display: block;
+    padding-bottom: 16px;
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .toc a {
+    display: flex;
+    gap: 8px;
+    padding: 6px 0;
+    text-decoration: none;
+  }
+  .toc-num {
+    flex: 0 0 34px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11px;
+    padding-top: 2px;
+  }
+  .issue {
+    flex: 999 1 520px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .issue :global(.intro) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    padding-bottom: 32px;
+  }
+  .issue-section {
+    border-top: var(--rule);
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scroll-margin-top: 16px;
+  }
+  .issue-heading {
+    font-weight: 900;
+    font-size: var(--fs-h3);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+  .issue-num {
+    font-weight: 700;
+    font-size: 14px;
+    vertical-align: middle;
+    padding-right: 12px;
+  }
+  .pager {
+    border-top: var(--rule);
+    padding-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  @media (max-width: 760px) {
+    .toc {
+      position: static;
+      max-height: none;
+      flex-basis: 100%;
+      border-right: 0;
+      border-bottom: var(--rule);
+      margin-right: 0;
+      padding: 0 0 16px;
+    }
+    .toc ol {
+      max-height: 320px;
+      overflow-y: auto;
+    }
+  }
+</style>

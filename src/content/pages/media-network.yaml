@@ -1,0 +1,33 @@
+title: Media Network
+description: The Confederation Media Network (CMN) is the media broadcasting and social media team of the United Space Confederation.
+eyebrow: Confederation Media Network
+heroKicker: Confederation
+heroLines:
+  - Media
+  - Network
+hero:
+  image: ../../assets/images/pages/media-network/hero/image.jpg
+  alt: USC ships in close formation
+  credit: Hadwin
+railLabel: CMN  |  USC
+railItems:
+  - 0.1  Who we are
+  - 0.2  What we make
+  - 0.3  Why
+statement: |
+  The media broadcasting and social media team for the USC. We produce the org's literature: **newsletters, brochures, newscasts.** We make its **social media content.** All of it supports **recruitment, marketing and communication.**
+statementAside: It's a big 'verse, and somebody has to write it down. We also answer to "the people with the newsletter".
+newsHeading: Notable News Updates
+videosHeading: Videos of the Month
+videosAside: Presented by the CMN and Farrister.
+poolHeading: USC Donation Pool
+poolAside: Three ways to contribute. Only one of them involves money, and that one is optional.
+time: Playtime is not mandatory, but the org relies on its members' participation. The USC has a one-org policy.
+talent: Members contribute their skills, such as commerce, diplomacy and engineering, toward the group's goals.
+treasureInGame: After official launch, a standard tax will fund org assets such as capital ships. A Javelin, for example, does not buy itself.
+treasureOutOfGame: Patreon donations support general needs. Merch purchases send 20% to the general support fund. Non-monetary donations such as stickers and printed works are also accepted. Out-of-game donations fund meetups, social media and member rewards.
+noticeStatement: Membership never requires payment.
+noticeBody: |
+  Donations are voluntary and confidential. Anyone asking for donations on the USC's behalf should be reported to the [Consul of Peace](mailto:consulofpeace@unitedspaceconfederation.org).
+closingHeading: Thank you for your time, talent and treasure.
+closingText: Follow the USC on Instagram and YouTube. Questions and feedback go to the Consul of Peace. Citizenship applications go through the application form.

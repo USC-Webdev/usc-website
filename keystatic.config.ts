@@ -155,6 +155,7 @@ export default config({
         ideas: prose('Ideas'),
         creedHeading: fields.text({ label: 'Creed heading' }),
         creed: titledItems('Creed items'),
+        closing: prose('Closing text'),
       },
     }),
 

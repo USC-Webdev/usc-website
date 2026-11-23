@@ -24,7 +24,8 @@ export function renderMarkdoc(source: string | undefined | null): string {
   if (errors.length > 0) {
     throw new Error(`Markdoc error: ${errors.map((e) => e.error.message).join('; ')}\n${source.slice(0, 200)}`);
   }
-  return Markdoc.renderers.html(Markdoc.transform(ast, config));
+  // The HTML renderer wraps the document in <article>; the page supplies its own landmarks.
+  return Markdoc.renderers.html(Markdoc.transform(ast, config)).replace(/^<article>([\s\S]*)<\/article>$/, '$1');
 }
 
 /** Renders inline Markdoc (one paragraph) without the wrapping <p>. */
