@@ -1,0 +1,93 @@
+---
+// Styles for rendered Markdoc bodies. Pass HTML from renderMarkdoc() or
+// slot content.
+interface Props {
+  html?: string;
+  tone?: 'light' | 'dark';
+  class?: string;
+}
+const { html, tone = 'light', class: className } = Astro.props;
+---
+
+{
+  html !== undefined ? (
+    <div class:list={['prose', tone, className]} set:html={html} />
+  ) : (
+    <div class:list={['prose', tone, className]}>
+      <slot />
+    </div>
+  )
+}
+
+<style>
+  .prose {
+    max-width: 65ch;
+    font-size: clamp(17px, 1.3vw, 19px);
+    line-height: 1.6;
+  }
+  .prose.dark {
+    color: var(--robot-white);
+  }
+  .prose :global(> * + *) {
+    margin-top: 1em;
+  }
+  .prose :global(h2),
+  .prose :global(h3),
+  .prose :global(h4) {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 1.6em;
+  }
+  .prose :global(h2) {
+    font-size: 1.6em;
+  }
+  .prose :global(h3) {
+    font-size: 1.3em;
+  }
+  .prose :global(h4) {
+    font-size: 1.1em;
+  }
+  .prose.dark :global(h2),
+  .prose.dark :global(h3),
+  .prose.dark :global(h4) {
+    color: var(--white);
+  }
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: 1.3em;
+  }
+  .prose :global(li + li) {
+    margin-top: 0.4em;
+  }
+  .prose :global(li::marker) {
+    color: var(--ruby-red);
+  }
+  .prose :global(a) {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+  }
+  .prose :global(blockquote) {
+    margin-left: 0;
+    padding-left: 20px;
+    border-left: 4px solid var(--ruby-red);
+    font-style: italic;
+  }
+  .prose :global(hr) {
+    border: 0;
+    border-top: var(--rule);
+  }
+  .prose :global(table) {
+    border-collapse: collapse;
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+  .prose :global(th),
+  .prose :global(td) {
+    border: var(--rule);
+    padding: 8px 12px;
+    text-align: left;
+  }
+</style>

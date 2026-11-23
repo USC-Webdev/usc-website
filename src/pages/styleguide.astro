@@ -1,0 +1,246 @@
+---
+// Design system reference. Excluded from the sitemap and not indexed.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CoverHero from '../components/CoverHero.astro';
+import SectionHead from '../components/SectionHead.astro';
+import RailBlock from '../components/RailBlock.astro';
+import IndexRow from '../components/IndexRow.astro';
+import PillLink from '../components/PillLink.astro';
+import Button from '../components/Button.astro';
+import CapsuleBand from '../components/CapsuleBand.astro';
+import VideoCard from '../components/VideoCard.astro';
+import ExhibitCard from '../components/ExhibitCard.astro';
+import Notice from '../components/Notice.astro';
+import Prose from '../components/Prose.astro';
+import Figure from '../components/Figure.astro';
+import Placeholder from '../components/Placeholder.astro';
+import MinistryMark from '../components/MinistryMark.astro';
+import ClockObject from '../components/objects/ClockObject.astro';
+import TalentObjects from '../components/objects/TalentObjects.astro';
+import CoinStack from '../components/objects/CoinStack.astro';
+import hero from '../assets/images/pages/media-network-hero.jpg';
+
+const swatches = [
+  ['Blue Zodiac', '--blue-zodiac', '#1B2E59'],
+  ['Robot White', '--robot-white', '#E1DDDF'],
+  ['White', '--white', '#FFFFFF'],
+  ['Ruby Red', '--ruby-red', '#EE302A'],
+  ['Topaz', '--topaz', '#00B1B8'],
+  ['Clover Green', '--clover-green', '#38A648'],
+  ['Sunshade', '--sunshade', '#F8991D'],
+  ['Steel Grey', '--steel-grey', '#718396'],
+];
+---
+
+<BaseLayout
+  title="Styleguide"
+  noindex
+  dock={[
+    { href: '#colour', label: '1.0 Colour' },
+    { href: '#index', label: '2.0 Index' },
+    { href: '#videos', label: '3.0 Video' },
+    { href: '#cards', label: '4.0 Cards' },
+  ]}
+>
+  <CoverHero
+    eyebrow="USC Design System"
+    edition="Styleguide"
+    kicker="Confederation"
+    lines={['Media', 'Network']}
+    image={{ src: hero, alt: 'A USC ship in flight above a planet', credit: 'Hadwin' }}
+    sections={[
+      { href: '#colour', label: '1.0  Colour' },
+      { href: '#index', label: '2.0  Index' },
+      { href: '#videos', label: '3.0  Video' },
+      { href: '#cards', label: '4.0  Cards' },
+    ]}
+  />
+
+  <div class="wrap block">
+    <RailBlock label="CMN  |  USC" items={['0.1  Rail block', '0.2  Rise', '0.3  Type']}>
+      <p class="statement rise">
+        Display statement in Orbitron 500 with <strong>900 for emphasis.</strong> Body copy follows in the
+        serif stack.
+      </p>
+      <p class="aside-copy">
+        It's a big 'verse, and somebody has to write it down. Body text is 17 to 21px with a 65 character
+        measure.
+      </p>
+    </RailBlock>
+  </div>
+
+  <section id="colour" class="wrap block">
+    <SectionHead num="1.0" title="Colour and type">Tokens from the brand guide. No tints, no gradients.</SectionHead>
+    <ul class="swatches">
+      {
+        swatches.map(([name, token, hex]) => (
+          <li>
+            <span class="chip" style={`background:var(${token})`} />
+            <span class="label">{name}</span>
+            <code>{hex}</code>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="type-samples">
+      <p class="t-h3">H3 index title, Orbitron 900</p>
+      <p class="t-label label">Label, body font, 12px, 0.16em</p>
+      <div class="pills">
+        <PillLink href="#" variant="primary">Apply for citizenship</PillLink>
+        <PillLink href="#" variant="solid">Solid light</PillLink>
+        <PillLink href="#" variant="outline">Outline light</PillLink>
+        <PillLink href="#" size="sm">Newsletter Q2 2956</PillLink>
+        <Button variant="outline">Button</Button>
+      </div>
+      <div class="pills dark-pills on-dark">
+        <PillLink href="#" variant="solid" tone="dark">Solid dark</PillLink>
+        <PillLink href="#" variant="outline" tone="dark">Outline dark</PillLink>
+        <Button variant="outline" tone="dark">Button dark</Button>
+      </div>
+    </div>
+  </section>
+
+  <section id="index" class="wrap block">
+    <SectionHead num="2.0" title="Index rows" />
+    <IndexRow num="2.1" title="Newsletter Q3 2956" text="The latest USC newsletter." href="#" />
+    <IndexRow num="2.2" title="Security Services" text="Row with a ministry mark placeholder." href="#" mark={{ abbreviation: 'MSS' }} />
+    <IndexRow num="2.3" title="Static row" text="No link, no arrow." last />
+    <div class="marks">
+      <MinistryMark abbreviation="MSS" />
+      <MinistryMark abbreviation="MIE" />
+      <MinistryMark abbreviation="MIC" />
+      <MinistryMark abbreviation="MES" />
+      <MinistryMark abbreviation="MSA" />
+    </div>
+  </section>
+
+  <CapsuleBand />
+
+  <section id="videos" class="videos on-dark">
+    <div class="wrap videos-inner">
+      <SectionHead num="3.0" title="Videos" tone="dark">Presented by the CMN.</SectionHead>
+      <div class="video-row">
+        <VideoCard youtubeId="tG4SH-YrN3k" title="Video title 01" num="3.1" titlePlaceholder />
+        <VideoCard youtubeId="Eurqia0gXkM" title="Video title 02" num="3.2" shape="tall" offset titlePlaceholder />
+      </div>
+    </div>
+  </section>
+
+  <section id="cards" class="wrap block">
+    <SectionHead num="4.0" title="Exhibit cards">Three stacking cards.</SectionHead>
+    <ExhibitCard num="4.1" word="Time" color="topaz" index={0}>
+      <p>Sample body on Topaz. Blue Zodiac text only.</p>
+      <ClockObject slot="object" />
+    </ExhibitCard>
+    <ExhibitCard num="4.2" word="Talent" color="sunshade" index={1}>
+      <p>Sample body on Sunshade. Blue Zodiac text only.</p>
+      <TalentObjects slot="object" />
+    </ExhibitCard>
+    <ExhibitCard num="4.3" word="Treasure" color="zodiac" index={2}>
+      <p>Sample body on Blue Zodiac.</p>
+      <CoinStack slot="object" />
+    </ExhibitCard>
+    <Notice statement="Membership never requires payment.">
+      <p>
+        Donations are voluntary and confidential. Anyone asking for donations on the USC's behalf should be
+        reported to the <a href="mailto:consulofpeace@unitedspaceconfederation.org">Consul of Peace</a>.
+      </p>
+    </Notice>
+  </section>
+
+  <section class="wrap block">
+    <SectionHead num="5.0" title="Prose and figures" />
+    <RailBlock label="Prose">
+      <Prose>
+        <h2>Heading two</h2>
+        <p>Body paragraph with <a href="#">a link</a>. Fact first, dry aside second.</p>
+        <ul>
+          <li>List item one</li>
+          <li>List item two</li>
+        </ul>
+        <blockquote>A quotation from a citizen.</blockquote>
+      </Prose>
+      <Figure src={hero} alt="A USC ship in flight above a planet" caption="Figure with caption." credit="Hadwin" />
+      <Placeholder label="Org chart image" ratio="16 / 6" />
+    </RailBlock>
+  </section>
+</BaseLayout>
+
+<style>
+  .block {
+    padding-top: var(--section);
+  }
+  .block:last-of-type {
+    padding-bottom: var(--section);
+  }
+  .statement {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.4rem, 3vw, 2.7rem);
+    line-height: 1.28;
+  }
+  .statement strong {
+    font-weight: 900;
+  }
+  .aside-copy {
+    max-width: 520px;
+  }
+  .swatches {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  .swatches li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .chip {
+    height: 80px;
+    border: var(--rule);
+  }
+  .type-samples {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .t-h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: var(--fs-h3);
+    line-height: 1.1;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .dark-pills {
+    background: var(--blue-zodiac);
+    padding: 24px;
+  }
+  .marks {
+    display: flex;
+    gap: 20px;
+    padding-top: 28px;
+  }
+  .videos {
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  .videos-inner {
+    padding-top: clamp(56px, 7vw, 100px);
+    padding-bottom: clamp(72px, 10vw, 140px);
+  }
+  .video-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+</style>

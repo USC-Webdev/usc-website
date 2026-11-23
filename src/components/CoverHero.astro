@@ -1,0 +1,191 @@
+---
+import { Picture } from 'astro:assets';
+import Placeholder from './Placeholder.astro';
+import type { HeroImage, NavLink } from '../lib/types';
+
+// Blue Zodiac cover: one upright image centred, white outlined title across it,
+// section labels along the bottom. "small" is the compact variant used by the
+// long-form, citizenship and compass templates.
+interface Props {
+  eyebrow: string;
+  edition?: string;
+  kicker?: string;
+  lines: string[];
+  image?: HeroImage;
+  sections?: NavLink[];
+  size?: 'full' | 'small';
+}
+const { eyebrow, edition, kicker, lines, image, sections = [], size = 'full' } = Astro.props;
+const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit}` : undefined;
+---
+
+<section class:list={['hero', size, 'on-dark']}>
+  <div class="wrap">
+    <div class="eyebrow label">
+      <span>{eyebrow}</span>
+      {
+        edition && (
+          <span class="edition">
+            <span class="dot" aria-hidden="true" />
+            {edition}
+          </span>
+        )
+      }
+    </div>
+    <div class="stage">
+      <figure class="frame">
+        {
+          image?.src ? (
+            <Picture
+              src={image.src}
+              alt={image.alt}
+              formats={['avif', 'webp']}
+              widths={[320, 480, 640, 880]}
+              sizes="(min-width: 1420px) 440px, 31vw"
+              loading="eager"
+              fetchpriority="high"
+              class="photo"
+            />
+          ) : (
+            <Placeholder label="Hero image" ratio="auto" tone="dark" class="photo" />
+          )
+        }
+        {creditText && <figcaption class="credit">{creditText}</figcaption>}
+      </figure>
+      <h1 class="title">
+        {kicker && <span class="kicker">{kicker}</span>}
+        {lines.map((line) => <span class="line">{line}</span>)}
+      </h1>
+    </div>
+    {
+      sections.length > 0 && (
+        <nav class="sections label" aria-label="Sections">
+          {sections.map((s) => <a href={s.href}>{s.label}</a>)}
+        </nav>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--blue-zodiac);
+    color: var(--white);
+    padding-bottom: 32px;
+  }
+  .eyebrow {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    letter-spacing: 0.14em;
+    text-transform: none;
+    padding: 16px 0 24px;
+  }
+  .edition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ruby-red);
+    animation: usc-blink 1.4s steps(2) infinite;
+  }
+  .stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: clamp(380px, 48vw, 690px);
+  }
+  .small .stage {
+    min-height: clamp(300px, 34vw, 480px);
+  }
+  .frame {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin: 0 0 0 clamp(-220px, -15.5vw, -110px);
+    width: clamp(220px, 31vw, 440px);
+    overflow: hidden;
+    background: var(--steel-grey);
+  }
+  .small .frame {
+    margin-left: clamp(-160px, -11vw, -90px);
+    width: clamp(180px, 22vw, 320px);
+  }
+  .frame :global(.photo) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .frame :global(picture) {
+    display: contents;
+  }
+  .credit {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 90%;
+    background: var(--blue-zodiac);
+    color: var(--white);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    padding: 4px 8px;
+  }
+  .title {
+    position: relative;
+    margin: 0;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: var(--fs-hero);
+    line-height: 1.02;
+    letter-spacing: var(--track-display);
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.05em var(--blue-zodiac);
+    paint-order: stroke fill;
+    overflow-wrap: anywhere;
+  }
+  .small .title {
+    font-size: clamp(2.2rem, 8vw, 7.4rem);
+  }
+  .kicker {
+    display: block;
+    font-weight: 500;
+    font-size: 0.2em;
+    letter-spacing: 0.5em;
+    padding-bottom: 0.6em;
+    -webkit-text-stroke: 0.14em var(--blue-zodiac);
+  }
+  .line {
+    display: block;
+  }
+  .sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 24px;
+    padding-top: 24px;
+  }
+  .sections a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 0;
+    min-height: var(--target-min);
+    display: inline-flex;
+    align-items: center;
+  }
+  .sections a:hover {
+    color: var(--white);
+    text-decoration: underline;
+  }
+</style>

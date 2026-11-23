@@ -1,0 +1,140 @@
+---
+import MinistryMark from './MinistryMark.astro';
+import type { SiteNav } from '../lib/types';
+
+interface Props {
+  nav: SiteNav;
+  currentPath: string;
+}
+const { nav, currentPath } = Astro.props;
+const norm = (p: string) => p.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => norm(href) === norm(currentPath);
+---
+
+<nav id="site-menu" class="menu wrap" aria-label="Primary" hidden>
+  <div class="panel">
+    <div class="pages">
+      {
+        nav.pages.map((link) => (
+          <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+    <div class="col">
+      <span class="label col-head">Ministries</span>
+      {
+        nav.ministries.map((m) => (
+          <a href={m.href} class="ministry" aria-current={isCurrent(m.href) ? 'page' : undefined}>
+            <span class="mark-slot">
+              <MinistryMark mark={m.mark} abbreviation={m.abbreviation} />
+            </span>
+            {m.label}
+          </a>
+        ))
+      }
+    </div>
+    <div class="col">
+      <span class="label col-head">Media Network</span>
+      {
+        nav.media.map((link) => (
+          <a href={link.href} class="media" aria-current={isCurrent(link.href) ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<noscript>
+  <style>
+    #site-menu[hidden] {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  .menu {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+  .panel {
+    background: var(--robot-white);
+    color: var(--blue-zodiac);
+    padding: clamp(24px, 4vw, 48px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 56px;
+  }
+  .panel a {
+    text-decoration: none;
+    color: var(--blue-zodiac);
+  }
+  .panel a:hover {
+    color: var(--ruby-red);
+  }
+  .panel :focus-visible {
+    outline-color: var(--blue-zodiac);
+  }
+  .pages {
+    flex: 2 1 380px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.7rem, 3.8vw, 3.2rem);
+    line-height: 1.25;
+  }
+  .pages a[aria-current='page'] {
+    border-bottom: 6px solid var(--ruby-red);
+    align-self: flex-start;
+  }
+  .col {
+    flex: 1.2 1 300px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-left: var(--rule);
+    padding-left: 24px;
+  }
+  .col:last-child {
+    flex: 1 1 220px;
+  }
+  .col-head {
+    padding-bottom: 10px;
+  }
+  .ministry {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 52px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .mark-slot {
+    width: 52px;
+    display: flex;
+    justify-content: center;
+  }
+  .media {
+    padding: 9px 0;
+    min-height: var(--target-min);
+    display: flex;
+    align-items: center;
+  }
+  .ministry[aria-current='page'],
+  .media[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: var(--ruby-red);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+  }
+</style>

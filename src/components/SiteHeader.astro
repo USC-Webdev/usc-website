@@ -1,0 +1,120 @@
+---
+import Logo from './Logo.astro';
+import MenuPanel from './MenuPanel.astro';
+import type { SiteNav, SiteSettings } from '../lib/types';
+
+interface Props {
+  nav: SiteNav;
+  settings: SiteSettings;
+  currentPath: string;
+}
+const { nav, settings, currentPath } = Astro.props;
+---
+
+<div class="site-header on-dark">
+  <header class="bar wrap">
+    <a href="/home" class="home-link">
+      <Logo variant="header" />
+    </a>
+    <div class="actions">
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span data-menu-label>Menu</span>
+      </button>
+      <a class="apply" href={settings.applicationUrl} rel="noopener">Application + Discord</a>
+    </div>
+  </header>
+  <MenuPanel nav={nav} currentPath={currentPath} />
+</div>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.getElementById('site-menu');
+  const label = toggle?.querySelector('[data-menu-label]');
+  if (toggle && menu && label) {
+    const setOpen = (open: boolean) => {
+      menu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      label.textContent = open ? 'Close' : 'Menu';
+    };
+    toggle.addEventListener('click', () => {
+      const open = menu.hidden === true;
+      setOpen(open);
+      if (open) menu.querySelector<HTMLAnchorElement>('a')?.focus();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !menu.hidden) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  .bar {
+    padding-top: 24px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+  }
+  .home-link {
+    display: block;
+    padding: 8px 8px 8px 0;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .menu-btn,
+  .apply {
+    display: inline-flex;
+    align-items: center;
+    height: var(--target-min);
+    padding: 0 24px;
+    border-radius: var(--r-control);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: var(--track-action);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.25s;
+  }
+  .menu-btn {
+    border: 1px solid var(--robot-white);
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+  }
+  .apply {
+    background: var(--white);
+    color: var(--blue-zodiac);
+  }
+  .apply:hover {
+    color: var(--blue-zodiac);
+  }
+  .menu-btn:hover,
+  .apply:hover {
+    transform: scale(1.05);
+  }
+  .site-header :focus-visible {
+    outline-color: var(--white);
+  }
+  @media (max-width: 480px) {
+    .menu-btn,
+    .apply {
+      padding: 0 16px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+  }
+</style>

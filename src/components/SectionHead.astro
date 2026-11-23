@@ -1,0 +1,68 @@
+---
+// Bold numeral + medium title, e.g. "1.0 Notable News Updates".
+interface Props {
+  num?: string;
+  title: string;
+  tone?: 'light' | 'dark';
+  as?: 'h2' | 'h3';
+  id?: string;
+}
+const { num, title, tone = 'light', as: Tag = 'h2', id } = Astro.props;
+const hasAside = Astro.slots.has('default');
+---
+
+<div class:list={['section-head', tone, { split: hasAside }]}>
+  <div class="numtitle">
+    {num && <span class="num" aria-hidden="true">{num}</span>}
+    <Tag class="title" id={id}>
+      {num && <span class="visually-hidden">{num} </span>}
+      {title}
+    </Tag>
+  </div>
+  {
+    hasAside && (
+      <div class="aside">
+        <slot />
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .section-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px 48px;
+    padding-bottom: 28px;
+  }
+  .numtitle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 32px;
+    font-family: var(--font-display);
+    font-size: var(--fs-section);
+    line-height: 1.1;
+    min-width: 0;
+  }
+  .num {
+    font-weight: 900;
+  }
+  .dark .num {
+    color: var(--steel-grey);
+  }
+  .title {
+    font-weight: 500;
+    font-size: 1em;
+    overflow-wrap: anywhere;
+  }
+  .aside {
+    max-width: 380px;
+    margin-bottom: 8px;
+  }
+  .dark .aside {
+    color: var(--robot-white);
+  }
+</style>

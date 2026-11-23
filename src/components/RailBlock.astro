@@ -1,0 +1,78 @@
+---
+// 220px label rail, 1px vertical rule, then content. Stacks on narrow screens.
+interface Props {
+  label?: string;
+  items?: string[];
+  tone?: 'light' | 'dark';
+  id?: string;
+  sticky?: boolean;
+  class?: string;
+}
+const { label, items = [], tone = 'light', id, sticky = false, class: className } = Astro.props;
+const hasRailSlot = Astro.slots.has('rail');
+---
+
+<section class:list={['rail-block', tone, className]} id={id}>
+  <div class:list={['rail', 'label', { sticky }]}>
+    {label && <span class="rail-label">{label}</span>}
+    {items.map((item) => <span>{item}</span>)}
+    {hasRailSlot && <slot name="rail" />}
+  </div>
+  <div class="content">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .rail-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 0;
+  }
+  .rail {
+    flex: 0 0 var(--rail);
+    max-width: 100%;
+    border-right: var(--rule);
+    margin-right: 40px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    letter-spacing: 0.14em;
+    text-transform: none;
+  }
+  .rail.sticky {
+    position: sticky;
+    top: 16px;
+    align-self: flex-start;
+  }
+  .dark .rail {
+    border-right-color: var(--steel-grey);
+  }
+  .rail-label {
+    text-transform: uppercase;
+    padding-bottom: 28px;
+  }
+  .content {
+    flex: 999 1 520px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  @media (max-width: 760px) {
+    .rail {
+      flex-basis: 100%;
+      border-right: 0;
+      border-bottom: var(--rule);
+      margin-right: 0;
+      padding: 0 0 16px;
+    }
+    .rail.sticky {
+      position: static;
+    }
+    .rail-label {
+      padding-bottom: 8px;
+    }
+  }
+</style>

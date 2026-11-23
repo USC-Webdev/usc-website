@@ -1,0 +1,57 @@
+---
+// Decorative shapes for the Talent card. They bob.
+---
+
+<div class="set">
+  <div class="item" style="animation-delay:0s">
+    <div class="shape circle"></div>
+    <span>Commerce</span>
+  </div>
+  <div class="item" style="animation-delay:-1.6s">
+    <div class="shape hex"></div>
+    <span>Diplomacy</span>
+  </div>
+  <div class="item" style="animation-delay:-3.2s">
+    <div class="shape tri"></div>
+    <span>Engineering</span>
+  </div>
+</div>
+
+<style>
+  .set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    animation: usc-bob 5s ease-in-out infinite;
+  }
+  .item span {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .circle {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--blue-zodiac);
+  }
+  .hex {
+    width: 104px;
+    height: 92px;
+    background: var(--robot-white);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  }
+  .tri {
+    width: 104px;
+    height: 96px;
+    background: var(--ruby-red);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+</style>

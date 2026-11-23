@@ -12,6 +12,8 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **The repo is public** (decided 23 Nov 2026) because GitHub Free only protects branches on public repos. Everything committed is world-readable, including commit author emails. The pre-publication history lives in the private `USC-Webdev/usc-website-private-archive`; do not make that repo public.
 - **Accounts:** the repo and Vercel project belong to the USC webdev account. Commits in this repo must be authored with that account's email.
 - **Hosting:** Vercel project `usc-website` (team `usc-webdev`), connected to `USC-Webdev/usc-website`. Temporary production URL: https://usc-website-nine.vercel.app. The four Keystatic variables are set for Production and Preview.
+- **Placeholders:** missing assets (white logo, ministry marks, hero images, video titles) render through `Placeholder.astro`, `MinistryMark.astro` or a `.ph-badge`, and carry `data-placeholder`. Before launch, `grep -r data-placeholder dist/` must come back empty.
+- **Design system:** components in `src/components/`, shown on `/styleguide` (noindex). Tokens in `src/styles/tokens.css`. Fonts self-hosted through Astro's `fonts` config.
 - **Never commit `.env`.** Required variables are listed in `README.md`.
 - **Ask Noel before** creating accounts, changing DNS, or changing repo visibility.
 
@@ -27,6 +29,6 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 Owner account: USC-Webdev. Editor account: nwalling (write access). Run on the repo while it was private and unprotected.
 
 - **Owner merge commit deploys.** An editor's commit on a `content/` branch, merged by USC-Webdev with a merge commit, deployed to production.
-- **Editor commits do not deploy on their own.** The editor's branch got no preview ("Deployment was blocked"), and an editor commit made straight to `main` was also blocked. Expect no Vercel previews on editor branches.
+- **Editor commits do not deploy on their own** while the repo was private: the editor's branch got no preview ("Deployment was blocked"). After the repo went public, an editor's `content/` branch did get a Vercel preview. Production only changes on owner merges.
 - **Keystatic only forces a branch when `main` is protected.** `branchPrefix` just prefixes the names of branches created in the branch picker. On an unprotected `main`, a save commits to `main`. With protection, GitHub rejects the commit and Keystatic prompts the editor to create a new branch. This is why the repo is public and protected.
 - **Keystatic login works on the deployed site** for both accounts.

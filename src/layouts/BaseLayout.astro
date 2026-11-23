@@ -1,0 +1,60 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Dock from '../components/Dock.astro';
+import { getSite } from '../lib/site';
+import type { NavLink } from '../lib/types';
+
+interface Props {
+  title: string;
+  description?: string;
+  dock?: NavLink[];
+  noindex?: boolean;
+}
+const { title, description, dock = [], noindex = false } = Astro.props;
+const { settings, nav } = await getSite();
+const fullTitle = title === 'United Space Confederation' ? title : `${title} | United Space Confederation`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.png', Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1B2E59" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="United Space Confederation" />
+    <meta property="og:title" content={fullTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <Font cssVariable="--font-orbitron" preload={[{ weight: 900 }, { weight: 700 }]} />
+    <Font cssVariable="--font-serif" preload={[{ weight: 400, style: 'normal' }]} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader nav={nav} settings={settings} currentPath={Astro.url.pathname} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    {dock.length > 0 && <Dock items={dock} />}
+    <SiteFooter settings={settings} />
+  </body>
+</html>
+
+<style>
+  main:focus {
+    outline: none;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+// Decorative coin stack for the Treasure card. The top coin bobs.
+---
+
+<div class="stack">
+  {[5, 4, 3, 2, 1].map((z, i) => <div class:list={['coin', { top: i === 0 }]} style={`z-index:${z}`} />)}
+</div>
+
+<style>
+  .stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .coin {
+    position: relative;
+    width: 220px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--sunshade);
+    border: 3px solid var(--blue-zodiac);
+    margin-top: -52px;
+  }
+  .coin.top {
+    margin-top: 0;
+    margin-bottom: 8px;
+    animation: usc-bob 4s ease-in-out infinite;
+  }
+</style>

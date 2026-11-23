@@ -1,0 +1,43 @@
+---
+// A clearly marked stand-in for a missing asset. Remove before launch.
+interface Props {
+  label: string;
+  ratio?: string;
+  tone?: 'light' | 'dark';
+  class?: string;
+}
+const { label, ratio = '16 / 9', tone = 'light', class: className } = Astro.props;
+---
+
+<div
+  class:list={['placeholder', tone, className]}
+  style={`aspect-ratio: ${ratio}`}
+  data-placeholder={label}
+  role="img"
+  aria-label={`Placeholder: ${label}`}
+>
+  <span class="ph-badge">Placeholder</span>
+  <span class="ph-text">{label}</span>
+</div>
+
+<style>
+  .placeholder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    text-align: center;
+    background: repeating-linear-gradient(135deg, #718396 0 18px, #647589 18px 36px);
+    color: var(--white);
+  }
+  .ph-text {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    max-width: 28ch;
+    background: var(--blue-zodiac);
+    padding: 4px 8px;
+  }
+</style>
