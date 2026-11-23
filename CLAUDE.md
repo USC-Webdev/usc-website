@@ -7,7 +7,8 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Rendering:** public pages are prerendered. Only the Keystatic routes run as Vercel functions.
 - **Content:** every Keystatic schema in `keystatic.config.ts` has a matching schema in `src/content.config.ts`. Change both together.
 - **Images:** Keystatic image fields store under `src/assets/images/<collection>`; render with `astro:assets`. `npm run check-images` enforces 1.5 MB and 3840px limits.
-- **Workflow:** one pull request per phase; `main` is protected; merge commits only, never squash (Vercel Hobby deploys only commits authored by the account owner).
+- **Workflow:** one pull request per phase; merge commits only, never squash (Vercel Hobby deploys only commits authored by the account owner). Squash and rebase merges are disabled in the repo settings.
+- **`main` is not protected.** GitHub Free does not allow branch protection on a private repo, and Noel chose on 23 Nov 2026 to keep the repo private and unprotected. Never push to `main` directly; always go through a pull request.
 - **Accounts:** the repo and Vercel project belong to the USC webdev account. Commits in this repo must be authored with that account's email.
 - **Never commit `.env`.** Required variables are listed in `README.md`.
 - **Ask Noel before** creating accounts, changing DNS, or changing repo visibility.
