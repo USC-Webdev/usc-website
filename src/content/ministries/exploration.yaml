@@ -3,6 +3,7 @@ menuLabel: Exploration
 fullName: Ministry of Intelligence and Exploration
 abbreviation: MIE
 summary: Research, intelligence and discovery.
+mark: ../../assets/images/ministries/exploration/mark.png
 order: 3
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
