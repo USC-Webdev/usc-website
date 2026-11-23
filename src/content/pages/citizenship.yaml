@@ -1,8 +1,7 @@
 title: Citizenship
 description: How to become a citizen of the United Space Confederation, and the rules every citizen follows.
 heroLines:
-  - Citizen
-  - ship
+  - Citizenship
 hero:
   image: ../../assets/images/pages/citizenship/hero/image.jpg
   alt: A USC citizen in a ship cockpit
