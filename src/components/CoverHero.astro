@@ -148,11 +148,17 @@ const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit
     opacity: 0;
     transition: opacity 0.2s;
   }
-  /* The credit is hover text: shown while the pointer is over the hero.
+  /* The credit is hover text on mouse devices: shown while the pointer is over the hero.
      It stays in the page for screen readers, and in the title tooltip. */
   .stage:hover .credit,
   .stage:focus-within .credit {
     opacity: 1;
+  }
+  /* Touch screens cannot hover, so the credit is always shown there. */
+  @media (hover: none) {
+    .credit {
+      opacity: 1;
+    }
   }
   .title {
     position: relative;

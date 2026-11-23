@@ -3,6 +3,7 @@ menuLabel: Engineering
 fullName: Ministry of Engineering and Support
 abbreviation: MES
 summary: All operational support activities within the Confederation.
+mark: ../../assets/images/ministries/engineering/mark.png
 order: 5
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.

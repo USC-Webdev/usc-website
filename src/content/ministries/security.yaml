@@ -3,6 +3,7 @@ menuLabel: Security
 fullName: Ministry of Security Services
 abbreviation: MSS
 summary: The general security of USC interests and the combat preparedness of the Confederation.
+mark: ../../assets/images/ministries/security/mark.png
 order: 2
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.

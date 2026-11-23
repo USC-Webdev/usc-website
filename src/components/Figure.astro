@@ -61,4 +61,10 @@ const creditText = credit ? `In game image by USC-Citizen: ${credit}` : undefine
   .media:hover .credit {
     opacity: 1;
   }
+  /* Touch screens cannot hover, so the credit is always shown there. */
+  @media (hover: none) {
+    .credit {
+      opacity: 1;
+    }
+  }
 </style>

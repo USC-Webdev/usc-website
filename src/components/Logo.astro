@@ -1,45 +1,30 @@
 ---
 import { Image } from 'astro:assets';
-import logoFormat1 from '../assets/brand/Logos_on_White_Main_Logo_USC_Format1_W.png';
+import logoWhite from '../assets/brand/logo-white.png';
+import logoBlue from '../assets/brand/Logos_on_White_Main_Logo_USC_Format1_W.png';
 
-// Only the blue-on-white logo exists so far. On Blue Zodiac it sits on a white
-// plate (the brand allows the logo on the white brand colour) and is marked as
-// a placeholder until the white-on-Blue-Zodiac file is supplied.
+// Format 1 lockup. Header: white logo on Blue Zodiac, 64px. Footer: blue
+// logo on Robot White, 96px. Files come from the org's logo package
+// (scripts/make-brand-assets.mjs).
 interface Props {
   variant: 'header' | 'footer';
 }
 const { variant } = Astro.props;
-const height = variant === 'header' ? 64 : 96;
 ---
 
 {
   variant === 'header' ? (
-    <span class="plate" data-placeholder="White logo for Blue Zodiac (Format 1)">
-      <Image src={logoFormat1} alt="United Space Confederation" height={height} densities={[1, 2]} loading="eager" />
-      <span class="ph-badge">Placeholder</span>
-    </span>
+    <Image src={logoWhite} alt="United Space Confederation" height={64} densities={[1, 2, 3]} loading="eager" class="header-logo" />
   ) : (
-    <Image src={logoFormat1} alt="United Space Confederation" height={height} densities={[1, 2]} class="footer-logo" />
+    <Image src={logoBlue} alt="United Space Confederation" height={96} densities={[1, 2]} class="footer-logo" />
   )
 }
 
 <style>
-  .plate {
-    position: relative;
-    display: block;
-    background: var(--white);
-    padding: 10px 14px;
-  }
-  .plate img {
-    height: 44px;
+  .header-logo {
+    height: 64px;
     width: auto;
-  }
-  .plate .ph-badge {
-    position: absolute;
-    right: -6px;
-    bottom: -10px;
-    font-size: 9px;
-    padding: 2px 6px;
+    max-width: 100%;
   }
   .footer-logo {
     height: 96px;
@@ -47,8 +32,8 @@ const height = variant === 'header' ? 64 : 96;
     max-width: 100%;
     object-fit: contain;
   }
-  @media (min-width: 720px) {
-    .plate img {
+  @media (max-width: 480px) {
+    .header-logo {
       height: 52px;
     }
   }

@@ -3,6 +3,7 @@ menuLabel: Commerce
 fullName: Ministry of Interstellar Commerce
 abbreviation: MIC
 summary: The business and money side of the USC, and general asset management.
+mark: ../../assets/images/ministries/commerce/mark.png
 order: 4
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.

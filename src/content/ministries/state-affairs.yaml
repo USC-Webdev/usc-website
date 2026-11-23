@@ -3,6 +3,7 @@ menuLabel: State Affairs
 fullName: Ministry of State Affairs
 abbreviation: MSA
 summary: "Out-of-game support and content creation: diplomacy, immigration and the CMN."
+mark: ../../assets/images/ministries/state-affairs/mark.png
 order: 6
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
