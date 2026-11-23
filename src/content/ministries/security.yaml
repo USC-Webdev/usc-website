@@ -1,0 +1,22 @@
+title: Security Services
+menuLabel: Security
+fullName: Ministry of Security Services
+abbreviation: MSS
+summary: The general security of USC interests and the combat preparedness of the Confederation.
+mark: null
+order: 2
+workInProgress: true
+workInProgressNote: More information will be posted as the game develops.
+hero:
+  image: ../../assets/images/ministries/security/hero/image.jpg
+  alt: USC ships in formation above a planet
+  credit: Hadwin
+overview: |
+  The Ministry of Security Services (MSS) is responsible for the general security of USC interests and the combat preparedness of the Confederation.
+officesHeading: Departments
+offices:
+  - name: Office of Naval Planning
+    body: |
+      Oversees Ship Combat readiness by overseeing capital ship operations, Fighter squadron missions and assignments, and other general ship defensive/offensive tactical operations.
+closing: ''
+gallery: []

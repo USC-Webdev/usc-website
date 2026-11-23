@@ -18,6 +18,12 @@ The site runs at http://localhost:4321 and the editor at http://localhost:4321/k
 | `npm run build` | Production build |
 | `npm run check-images` | Fails if an image under `src/assets/images` is over 1.5 MB or wider than 3840px |
 
+To edit content on disk instead of GitHub while developing (for example to test a schema change), run:
+
+```bash
+PUBLIC_KEYSTATIC_LOCAL=true npm run dev
+```
+
 Vercel runs functions on Node 24, so use Node 24 locally where possible.
 
 ## Environment variables

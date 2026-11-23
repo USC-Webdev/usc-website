@@ -1,0 +1,40 @@
+title: Newsletter Q3 2956
+quarter: Q3
+year: 2956
+issueNumber: 29563
+published: 2956-09-30
+summary: The latest USC newsletter.
+cover:
+  image: ../../assets/images/newsletters/newsletter-q3-2956/cover/image.jpg
+  alt: The Senate chamber, seen from the speaker's platform
+intro: |
+  News from around the Confederation.
+sections:
+  - heading: The Office Of The Chancellor
+    body: >
+      Dear Citizens,
+
+
+      In this quarter we've experienced a confident and continued up tick in
+      activity across the board throughout the confederation.
+    gallery: []
+  - heading: Welcome New Citizens
+    body: >
+      The USC is proud to welcome the following new citizens to the United Space
+      Confederation!
+    gallery:
+      - image: >-
+          ../../assets/images/newsletters/newsletter-q3-2956/sections/1/gallery/0/image.jpg
+        alt: Certificate of citizenship
+      - image: >-
+          ../../assets/images/newsletters/newsletter-q3-2956/sections/1/gallery/1/image.jpg
+        alt: Certificate of citizenship
+  - heading: USC Goes on Patrol
+    kicker: Featured event
+    body: >
+      The newly commissioned Idris class frigate USCS-Maelstrom is heading up a
+      fleet for the first time into Nyx.
+    gallery:
+      - image: >-
+          ../../assets/images/newsletters/newsletter-q3-2956/sections/2/gallery/0/image.jpg
+        alt: Screenshot from the USC patrol into Nyx

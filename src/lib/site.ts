@@ -1,22 +1,35 @@
-import type { SiteNav, SiteSettings } from './types';
+import { getMinistries, getNewsletters, getSingleton, ministryHref, newsletterHref } from './content';
+import type { Channel, SiteNav, SiteSettings } from './types';
 
-// Phase 2: static defaults so the design system can be built before the
-// content model. Phase 3 replaces these with Keystatic content.
-export async function getSite(): Promise<{ settings: SiteSettings; nav: SiteNav }> {
+let cached: Promise<{ settings: SiteSettings; nav: SiteNav }> | undefined;
+
+/** Site-wide settings and menu, built from Keystatic content. */
+export function getSite() {
+  cached ??= load();
+  return cached;
+}
+
+async function load(): Promise<{ settings: SiteSettings; nav: SiteNav }> {
+  const s = await getSingleton('siteSettings');
+  const channelList: [string, string][] = [
+    ['YouTube', s.youtube],
+    ['Instagram', s.instagram],
+    ['X / Twitter', s.x],
+    ['Patreon', s.patreon],
+    ['Swag Store', s.swagStore],
+    ['Galactic Senate', s.galacticSenate],
+  ];
+  const channels: Channel[] = channelList.filter(([, href]) => href).map(([label, href]) => ({ label, href }));
   const settings: SiteSettings = {
-    applicationUrl: 'https://forms.gle/zfYYm6SCNMQfhEMWA',
-    contactEmail: 'consulofpeace@unitedspaceconfederation.org',
-    tagline: 'EQUALITY.PROSPERITY.FREEDOM',
-    footerText: '',
-    channels: [
-      { label: 'YouTube', href: 'https://www.youtube.com/channel/UCR7NViQANVRSMB84wMFCS-A' },
-      { label: 'Instagram', href: 'https://www.instagram.com/theunitedspaceconfederation' },
-      { label: 'X / Twitter', href: 'https://twitter.com/usc_starcitizen' },
-      { label: 'Patreon', href: 'https://www.patreon.com/UnitedSpaceConfederation' },
-      { label: 'Swag Store', href: 'https://www.redbubble.com/people/LandscaperUSC/explore' },
-      { label: 'Galactic Senate', href: 'https://robertsspaceindustries.com/orgs/SENATE' },
-    ],
+    applicationUrl: s.applicationUrl,
+    contactEmail: s.contactEmail,
+    tagline: s.tagline,
+    footerText: s.footerText,
+    channels,
   };
+
+  const ministries = await getMinistries();
+  const newsletters = await getNewsletters();
   const nav: SiteNav = {
     pages: [
       { href: '/home', label: 'Home' },
@@ -27,17 +40,15 @@ export async function getSite(): Promise<{ settings: SiteSettings; nav: SiteNav 
       { href: '/citizenship', label: 'Citizenship' },
       { href: '/media-network', label: 'Media Network' },
     ],
-    ministries: [
-      { href: '/ministries/usc-navy', label: 'USC Navy', abbreviation: 'NAVY' },
-      { href: '/ministries/security', label: 'Security', abbreviation: 'MSS' },
-      { href: '/ministries/exploration', label: 'Exploration', abbreviation: 'MIE' },
-      { href: '/ministries/commerce', label: 'Commerce', abbreviation: 'MIC' },
-      { href: '/ministries/engineering', label: 'Engineering', abbreviation: 'MES' },
-      { href: '/ministries/state-affairs', label: 'State Affairs', abbreviation: 'MSA' },
-    ],
+    ministries: ministries.map((m) => ({
+      href: ministryHref(m.id),
+      label: m.data.menuLabel,
+      abbreviation: m.data.abbreviation,
+      mark: m.data.mark ?? undefined,
+    })),
     media: [
       { href: '/media-network/the-citizen-compass', label: 'The Citizen Compass' },
-      { href: '/media-network/newsletter-q3-2956', label: 'Newsletter Q3 2956' },
+      ...newsletters.map((n) => ({ href: newsletterHref(n.id), label: n.data.title })),
     ],
   };
   return { settings, nav };
