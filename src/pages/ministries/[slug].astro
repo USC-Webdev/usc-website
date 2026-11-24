@@ -36,8 +36,6 @@ const lines = m.title.split(/\s+/).reduce<string[]>((acc, word) => {
 
 <BaseLayout title={m.fullName} description={m.summary || undefined}>
   <CoverHero
-    eyebrow={m.fullName}
-    edition={m.abbreviation}
     lines={lines}
     image={{ src: m.hero.image, alt: m.hero.alt, credit: m.hero.credit, creditStatus: m.hero.creditStatus }}
     size="small"

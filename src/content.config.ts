@@ -72,7 +72,6 @@ const home = defineCollection({
   schema: ({ image }) =>
     z.object({
       ...seo,
-      eyebrow: text(),
       heroKicker: text(),
       heroLines: lines(),
       hero: heroSchema(image),
@@ -197,7 +196,6 @@ const mediaNetwork = defineCollection({
   schema: ({ image }) =>
     z.object({
       ...seo,
-      eyebrow: text(),
       heroKicker: text(),
       heroLines: lines(),
       hero: heroSchema(image),

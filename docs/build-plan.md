@@ -164,7 +164,7 @@ Port each from `usc-mockup-a-reference.html`. That file is a design-canvas expor
 |---|---|
 | `SiteHeader` | Logo, Menu button, "Application + Discord" button. On Blue Zodiac. |
 | `MenuPanel` | Opens under the header. Robot White panel: page links in Orbitron 900, ministries with their marks, Media Network sub-pages. Needs a small client script; must work with keyboard and close on Escape. |
-| `CoverHero` | Props: eyebrow, title lines, image, credit, section labels. |
+| `CoverHero` | Props: kicker, title lines, image, credit, section labels. |
 | `SectionHead` | Numeral + title, optional aside. Light and dark variants. |
 | `RailBlock` | Label rail + content. |
 | `IndexRow` | Number, title, sentence, hexagon arrow. Whole row is the link. |

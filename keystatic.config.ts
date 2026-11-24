@@ -146,7 +146,6 @@ export default config({
       format: { data: 'yaml' },
       schema: {
         ...seo,
-        eyebrow: fields.text({ label: 'Hero eyebrow' }),
         heroKicker: fields.text({ label: 'Hero small line' }),
         heroLines: fields.array(fields.text({ label: 'Line' }), { label: 'Hero title lines', itemLabel: (p) => p.value }),
         hero: hero('pages/home'),
@@ -312,7 +311,6 @@ export default config({
       format: { data: 'yaml' },
       schema: {
         ...seo,
-        eyebrow: fields.text({ label: 'Hero eyebrow', defaultValue: 'Confederation Media Network' }),
         heroKicker: fields.text({ label: 'Hero small line', defaultValue: 'Confederation' }),
         heroLines: fields.array(fields.text({ label: 'Line' }), { label: 'Hero title lines', itemLabel: (p) => p.value }),
         hero: hero('pages/media-network'),

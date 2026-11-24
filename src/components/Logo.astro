@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import logoWhite from '../assets/brand/logo-white.png';
+import markWhite from '../assets/brand/mark-white.png';
 import logoBlue from '../assets/brand/Logos_on_White_Main_Logo_USC_Format1_W.png';
 
-// Format 1 lockup. Header: white logo on Blue Zodiac, 64px. Footer: blue
+// Format 1 lockup. Header: white logo on Blue Zodiac, 64px; on phones the
+// emblem alone, so the header buttons fit beside it. Footer: blue
 // logo on Robot White, 96px. Files come from the org's logo package
 // (scripts/make-brand-assets.mjs).
 interface Props {
@@ -14,7 +16,10 @@ const { variant } = Astro.props;
 
 {
   variant === 'header' ? (
-    <Image src={logoWhite} alt="United Space Confederation" height={64} densities={[1, 2, 3]} loading="eager" class="header-logo" />
+    <>
+      <Image src={logoWhite} alt="United Space Confederation" height={64} densities={[1, 2, 3]} loading="eager" class="header-logo" />
+      <Image src={markWhite} alt="United Space Confederation" height={48} densities={[1, 2, 3]} loading="eager" class="header-mark" />
+    </>
   ) : (
     <Image src={logoBlue} alt="United Space Confederation" height={96} densities={[1, 2]} class="footer-logo" />
   )
@@ -32,9 +37,18 @@ const { variant } = Astro.props;
     max-width: 100%;
     object-fit: contain;
   }
-  @media (max-width: 480px) {
+  .header-mark {
+    display: none;
+    height: 48px;
+    width: auto;
+  }
+  @media (max-width: 640px) {
     .header-logo {
-      height: 52px;
+      display: none;
+    }
+    .header-mark {
+      display: block;
+      height: clamp(36px, 11vw, 48px);
     }
   }
 </style>

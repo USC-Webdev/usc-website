@@ -10,12 +10,10 @@ import { getSingleton } from '../../lib/content';
 import { renderMarkdoc } from '../../lib/markdoc';
 
 const page = await getSingleton('citizenCompass');
-const media = await getSingleton('mediaNetwork');
 ---
 
 <BaseLayout title={page.title} description={page.description}>
   <CoverHero
-    eyebrow={media.eyebrow}
     kicker="The"
     lines={page.heroLines}
     image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
