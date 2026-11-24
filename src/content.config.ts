@@ -266,6 +266,7 @@ const newsletters = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: req(),
+      visible: z.boolean().default(true),
       quarter: z.enum(['Q1', 'Q2', 'Q3', 'Q4']),
       year: z.number().int(),
       issueNumber: z.number().int().nullish(),

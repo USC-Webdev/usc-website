@@ -39,9 +39,14 @@ If you forget and try to save on `main`, Keystatic stops you and asks you to cre
    - **Body**: write normally. Use the toolbar for bold, italics, lists and links. Headings inside a section are Heading 3 or Heading 4.
    - **Gallery**: click **Add** for each image.
 4. Drag sections to reorder them.
-5. Click **Create** (or **Save** when editing).
+5. **Published on the site** is ticked by default. Untick it while the issue is unfinished: a draft is saved but appears nowhere on the site. Tick it again when the issue is ready.
+6. Click **Create** (or **Save** when editing).
 
-The newest newsletter appears on the Media Network page automatically, and the menu lists every issue.
+The newest published newsletter appears on the Media Network page automatically, the previous one moves under **Back issues**, and the menu lists every published issue.
+
+### Publishing straight to the live site (USC-Webdev account)
+
+Signed in to Keystatic as **USC-Webdev**, you skip the branch step: stay on `main`, add the issue as above with **Published on the site** ticked, and click **Create**. The site rebuilds and the issue is live in about two minutes. Editors' saves always go to a branch that USC-Webdev approves and merges (see sections 6 and 7); that is what puts their work live.
 
 ## 4. Images
 

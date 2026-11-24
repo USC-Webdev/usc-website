@@ -25,9 +25,9 @@ export async function getSingleton<K extends SingletonKey>(key: K): Promise<Coll
 
 const quarterIndex = { Q1: 1, Q2: 2, Q3: 3, Q4: 4 } as const;
 
-/** Newsletters, newest first (by in-universe year and quarter). */
+/** Published newsletters, newest first (by in-universe year and quarter). Drafts are left out everywhere. */
 export async function getNewsletters() {
-  const all = await getCollection('newsletters');
+  const all = await getCollection('newsletters', (n) => n.data.visible);
   return all.sort((a, b) => b.data.year - a.data.year || quarterIndex[b.data.quarter] - quarterIndex[a.data.quarter]);
 }
 
