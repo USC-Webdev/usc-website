@@ -57,6 +57,7 @@ The newest newsletter appears on the Media Network page automatically, and the m
 | Videos | Videos of the Month. The two with the newest **Month** are shown. Paste the YouTube ID (the part after `v=`). |
 | Media Network page, The Citizen Compass page | Text on those pages. |
 | Pages | Home, Our Vision, Leadership, Policies, Citizenship, Ministries. |
+| Pages → Organization chart (interactive) | The org chart on the Ministries page: who holds each post, which offices are open, tiers and descriptions. Change a holder or set an office to Open here when people move. |
 | Settings → Site settings | Application form link, contact email, social links. Ask the webdev team first. |
 
 ## Copy rules

@@ -146,6 +146,35 @@ const policies = defineCollection({
     }),
 });
 
+const orgChart = defineCollection({
+  loader: glob(single('org-chart')),
+  schema: z.object({
+    version: text(),
+    bodiesNote: text(),
+    bodies: list(z.object({ name: req(), holder: text(), description: text(), duties: lines() })),
+    branches: list(
+      z.object({
+        name: req(),
+        short: text(),
+        role: text(),
+        holder: text(),
+        tier: z.enum(['1', '2', '3']),
+        description: text(),
+        duties: lines(),
+        offices: list(
+          z.object({
+            name: req(),
+            note: text(),
+            holder: text(),
+            status: z.enum(['filled', 'open', 'wip', 'none']),
+            description: text(),
+          }),
+        ),
+      }),
+    ),
+  }),
+});
+
 const citizenship = defineCollection({
   loader: glob(single('citizenship')),
   schema: ({ image }) =>
@@ -288,6 +317,7 @@ export const collections = {
   ministriesIndex,
   policies,
   citizenship,
+  orgChart,
   mediaNetwork,
   citizenCompass,
   ministries,

@@ -7,8 +7,7 @@ import SectionHead from '../../components/SectionHead.astro';
 import RailBlock from '../../components/RailBlock.astro';
 import IndexRow from '../../components/IndexRow.astro';
 import Prose from '../../components/Prose.astro';
-import Gallery from '../../components/Gallery.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import OrgExplorer from '../../components/OrgExplorer.astro';
 import CapsuleBand from '../../components/CapsuleBand.astro';
 import NumberedSections from '../../components/NumberedSections.astro';
 import JoinBand from '../../components/JoinBand.astro';
@@ -62,17 +61,26 @@ const chartNum = sectionStart + page.sections.length;
 
   <NumberedSections sections={page.sections} start={sectionStart} />
 
-  <section class="wrap block block-last" id={`s-${chartNum}`}>
-    <SectionHead num={`${chartNum}.0`} title={page.orgChartHeading} />
-    {page.orgChart.length > 0 ? <Gallery items={page.orgChart} /> : <Placeholder label="USC organization chart image" ratio="16 / 7" />}
+  <div class="block"></div>
+  <CapsuleBand seed={2952} />
+
+  <section class="dark-section on-dark" id={`s-${chartNum}`}>
+    <div class="wrap inner">
+      <SectionHead num={`${chartNum}.0`} title={page.orgChartHeading} tone="dark" />
+      <OrgExplorer fullChartHref={page.orgChart[0]?.image.src} />
+    </div>
   </section>
 
-  <CapsuleBand seed={2952} />
+  <div class="divider" aria-hidden="true"></div>
   <JoinBand links={[{ href: '/leadership', label: 'Leadership' }]} />
 </BaseLayout>
 
 <style>
   .rows {
     padding-top: 40px;
+  }
+  .divider {
+    height: 1px;
+    background: var(--steel-grey);
   }
 </style>
