@@ -56,8 +56,8 @@ const { nav, settings, currentPath } = Astro.props;
     color: var(--white);
   }
   .bar {
-    padding-top: 24px;
-    padding-bottom: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -109,12 +109,27 @@ const { nav, settings, currentPath } = Astro.props;
   .site-header :focus-visible {
     outline-color: var(--white);
   }
-  @media (max-width: 480px) {
+  @media (max-width: 640px) {
+    .bar {
+      flex-wrap: nowrap;
+      gap: 8px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .home-link {
+      flex: none;
+      padding: 4px 0;
+    }
+    .actions {
+      flex-wrap: nowrap;
+      gap: 8px;
+    }
     .menu-btn,
     .apply {
-      padding: 0 16px;
-      font-size: 12px;
-      letter-spacing: 0.06em;
+      padding: 0 clamp(8px, 2.6vw, 14px);
+      font-size: clamp(10px, 3vw, 12px);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
   }
 </style>

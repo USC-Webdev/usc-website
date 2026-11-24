@@ -20,6 +20,23 @@ const WHITE = '#FFFFFF';
 // Header logo: white Format 1 lockup on transparent.
 await sharp('USC Main Logo/Banner_Layer 1.png').trim().resize({ height: 192 }).png({ compressionLevel: 9 }).toFile('src/assets/brand/logo-white.png');
 
+// Phone header: the emblem alone, cut from the lockup at the first empty
+// column run (the gap between the emblem and the wordmark).
+{
+  const { data, info } = await sharp('src/assets/brand/logo-white.png').ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const filled = (x) => {
+    for (let y = 0; y < info.height; y++) if (data[(y * info.width + x) * 4 + 3] > 20) return true;
+    return false;
+  };
+  let x = 0;
+  while (x < info.width && filled(x)) x++;
+  await sharp('src/assets/brand/logo-white.png')
+    .extract({ left: 0, top: 0, width: x, height: info.height })
+    .trim()
+    .png({ compressionLevel: 9 })
+    .toFile('src/assets/brand/mark-white.png');
+}
+
 // Ministry marks: each "WHITE BACKGROUND" sheet holds three lockups stacked
 // vertically on solid white; the bottom one is the mark beside the
 // abbreviation. Find that band, then the mark at its left (separated from the

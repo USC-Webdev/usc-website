@@ -7,15 +7,13 @@ import type { HeroImage, NavLink } from '../lib/types';
 // section labels along the bottom. "small" is the compact variant used by the
 // long-form, citizenship and compass templates.
 interface Props {
-  eyebrow: string;
-  edition?: string;
   kicker?: string;
   lines: string[];
   image?: HeroImage;
   sections?: NavLink[];
   size?: 'full' | 'small';
 }
-const { eyebrow, edition, kicker, lines, image, sections = [], size = 'full' } = Astro.props;
+const { kicker, lines, image, sections = [], size = 'full' } = Astro.props;
 // Shrink the title so its longest line fits the page width (Orbitron 900 caps are about 1em wide).
 const longest = Math.max(...lines.map((l) => l.length), 1);
 const fit = `calc((min(100vw, 1392px) - 48px) / ${(longest * 1.04).toFixed(2)})`;
@@ -27,17 +25,6 @@ const creditText = image?.credit ? `In game image by USC-${image.creditStatus ??
 
 <section class:list={['hero', size, 'on-dark']}>
   <div class="wrap">
-    <div class="eyebrow label">
-      <span>{eyebrow}</span>
-      {
-        edition && (
-          <span class="edition">
-            <span class="dot" aria-hidden="true" />
-            {edition}
-          </span>
-        )
-      }
-    </div>
     <div class="stage" title={creditText}>
       <figure class="frame">
         {
@@ -79,27 +66,6 @@ const creditText = image?.credit ? `In game image by USC-${image.creditStatus ??
     background: var(--blue-zodiac);
     color: var(--white);
     padding-bottom: 32px;
-  }
-  .eyebrow {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 16px;
-    letter-spacing: 0.14em;
-    text-transform: none;
-    padding: 16px 0 24px;
-  }
-  .edition {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--ruby-red);
-    animation: usc-blink 1.4s steps(2) infinite;
   }
   .stage {
     position: relative;
