@@ -110,7 +110,7 @@ export default config({
     brand: { name: 'USC' },
     navigation: {
       'Media Network': ['newsletters', 'newsUpdates', 'videos', 'mediaNetwork', 'citizenCompass'],
-      Pages: ['home', 'ourVision', 'leadership', 'policies', 'citizenship', 'ministriesIndex', 'ministries'],
+      Pages: ['home', 'ourVision', 'leadership', 'policies', 'citizenship', 'ministriesIndex', 'orgChart', 'ministries'],
       Settings: ['siteSettings'],
     },
   },
@@ -227,6 +227,64 @@ export default config({
         internal: sections('Internal policies'),
         externalHeading: fields.text({ label: 'External policies heading' }),
         external: sections('External policies'),
+      },
+    }),
+
+    orgChart: singleton({
+      label: 'Organization chart (interactive)',
+      path: page('org-chart'),
+      format: { data: 'yaml' },
+      schema: {
+        version: fields.text({ label: 'Version line', defaultValue: 'USC organization chart v4 · January 2955' }),
+        bodiesNote: fields.text({ label: 'Note under the governing bodies', multiline: true }),
+        bodies: fields.array(
+          fields.object({
+            name: fields.text({ label: 'Name', validation: { length: { min: 1 } } }),
+            holder: fields.text({ label: 'Who sits in it' }),
+            description: fields.text({ label: 'Description', multiline: true }),
+            duties: fields.array(fields.text({ label: 'Duty' }), { label: 'Duties', itemLabel: (p) => p.value }),
+          }),
+          { label: 'Governing bodies', itemLabel: (p) => p.fields.name.value || 'Body' },
+        ),
+        branches: fields.array(
+          fields.object({
+            name: fields.text({ label: 'Name', validation: { length: { min: 1 } } }),
+            short: fields.text({ label: 'Short name', description: 'Shown in the branch list.' }),
+            role: fields.text({ label: 'Title of the post', description: 'e.g. Consul of Peace' }),
+            holder: fields.text({ label: 'Holder', description: 'Leave empty if the post is open.' }),
+            tier: fields.select({
+              label: 'Tier',
+              options: [
+                { label: 'Tier I · Support', value: '1' },
+                { label: 'Tier II · Sandbox content', value: '2' },
+                { label: 'Tier III · Progression', value: '3' },
+              ],
+              defaultValue: '2',
+            }),
+            description: fields.text({ label: 'Description', multiline: true }),
+            duties: fields.array(fields.text({ label: 'Duty' }), { label: 'Duties', itemLabel: (p) => p.value }),
+            offices: fields.array(
+              fields.object({
+                name: fields.text({ label: 'Name', validation: { length: { min: 1 } } }),
+                note: fields.text({ label: 'Short note', description: 'e.g. Discord admin' }),
+                holder: fields.text({ label: 'Holder' }),
+                status: fields.select({
+                  label: 'Status',
+                  options: [
+                    { label: 'Filled', value: 'filled' },
+                    { label: 'Open', value: 'open' },
+                    { label: 'In development', value: 'wip' },
+                    { label: 'Not listed', value: 'none' },
+                  ],
+                  defaultValue: 'open',
+                }),
+                description: fields.text({ label: 'Description', multiline: true }),
+              }),
+              { label: 'Offices and departments', itemLabel: (p) => p.fields.name.value || 'Office' },
+            ),
+          }),
+          { label: 'Cabinet branches', itemLabel: (p) => p.fields.name.value || 'Branch' },
+        ),
       },
     }),
 

@@ -1,0 +1,654 @@
+---
+import { getSingleton } from '../lib/content';
+
+// Interactive org chart ("column explorer"): governing bodies, Cabinet
+// branches, and the selected one in detail with its offices. All panels are
+// in the HTML, so without JavaScript everything is readable in order; the
+// script shows one panel at a time and adds search and filters.
+interface Props {
+  fullChartHref?: string;
+}
+const { fullChartHref } = Astro.props;
+const chart = await getSingleton('orgChart');
+
+const TIER: Record<string, string> = { '0': 'Governing body', '1': 'Tier I · Support', '2': 'Tier II · Sandbox content', '3': 'Tier III · Progression' };
+const STATUS: Record<string, string> = { open: 'Open', wip: 'In development', filled: 'Filled', none: 'Not listed' };
+const initials = (s: string) =>
+  (s || '?')
+    .replace(/[^A-Za-z ]/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase() || '?';
+
+type Office = (typeof chart.branches)[number]['offices'][number];
+interface Unit {
+  key: string;
+  kind: 'body' | 'branch';
+  name: string;
+  short: string;
+  role: string;
+  holder: string;
+  tier: string;
+  description: string;
+  duties: string[];
+  offices: Office[];
+  open: number;
+  search: string;
+}
+const units: Unit[] = [
+  ...chart.bodies.map((b, i) => ({
+    key: `body-${i}`,
+    kind: 'body' as const,
+    name: b.name,
+    short: b.name,
+    role: '',
+    holder: b.holder,
+    tier: '0',
+    description: b.description,
+    duties: b.duties,
+    offices: [],
+    open: 0,
+    search: [b.name, b.holder].join(' ').toLowerCase(),
+  })),
+  ...chart.branches.map((b, i) => ({
+    key: `branch-${i}`,
+    kind: 'branch' as const,
+    name: b.name,
+    short: b.short || b.name,
+    role: b.role,
+    holder: b.holder,
+    tier: b.tier,
+    description: b.description,
+    duties: b.duties,
+    offices: b.offices,
+    open: (b.holder ? 0 : 1) + b.offices.filter((o) => o.status === 'open').length,
+    search: [b.name, b.short, b.role, b.holder, ...b.offices.flatMap((o) => [o.name, o.note, o.holder])].join(' ').toLowerCase(),
+  })),
+];
+const bodies = units.filter((u) => u.kind === 'body');
+const branches = units.filter((u) => u.kind === 'branch');
+const totalOpen = branches.reduce((n, u) => n + u.open, 0);
+const initial = branches.find((u) => u.role === 'Consul of Peace')?.key ?? branches[0]?.key ?? bodies[0]?.key;
+const tiers = [
+  { value: 'all', label: 'All tiers' },
+  { value: '1', label: 'Tier I' },
+  { value: '2', label: 'Tier II' },
+  { value: '3', label: 'Tier III' },
+];
+---
+
+<div class="org" data-org data-initial={initial}>
+  <div class="toolbar">
+    <span class="label version">{chart.version}</span>
+    <div class="controls">
+      <label class="search">
+        <span class="label">Find a person or office</span>
+        <input type="search" data-org-search placeholder="e.g. RidgeSix, Treasury" autocomplete="off" />
+      </label>
+      <div class="chips" role="group" aria-label="Filter by tier">
+        {
+          tiers.map((t) => (
+            <button type="button" class="chip" data-org-tier={t.value} aria-pressed={t.value === 'all' ? 'true' : 'false'}>
+              <span class:list={['dot', `t${t.value === 'all' ? '0' : t.value}`]} aria-hidden="true" />
+              {t.label}
+            </button>
+          ))
+        }
+        <button type="button" class="chip" data-org-open aria-pressed="false">
+          Open posts ({totalOpen})
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col col-bodies">
+      <span class="label col-head">Governing bodies</span>
+      {
+        bodies.map((u) => (
+          <button type="button" class="node" data-org-node={u.key} aria-controls={`org-${u.key}`} aria-pressed="false">
+            <span class="node-name big">{u.name}</span>
+            <span class="node-sub">{u.holder}</span>
+          </button>
+        ))
+      }
+      {chart.bodiesNote && <p class="note">{chart.bodiesNote}</p>}
+    </div>
+
+    <div class="col col-branches">
+      <span class="label col-head">Cabinet branches</span>
+      {
+        branches.map((u) => (
+          <button
+            type="button"
+            class="node"
+            data-org-node={u.key}
+            data-tier={u.tier}
+            data-open={u.open}
+            data-search={u.search}
+            aria-controls={`org-${u.key}`}
+            aria-pressed="false"
+          >
+            <span class="node-row">
+              <span class="node-name">{u.short}</span>
+              <span class:list={['dot', `t${u.tier}`]} aria-hidden="true" />
+            </span>
+            <span class="node-row node-sub">
+              <span>{u.holder || 'Open'}</span>
+              {u.open > 0 && <span class="open-count">{u.open} open</span>}
+            </span>
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="col col-detail">
+      {
+        units.map((u) => (
+          <section class="panel" id={`org-${u.key}`} data-org-panel={u.key} tabindex="-1" aria-labelledby={`org-${u.key}-h`}>
+            <div class="panel-head">
+              <span class="avatar" aria-hidden="true">
+                {u.kind === 'body' ? u.name.replace(/^USC /, '').slice(0, 2).toUpperCase() : initials(u.holder || u.role)}
+              </span>
+              <div class="panel-titles">
+                <span class="label tier">
+                  <span class:list={['dot', `t${u.tier}`]} aria-hidden="true" />
+                  {TIER[u.tier]}
+                </span>
+                <h3 class="panel-name" id={`org-${u.key}-h`}>
+                  {u.name}
+                </h3>
+                <span class="holder">
+                  {u.kind === 'body' ? u.holder : `${u.role ? u.role + ': ' : ''}${u.holder || 'Position open'}`}
+                </span>
+              </div>
+            </div>
+            {u.description && <p class="desc">{u.description}</p>}
+            {u.duties.length > 0 && (
+              <ul class="duties">
+                {u.duties.map((d) => (
+                  <li>{d}</li>
+                ))}
+              </ul>
+            )}
+            {u.offices.length > 0 && (
+              <div class="offices">
+                <span class="label col-head">Offices and departments</span>
+                {u.offices.map((o) => (
+                  <details class="office" data-status={o.status}>
+                    <summary>
+                      <span class="office-name">{o.name}</span>
+                      <span class:list={['pill', o.status]}>{STATUS[o.status]}</span>
+                    </summary>
+                    <div class="office-body">
+                      {(o.holder || o.note) && <span class="office-sub">{[o.holder, o.note].filter(Boolean).join(' · ')}</span>}
+                      {o.description && <span>{o.description}</span>}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            )}
+          </section>
+        ))
+      }
+      <p class="empty" data-org-empty hidden>No office or person matches that search.</p>
+    </div>
+  </div>
+
+  {
+    fullChartHref && (
+      <p class="full">
+        <a href={fullChartHref} target="_blank" rel="noopener">
+          Open the original chart<span class="visually-hidden"> (opens in a new tab)</span>
+        </a>
+      </p>
+    )
+  }
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-org]').forEach((root) => {
+    const nodes = [...root.querySelectorAll<HTMLButtonElement>('[data-org-node]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[data-org-panel]')];
+    const search = root.querySelector<HTMLInputElement>('[data-org-search]');
+    const tierButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-org-tier]')];
+    const openButton = root.querySelector<HTMLButtonElement>('[data-org-open]');
+    const empty = root.querySelector<HTMLElement>('[data-org-empty]');
+    let tier = 'all';
+    let openOnly = false;
+    root.classList.add('is-enhanced');
+
+    const select = (key: string, focus = false) => {
+      for (const n of nodes) n.setAttribute('aria-pressed', String(n.dataset.orgNode === key));
+      for (const p of panels) p.hidden = p.dataset.orgPanel !== key;
+      const panel = panels.find((p) => p.dataset.orgPanel === key);
+      if (focus && panel) {
+        panel.focus({ preventScroll: true });
+        if (window.matchMedia('(max-width: 900px)').matches) panel.scrollIntoView({ block: 'start' });
+      }
+    };
+
+    const filter = () => {
+      const q = (search?.value ?? '').trim().toLowerCase();
+      let shown = 0;
+      for (const n of nodes) {
+        if (!n.dataset.tier) continue; // governing bodies are always shown
+        const ok =
+          (tier === 'all' || n.dataset.tier === tier) &&
+          (!openOnly || Number(n.dataset.open) > 0) &&
+          (!q || (n.dataset.search ?? '').includes(q));
+        n.classList.toggle('is-dim', !ok);
+        if (ok) shown++;
+      }
+      for (const d of root.querySelectorAll<HTMLElement>('.office')) {
+        d.classList.toggle('is-dim', openOnly && d.dataset.status !== 'open');
+      }
+      if (empty) empty.hidden = !q || shown > 0;
+      // Jump to the first match when a search narrows the list.
+      if (q && shown > 0) {
+        const current = nodes.find((n) => n.getAttribute('aria-pressed') === 'true');
+        if (!current || current.classList.contains('is-dim')) {
+          const first = nodes.find((n) => n.dataset.tier && !n.classList.contains('is-dim'));
+          if (first) select(first.dataset.orgNode!);
+        }
+      }
+    };
+
+    nodes.forEach((n) => n.addEventListener('click', () => select(n.dataset.orgNode!, true)));
+    tierButtons.forEach((b) =>
+      b.addEventListener('click', () => {
+        tier = b.dataset.orgTier!;
+        tierButtons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        filter();
+      }),
+    );
+    openButton?.addEventListener('click', () => {
+      openOnly = !openOnly;
+      openButton.setAttribute('aria-pressed', String(openOnly));
+      filter();
+    });
+    search?.addEventListener('input', filter);
+
+    select(root.dataset.initial ?? nodes[0]?.dataset.orgNode ?? '');
+  });
+</script>
+
+<style>
+  .org {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    color: var(--white);
+  }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 32px;
+  }
+  .label {
+    color: var(--robot-white);
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .search {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .search input {
+    height: var(--target-min);
+    width: 260px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border: 1px solid rgba(225, 221, 223, 0.6);
+    border-radius: var(--r-control);
+    background: transparent;
+    color: var(--white);
+    font: 16px var(--font-body);
+  }
+  .search input::placeholder {
+    color: rgba(225, 221, 223, 0.75);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: var(--target-min);
+    padding: 0 16px;
+    border: 1px solid rgba(225, 221, 223, 0.6);
+    border-radius: var(--r-control);
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: var(--track-action);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .chip[aria-pressed='true'] {
+    background: var(--white);
+    color: var(--blue-zodiac);
+    border-color: var(--white);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 220px 340px minmax(0, 1fr);
+    border-top: 1px solid rgba(225, 221, 223, 0.32);
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 24px 0;
+    min-width: 0;
+  }
+  .col-bodies {
+    padding-left: 0;
+    border-right: 1px solid rgba(225, 221, 223, 0.32);
+    gap: 14px;
+  }
+  .col-branches {
+    border-right: 1px solid rgba(225, 221, 223, 0.32);
+  }
+  .col-detail {
+    padding-left: 32px;
+    padding-right: 0;
+    gap: 32px;
+  }
+  .col-head {
+    display: block;
+    padding-bottom: 6px;
+  }
+  .node {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    min-height: var(--target-min);
+    padding: 12px 14px;
+    border: 1px solid rgba(225, 221, 223, 0.32);
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-body);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, opacity 0.2s, border-color 0.2s;
+  }
+  .node:hover {
+    border-color: var(--white);
+  }
+  .node[aria-pressed='true'] {
+    background: var(--white);
+    color: var(--blue-zodiac);
+    border-color: var(--white);
+  }
+  .node.is-dim {
+    opacity: 0.32;
+  }
+  .node-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .node-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .node-name.big {
+    font-weight: 900;
+    font-size: 18px;
+  }
+  .node-sub {
+    font-size: 14px;
+  }
+  .open-count {
+    font-size: 12px;
+    letter-spacing: var(--track-action);
+  }
+  .note {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--robot-white);
+  }
+  .panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    scroll-margin-top: 24px;
+  }
+  .panel:focus {
+    outline: none;
+  }
+  .panel[hidden],
+  .empty[hidden] {
+    display: none;
+  }
+  .org:not(.is-enhanced) .panel + .panel {
+    border-top: 1px solid rgba(225, 221, 223, 0.32);
+    padding-top: 32px;
+  }
+  .panel-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .avatar {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--robot-white);
+    color: var(--blue-zodiac);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 18px;
+  }
+  .panel-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  .tier {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-name {
+    font-weight: 900;
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+  .holder {
+    font-size: 16px;
+  }
+  .desc,
+  .duties {
+    max-width: 62ch;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .desc {
+    color: var(--robot-white);
+  }
+  .duties {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 15px;
+  }
+  .offices {
+    display: flex;
+    flex-direction: column;
+  }
+  .office {
+    border-top: 1px solid rgba(225, 221, 223, 0.25);
+  }
+  .office.is-dim {
+    opacity: 0.32;
+  }
+  .office summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: var(--target-min);
+    padding: 10px 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  .office summary::-webkit-details-marker {
+    display: none;
+  }
+  .office summary::after {
+    content: '+';
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin-left: 4px;
+  }
+  .office[open] summary::after {
+    content: '–';
+  }
+  .office-name {
+    flex: 1 1 auto;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .office-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 0 14px;
+    max-width: 60ch;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .office-sub {
+    color: var(--robot-white);
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 24px;
+    padding: 0 10px;
+    border-radius: var(--r-control);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border: 1px solid rgba(225, 221, 223, 0.6);
+    color: var(--robot-white);
+  }
+  .pill.open {
+    border-color: var(--white);
+    color: var(--white);
+  }
+  .pill.open::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ruby-red);
+  }
+  .pill.filled {
+    border-color: transparent;
+    background: rgba(225, 221, 223, 0.14);
+    color: var(--white);
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+  .t0 {
+    background: var(--steel-grey);
+  }
+  .t1 {
+    background: var(--topaz);
+  }
+  .t2 {
+    background: var(--clover-green);
+  }
+  .t3 {
+    background: var(--ruby-red);
+  }
+  .empty {
+    font-size: 15px;
+    color: var(--robot-white);
+  }
+  .full a {
+    color: var(--white);
+  }
+  .org :focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 3px;
+  }
+  @media (max-width: 1100px) {
+    .grid {
+      grid-template-columns: 300px minmax(0, 1fr);
+    }
+    .col-bodies {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-right: 0;
+      border-bottom: 1px solid rgba(225, 221, 223, 0.32);
+      padding: 24px 0;
+    }
+    .col-bodies .col-head,
+    .col-bodies .note {
+      flex-basis: 100%;
+    }
+    .col-bodies .node {
+      width: auto;
+      flex: 1 1 240px;
+    }
+  }
+  @media (max-width: 760px) {
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .col-branches {
+      border-right: 0;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(225, 221, 223, 0.32);
+    }
+    .col-detail {
+      padding: 24px 0 0;
+    }
+    .search input {
+      width: 100%;
+    }
+    .search {
+      flex: 1 1 100%;
+    }
+  }
+</style>

@@ -6,6 +6,7 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Stack:** Astro 7, TypeScript strict, React (Keystatic admin only), Markdoc, Keystatic, `@astrojs/vercel`. Do not add other dependencies without asking Noel.
 - **Rendering:** public pages are prerendered. Only the Keystatic routes run as Vercel functions.
 - **Content:** all entries are YAML; long text fields are Markdoc strings rendered by `src/lib/markdoc.ts`. Every Keystatic schema in `keystatic.config.ts` has a matching schema in `src/content.config.ts`. Change both together.
+- **Org chart:** the Ministries page shows an interactive column explorer (`OrgExplorer.astro`) built from the `orgChart` singleton (`src/content/pages/org-chart.yaml`); the v4 draw.io SVG is linked as "the original chart".
 - **Alt text** is optional (Noel, 24.11.2026); the migrated images have none yet. **Credits** have a Citizen/Resident status ("Resident" is the pre-citizen term).
 - **Application form:** `https://forms.gle/LEw1K2o1JVU1cjLo6`, set once in Site settings.
 - **Images:** Keystatic image fields store under `src/assets/images/<collection>/<slug>/<field path>/image.<ext>` (singletons: `src/assets/images/pages/<page>/...`), referenced from YAML as `../../assets/images/...`; render with `astro:assets`. Keystatic renames files to this layout on save, so keep migrated files in it too. `npm run check-images` enforces 1.5 MB and 3840px limits.

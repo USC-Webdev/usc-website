@@ -9,6 +9,7 @@ type SingletonKey = Extract<
   | 'ministriesIndex'
   | 'policies'
   | 'citizenship'
+  | 'orgChart'
   | 'mediaNetwork'
   | 'citizenCompass'
 >;
