@@ -34,7 +34,26 @@ const { nav, settings, currentPath } = Astro.props;
   const close = menu?.querySelector<HTMLButtonElement>('[data-menu-close]');
   if (toggle && menu && close) {
     const focusables = () => [...menu.querySelectorAll<HTMLElement>('a[href], button')];
+    const bar = toggle.closest('.bar');
+    // Line Close up exactly over Menu while the header is on screen.
+    const mirror = () => {
+      // Unscaled box: the button grows 5% on hover.
+      const b = toggle.getBoundingClientRect();
+      const w = toggle.offsetWidth;
+      const h = toggle.offsetHeight;
+      const r = { top: b.top + (b.height - h) / 2, left: b.left + (b.width - w) / 2, bottom: b.bottom, width: w, height: h };
+      const on = !!bar && r.bottom > 0 && r.top >= 0;
+      menu.classList.toggle('mirror', on);
+      if (!on || !bar) return;
+      const set = (name: string, px: number) => menu.style.setProperty(name, `${px}px`);
+      set('--btn-top', r.top);
+      set('--btn-left', r.left);
+      set('--btn-w', r.width);
+      set('--btn-h', r.height);
+      set('--bar-h', bar.getBoundingClientRect().bottom);
+    };
     const setOpen = (open: boolean) => {
+      if (open) mirror();
       menu.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
       document.documentElement.style.overflow = open ? 'hidden' : '';
@@ -42,6 +61,13 @@ const { nav, settings, currentPath } = Astro.props;
       else toggle.focus();
     };
     toggle.addEventListener('click', () => setOpen(true));
+    window.addEventListener('resize', () => {
+      if (!menu.hidden) {
+        menu.hidden = true;
+        mirror();
+        menu.hidden = false;
+      }
+    });
     close.addEventListener('click', () => setOpen(false));
     menu.addEventListener('click', (event) => {
       const target = event.target as HTMLElement;
@@ -68,6 +94,8 @@ const { nav, settings, currentPath } = Astro.props;
 
 <style>
   .site-header {
+    /* Menu and Close share one width so Close can sit exactly over Menu. */
+    --menu-btn-w: 140px;
     background: var(--blue-zodiac);
     color: var(--white);
   }
@@ -106,6 +134,8 @@ const { nav, settings, currentPath } = Astro.props;
     transition: transform 0.25s;
   }
   .menu-btn {
+    justify-content: center;
+    min-width: var(--menu-btn-w);
     border: 1px solid var(--robot-white);
     background: transparent;
     color: var(--white);
@@ -126,6 +156,9 @@ const { nav, settings, currentPath } = Astro.props;
     outline-color: var(--white);
   }
   @media (max-width: 640px) {
+    .site-header {
+      --menu-btn-w: clamp(64px, 20vw, 92px);
+    }
     .bar {
       flex-wrap: nowrap;
       gap: 8px;

@@ -10,12 +10,14 @@ const { nav, currentPath } = Astro.props;
 const norm = (p: string) => p.replace(/\/$/, '') || '/';
 const isCurrent = (href: string) => norm(href) === norm(currentPath);
 // Full-screen overlay over the page; SiteHeader's script opens and closes it.
+// While the header is in view, the script lines the Close button up exactly
+// over the Menu button (the "mirror" class), so the button doesn't move.
 ---
 
 <div id="site-menu" class="overlay" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="inner wrap">
     <div class="overlay-bar">
-      <span class="label">Menu</span>
+      <span class="bar-label">Menu</span>
       <button type="button" class="close" data-menu-close>Close <span aria-hidden="true">✕</span></button>
     </div>
     <nav class="panel" aria-label="Primary">
@@ -29,7 +31,7 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
         }
       </div>
       <div class="col">
-        <a href="/ministries" class="label col-head" aria-current={isCurrent('/ministries') ? 'page' : undefined}>Ministries</a>
+        <a href="/ministries" class="col-head" aria-current={isCurrent('/ministries') ? 'page' : undefined}>Ministries</a>
         {
           nav.ministries.map((m) => (
             <a href={m.href} class="ministry" aria-current={isCurrent(m.href) ? 'page' : undefined}>
@@ -42,7 +44,7 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
         }
       </div>
       <div class="col">
-        <a href="/media-network" class="label col-head" aria-current={isCurrent('/media-network') ? 'page' : undefined}>Media Network</a>
+        <a href="/media-network" class="col-head" aria-current={isCurrent('/media-network') ? 'page' : undefined}>Media Network</a>
         {
           nav.media.map((link) => (
             <a href={link.href} class="media" aria-current={isCurrent(link.href) ? 'page' : undefined}>
@@ -99,25 +101,61 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
     color: var(--white);
     padding-bottom: 16px;
   }
+  /* Menu label and Close share the header buttons' type. */
+  .bar-label,
   .close {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    height: var(--target-min);
-    padding: 0 24px;
-    border: 1px solid var(--robot-white);
-    border-radius: var(--r-control);
-    background: transparent;
-    color: var(--white);
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 14px;
     letter-spacing: var(--track-action);
     text-transform: uppercase;
+  }
+  .close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: var(--target-min);
+    min-width: var(--menu-btn-w);
+    padding: 0 24px;
+    border: 1px solid var(--robot-white);
+    border-radius: var(--r-control);
+    background: transparent;
+    color: var(--white);
     cursor: pointer;
   }
   .close:focus-visible {
     outline-color: var(--white);
+  }
+  /* Header in view: the bar matches the header's height and Close sits exactly where Menu is. */
+  .overlay.mirror .inner {
+    padding-top: 0;
+  }
+  .overlay.mirror .overlay-bar {
+    height: var(--bar-h);
+    padding-bottom: 0;
+    margin-bottom: 16px;
+  }
+  .overlay.mirror .close {
+    position: absolute;
+    top: var(--btn-top);
+    left: var(--btn-left);
+    width: var(--btn-w);
+    height: var(--btn-h);
+    min-width: 0;
+    padding: 0;
+  }
+  @media (max-width: 640px) {
+    .bar-label,
+    .close {
+      font-size: clamp(10px, 3vw, 12px);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .close {
+      gap: 6px;
+      padding: 0 clamp(8px, 2.6vw, 14px);
+    }
   }
   .panel {
     background: var(--robot-white);
@@ -137,19 +175,24 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
   .panel :focus-visible {
     outline-color: var(--blue-zodiac);
   }
+  /* Main pages: the same type and row height as the ministries. */
   .pages {
-    flex: 2 1 380px;
+    flex: 1 1 240px;
     min-width: 0;
     display: flex;
     flex-direction: column;
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: clamp(1.7rem, 3.8vw, 3.2rem);
-    line-height: 1.25;
+    gap: 2px;
   }
-  .pages a[aria-current='page'] {
-    border-bottom: 6px solid var(--ruby-red);
-    align-self: flex-start;
+  .pages a,
+  .ministry {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
   .col {
     flex: 1.2 1 300px;
@@ -163,26 +206,19 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
   .col:last-child {
     flex: 1 1 220px;
   }
+  /* Column heads: larger than the links under them. */
   .col-head {
-    padding: 12px 0 10px;
-    min-height: var(--target-min);
-  }
-  .col-head[aria-current='page'] {
-    text-decoration: underline;
-    text-decoration-color: var(--ruby-red);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 5px;
-  }
-  .ministry {
     display: flex;
     align-items: center;
-    gap: 14px;
-    min-height: 52px;
+    min-height: var(--target-min);
+    margin-bottom: 8px;
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .ministry {
+    gap: 14px;
   }
   .mark-slot {
     width: 52px;
@@ -194,12 +230,5 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
     min-height: var(--target-min);
     display: flex;
     align-items: center;
-  }
-  .ministry[aria-current='page'],
-  .media[aria-current='page'] {
-    text-decoration: underline;
-    text-decoration-color: var(--ruby-red);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 6px;
   }
 </style>

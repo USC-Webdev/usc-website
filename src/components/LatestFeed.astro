@@ -6,7 +6,8 @@ import { formatDate } from '../lib/content';
 import type { FeedItem } from '../lib/feed';
 
 // "Latest updates" carousel: a row of cards (picture, source and date, title,
-// short text) that scrolls sideways and snaps card by card. Three cards show on
+// short text; screenshots from the pool show their caption and credit instead)
+// that scrolls sideways and snaps card by card. Three cards show on
 // wide screens, two on tablets, one and a peek of the next on phones. Swipe,
 // scroll or use the Previous/Next buttons; without JavaScript the row still
 // scrolls. Items without a picture get a Blue Zodiac tile with the source
@@ -50,9 +51,10 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
             </span>
             <span class="meta label">
               <span>{item.source}</span>
-              <time datetime={item.date.toISOString().slice(0, 10)}>{formatDate(item.date)}</time>
+              {item.kind !== 'screenshot' && <time datetime={item.date.toISOString().slice(0, 10)}>{formatDate(item.date)}</time>}
             </span>
-            <span class="title">{item.title}</span>
+            {item.title && <span class="title">{item.title}</span>}
+            {item.credit && <span class="credit">{item.credit}</span>}
             {item.text && <span class="text">{item.text}</span>}
             {item.href && (
               <span class="go">
@@ -228,6 +230,10 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
   .card.link:hover .title {
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+  .credit {
+    font-size: 14px;
+    font-style: italic;
   }
   .text {
     display: -webkit-box;

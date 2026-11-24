@@ -109,7 +109,7 @@ export default config({
   ui: {
     brand: { name: 'USC' },
     navigation: {
-      'Media Network': ['updates', 'newsletters', 'newsUpdates', 'videos', 'mediaNetwork', 'citizenCompass'],
+      'Media Network': ['updates', 'screenshots','newsletters', 'newsUpdates', 'videos', 'mediaNetwork', 'citizenCompass'],
       Pages: ['home', 'ourVision', 'leadership', 'policies', 'citizenship', 'ministriesIndex', 'orgChart', 'ministries'],
       Settings: ['siteSettings'],
     },
@@ -154,6 +154,11 @@ export default config({
         ),
         feedVideosPerChannel: fields.integer({ label: 'Latest updates: videos per channel', defaultValue: 3 }),
         feedLength: fields.integer({ label: 'Latest updates: items shown', defaultValue: 6 }),
+        feedScreenshots: fields.integer({
+          label: 'Latest updates: screenshots mixed in',
+          description: 'Picked from the Screenshot pool, a different set each day. 0 turns them off.',
+          defaultValue: 2,
+        }),
       },
     }),
 
@@ -491,6 +496,30 @@ export default config({
         image: optionalImg('updates', 'Image (optional)'),
         alt: alt(),
         visible: fields.checkbox({ label: 'Published on the site', defaultValue: true }),
+      },
+    }),
+
+    screenshots: collection({
+      label: 'Screenshot pool',
+      path: 'src/content/screenshots/*',
+      slugField: 'title',
+      format: { data: 'yaml' },
+      columns: ['title', 'credit', 'visible'],
+      schema: {
+        title: fields.slug({
+          name: {
+            label: 'Name',
+            description: 'For finding it here, for example "Idris over Nyx". Not shown on the site.',
+            validation: { length: { min: 1 } },
+          },
+        }),
+        image: img('screenshots', 'Screenshot'),
+        alt: alt(),
+        caption: fields.text({ label: 'Caption (optional)', description: 'Shown on the card under the picture.' }),
+        credit: credit(),
+        creditStatus: creditStatus(),
+        link: fields.url({ label: 'Link (optional)', description: 'For example the newsletter the screenshot appeared in.' }),
+        visible: fields.checkbox({ label: 'In the pool', description: 'Untick to take it out of rotation without deleting it.', defaultValue: true }),
       },
     }),
 

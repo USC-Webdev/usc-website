@@ -67,6 +67,7 @@ const siteSettings = defineCollection({
     feedChannels: list(z.object({ label: req(), channelId: z.string().min(10) })),
     feedVideosPerChannel: z.number().int().nullish().transform((v) => v ?? 3),
     feedLength: z.number().int().nullish().transform((v) => v ?? 6),
+    feedScreenshots: z.number().int().nullish().transform((v) => v ?? 2),
   }),
 });
 
@@ -313,6 +314,21 @@ const updates = defineCollection({
     }),
 });
 
+const screenshots = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: './src/content/screenshots' }),
+  schema: ({ image }) =>
+    z.object({
+      title: req(),
+      image: image(),
+      alt: text(),
+      caption: text(),
+      credit: text(),
+      creditStatus: creditStatus(),
+      link: url(),
+      visible: z.boolean().default(true),
+    }),
+});
+
 const videos = defineCollection({
   loader: glob({ pattern: '*.yaml', base: './src/content/videos' }),
   schema: ({ image }) =>
@@ -341,5 +357,6 @@ export const collections = {
   newsletters,
   newsUpdates,
   updates,
+  screenshots,
   videos,
 };
