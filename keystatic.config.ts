@@ -399,11 +399,16 @@ export default config({
       path: 'src/content/newsletters/*',
       slugField: 'title',
       format: { data: 'yaml' },
-      columns: ['title', 'published'],
+      columns: ['title', 'published', 'visible'],
       schema: {
         title: fields.slug({
           name: { label: 'Title', description: 'For example: Newsletter Q3 2956', validation: { length: { min: 1 } } },
           slug: { label: 'URL slug', description: 'For example: newsletter-q3-2956' },
+        }),
+        visible: fields.checkbox({
+          label: 'Published on the site',
+          description: 'Untick to keep this issue as a draft: it is saved but does not appear anywhere on the site. Tick it and save to publish.',
+          defaultValue: true,
         }),
         quarter: fields.select({
           label: 'Quarter',
