@@ -1,0 +1,21 @@
+# Rebuilds the production site once a day so the Latest Updates feed on Home
+# picks up new YouTube videos (the feed is fetched at build time). Calls the
+# Vercel deploy hook "daily-feed-refresh" (branch main), stored as the repo
+# secret VERCEL_DEPLOY_HOOK. Can also be run by hand from the Actions tab.
+name: Daily rebuild
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: curl --fail --silent --show-error -X POST "$HOOK" > /dev/null

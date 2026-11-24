@@ -109,7 +109,7 @@ export default config({
   ui: {
     brand: { name: 'USC' },
     navigation: {
-      'Media Network': ['newsletters', 'newsUpdates', 'videos', 'mediaNetwork', 'citizenCompass'],
+      'Media Network': ['updates', 'newsletters', 'newsUpdates', 'videos', 'mediaNetwork', 'citizenCompass'],
       Pages: ['home', 'ourVision', 'leadership', 'policies', 'citizenship', 'ministriesIndex', 'orgChart', 'ministries'],
       Settings: ['siteSettings'],
     },
@@ -137,6 +137,23 @@ export default config({
           }),
           { label: 'Affiliates (footer)', itemLabel: (p) => p.fields.label.value || 'Affiliate' },
         ),
+        feedChannels: fields.array(
+          fields.object({
+            label: fields.text({ label: 'Channel name', validation: { length: { min: 1 } } }),
+            channelId: fields.text({
+              label: 'YouTube channel ID',
+              description: 'Starts with UC. On the channel page: More (the "…more" link under the name) → Share channel → Copy channel ID.',
+              validation: { length: { min: 10 } },
+            }),
+          }),
+          {
+            label: 'Latest updates: YouTube channels',
+            description: 'New videos from these channels appear in the Latest updates feed on Home. The site checks once a day.',
+            itemLabel: (p) => p.fields.label.value || 'Channel',
+          },
+        ),
+        feedVideosPerChannel: fields.integer({ label: 'Latest updates: videos per channel', defaultValue: 3 }),
+        feedLength: fields.integer({ label: 'Latest updates: items shown', defaultValue: 6 }),
       },
     }),
 
@@ -154,6 +171,7 @@ export default config({
         philosophyHeading: fields.text({ label: 'Philosophy heading' }),
         philosophy: titledItems('Philosophy items'),
         community: sections('Community sections'),
+        updatesHeading: fields.text({ label: 'Latest updates heading', defaultValue: 'Latest Updates' }),
         ctaHeading: fields.text({ label: 'Closing heading' }),
         ctaText: fields.text({ label: 'Closing text', multiline: true }),
         ctaLabel: fields.text({ label: 'Apply button label', defaultValue: 'Apply for citizenship' }),
@@ -453,6 +471,26 @@ export default config({
         }),
         order: fields.integer({ label: 'Order', defaultValue: 1 }),
         visible: fields.checkbox({ label: 'Visible', defaultValue: true }),
+      },
+    }),
+
+    updates: collection({
+      label: 'Latest updates',
+      path: 'src/content/updates/*',
+      slugField: 'title',
+      format: { data: 'yaml' },
+      columns: ['title', 'date', 'visible'],
+      schema: {
+        title: fields.slug({ name: { label: 'Title', validation: { length: { min: 1 } } } }),
+        date: fields.date({ label: 'Date (in-universe)', description: 'For example 2956-11-24. Newest first in the feed.', validation: { isRequired: true } }),
+        summary: fields.text({ label: 'Short text', multiline: true, description: 'One or two sentences. Leave empty on a link to use the linked page\'s own description.' }),
+        link: fields.url({
+          label: 'Link',
+          description: 'Optional. An Instagram or X post, a YouTube video, a Discord event or any page. Without an image below, the site uses the linked page\'s own picture.',
+        }),
+        image: optionalImg('updates', 'Image (optional)'),
+        alt: alt(),
+        visible: fields.checkbox({ label: 'Published on the site', defaultValue: true }),
       },
     }),
 

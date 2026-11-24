@@ -1,6 +1,6 @@
 ---
 // Template 2: Home. Cover hero with the org name, philosophy as index rows,
-// community sections as rail blocks, call to action to apply.
+// community sections as rail blocks, latest updates feed, call to action to apply.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CoverHero from '../components/CoverHero.astro';
 import SectionHead from '../components/SectionHead.astro';
@@ -10,17 +10,22 @@ import Prose from '../components/Prose.astro';
 import CapsuleBand from '../components/CapsuleBand.astro';
 import NumberedSections from '../components/NumberedSections.astro';
 import JoinBand from '../components/JoinBand.astro';
+import LatestFeed from '../components/LatestFeed.astro';
 import { getSingleton } from '../lib/content';
 import { renderMarkdoc } from '../lib/markdoc';
 import { getSite } from '../lib/site';
+import { getFeed } from '../lib/feed';
 
 const page = await getSingleton('home');
 const { settings } = await getSite();
 const communityStart = 3;
+const feed = await getFeed();
+const updatesNum = communityStart + page.community.length;
 const heroSections = [
   { href: '#s-1', label: `1.0  ${page.introHeading}` },
   { href: '#s-2', label: `2.0  ${page.philosophyHeading}` },
   ...page.community.map((c, i) => ({ href: `#s-${communityStart + i}`, label: `${communityStart + i}.0  ${c.heading}` })),
+  ...(feed.length ? [{ href: `#s-${updatesNum}`, label: `${updatesNum}.0  ${page.updatesHeading}` }] : []),
 ];
 ---
 
@@ -48,6 +53,15 @@ const heroSections = [
   </section>
 
   <NumberedSections sections={page.community} start={communityStart} />
+
+  {
+    feed.length > 0 && (
+      <section class="wrap block" id={`s-${updatesNum}`}>
+        <SectionHead num={`${updatesNum}.0`} title={page.updatesHeading} />
+        <LatestFeed items={feed} />
+      </section>
+    )
+  }
 
   <div class="block"></div>
   <CapsuleBand seed={2013} />

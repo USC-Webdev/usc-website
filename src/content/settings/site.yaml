@@ -15,3 +15,8 @@ affiliates:
     href: https://www.youtube.com/@RidgeSix
   - label: Hangarworks SC Tool
     href: https://www.sc-hangarworks.org/
+feedChannels:
+  - label: USC
+    channelId: UCR7NViQANVRSMB84wMFCS-A
+feedVideosPerChannel: 3
+feedLength: 6
