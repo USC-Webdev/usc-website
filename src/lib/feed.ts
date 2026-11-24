@@ -9,7 +9,7 @@ import { getNewsletters, getSingleton, newsletterHref } from './content';
 
 export interface FeedItem {
   key: string;
-  kind: 'update' | 'newsletter' | 'video';
+  kind: 'update' | 'newsletter' | 'video' | 'screenshot';
   /** In-universe date (real year + 930), like every date on the site. */
   date: Date;
   title: string;
@@ -21,6 +21,8 @@ export interface FeedItem {
   /** Remote picture (YouTube thumbnail or a linked page's og:image), downloaded at build time. */
   remoteImage?: string;
   alt: string;
+  /** "In game image by USC-Citizen: NAME", for screenshots. */
+  credit?: string;
 }
 
 /** Star Citizen's in-universe calendar runs 930 years ahead of ours (2026 is 2956). */
@@ -185,9 +187,56 @@ async function channelVideos(label: string, channelId: string, count: number): P
   return items.filter((i): i is FeedItem => !!i);
 }
 
+/** Mulberry32: a small seeded random generator, so one build picks one set. */
+function seeded(seed: number) {
+  return () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** `count` screenshots from the pool, a different pick each UTC day. */
+async function screenshotItems(count: number): Promise<FeedItem[]> {
+  if (count <= 0) return [];
+  const pool = (await getCollection('screenshots', (s) => s.data.visible)).sort((a, b) => a.id.localeCompare(b.id));
+  const random = seeded(Math.floor(Date.now() / 86_400_000));
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, count).map((s) => {
+    const d = s.data;
+    const external = /^https?:/.test(d.link);
+    return {
+      key: `screenshot-${s.id}`,
+      kind: 'screenshot',
+      date: new Date(0),
+      title: d.caption,
+      text: '',
+      href: d.link || undefined,
+      external,
+      source: 'Screenshot',
+      image: d.image,
+      alt: d.alt,
+      credit: d.credit ? `In game image by USC-${d.creditStatus}: ${d.credit}` : undefined,
+    };
+  });
+}
+
+/** Spreads `extra` evenly through `items` (first one after the first item). */
+function interleave(items: FeedItem[], extra: FeedItem[]): FeedItem[] {
+  if (!extra.length) return items;
+  const out = [...items];
+  const every = Math.max(1, Math.round((items.length + extra.length) / extra.length));
+  extra.forEach((x, i) => out.splice(Math.min(out.length, 1 + i * every), 0, x));
+  return out;
+}
+
 let cached: Promise<FeedItem[]> | undefined;
 
-/** All feed items, newest first, cut to the length set in Site settings. */
+/** All feed items, newest first, cut to the length set in Site settings, with the day's screenshots spread through. */
 export function getFeed(): Promise<FeedItem[]> {
   cached ??= (async () => {
     const settings = await getSingleton('siteSettings');
@@ -197,11 +246,12 @@ export function getFeed(): Promise<FeedItem[]> {
       ...settings.feedChannels.map((c) => channelVideos(c.label, c.channelId, settings.feedVideosPerChannel)),
     ]);
     const seen = new Set<string>();
-    return groups
+    const latest = groups
       .flat()
       .filter((i) => (seen.has(i.key) ? false : (seen.add(i.key), true)))
       .sort((a, b) => b.date.getTime() - a.date.getTime())
       .slice(0, settings.feedLength);
+    return interleave(latest, await screenshotItems(settings.feedScreenshots));
   })();
   return cached;
 }
