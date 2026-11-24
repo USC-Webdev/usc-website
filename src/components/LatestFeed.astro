@@ -1,20 +1,36 @@
 ---
 import { Image } from 'astro:assets';
 import HexArrow from './HexArrow.astro';
+import SectionHead from './SectionHead.astro';
 import { formatDate } from '../lib/content';
 import type { FeedItem } from '../lib/feed';
 
-// "Latest updates" cards: picture, source and date, title, short text. The
-// whole card is the link. Items without a picture get a Blue Zodiac tile with
-// the source name. Data comes from getFeed() in src/lib/feed.ts.
+// "Latest updates" carousel: a row of cards (picture, source and date, title,
+// short text) that scrolls sideways and snaps card by card. Three cards show on
+// wide screens, two on tablets, one and a peek of the next on phones. Swipe,
+// scroll or use the Previous/Next buttons; without JavaScript the row still
+// scrolls. Items without a picture get a Blue Zodiac tile with the source
+// name. Data comes from getFeed() in src/lib/feed.ts.
 interface Props {
+  heading: string;
   items: FeedItem[];
 }
-const { items } = Astro.props;
-const sizes = '(min-width: 1100px) 30vw, (min-width: 700px) 45vw, 100vw';
+const { heading, items } = Astro.props;
+const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
 ---
 
-<ul class="feed">
+<div class="carousel" data-carousel>
+  <SectionHead title={heading}>
+  <div class="controls" hidden data-controls>
+    <button type="button" class="nav" data-prev aria-label="Previous updates" aria-controls="feed-track">
+      <span aria-hidden="true">←</span>
+    </button>
+    <button type="button" class="nav" data-next aria-label="Next updates" aria-controls="feed-track">
+      <span aria-hidden="true">→</span>
+    </button>
+  </div>
+  </SectionHead>
+<ul class="feed" id="feed-track" aria-label="Latest updates" tabindex="0">
   {
     items.map((item) => {
       const Tag = item.href ? 'a' : 'div';
@@ -50,15 +66,118 @@ const sizes = '(min-width: 1100px) 30vw, (min-width: 700px) 45vw, 100vw';
     })
   }
 </ul>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('.feed');
+    const controls = root.querySelector<HTMLElement>('[data-controls]');
+    const prev = root.querySelector<HTMLButtonElement>('[data-prev]');
+    const next = root.querySelector<HTMLButtonElement>('[data-next]');
+    if (!track || !controls || !prev || !next) return;
+    // One step is one card plus the gap.
+    const step = () => {
+      const card = track.querySelector('li');
+      return card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || '0') : track.clientWidth;
+    };
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      controls.hidden = max <= 2;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    };
+    const go = (dir: number) => {
+      const max = track.scrollWidth - track.clientWidth;
+      track.scrollTo({ left: Math.max(0, Math.min(max, track.scrollLeft + dir * step())) });
+    };
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+</script>
 
 <style>
+  .carousel {
+    position: relative;
+  }
+  /* The last card can't reach the left edge, so it snaps to the right one. */
+  .feed > li:last-child {
+    scroll-snap-align: end;
+  }
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .controls[hidden] {
+    display: none;
+  }
+  .nav {
+    width: var(--target-min);
+    height: var(--target-min);
+    border: 1px solid var(--blue-zodiac);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--blue-zodiac);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .nav:hover:not(:disabled) {
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  .nav:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
   .feed {
+    --gap: 28px;
+    --per-view: 3;
     list-style: none;
     margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-    gap: 32px 28px;
+    padding: 0 0 8px;
+    display: flex;
+    gap: var(--gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .feed::-webkit-scrollbar {
+    display: none;
+  }
+  .feed:focus-visible {
+    outline-offset: 4px;
+  }
+  .feed > li {
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+    min-width: 0;
+    /* Containing block for the visually hidden link text, so it stays inside the scroller. */
+    position: relative;
+    scroll-snap-align: start;
+  }
+  @media (max-width: 999px) {
+    .feed {
+      --per-view: 2;
+    }
+  }
+  @media (max-width: 639px) {
+    .feed {
+      --gap: 16px;
+    }
+    .feed > li {
+      flex-basis: 85%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .feed {
+      scroll-behavior: auto;
+    }
   }
   .card {
     height: 100%;
