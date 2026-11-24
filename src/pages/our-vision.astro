@@ -17,12 +17,15 @@ const ideasNum = page.sections.length + 1;
 const creedNum = ideasNum + 1;
 ---
 
-<BaseLayout title={page.title} description={page.description}>
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  dock={page.sections.map((s, i) => ({ href: `#s-${i + 1}`, label: `${i + 1}.0  ${s.heading}` }))}
+>
   <CoverHero
     lines={page.heroLines}
     image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
     size="small"
-    sections={page.sections.map((s, i) => ({ href: `#s-${i + 1}`, label: `${i + 1}.0  ${s.heading}` }))}
   />
 
   <NumberedSections sections={page.sections} />

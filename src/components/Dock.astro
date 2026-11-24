@@ -1,7 +1,8 @@
 ---
-// Floating section nav, bottom centre. Highlights the section in view.
-// Labels are "1.0 News" style; on narrow screens only the number shows and
-// the word stays available to screen readers.
+// Floating section nav, bottom centre: the page's quick links, one per
+// numbered section, labelled "1.0 Section title". Highlights the section in
+// view. A long list stays on one row and scrolls sideways; the highlighted
+// link is kept in view.
 interface Props {
   items: { href: string; label: string }[];
 }
@@ -28,6 +29,17 @@ const split = (label: string) => {
 
 <script>
   const dock = document.querySelector<HTMLElement>('[data-dock]');
+  // Fade the edge(s) where more links are hidden, so the row reads as scrollable.
+  if (dock) {
+    const edges = () => {
+      const max = dock.scrollWidth - dock.clientWidth;
+      dock.classList.toggle('more-left', dock.scrollLeft > 2);
+      dock.classList.toggle('more-right', dock.scrollLeft < max - 2);
+    };
+    dock.addEventListener('scroll', edges, { passive: true });
+    window.addEventListener('resize', edges);
+    edges();
+  }
   if (dock && 'IntersectionObserver' in window) {
     const links = [...dock.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')];
     const targets = links
@@ -38,8 +50,12 @@ const split = (label: string) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
           for (const link of links) {
-            if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'true');
-            else link.removeAttribute('aria-current');
+            if (link.hash === `#${entry.target.id}`) {
+              link.setAttribute('aria-current', 'true');
+              // Scroll the dock (not the page) so the current link is centred.
+              // Plain assignment: a smooth scrollTo here is cancelled while the page itself is scrolling.
+              dock.scrollLeft = link.offsetLeft - (dock.clientWidth - link.offsetWidth) / 2;
+            } else link.removeAttribute('aria-current');
           }
         }
       },
@@ -55,23 +71,38 @@ const split = (label: string) => {
     bottom: 16px;
     z-index: 20;
     width: fit-content;
-    max-width: calc(100% - 24px);
+    max-width: min(calc(100% - 24px), 1200px);
     margin: 24px auto;
     background: var(--robot-white);
     border: var(--rule);
     border-radius: var(--r-control);
     padding: 5px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 2px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 13px;
     letter-spacing: var(--track-action);
     text-transform: uppercase;
   }
+  .dock.more-right {
+    mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+  }
+  .dock.more-left {
+    mask-image: linear-gradient(to left, #000 calc(100% - 48px), transparent);
+  }
+  .dock.more-left.more-right {
+    mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+  }
+  .dock::-webkit-scrollbar {
+    display: none;
+  }
   a {
+    flex: none;
+    white-space: nowrap;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -95,13 +126,8 @@ const split = (label: string) => {
       min-height: 48px;
       padding: 0 12px;
     }
-    .num + .word {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      white-space: nowrap;
+    .dock {
+      font-size: 12px;
     }
   }
 </style>

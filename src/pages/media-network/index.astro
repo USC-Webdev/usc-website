@@ -35,28 +35,22 @@ const rows = [
 ];
 const channel = (label: string) => settings.channels.find((c) => c.label === label)?.href;
 const sections = [
-  { href: '#news', label: '1.0  News' },
-  { href: '#videos', label: '2.0  Videos' },
-  { href: '#pool', label: '3.0  Donation Pool' },
-  { href: '#hail', label: '4.0  Contact' },
+  { href: '#news', label: `1.0  ${page.newsHeading}` },
+  { href: '#videos', label: `2.0  ${page.videosHeading}` },
+  { href: '#pool', label: `3.0  ${page.poolHeading}` },
+  { href: '#hail', label: `4.0  ${page.closingHeading}` },
 ];
 ---
 
 <BaseLayout
   title={page.title}
   description={page.description}
-  dock={[
-    { href: '#news', label: '1.0 News' },
-    { href: '#videos', label: '2.0 Videos' },
-    { href: '#pool', label: '3.0 Pool' },
-    { href: '#hail', label: '4.0 Contact' },
-  ]}
+  dock={sections}
 >
   <CoverHero
     kicker={page.heroKicker}
     lines={page.heroLines}
     image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
-    sections={sections}
   />
 
   <div class="wrap statement-block">
