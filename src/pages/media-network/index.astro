@@ -57,7 +57,7 @@ const sections = [
     edition={latest ? `Edition ${latest.data.quarter} ${latest.data.year}` : undefined}
     kicker={page.heroKicker}
     lines={page.heroLines}
-    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
     sections={sections}
   />
 
@@ -65,7 +65,7 @@ const sections = [
     <RailBlock label={page.railLabel} items={page.railItems}>
       <div class="rise stack">
         <p class="statement" set:html={renderInline(page.statement)} />
-        {page.statementAside && <p class="aside-copy">{page.statementAside}</p>}
+        {page.statementAside && <p class="aside-copy para">{page.statementAside}</p>}
       </div>
     </RailBlock>
   </div>
@@ -117,22 +117,22 @@ const sections = [
   <section id="pool" class="wrap pool">
     <SectionHead num="3.0" title={page.poolHeading}>{page.poolAside}</SectionHead>
     <ExhibitCard num="3.1" word="Time" color="topaz" index={0}>
-      <p>{page.time}</p>
+      <p class="para">{page.time}</p>
       <ClockObject slot="object" />
     </ExhibitCard>
     <ExhibitCard num="3.2" word="Talent" color="sunshade" index={1}>
-      <p>{page.talent}</p>
+      <p class="para">{page.talent}</p>
       <TalentObjects slot="object" />
     </ExhibitCard>
     <ExhibitCard num="3.3" word="Treasure" color="zodiac" index={2}>
       <div class="treasure">
         <div class="treasure-col">
           <span class="label">In game</span>
-          <p class="treasure-text">{page.treasureInGame}</p>
+          <p class="treasure-text para">{page.treasureInGame}</p>
         </div>
         <div class="treasure-col">
           <span class="label">Out of game</span>
-          <p class="treasure-text">{page.treasureOutOfGame}</p>
+          <p class="treasure-text para">{page.treasureOutOfGame}</p>
         </div>
       </div>
       <div class="pill-row">
@@ -150,7 +150,7 @@ const sections = [
     <div class="hail rise">
       <span class="hail-num" aria-hidden="true">4.0</span>
       <h2 class="hail-title"><span class="visually-hidden">4.0 </span>{page.closingHeading}</h2>
-      <p class="hail-text">{page.closingText}</p>
+      <p class="hail-text para">{page.closingText}</p>
       <div class="pill-row center">
         <PillLink href={settings.applicationUrl} variant="primary" size="lg">{home.ctaLabel}</PillLink>
         {channel('Instagram') && <PillLink href={channel('Instagram')!} variant="outline" tone="dark">Instagram</PillLink>}
@@ -250,5 +250,9 @@ const sections = [
   }
   .center {
     justify-content: center;
+  }
+  /* Plain-text fields keep the editor's paragraph breaks. */
+  .para {
+    white-space: pre-line;
   }
 </style>

@@ -14,21 +14,24 @@ const url = () => z.string().nullish().transform((v) => v ?? '');
 const prose = () => z.string().nullish().transform((v) => v ?? '');
 const list = <T extends z.ZodTypeAny>(item: T) => z.array(item).nullish().transform((v) => v ?? []);
 const lines = () => list(z.string());
+const creditStatus = () => z.enum(['Citizen', 'Resident']).nullish().transform((v) => v ?? 'Citizen');
 
 const heroSchema = (image: ImageFn) =>
   z.object({
     image: image(),
-    alt: req(),
+    alt: text(),
     credit: text(),
+    creditStatus: creditStatus(),
   });
 
 const gallerySchema = (image: ImageFn) =>
   list(
     z.object({
       image: image(),
-      alt: req(),
+      alt: text(),
       caption: text(),
       credit: text(),
+      creditStatus: creditStatus(),
     }),
   );
 
@@ -266,19 +269,14 @@ const newsUpdates = defineCollection({
 const videos = defineCollection({
   loader: glob({ pattern: '*.yaml', base: './src/content/videos' }),
   schema: ({ image }) =>
-    z
-      .object({
-        title: req(),
-        youtubeId: z.string().min(5),
-        presenter: text(),
-        month: z.coerce.date(),
-        poster: image().nullish(),
-        posterAlt: text(),
-      })
-      .refine((v) => !v.poster || v.posterAlt.length > 0, {
-        message: 'Poster alt text is required when a poster image is set.',
-        path: ['posterAlt'],
-      }),
+    z.object({
+      title: req(),
+      youtubeId: z.string().min(5),
+      presenter: text(),
+      month: z.coerce.date(),
+      poster: image().nullish(),
+      posterAlt: text(),
+    }),
 });
 
 export const collections = {

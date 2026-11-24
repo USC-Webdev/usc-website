@@ -10,14 +10,15 @@ interface Props {
   alt: string;
   caption?: string;
   credit?: string;
+  creditStatus?: 'Citizen' | 'Resident';
   sizes?: string;
   eager?: boolean;
 }
-const { src, alt, caption, credit, sizes = '(min-width: 1392px) 900px, 100vw', eager = false } = Astro.props;
+const { src, alt, caption, credit, creditStatus = 'Citizen', sizes = '(min-width: 1392px) 900px, 100vw', eager = false } = Astro.props;
 const isSvg = src.format === 'svg';
 const widths = [480, 960, 1440, 1920].filter((w) => w <= src.width);
 if (widths.length === 0) widths.push(src.width);
-const creditText = credit ? `In game image by USC-Citizen: ${credit}` : undefined;
+const creditText = credit ? `In game image by USC-${creditStatus}: ${credit}` : undefined;
 ---
 
 <figure class="figure">

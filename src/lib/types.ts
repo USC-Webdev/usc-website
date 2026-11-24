@@ -33,4 +33,5 @@ export interface HeroImage {
   src?: ImageMetadata;
   alt: string;
   credit?: string;
+  creditStatus?: 'Citizen' | 'Resident';
 }

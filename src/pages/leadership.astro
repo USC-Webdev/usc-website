@@ -18,7 +18,7 @@ const roles = page.roles.map((r) => ({ heading: r.name, body: r.description }));
   <CoverHero
     eyebrow="United Space Confederation"
     lines={page.heroLines}
-    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
     size="small"
     sections={[
       ...page.sections.map((s, i) => ({ href: `#s-${i + 1}`, label: `${i + 1}.0  ${s.heading}` })),

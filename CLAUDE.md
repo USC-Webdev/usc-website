@@ -6,9 +6,11 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - **Stack:** Astro 7, TypeScript strict, React (Keystatic admin only), Markdoc, Keystatic, `@astrojs/vercel`. Do not add other dependencies without asking Noel.
 - **Rendering:** public pages are prerendered. Only the Keystatic routes run as Vercel functions.
 - **Content:** all entries are YAML; long text fields are Markdoc strings rendered by `src/lib/markdoc.ts`. Every Keystatic schema in `keystatic.config.ts` has a matching schema in `src/content.config.ts`. Change both together.
+- **Alt text** is optional (Noel, 24.11.2026); the migrated images have none yet. **Credits** have a Citizen/Resident status ("Resident" is the pre-citizen term).
+- **Application form:** `https://forms.gle/LEw1K2o1JVU1cjLo6`, set once in Site settings.
 - **Images:** Keystatic image fields store under `src/assets/images/<collection>/<slug>/<field path>/image.<ext>` (singletons: `src/assets/images/pages/<page>/...`), referenced from YAML as `../../assets/images/...`; render with `astro:assets`. Keystatic renames files to this layout on save, so keep migrated files in it too. `npm run check-images` enforces 1.5 MB and 3840px limits.
 - **Workflow:** one pull request per phase; merge commits only, never squash (Vercel Hobby deploys only commits authored by the account owner). Squash and rebase merges are disabled in the repo settings.
-- **`main` is protected:** pull requests required (no approval count), no force pushes, admins included. Only USC-Webdev should merge; a merge by an editor would be authored by them and blocked from deploying.
+- **`main` is protected:** pull requests need an approving review from USC-Webdev (code owner, `.github/CODEOWNERS`); no force pushes. USC-Webdev is exempt as admin, so its own pull requests merge with `gh pr merge --merge --admin`. Editors cannot merge their own work.
 - **The repo is public** (decided 23 Nov 2026) because GitHub Free only protects branches on public repos. Everything committed is world-readable, including commit author emails. The pre-publication history lives in the private `USC-Webdev/usc-website-private-archive`; do not make that repo public.
 - **Accounts:** the repo and Vercel project belong to the USC webdev account. Commits in this repo must be authored with that account's email.
 - **Hosting:** Vercel project `usc-website` (team `usc-webdev`), connected to `USC-Webdev/usc-website`. Temporary production URL: https://usc-website-nine.vercel.app. The four Keystatic variables are set for Production and Preview.

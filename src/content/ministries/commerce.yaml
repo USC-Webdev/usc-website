@@ -9,7 +9,7 @@ workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
   image: ../../assets/images/ministries/commerce/hero/image.jpg
-  alt: In-game image for the Ministry of Interstellar Commerce
+  alt: ""
   credit: Baron
 overview: |
   The business and money side of the USC, as well as general asset management, is handled by the Ministry of Interstellar Commerce (MIC). The MIC is, like all our Ministries, a vital part of the USC’s operations.
@@ -30,6 +30,6 @@ offices:
       The department is in charge of the exciting world of travel and entertainment. It oversees VIP and economy class people transportation services as well as the adrenalin-pumping Space Race Entertainment Industry. General event planning is also handled by this department, which may act with the Department of Diplomatic Support if any "Game" assistance is needed in the form of proper VIP Transportation services and catering.
 gallery:
   - image: ../../assets/images/ministries/commerce/gallery/0/image.jpg
-    alt: Organization chart of the Ministry of Interstellar Commerce
+    alt: ""
     caption: ""
     credit: ""

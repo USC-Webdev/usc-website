@@ -4,7 +4,7 @@ heroLines:
   - Ministries
 hero:
   image: ../../assets/images/pages/ministries/hero/image.jpg
-  alt: USC ships in a planetary atmosphere
+  alt: ""
   credit: Hadwin
 sections:
   - heading: Why Not Both?
@@ -32,6 +32,6 @@ ministriesIntro: |
 orgChartHeading: The USC Organization Chart
 orgChart:
   - image: ../../assets/images/pages/ministries/orgChart/0/image.svg
-    alt: "USC organization chart v4: the Senate and the Cabinet, the Chancellor, the Prime Minister, the five ministries and the Navy, each with its offices and current holders"
+    alt: ""
     caption: USC organization chart v4, January 2955.
     credit: ""

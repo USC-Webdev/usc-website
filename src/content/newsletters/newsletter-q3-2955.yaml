@@ -5,7 +5,7 @@ published: 2955-09-30
 summary: The USC newsletter for Q3 2955.
 cover:
   image: ../../assets/images/newsletters/newsletter-q3-2955/cover/image.jpg
-  alt: Cover image of Newsletter Q3 2955
+  alt: ""
   credit: ""
 intro: |
   NEWS FROM AROUND THE CONFEDERATION
@@ -40,7 +40,7 @@ sections:
       United Space Confederation
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/0/gallery/0/image.jpg
-        alt: Image 1 from “A Word From The Chancellor”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Profiles In Courage
@@ -49,7 +49,7 @@ sections:
       _Notable Acts Of Bravery, Contribution And Integrity_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/1/gallery/0/image.jpg
-        alt: Image 1 from “Profiles In Courage”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Maxwell
@@ -60,7 +60,7 @@ sections:
       Thank you Maxwell!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/2/gallery/0/image.jpg
-        alt: Image 1 from “Maxwell”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Hadwin
@@ -75,7 +75,7 @@ sections:
       Thank you Hadwin!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/3/gallery/0/image.jpg
-        alt: Image 1 from “Hadwin”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Dekan
@@ -93,7 +93,7 @@ sections:
       THE USC IS PROUD TO WELCOME THE FOLLOWING NEW CITIZENS TO THE UNITED SPACE CONFEDERATION!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/5/gallery/0/image.jpg
-        alt: Image 1 from “Welcome New Citizens!”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Golucky
@@ -102,7 +102,7 @@ sections:
       Golucky is excited to provide his support for org activities by supplying his fleet, improving his leadership competence, and serving in multiple roles.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/6/gallery/0/image.jpg
-        alt: Image 1 from “Golucky”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Marius G43
@@ -111,7 +111,7 @@ sections:
       Marius has a large family to look after, so when we gets the chance, he likes to relax in a game he can enjoy. One of his goals is to "build myself up and into different ships I can play with. Help others as needed and hopefully, one day, get more and more time free to play more in this nice looking game."
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/7/gallery/0/image.jpg
-        alt: Image 1 from “Marius G43”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Dances
@@ -122,7 +122,7 @@ sections:
       He is Looking to help USC members with any job they need with different ships and hoping his friends will return to the game soon.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/8/gallery/0/image.jpg
-        alt: Image 1 from “Dances”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Choam
@@ -133,7 +133,7 @@ sections:
       An avid crafter, CHOAM explains his secret: "I tend to have some OCD tendencies when it comes to my precious cargo boxes lol. "
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/9/gallery/0/image.jpg
-        alt: Image 1 from “Choam”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Gupte
@@ -144,7 +144,7 @@ sections:
       GUPTE enjoys everything from mining to bounty hunting to just goofing around as a group.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/10/gallery/0/image.jpg
-        alt: Image 1 from “Gupte”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Lambsauce
@@ -155,7 +155,7 @@ sections:
       I want to explore what Star Citizen to the fullest and do multiple things within it be it the future base building aspects, exploration of Pyro, security of scrap crews or being the scrap crew and the list goes on. I love to try new things and go headfirst and learn to help advance my own skills and give back tenfold what is given to me."
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/11/gallery/0/image.jpg
-        alt: Image 1 from “Lambsauce”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Ridgesix
@@ -168,7 +168,7 @@ sections:
       "I've built a strong little fleet doing this. Currently, I'm really into both ROC and Prospector mining, but also enjoy cargo runs. As a medical provider in real life, I hope to get more into medical or rescue type gameplay soon, too. "
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/12/gallery/0/image.jpg
-        alt: Image 1 from “Ridgesix”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Squigglykey
@@ -179,7 +179,7 @@ sections:
       SQUIGGLYKEY wants to experience as much of the content as he can, if he had to pick a favoured game loop it’d be cargo hauling of any description.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/13/gallery/0/image.jpg
-        alt: Image 1 from “Squigglykey”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Sovi Reign
@@ -192,7 +192,7 @@ sections:
       "This speaks to that ROI, as a new dad with primarily weekend nights to play SC, I would prefer to focus my efforts. "
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/14/gallery/0/image.jpg
-        alt: Image 1 from “Sovi Reign”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Brother Maynard
@@ -254,19 +254,19 @@ sections:
       PSA: Now that we've completed our refresh updates to the USC Discord, no more testing pings! Please revisit your notifications settings so you don't miss upcoming events.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/16/gallery/0/image.jpg
-        alt: Image 1 from “Featured Events From 2Q2955”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/16/gallery/1/image.jpg
-        alt: Image 2 from “Featured Events From 2Q2955”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/16/gallery/2/image.jpg
-        alt: Image 3 from “Featured Events From 2Q2955”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/16/gallery/3/image.jpg
-        alt: Image 4 from “Featured Events From 2Q2955”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Featured Screenshots
@@ -283,15 +283,15 @@ sections:
       YOU MAY FIND THE CATALOG OF USC MEMBER DISCORD SUBMISSIONS IN THE [SCREENSHOTS FOLDER](https://drive.google.com/drive/folders/1FX-bkZfCW1u-tjj661MyiECNOm3baMOU?usp=sharing)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/17/gallery/0/image.jpg
-        alt: Image 1 from “Featured Screenshots”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/17/gallery/1/image.jpg
-        alt: Image 2 from “Featured Screenshots”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/17/gallery/2/image.jpg
-        alt: Image 3 from “Featured Screenshots”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Featured 3Q2955 Celebrations
@@ -300,7 +300,7 @@ sections:
       _In-Game, Community Or USC Celebrations_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/18/gallery/0/image.jpg
-        alt: Image 1 from “Featured 3Q2955 Celebrations”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Alien Week - First Contact Star Citizen
@@ -313,7 +313,7 @@ sections:
       Join us in celebrating this continually prosperous alliance this Alien Week, with special events and fun interactive adventures both in and out of the 'verse.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/19/gallery/0/image.jpg
-        alt: Image 1 from “Alien Week - First Contact Star Citizen”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Foundation Festival USC
@@ -324,7 +324,7 @@ sections:
       During this time, the hope is that people will lift each other up so the community as a whole gets stronger.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/20/gallery/0/image.jpg
-        alt: Image 1 from “Foundation Festival USC”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: USC Unification Day USC
@@ -337,7 +337,7 @@ sections:
       Guided by principles of Equality, Prosperity and Freedom for all.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/21/gallery/0/image.jpg
-        alt: Image 1 from “USC Unification Day USC”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Ship Showdown Star Citizen
@@ -355,7 +355,7 @@ sections:
       _Here Are Only A Few Of The Interesting Real Life Moments Our Members Shared:_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/23/gallery/0/image.jpg
-        alt: Image 1 from “Featured Real Life Events - Wip”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: New Job
@@ -370,7 +370,7 @@ sections:
       Wish me good luck guys!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/24/gallery/0/image.jpg
-        alt: Image 1 from “New Job”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Boot Camp
@@ -381,7 +381,7 @@ sections:
       Let's all wish him great succuss on his new life journey!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/25/gallery/0/image.jpg
-        alt: Image 1 from “Boot Camp”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: First Drawing Video
@@ -412,7 +412,7 @@ sections:
       Each quarter will have activities, events, and/or tasks that fall within the theme and gameplay of Star Citizen. Some events may be in the form of contests, in which members must participate in to earn ‘points’. For contests, all citizens can participate to earn points by participating in group gameplay activities. Points reset every quarter. Each activity may have different ranges of points that can be earned. Refer to the 'Events' channel on the USC Discord for more information.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/27/gallery/0/image.jpg
-        alt: Image 1 from “Looking Forward”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Confederation Conference 2955
@@ -432,7 +432,7 @@ sections:
       _Ways You Can Have Fun And Contribute Your Talents To The USC!_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/29/gallery/0/image.jpg
-        alt: Image 1 from “Help Wanted”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Become a Griffin!
@@ -445,7 +445,7 @@ sections:
       Watch Farrister's video to learn more: [USC Griffins](https://youtu.be/AaP1RYRJy5w)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/30/gallery/0/image.jpg
-        alt: Image 1 from “Become a Griffin!”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Video & Media
@@ -460,7 +460,7 @@ sections:
       Reach out to @Landscaper on Discord to sign up.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/31/gallery/0/image.jpg
-        alt: Image 1 from “Video & Media”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Did You Know?
@@ -473,7 +473,7 @@ sections:
       You will find the folder links in the #Port of Entry section on Discord.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/32/gallery/0/image.jpg
-        alt: Image 1 from “Did You Know?”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Tier I Voice Channels
@@ -501,11 +501,11 @@ sections:
       
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/36/gallery/0/image.jpg
-        alt: Image 1 from “2Q2955 Senate Votes”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/36/gallery/1/image.jpg
-        alt: Image 2 from “2Q2955 Senate Votes”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: "Cargolympics & Navy Petition: Polaris"
@@ -532,7 +532,7 @@ sections:
       (*POC = Proof of Concept)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/37/gallery/0/image.jpg
-        alt: "Image 1 from “Cargolympics & Navy Petition: Polaris”, Newsletter Q3 2955"
+        alt: ""
         caption: ""
         credit: ""
   - heading: To Ping, Or Not To Ping
@@ -551,7 +551,7 @@ sections:
       -Chancellor Caylen
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/38/gallery/0/image.jpg
-        alt: Image 1 from “To Ping, Or Not To Ping”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Operations Comms
@@ -565,11 +565,11 @@ sections:
       
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/40/gallery/0/image.jpg
-        alt: Image 1 from “Ministry Round Up”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/40/gallery/1/image.jpg
-        alt: Image 2 from “Ministry Round Up”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: From The Minister Of Security - MSS
@@ -628,15 +628,15 @@ sections:
       This game is ever changing, so the MSS must change with it, and have fun in the process to encourage participation.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/41/gallery/0/image.jpg
-        alt: Image 1 from “From The Minister Of Security - MSS”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/41/gallery/1/image.jpg
-        alt: Image 2 from “From The Minister Of Security - MSS”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/41/gallery/2/image.jpg
-        alt: Image 3 from “From The Minister Of Security - MSS”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: MSS Directors
@@ -645,7 +645,7 @@ sections:
       MSS DIRECTORS ARE SEEKING TO HAVE SEVERAL ROLES FILLED. ARE YOU READY FOR ACTION? SIGN UP TODAY!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/42/gallery/0/image.jpg
-        alt: Image 1 from “MSS Directors”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Confederation Law Civil Protectorate (CLCP)
@@ -663,7 +663,7 @@ sections:
       - Will ensure that contractual obligations initiated with or between USC Citizen are fulfilled and if needed kept secure and safe.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/43/gallery/0/image.jpg
-        alt: Image 1 from “Confederation Law Civil Protectorate (CLCP)”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Department Marine Corps
@@ -680,7 +680,7 @@ sections:
       - If deemed necessary and appropriate, coordinate with the consul of war on the management of patrol schedules or "Fast Response Unit" Rosters and schedules or similar.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/44/gallery/0/image.jpg
-        alt: Image 1 from “Department Marine Corps”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Fleet Planning
@@ -697,11 +697,11 @@ sections:
       My gratitude.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/45/gallery/0/image.jpg
-        alt: Image 1 from “Office Fleet Planning”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/45/gallery/1/image.jpg
-        alt: Image 2 from “Office Fleet Planning”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: From The Minister Of Exploration
@@ -727,7 +727,7 @@ sections:
       MIE DIRECTORS WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE PLANNING TO DO WITHIN THEIR DEPARTMENTS! HERE ARE ONLY A FEW OF THE INTERESTING GOALS AND OBJECTIVES THEY ARE COOKING UP:
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/47/gallery/0/image.jpg
-        alt: Image 1 from “MIE Directors”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Academy of Cosmic Research & Exploration
@@ -744,7 +744,7 @@ sections:
       - Remain up to date with the latest developments in the universe and provide summaries and potential consequences as a pre-patch release (moving to monthly as development picks up) report to the Minister of Intelligence.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/48/gallery/0/image.jpg
-        alt: Image 1 from “Academy of Cosmic Research & Exploration”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Cosmic Survey
@@ -761,7 +761,7 @@ sections:
       - Track participation in the mission types listed above.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/49/gallery/0/image.jpg
-        alt: Image 1 from “Office Cosmic Survey”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Naval Intelligence
@@ -780,11 +780,11 @@ sections:
       Fly safe
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/50/gallery/0/image.jpg
-        alt: Image 1 from “Office Naval Intelligence”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/50/gallery/1/image.jpg
-        alt: Image 2 from “Office Naval Intelligence”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: A Word From The Minister Of Commerce
@@ -806,7 +806,7 @@ sections:
       MIC WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE LOOKING FOR MEMBERS THAT ARE INTERESTED IN SIGNING UP!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/52/gallery/0/image.jpg
-        alt: Image 1 from “MIC Directors”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Department Travel & Hospitality
@@ -824,7 +824,7 @@ sections:
       - Manages event planning with the assistance of other departments as needed.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/53/gallery/0/image.jpg
-        alt: Image 1 from “Department Travel & Hospitality”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Treasury & Fleet Logistics
@@ -845,7 +845,7 @@ sections:
       - Manage tax collection.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/54/gallery/0/image.jpg
-        alt: Image 1 from “Office Treasury & Fleet Logistics”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Trade & Commodities
@@ -864,11 +864,11 @@ sections:
       Thank you all.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/55/gallery/0/image.jpg
-        alt: Image 1 from “Office Trade & Commodities”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/55/gallery/1/image.jpg
-        alt: Image 2 from “Office Trade & Commodities”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: A Word From The Minister Of Engineering
@@ -890,7 +890,7 @@ sections:
       _Here Are Only A Few Of The Interesting Goals And Objectives They Are Cooking Up:_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/57/gallery/0/image.jpg
-        alt: Image 1 from “MES Directors”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Confederation Health Services
@@ -913,7 +913,7 @@ sections:
       I’d also like to see long-haul expeditions deployed to fringe systems affected by Vanduul incursions, or outlaw occupied areas, or even environmental disasters. Delivering aid to refugees or disease-stricken settlements. This could possibly lend to bridging relationships with other factions or orgs, earning protective status through goodwill, or even provide peacekeeping conferences between feuding orgs.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/58/gallery/0/image.jpg
-        alt: Image 1 from “Confederation Health Services”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Department of Industrial Engineering
@@ -933,7 +933,7 @@ sections:
       - Oversees the activities that provides the USC with crafted and/or improved vehicles, components & equipment.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/59/gallery/0/image.jpg
-        alt: Image 1 from “Department of Industrial Engineering”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office of Fleet Engineering
@@ -973,11 +973,11 @@ sections:
       Keep an eye on Discord for announcements and calendar events to join.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/60/gallery/0/image.jpg
-        alt: Image 1 from “Office of Fleet Engineering”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/60/gallery/1/image.jpg
-        alt: Image 2 from “Office of Fleet Engineering”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: A Word From The Minister Of State Affairs
@@ -1015,7 +1015,7 @@ sections:
       MSA DIRECTORS WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE PLANNING TO DO WITHIN THEIR DEPARTMENTS! HERE ARE ONLY A FEW OF THE INTERESTING GOALS AND OBJECTIVES THEY ARE COOKING UP:
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/62/gallery/0/image.jpg
-        alt: Image 1 from “MSA Directors”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Confederation Media Network
@@ -1035,7 +1035,7 @@ sections:
       - Showcase our activity and achievements.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/63/gallery/0/image.jpg
-        alt: Image 1 from “Confederation Media Network”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Diplomatic Support
@@ -1053,7 +1053,7 @@ sections:
       - Maintain a presence in any groups you are assigned to as the official USC Envoy.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q3-2955/sections/64/gallery/0/image.jpg
-        alt: Image 1 from “Office Diplomatic Support”, Newsletter Q3 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Immigration & Resettlement

@@ -30,7 +30,7 @@ const sections = n.sections.map((s, i) => ({ ...s, id: `section-${i + 1}`, num: 
     edition={`Published ${formatDate(n.published)}`}
     kicker={n.title.replace(/\s*(Q[1-4])\s*\d{4}$/, '')}
     lines={[n.quarter, String(n.year)]}
-    image={{ src: n.cover.image, alt: n.cover.alt, credit: n.cover.credit }}
+    image={{ src: n.cover.image, alt: n.cover.alt, credit: n.cover.credit, creditStatus: n.cover.creditStatus }}
     size="small"
   />
 

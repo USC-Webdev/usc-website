@@ -9,7 +9,7 @@ workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
   image: ../../assets/images/ministries/security/hero/image.jpg
-  alt: In-game image for the Ministry of Security Services
+  alt: ""
   credit: Hadwin
 overview: |
   The Ministry of Security Services (MSS) is responsible for the general security of USC interests and the combat preparedness of the Confederation.
@@ -30,6 +30,6 @@ offices:
       Oversees Civil Law and Order within the Confederation by managing the USC's internal Bounty Hunters guild. Mainly in charge of tracking and apprehending suspects, It will also engage in investigations, contract enforcement, and the confiscation/destruction of contraband and controlled substances.
 gallery:
   - image: ../../assets/images/ministries/security/gallery/0/image.jpg
-    alt: Organization chart of the Ministry of Security Services
+    alt: ""
     caption: ""
     credit: ""

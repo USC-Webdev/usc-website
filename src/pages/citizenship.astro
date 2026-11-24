@@ -27,7 +27,7 @@ const { settings } = await getSite();
   <CoverHero
     eyebrow="United Space Confederation"
     lines={page.heroLines}
-    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit }}
+    image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
     size="small"
     sections={[
       { href: '#s-1', label: `1.0  ${page.rulesHeading}` },

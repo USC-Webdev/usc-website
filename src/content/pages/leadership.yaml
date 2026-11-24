@@ -4,7 +4,7 @@ heroLines:
   - Leadership
 hero:
   image: ../../assets/images/pages/leadership/hero/image.jpg
-  alt: USC citizens gathered in a hangar
+  alt: ""
   credit: Hadwin
 sections:
   - heading: Leadership Philosophy
@@ -83,6 +83,6 @@ roles:
       - The responsibility for the proper functioning of the Senate, its voting process, and its operations is entrusted to an elected Citizen:
 chart:
   - image: ../../assets/images/pages/leadership/chart/0/image.jpg
-    alt: "USC organization chart: the Cabinet above the Chancellor, the five ministries, the Navy and the Prime Minister"
+    alt: ""
     caption: The USC organization chart.
     credit: ""

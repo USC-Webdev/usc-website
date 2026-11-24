@@ -5,7 +5,7 @@ heroLines:
   - Vision
 hero:
   image: ../../assets/images/pages/our-vision/hero/image.jpg
-  alt: A USC ship over a planet
+  alt: ""
   credit: LordActon
 sections:
   - heading: Our Vision, Our Way of Life

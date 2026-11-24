@@ -18,14 +18,24 @@ const optionalImg = (folder: string, label: string) => fields.image(imageField(f
 const alt = () =>
   fields.text({
     label: 'Alt text',
-    description: 'Describe what the image shows for people who cannot see it. Required.',
-    validation: { length: { min: 1 } },
+    description: 'Describe what the image shows for people who cannot see it. Optional but recommended; leave empty only for decorative images.',
   });
 
 const credit = () =>
   fields.text({
-    label: 'Image credit (USC-Citizen name)',
-    description: 'Shown as "In game image by USC-Citizen: NAME". Leave empty if not an in-game image.',
+    label: 'Image credit (name)',
+    description: 'Shown as "In game image by USC-Citizen: NAME" (or USC-Resident). Leave empty if not an in-game image.',
+  });
+
+const creditStatus = () =>
+  fields.select({
+    label: 'Credit status',
+    description: 'Resident is the pre-citizen term.',
+    options: [
+      { label: 'Citizen', value: 'Citizen' },
+      { label: 'Resident', value: 'Resident' },
+    ],
+    defaultValue: 'Citizen',
   });
 
 const prose = (label: string, description?: string) =>
@@ -41,6 +51,7 @@ const hero = (folder: string) =>
       image: img(folder, 'Hero image'),
       alt: alt(),
       credit: credit(),
+      creditStatus: creditStatus(),
     },
     { label: 'Hero image' },
   );
@@ -52,6 +63,7 @@ const gallery = (folder: string, label = 'Gallery') =>
       alt: alt(),
       caption: fields.text({ label: 'Caption' }),
       credit: credit(),
+      creditStatus: creditStatus(),
     }),
     { label, itemLabel: (props) => props.fields.caption.value || props.fields.alt.value || 'Image' },
   );
@@ -388,7 +400,7 @@ export default config({
         presenter: fields.text({ label: 'Presenter line' }),
         month: fields.date({ label: 'Month', validation: { isRequired: true } }),
         poster: optionalImg('videos', 'Poster image'),
-        posterAlt: fields.text({ label: 'Poster alt text', description: 'Required if a poster image is set.' }),
+        posterAlt: fields.text({ label: 'Poster alt text', description: 'Optional but recommended.' }),
       },
     }),
   },
