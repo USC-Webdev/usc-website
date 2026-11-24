@@ -20,18 +20,14 @@ const { settings } = await getSite();
   title={page.title}
   description={page.description}
   dock={[
-    { href: '#s-1', label: '1.0 Rules' },
-    { href: '#apply', label: '2.0 Apply' },
+    { href: '#s-1', label: `1.0  ${page.rulesHeading}` },
+    { href: '#apply', label: `2.0  ${page.ctaHeading}` },
   ]}
 >
   <CoverHero
     lines={page.heroLines}
     image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
     size="small"
-    sections={[
-      { href: '#s-1', label: `1.0  ${page.rulesHeading}` },
-      { href: '#apply', label: `2.0  ${page.ctaHeading}` },
-    ]}
   />
 
   <div class="wrap block">

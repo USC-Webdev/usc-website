@@ -133,7 +133,7 @@ Facts confirmed on 23 Nov 2026:
 
 ### Layout motifs
 
-- **Cover hero:** Blue Zodiac ground, one upright image centred, white outlined title across it, section labels along the bottom.
+- **Cover hero:** Blue Zodiac ground, one upright image centred, white outlined title across it. Section links go in the dock, not under the hero (team feedback, 24.11.2026).
 - **Rail and hairline:** 220px label rail, 1px vertical rule, then content. All dividers are 1px Blue Zodiac lines. Square corners on every panel.
 - **Capsule band:** full-width Blue Zodiac strip of diagonal rounded capsules in the brand colours, drifting slowly. One per page, between a light and a dark section.
 - **Numbering:** sections are 1.0, 2.0; items are 1.1, 1.2.
@@ -164,7 +164,7 @@ Port each from `usc-mockup-a-reference.html`. That file is a design-canvas expor
 |---|---|
 | `SiteHeader` | Logo, Menu button, "Application + Discord" button. On Blue Zodiac. |
 | `MenuPanel` | Opens under the header. Robot White panel: page links in Orbitron 900, ministries with their marks, Media Network sub-pages. Needs a small client script; must work with keyboard and close on Escape. |
-| `CoverHero` | Props: kicker, title lines, image, credit, section labels. |
+| `CoverHero` | Props: kicker, title lines, image, credit. |
 | `SectionHead` | Numeral + title, optional aside. Light and dark variants. |
 | `RailBlock` | Label rail + content. |
 | `IndexRow` | Number, title, sentence, hexagon arrow. Whole row is the link. |
@@ -173,7 +173,7 @@ Port each from `usc-mockup-a-reference.html`. That file is a design-canvas expor
 | `VideoCard` | YouTube ID, title, poster. Click loads the embed (no iframe until click). |
 | `ExhibitCard` | Sticky stacking card: number, word, body, colour, object slot. |
 | `Notice` | 2px border, Ruby bar, Orbitron statement, body. |
-| `Dock` | Floating section nav, bottom centre, per page. |
+| `Dock` | Floating quick links, bottom centre: one per numbered section, full section titles, scrolls sideways when long. |
 | `SiteFooter` | Logo, tagline, channels, contact email, outlined marquee. |
 | `Prose` | Markdoc body styles for long pages and newsletters. |
 | `Figure` | Astro Image + caption + credit line "In game image by USC-Citizen: NAME". |

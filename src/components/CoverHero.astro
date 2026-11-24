@@ -1,19 +1,18 @@
 ---
 import { Picture } from 'astro:assets';
 import Placeholder from './Placeholder.astro';
-import type { HeroImage, NavLink } from '../lib/types';
+import type { HeroImage } from '../lib/types';
 
-// Blue Zodiac cover: one upright image centred, white outlined title across it,
-// section labels along the bottom. "small" is the compact variant used by the
-// long-form, citizenship and compass templates.
+// Blue Zodiac cover: full-width image with the white outlined title across it.
+// Section links live in the bottom Dock, not here. "small" is the compact
+// variant used by the long-form, citizenship and compass templates.
 interface Props {
   kicker?: string;
   lines: string[];
   image?: HeroImage;
-  sections?: NavLink[];
   size?: 'full' | 'small';
 }
-const { kicker, lines, image, sections = [], size = 'full' } = Astro.props;
+const { kicker, lines, image, size = 'full' } = Astro.props;
 // Shrink the title so its longest line fits the page width (Orbitron 900 caps are about 1em wide).
 const longest = Math.max(...lines.map((l) => l.length), 1);
 const fit = `calc((min(100vw, 1392px) - 48px) / ${(longest * 1.04).toFixed(2)})`;
@@ -50,13 +49,6 @@ const creditText = image?.credit ? `In game image by USC-${image.creditStatus ??
         {lines.map((line) => <span class="line">{line}</span>)}
       </h1>
     </div>
-    {
-      sections.length > 0 && (
-        <nav class="sections label" aria-label="Sections">
-          {sections.map((s) => <a href={s.href}>{s.label}</a>)}
-        </nav>
-      )
-    }
   </div>
 </section>
 
@@ -65,7 +57,6 @@ const creditText = image?.credit ? `In game image by USC-${image.creditStatus ??
     container-type: inline-size;
     background: var(--blue-zodiac);
     color: var(--white);
-    padding-bottom: 32px;
   }
   .stage {
     position: relative;
@@ -156,24 +147,5 @@ const creditText = image?.credit ? `In game image by USC-${image.creditStatus ??
   }
   .line {
     display: block;
-  }
-  .sections {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0 24px;
-    padding-top: 24px;
-  }
-  .sections a {
-    color: var(--white);
-    text-decoration: none;
-    padding: 14px 0;
-    min-height: var(--target-min);
-    display: inline-flex;
-    align-items: center;
-  }
-  .sections a:hover {
-    color: var(--white);
-    text-decoration: underline;
   }
 </style>

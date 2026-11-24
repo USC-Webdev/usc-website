@@ -15,18 +15,14 @@ const page = await getSingleton('policies');
   title={page.title}
   description={page.description}
   dock={[
-    { href: '#s-1', label: '1.0 Internal' },
-    { href: '#s-2', label: '2.0 External' },
+    { href: '#s-1', label: `1.0  ${page.internalHeading}` },
+    { href: '#s-2', label: `2.0  ${page.externalHeading}` },
   ]}
 >
   <CoverHero
     lines={page.heroLines}
     image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
     size="small"
-    sections={[
-      { href: '#s-1', label: `1.0  ${page.internalHeading}` },
-      { href: '#s-2', label: `2.0  ${page.externalHeading}` },
-    ]}
   />
 
   <section class="wrap block" id="s-1">

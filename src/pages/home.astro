@@ -27,18 +27,12 @@ const heroSections = [
 <BaseLayout
   title="United Space Confederation"
   description={page.description}
-  dock={[
-    { href: '#s-1', label: '1.0 About' },
-    { href: '#s-2', label: '2.0 Values' },
-    { href: `#s-${communityStart}`, label: `${communityStart}.0 Community` },
-    { href: '#join', label: 'Join' },
-  ]}
+  dock={[...heroSections, { href: '#join', label: 'Join' }]}
 >
   <CoverHero
     kicker={page.heroKicker}
     lines={page.heroLines}
     image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
-    sections={heroSections}
   />
 
   <section class="wrap block" id="s-1">

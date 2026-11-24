@@ -34,15 +34,18 @@ const lines = m.title.split(/\s+/).reduce<string[]>((acc, word) => {
 }, []);
 ---
 
-<BaseLayout title={m.fullName} description={m.summary || undefined}>
+<BaseLayout
+  title={m.fullName}
+  description={m.summary || undefined}
+  dock={[
+    { href: '#s-1', label: `1.0  ${m.fullName}` },
+    ...(offices.length ? [{ href: '#s-2', label: `2.0  ${m.officesHeading}` }] : []),
+  ]}
+>
   <CoverHero
     lines={lines}
     image={{ src: m.hero.image, alt: m.hero.alt, credit: m.hero.credit, creditStatus: m.hero.creditStatus }}
     size="small"
-    sections={[
-      { href: '#s-1', label: `1.0  ${m.abbreviation}` },
-      ...(offices.length ? [{ href: '#s-2', label: `2.0  ${m.officesHeading}` }] : []),
-    ]}
   />
 
   <section class="wrap block" id="s-1">

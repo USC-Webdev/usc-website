@@ -21,16 +21,19 @@ const sectionStart = 2;
 const chartNum = sectionStart + page.sections.length;
 ---
 
-<BaseLayout title={page.title} description={page.description}>
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  dock={[
+    { href: '#s-1', label: `1.0  ${page.ministriesHeading}` },
+    ...page.sections.map((s, i) => ({ href: `#s-${sectionStart + i}`, label: `${sectionStart + i}.0  ${s.heading}` })),
+    { href: `#s-${chartNum}`, label: `${chartNum}.0  ${page.orgChartHeading}` },
+  ]}
+>
   <CoverHero
     lines={page.heroLines}
     image={{ src: page.hero.image, alt: page.hero.alt, credit: page.hero.credit, creditStatus: page.hero.creditStatus }}
     size="small"
-    sections={[
-      { href: '#s-1', label: `1.0  ${page.ministriesHeading}` },
-      ...page.sections.map((s, i) => ({ href: `#s-${sectionStart + i}`, label: `${sectionStart + i}.0  ${s.heading}` })),
-      { href: `#s-${chartNum}`, label: `${chartNum}.0  ${page.orgChartHeading}` },
-    ]}
   />
 
   <section class="wrap block" id={`s-${listNum}`}>
