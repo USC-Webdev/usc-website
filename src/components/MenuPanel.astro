@@ -24,7 +24,7 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
       <div class="pages">
         {
           nav.pages.map((link) => (
-            <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+            <a href={link.href} class:list={{ 'col-head': norm(link.href) === '/home' }} aria-current={isCurrent(link.href) ? 'page' : undefined}>
               {link.label}
             </a>
           ))
@@ -206,8 +206,9 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
   .col:last-child {
     flex: 1 1 220px;
   }
-  /* Column heads: larger than the links under them. */
-  .col-head {
+  /* Column heads: larger than the links under them. Home heads the pages column the same way. */
+  .col-head,
+  .pages a.col-head {
     display: flex;
     align-items: center;
     min-height: var(--target-min);
@@ -216,6 +217,8 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
     font-weight: 900;
     font-size: 24px;
     line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: none;
   }
   .ministry {
     gap: 14px;
