@@ -63,6 +63,7 @@ const siteSettings = defineCollection({
     patreon: url(),
     swagStore: url(),
     galacticSenate: url(),
+    affiliates: list(z.object({ label: req(), href: z.url() })),
   }),
 });
 

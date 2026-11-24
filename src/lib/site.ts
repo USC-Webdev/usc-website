@@ -26,6 +26,7 @@ async function load(): Promise<{ settings: SiteSettings; nav: SiteNav }> {
     tagline: s.tagline,
     footerText: s.footerText,
     channels,
+    affiliates: s.affiliates,
   };
 
   const ministries = await getMinistries();
