@@ -9,57 +9,115 @@ interface Props {
 const { nav, currentPath } = Astro.props;
 const norm = (p: string) => p.replace(/\/$/, '') || '/';
 const isCurrent = (href: string) => norm(href) === norm(currentPath);
+// Full-screen overlay over the page; SiteHeader's script opens and closes it.
 ---
 
-<nav id="site-menu" class="menu wrap" aria-label="Primary" hidden>
-  <div class="panel">
-    <div class="pages">
-      {
-        nav.pages.map((link) => (
-          <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
-            {link.label}
-          </a>
-        ))
-      }
+<div id="site-menu" class="overlay" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="inner wrap">
+    <div class="overlay-bar">
+      <span class="label">Menu</span>
+      <button type="button" class="close" data-menu-close>Close <span aria-hidden="true">✕</span></button>
     </div>
-    <div class="col">
-      <span class="label col-head">Ministries</span>
-      {
-        nav.ministries.map((m) => (
-          <a href={m.href} class="ministry" aria-current={isCurrent(m.href) ? 'page' : undefined}>
-            <span class="mark-slot">
-              <MinistryMark mark={m.mark} abbreviation={m.abbreviation} />
-            </span>
-            {m.label}
-          </a>
-        ))
-      }
-    </div>
-    <div class="col">
-      <span class="label col-head">Media Network</span>
-      {
-        nav.media.map((link) => (
-          <a href={link.href} class="media" aria-current={isCurrent(link.href) ? 'page' : undefined}>
-            {link.label}
-          </a>
-        ))
-      }
-    </div>
+    <nav class="panel" aria-label="Primary">
+      <div class="pages">
+        {
+          nav.pages.map((link) => (
+            <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+      <div class="col">
+        <a href="/ministries" class="label col-head" aria-current={isCurrent('/ministries') ? 'page' : undefined}>Ministries</a>
+        {
+          nav.ministries.map((m) => (
+            <a href={m.href} class="ministry" aria-current={isCurrent(m.href) ? 'page' : undefined}>
+              <span class="mark-slot">
+                <MinistryMark mark={m.mark} abbreviation={m.abbreviation} />
+              </span>
+              {m.label}
+            </a>
+          ))
+        }
+      </div>
+      <div class="col">
+        <a href="/media-network" class="label col-head" aria-current={isCurrent('/media-network') ? 'page' : undefined}>Media Network</a>
+        {
+          nav.media.map((link) => (
+            <a href={link.href} class="media" aria-current={isCurrent(link.href) ? 'page' : undefined}>
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+    </nav>
   </div>
-</nav>
+</div>
 
 <noscript>
   <style>
     #site-menu[hidden] {
       display: block;
+      position: static;
+      background: none;
+    }
+    #site-menu .overlay-bar {
+      display: none;
     }
   </style>
 </noscript>
 
 <style>
-  .menu {
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: rgb(27 46 89 / 0.94);
+    backdrop-filter: blur(6px);
+    animation: menu-in 0.2s ease-out;
+  }
+  .overlay[hidden] {
+    display: none;
+  }
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+    }
+  }
+  .inner {
     padding-top: 16px;
-    padding-bottom: 8px;
+    padding-bottom: 32px;
+  }
+  .overlay-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--white);
+    padding-bottom: 16px;
+  }
+  .close {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: var(--target-min);
+    padding: 0 24px;
+    border: 1px solid var(--robot-white);
+    border-radius: var(--r-control);
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: var(--track-action);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .close:focus-visible {
+    outline-color: var(--white);
   }
   .panel {
     background: var(--robot-white);
@@ -106,7 +164,14 @@ const isCurrent = (href: string) => norm(href) === norm(currentPath);
     flex: 1 1 220px;
   }
   .col-head {
-    padding-bottom: 10px;
+    padding: 12px 0 10px;
+    min-height: var(--target-min);
+  }
+  .col-head[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: var(--ruby-red);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
   }
   .ministry {
     display: flex;

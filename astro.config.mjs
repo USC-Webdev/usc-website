@@ -21,6 +21,9 @@ export default defineConfig({
   // Vercel's runtime image service.
   image: {
     responsiveStyles: false,
+    // YouTube thumbnails for video cards are fetched from here at build time
+    // and served from this site.
+    domains: ['i.ytimg.com'],
   },
   // Fonts are downloaded at build time and self-hosted from the site.
   fonts: [

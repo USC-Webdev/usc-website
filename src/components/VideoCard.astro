@@ -3,7 +3,9 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 // YouTube card. It is a plain link to YouTube; with JavaScript, a click swaps
-// in a youtube-nocookie embed (no iframe until the click).
+// in a youtube-nocookie embed (no iframe until the click). Without a poster
+// image, the video's YouTube thumbnail is downloaded at build time and served
+// from this site, so visitors make no request to YouTube until they press Play.
 interface Props {
   youtubeId: string;
   title: string;
@@ -15,17 +17,33 @@ interface Props {
   titlePlaceholder?: boolean;
 }
 const { youtubeId, title, num, shape = 'wide', poster, posterAlt = '', offset = false, titlePlaceholder = false } = Astro.props;
+const watchUrl = `https://www.youtube.com/watch?v=${youtubeId}`;
+
+// Largest thumbnail YouTube has for this video (maxres is missing for some).
+async function thumbnailUrl(id: string) {
+  for (const size of ['maxresdefault', 'sddefault']) {
+    const url = `https://i.ytimg.com/vi/${id}/${size}.jpg`;
+    try {
+      if ((await fetch(url, { method: 'HEAD' })).ok) return url;
+    } catch {
+      // Offline build: fall through to the always-present thumbnail.
+    }
+  }
+  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+}
+const thumb = poster ? undefined : await thumbnailUrl(youtubeId);
 ---
 
 <div class:list={['video', shape, { offset }]}>
   <a
     class="screen"
-    href={`https://www.youtube.com/watch?v=${youtubeId}`}
+    href={watchUrl}
     data-youtube={youtubeId}
     data-title={title}
     rel="noopener"
   >
     {poster && <Image src={poster} alt={posterAlt} widths={[480, 960]} sizes="(min-width: 900px) 50vw, 100vw" class="poster" />}
+    {thumb && <Image src={thumb} alt="" inferSize widths={[480, 960]} sizes="(min-width: 900px) 50vw, 100vw" class="poster thumb" />}
     <span class="top label">
       <span>{num}</span>
       <span>YouTube</span>
@@ -39,7 +57,7 @@ const { youtubeId, title, num, shape = 'wide', poster, posterAlt = '', offset = 
     <span class="baseline" aria-hidden="true"></span>
   </a>
   <p class="video-title">
-    {title}
+    <a href={watchUrl} rel="noopener">{title}</a>
     {titlePlaceholder && <span class="ph-badge">Placeholder title</span>}
   </p>
 </div>
@@ -115,6 +133,20 @@ const { youtubeId, title, num, shape = 'wide', poster, posterAlt = '', offset = 
     height: 100%;
     object-fit: cover;
     opacity: 0.55;
+  }
+  .thumb {
+    opacity: 0.7;
+  }
+  .video-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .video-title a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  .video-title a:focus-visible {
+    outline-color: var(--white);
   }
   .top {
     position: relative;

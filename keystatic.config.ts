@@ -467,7 +467,7 @@ export default config({
         youtubeId: fields.text({ label: 'YouTube video ID', description: 'The part after v= in the YouTube link.', validation: { length: { min: 5 } } }),
         presenter: fields.text({ label: 'Presenter line' }),
         month: fields.date({ label: 'Month', validation: { isRequired: true } }),
-        poster: optionalImg('videos', 'Poster image'),
+        poster: optionalImg('videos', 'Poster image (optional: leave empty to use the YouTube thumbnail)'),
         posterAlt: fields.text({ label: 'Poster alt text', description: 'Optional but recommended.' }),
       },
     }),

@@ -1,5 +1,5 @@
 ---
-// Bold numeral + medium title, e.g. "1.0 Notable News Updates".
+// Bold numeral above a medium title, e.g. "1.0" / "Notable News Updates".
 interface Props {
   num?: string;
   title: string;
@@ -37,11 +37,12 @@ const hasAside = Astro.slots.has('default');
     gap: 16px 48px;
     padding-bottom: 28px;
   }
+  /* Number on its own line, title below, on every page and screen size. */
   .numtitle {
     display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     font-family: var(--font-display);
     font-size: var(--fs-section);
     line-height: 1.1;
