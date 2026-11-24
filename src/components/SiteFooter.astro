@@ -17,7 +17,7 @@ const { settings } = Astro.props;
       <span class="tagline">{settings.tagline}</span>
       {settings.footerText && <p class="footer-text">{settings.footerText}</p>}
     </div>
-    <div class="channels">
+    <div class="col channels">
       <span class="label">Channels</span>
       <nav aria-label="Channels" class="links">
         {
@@ -30,6 +30,20 @@ const { settings } = Astro.props;
       </nav>
       <a href={`mailto:${settings.contactEmail}`} class="email">{settings.contactEmail}</a>
     </div>
+    {
+      settings.affiliates.length > 0 && (
+        <div class="col affiliates">
+          <span class="label">Affiliates</span>
+          <nav aria-label="Affiliates" class="affiliate-links">
+            {settings.affiliates.map((a) => (
+              <a href={a.href} rel="noopener">
+                {a.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )
+    }
   </div>
   <div class="marquee" aria-hidden="true">
     <div class="track">UNITED SPACE CONFEDERATION &nbsp;/&nbsp; UNITED SPACE CONFEDERATION &nbsp;/&nbsp;&nbsp;</div>
@@ -42,14 +56,33 @@ const { settings } = Astro.props;
     border-top: var(--rule);
     overflow: hidden;
   }
+  /* Brand left, channels centred, affiliates right; stacked on narrow screens. */
   .grid {
     padding-top: 56px;
     padding-bottom: 24px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     gap: 32px 56px;
-    justify-content: space-between;
-    align-items: flex-start;
+    align-items: start;
+  }
+  .affiliates {
+    justify-self: end;
+  }
+  @media (max-width: 1100px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .brand {
+      grid-column: 1 / -1;
+    }
+    .affiliates {
+      justify-self: start;
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
   .brand {
     display: flex;
@@ -63,15 +96,16 @@ const { settings } = Astro.props;
   .tagline {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: 15px;
+    /* Scales down on phones so the tagline stays on one line. */
+    font-size: clamp(11px, 3.4vw, 15px);
     letter-spacing: 0.14em;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
   }
   .footer-text {
     max-width: 46ch;
     font-size: 15px;
   }
-  .channels {
+  .col {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -79,8 +113,12 @@ const { settings } = Astro.props;
     padding-left: 24px;
     min-width: 0;
   }
-  .channels .label {
+  .col .label {
     padding-bottom: 6px;
+  }
+  .affiliate-links {
+    display: flex;
+    flex-direction: column;
   }
   .links {
     display: flex;
@@ -89,6 +127,7 @@ const { settings } = Astro.props;
     max-width: 420px;
   }
   .links a,
+  .affiliate-links a,
   .email {
     padding: 11px 0;
     min-height: var(--target-min);

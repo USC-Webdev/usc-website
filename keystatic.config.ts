@@ -130,6 +130,13 @@ export default config({
         patreon: fields.url({ label: 'Patreon' }),
         swagStore: fields.url({ label: 'Swag Store' }),
         galacticSenate: fields.url({ label: 'Galactic Senate' }),
+        affiliates: fields.array(
+          fields.object({
+            label: fields.text({ label: 'Link text', validation: { length: { min: 1 } } }),
+            href: fields.url({ label: 'Address', validation: { isRequired: true } }),
+          }),
+          { label: 'Affiliates (footer)', itemLabel: (p) => p.fields.label.value || 'Affiliate' },
+        ),
       },
     }),
 

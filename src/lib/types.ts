@@ -27,6 +27,7 @@ export interface SiteSettings {
   tagline: string;
   footerText: string;
   channels: Channel[];
+  affiliates: Channel[];
 }
 
 export interface HeroImage {
