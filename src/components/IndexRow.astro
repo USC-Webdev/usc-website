@@ -4,7 +4,8 @@ import MinistryMark from './MinistryMark.astro';
 import type { ImageMetadata } from 'astro';
 
 // Number, title, sentence, hexagon arrow. The whole row is the link and flips
-// to Blue Zodiac on hover. Without href it renders as a static row.
+// to Blue Zodiac on hover. Without href it renders as a static row. With a
+// ministry mark, the mark leads and the number sits above the title beside it.
 interface Props {
   num: string;
   title: string;
@@ -23,15 +24,24 @@ const external = href ? /^https?:\/\//.test(href) : false;
   href={href}
   {...external ? { rel: 'noopener' } : {}}
 >
-  <span class="num">{num}</span>
   {
-    mark && (
-      <span class="mark">
-        <MinistryMark mark={mark.image} abbreviation={mark.abbreviation} size={56} />
+    mark ? (
+      <span class="lead">
+        <span class="mark">
+          <MinistryMark mark={mark.image} abbreviation={mark.abbreviation} size={56} />
+        </span>
+        <span class="head">
+          <span class="num">{num}</span>
+          <span class="title">{title}</span>
+        </span>
       </span>
+    ) : (
+      <>
+        <span class="num">{num}</span>
+        <span class="title">{title}</span>
+      </>
     )
   }
-  <span class="title">{title}</span>
   {text && <span class="text">{text}</span>}
   {href && <HexArrow />}
 </Tag>
@@ -81,6 +91,23 @@ const external = href ? /^https?:\/\//.test(href) : false;
     font-size: var(--fs-h3);
     line-height: 1.1;
     overflow-wrap: anywhere;
+  }
+  .lead {
+    flex: 3 1 420px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .head {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .head .num,
+  .head .title {
+    flex: none;
   }
   .text {
     flex: 1 1 260px;
