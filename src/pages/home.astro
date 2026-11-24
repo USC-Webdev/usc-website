@@ -43,8 +43,7 @@ const heroSections = [
   {
     feed.length > 0 && (
       <section class="wrap block" id="latest">
-        <SectionHead title={page.updatesHeading} />
-        <LatestFeed items={feed} />
+        <LatestFeed heading={page.updatesHeading} items={feed} />
       </section>
     )
   }
