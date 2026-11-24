@@ -39,7 +39,7 @@ const lines = m.title.split(/\s+/).reduce<string[]>((acc, word) => {
     eyebrow={m.fullName}
     edition={m.abbreviation}
     lines={lines}
-    image={{ src: m.hero.image, alt: m.hero.alt, credit: m.hero.credit }}
+    image={{ src: m.hero.image, alt: m.hero.alt, credit: m.hero.credit, creditStatus: m.hero.creditStatus }}
     size="small"
     sections={[
       { href: '#s-1', label: `1.0  ${m.abbreviation}` },

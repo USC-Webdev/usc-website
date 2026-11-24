@@ -9,8 +9,9 @@ workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
   image: ../../assets/images/ministries/engineering/hero/image.jpg
-  alt: In-game image for the Ministry of Engineering and Support
+  alt: ""
   credit: Jensys
+  creditStatus: Resident
 overview: |
   The Ministry of Engineering and Support (MES) is responsible for all operational support activities within the USC.
 
@@ -30,6 +31,6 @@ offices:
       The Department of Industry is responsible for resource gathering & recycling in space and on planetary surfaces, the maintenance, upgrading & construction of public infrastructure, assets & consumables, and the technological development & innovation within the USC.
 gallery:
   - image: ../../assets/images/ministries/engineering/gallery/0/image.jpg
-    alt: Organization chart of the Ministry of Engineering and Support
+    alt: ""
     caption: ""
     credit: ""

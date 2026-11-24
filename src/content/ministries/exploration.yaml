@@ -9,7 +9,7 @@ workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
   image: ../../assets/images/ministries/exploration/hero/image.jpg
-  alt: In-game image for the Ministry of Intelligence and Exploration
+  alt: ""
   credit: Jichael_Macksons
 overview: |
   The Ministry of Intelligence and Exploration (MIE) is responsible for Research, Intelligence and Discovery. The exploration-centric needs of the USC are fulfilled here.
@@ -30,6 +30,6 @@ offices:
       The Academy is in charge of extending the boundaries of our collective knowledge. It looks over a vast open-ended scope that may include but is not limited to: Organizing general scope exploration missions, pursuing scientific research to uncover new fabrication processes, uncovering new uses for Fauna or Flora, developing new farming or xeno-breeding methods, Studying spatial phenomena/anomalies and documenting any practical applications, etc.
 gallery:
   - image: ../../assets/images/ministries/exploration/gallery/0/image.jpg
-    alt: Organization chart of the Ministry of Intelligence and Exploration
+    alt: ""
     caption: ""
     credit: ""

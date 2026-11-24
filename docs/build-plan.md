@@ -313,7 +313,7 @@ Move the text and images of all 19 pages from the live site. Newsletters are the
 - Leadership: "USC Membership is:" and "three other important roles" are followed by nothing in the page text. The content is probably an image; transcribe it.
 - Menu labels (Security, Exploration, Commerce, Engineering) differ from the full ministry names. Store both.
 
-Keep outbound links as they are: application form `https://forms.gle/zfYYm6SCNMQfhEMWA`, Consul of Peace `consulofpeace@unitedspaceconfederation.org`, YouTube channel `UCR7NViQANVRSMB84wMFCS-A`, Instagram `theunitedspaceconfederation`, X `usc_starcitizen`, Patreon `UnitedSpaceConfederation`, Swag Store `redbubble.com/people/LandscaperUSC/explore`, Galactic Senate `robertsspaceindustries.com/orgs/SENATE`, The Citizen Compass `thecitizencompass.com`.
+Keep outbound links as they are: application form `https://forms.gle/zfYYm6SCNMQfhEMWA` (replaced 24.11.2026 by `https://forms.gle/LEw1K2o1JVU1cjLo6`, set in Site settings), Consul of Peace `consulofpeace@unitedspaceconfederation.org`, YouTube channel `UCR7NViQANVRSMB84wMFCS-A`, Instagram `theunitedspaceconfederation`, X `usc_starcitizen`, Patreon `UnitedSpaceConfederation`, Swag Store `redbubble.com/people/LandscaperUSC/explore`, Galactic Senate `robertsspaceindustries.com/orgs/SENATE`, The Citizen Compass `thecitizencompass.com`.
 
 Done when: a page-by-page checklist in the PR shows each of the 19 pages compared against the live site.
 

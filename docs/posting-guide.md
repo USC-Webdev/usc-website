@@ -31,7 +31,7 @@ If you forget and try to save on `main`, Keystatic stops you and asks you to cre
    - **URL slug**: `newsletter-q4-2956` (lowercase, dashes). This becomes the page address.
    - **Quarter**, **Year (in-universe)**, **Published date**.
    - **One-line summary**: shown on the Media Network page.
-   - **Hero image**, **Alt text** and **Image credit** (see section 4).
+   - **Hero image**, **Alt text**, **Image credit** and credit status (see section 4).
    - **Intro**: the masthead line, for example "News from around the Confederation".
 3. Under **Sections**, click **Add** for each part of the newsletter ("Profiles in Courage", "Senate Votes" and so on):
    - **Heading** is required.
@@ -46,7 +46,7 @@ The newest newsletter appears on the Media Network page automatically, and the m
 ## 4. Images
 
 - Export screenshots as **JPEG, at most 2560 pixels wide**. Files over 1.5 MB or wider than 3840 pixels fail the website's checks and block publishing.
-- **Alt text is required.** Describe what the image shows for someone who cannot see it, for example "Three USC fighters escorting an Idris over Nyx". Do not start with "Image of".
+- **Alt text** is optional but please add it: it is what people using screen readers hear. Describe what the image shows, for example "Three USC fighters escorting an Idris over Nyx". Do not start with "Image of". Leave it empty only for purely decorative images.
 - **Image credit**: just the citizen's name, for example `Hadwin`. The site shows it as "In game image by USC-Citizen: Hadwin". Leave it empty for images that are not in-game screenshots.
 
 ## 5. Other things you can edit

@@ -22,7 +22,7 @@ const fit = `calc((min(100vw, 1392px) - 48px) / ${(longest * 1.04).toFixed(2)})`
 const srcWidth = image?.src?.width ?? 0;
 const heroWidths = [640, 960, 1280, 1920, 2560].filter((w) => w <= srcWidth);
 if (heroWidths.length === 0 && srcWidth) heroWidths.push(srcWidth);
-const creditText = image?.credit ? `In game image by USC-Citizen: ${image.credit}` : undefined;
+const creditText = image?.credit ? `In game image by USC-${image.creditStatus ?? 'Citizen'}: ${image.credit}` : undefined;
 ---
 
 <section class:list={['hero', size, 'on-dark']}>

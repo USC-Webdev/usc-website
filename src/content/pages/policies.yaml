@@ -4,7 +4,7 @@ heroLines:
   - Policies
 hero:
   image: ../../assets/images/pages/policies/hero/image.jpg
-  alt: A USC capital ship at rest
+  alt: ""
   credit: Edgy_Socrates
 internalHeading: Internal Citizen Policies
 internal:

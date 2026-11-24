@@ -8,7 +8,7 @@ heroLines:
   - Confederation
 hero:
   image: ../../assets/images/pages/home/hero/image.jpg
-  alt: A USC ship in flight
+  alt: ""
   credit: Sir_Duck
 introHeading: Organization Overview
 intro: |

@@ -7,7 +7,7 @@ heroLines:
   - Network
 hero:
   image: ../../assets/images/pages/media-network/hero/image.jpg
-  alt: USC ships in close formation
+  alt: ""
   credit: Hadwin
 railLabel: CMN  |  USC
 railItems:
@@ -15,19 +15,29 @@ railItems:
   - 0.2  What we make
   - 0.3  Why
 statement: |
-  The media broadcasting and social media team for the USC. We produce the org's literature: **newsletters, brochures, newscasts.** We make its **social media content.** All of it supports **recruitment, marketing and communication.**
-statementAside: It's a big 'verse, and somebody has to write it down. We also answer to "the people with the newsletter".
+  The Confederation Media Network (CMN) is the media broadcasting and social media team for the United Space Confederation.
+statementAside: The CMN is responsible for producing and publishing org-specific literature such as newsletters, brochures, newscasts, and newsletter updates. They also produce content for our social media sites and aid recruitment, marketing, and communication efforts.
 newsHeading: Notable News Updates
 videosHeading: Videos of the Month
-videosAside: Presented by the CMN and Farrister.
+videosAside: "The CMN and our very own Farrister presents:"
 poolHeading: USC Donation Pool
-poolAside: Three ways to contribute. Only one of them involves money, and that one is optional.
-time: Playtime is not mandatory, but the org relies on its members' participation. The USC has a one-org policy.
-talent: Members contribute their skills, such as commerce, diplomacy and engineering, toward the group's goals.
-treasureInGame: After official launch, a standard tax will fund org assets such as capital ships. A Javelin, for example, does not buy itself.
-treasureOutOfGame: Patreon donations support general needs. Merch purchases send 20% to the general support fund. Non-monetary donations such as stickers and printed works are also accepted. Out-of-game donations fund meetups, social media and member rewards.
-noticeStatement: Membership never requires payment.
+poolAside: "Members donate to the org's success in three meaningful ways:"
+time: While we don't mandate your playtime, we can't be successful if you don't contribute any time to the org's objective for creating group gameplay content. We want to benefit from the valuable time you will contribute, hence our one-org policy and our concerted efforts to provide you the tools and platforms you'll need to maximize every moment you can afford to spend on the Star Citizen game.
+talent: Our talents can only be refined and mastered after spending quality time in the game. We understand our members have individual aspirations for what they want their in-game characters to become. So, the USC aims to organize these individual contributions to achieve collective goals. These goals will require a group effort, so your contribution to content mastery, i.e., commerce, diplomacy, engineering, etc., is valuable to us and appreciated.
+treasureInGame: Upon official launch, the USC will levy a standard tax on members with the intent of supporting our various efforts that may include purchasing org-owned assets and contributing towards the accomplishments of our collective goals, i.e., buying, upgrading, maintaining, and repairing capital ships such as the Javelin.
+treasureOutOfGame: |-
+  The USC graciously accepts real-life donations of money via the following two (2) methods:
+
+  Patreon: We've set up a Patreon page to collect donations that will be used for general support.
+
+  Org Merch: Check out our new designs on the USC Swag Store. 20% of each purchase goes directly into the general support fund!
+
+  Out-of-game donations help us host real-life meetup events, maintain social media efforts, and in-game activity rewards such as game packages, ships, and flair items. Out-of-game donations don't have to be just money; other items, such as stickers, printed works, logo stencils, etc., all help.
+noticeStatement: We will never require anyone to make a payment to be a member of the USC.
 noticeBody: |
-  Donations are voluntary and confidential. Anyone asking for donations on the USC's behalf should be reported to the [Consul of Peace](mailto:consulofpeace@unitedspaceconfederation.org).
-closingHeading: Thank you for your time, talent and treasure.
-closingText: Follow the USC on Instagram and YouTube. Questions and feedback go to the Consul of Peace. Citizenship applications go through the application form.
+  These donations are completely voluntary, and we will not disclose your donations. Contact [consulofpeace@unitedspaceconfederation.org](mailto:consulofpeace@unitedspaceconfederation.org) if anyone or any member ever approaches you about collecting a donation on our behalf; it isn't allowed or tolerated.
+closingHeading: Thank you!
+closingText: |-
+  We want to take this opportunity to thank all of our members for the time, talent, and treasure they donate to the United Space Confederation.
+
+  Thanks to your donations, our organization is able to provide an enjoyable game community experience for our members and the Star Citizen community as a whole!

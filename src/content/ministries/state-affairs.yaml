@@ -9,7 +9,7 @@ workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
   image: ../../assets/images/ministries/state-affairs/hero/image.jpg
-  alt: In-game image for the Ministry of State Affairs
+  alt: ""
   credit: Kil-Roy
 overview: |
   The Ministry of State Affairs (MSA) is an 'Out of Game Support and Content Creation' entity responsible for the crucial activities required outside of the game. Activities such as recruitment efforts, social media content creation, and diplomatic relations.
@@ -30,6 +30,6 @@ offices:
       The CMN is the out-of-game content creation team. They produce content for our various social media sites and platforms to aid in the recruitment and promotion of the organization. Various digital content may be produced, such as Video, Audio, or digital print media. They also may engage in online or offline sanctioned PR activities.
 gallery:
   - image: ../../assets/images/ministries/state-affairs/gallery/0/image.jpg
-    alt: Organization chart of the Ministry of State Affairs
+    alt: ""
     caption: ""
     credit: ""

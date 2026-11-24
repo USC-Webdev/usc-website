@@ -5,7 +5,7 @@ published: 2955-12-31
 summary: The USC newsletter for Q4 2955.
 cover:
   image: ../../assets/images/newsletters/newsletter-q4-2955/cover/image.jpg
-  alt: Cover image of Newsletter Q4 2955
+  alt: ""
   credit: ""
 intro: |
   NEWS FROM AROUND THE CONFEDERATION
@@ -46,7 +46,7 @@ sections:
       United Space Confederation
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/0/gallery/0/image.jpg
-        alt: Image 1 from “A Word From The Chancellor”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Profiles In Courage
@@ -69,15 +69,15 @@ sections:
       Thank you Bar, and we look forward to your next awesome event!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/1/gallery/0/image.jpg
-        alt: Image 1 from “Profiles In Courage”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/1/gallery/1/image.jpg
-        alt: Image 2 from “Profiles In Courage”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/1/gallery/2/image.jpg
-        alt: Image 3 from “Profiles In Courage”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Welcome New Citizens!
@@ -138,55 +138,55 @@ sections:
       He plays for the release from the usual grind of worklife. Gaming is his source for relaxation and enjoyment when i do get time.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/0/image.jpg
-        alt: Image 1 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/1/image.jpg
-        alt: Image 2 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/2/image.jpg
-        alt: Image 3 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/3/image.jpg
-        alt: Image 4 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/4/image.jpg
-        alt: Image 5 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/5/image.jpg
-        alt: Image 6 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/6/image.jpg
-        alt: Image 7 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/7/image.jpg
-        alt: Image 8 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/8/image.jpg
-        alt: Image 9 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/9/image.jpg
-        alt: Image 10 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/10/image.jpg
-        alt: Image 11 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/11/image.jpg
-        alt: Image 12 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/2/gallery/12/image.jpg
-        alt: Image 13 from “Welcome New Citizens!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Featured Events From 3Q2955
@@ -299,35 +299,35 @@ sections:
       PSA: Now that we've completed our refresh updates to the USC Discord, no more testing pings! Please revisit your notifications settings so you don't miss upcoming events.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/0/image.jpg
-        alt: Image 1 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/1/image.jpg
-        alt: Image 2 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/2/image.jpg
-        alt: Image 3 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/3/image.jpg
-        alt: Image 4 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/4/image.jpg
-        alt: Image 5 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/5/image.jpg
-        alt: Image 6 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/6/image.jpg
-        alt: Image 7 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/3/gallery/7/image.jpg
-        alt: Image 8 from “Featured Events From 3Q2955”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Featured Screenshots
@@ -346,15 +346,15 @@ sections:
       YOU MAY FIND THE CATALOG OF USC MEMBER DISCORD SUBMISSIONS IN THE [SCREENSHOTS FOLDER](https://drive.google.com/drive/folders/1FX-bkZfCW1u-tjj661MyiECNOm3baMOU?usp=sharing)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/4/gallery/0/image.jpg
-        alt: Image 1 from “Featured Screenshots”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/4/gallery/1/image.jpg
-        alt: Image 2 from “Featured Screenshots”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/4/gallery/2/image.jpg
-        alt: Image 3 from “Featured Screenshots”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Featured 4Q2955 Celebrations
@@ -363,7 +363,7 @@ sections:
       _In-Game, Community Or USC Celebrations_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/5/gallery/0/image.jpg
-        alt: Image 1 from “Featured 4Q2955 Celebrations”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Day of the Vara Star Citizen
@@ -376,7 +376,7 @@ sections:
       Read more at [Galactapedia](https://robertsspaceindustries.com/galactapedia/article/RkGQqpJwGp-day-of-the-vara)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/6/gallery/0/image.jpg
-        alt: Image 1 from “Day of the Vara Star Citizen”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Foundation Festival Star Citizen
@@ -389,7 +389,7 @@ sections:
       Read more at [Citizen History](https://citizen-history.com/article/the-intergalactic-aerospace-expo-iae)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/7/gallery/0/image.jpg
-        alt: Image 1 from “Foundation Festival Star Citizen”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: "Sicsemtyr Day Pronounced: sik'sem'tyr USC"
@@ -404,7 +404,7 @@ sections:
       Citizens usually wear clothes in shades of purple. Masks have been created for this occasion that resembles Venetian masks of the old earth but that covers only half of the wearer's face. These masks represent the duality of humans. Both representing the good and the bad that one can represent and the choices that everyone makes in their daily lives.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/8/gallery/0/image.jpg
-        alt: "Image 1 from “Sicsemtyr Day Pronounced: sik'sem'tyr USC”, Newsletter Q4 2955"
+        alt: ""
         caption: ""
         credit: ""
   - heading: Three Worlds Day USC
@@ -421,7 +421,7 @@ sections:
       This day is usually a solemn day marked by lighting 3 candles at night in front of a window, representing the three worlds we've lost and the people we've left behind.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/9/gallery/0/image.jpg
-        alt: Image 1 from “Three Worlds Day USC”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Featured Real Life Events - Wip
@@ -432,7 +432,7 @@ sections:
       The Hat assigned Maxwell to House Ravenclaw!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/10/gallery/0/image.jpg
-        alt: Image 1 from “Featured Real Life Events - Wip”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Touching Da Grass!
@@ -445,15 +445,15 @@ sections:
       Betty found a real live Juvinile Star Citizen Wurm. :)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/11/gallery/0/image.jpg
-        alt: Image 1 from “Touching Da Grass!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/11/gallery/1/image.jpg
-        alt: Image 2 from “Touching Da Grass!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/11/gallery/2/image.jpg
-        alt: Image 3 from “Touching Da Grass!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: This is my mouse now!
@@ -464,7 +464,7 @@ sections:
       Gupte constructed a proper home for his new friend. :)
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/12/gallery/0/image.jpg
-        alt: Image 1 from “This is my mouse now!”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Looking Forward
@@ -491,7 +491,7 @@ sections:
       _Ways You Can Have Fun And Contribute Your Talents To The USC!_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/14/gallery/0/image.jpg
-        alt: Image 1 from “Help Wanted”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Are You An Engineer?
@@ -508,15 +508,15 @@ sections:
       - Assess USC naval load-out effectiveness & recommend optimizations to navy leadership.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/15/gallery/0/image.jpg
-        alt: Image 1 from “Are You An Engineer?”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/15/gallery/1/image.jpg
-        alt: Image 2 from “Are You An Engineer?”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/15/gallery/2/image.jpg
-        alt: Image 3 from “Are You An Engineer?”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Minister Of Interstellar Commerce
@@ -527,11 +527,11 @@ sections:
       Thanks!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/16/gallery/0/image.jpg
-        alt: Image 1 from “Minister Of Interstellar Commerce”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/16/gallery/1/image.jpg
-        alt: Image 2 from “Minister Of Interstellar Commerce”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Group Gameplay Content
@@ -567,7 +567,7 @@ sections:
       
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/18/gallery/0/image.jpg
-        alt: Image 1 from “SNAKES!! Check out this awesome group gameplay video created by our very own JustinTime and Gargotron.”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: "POLICY UPDATE: Prime Minister Backfill"
@@ -603,7 +603,7 @@ sections:
       
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/20/gallery/0/image.jpg
-        alt: Image 1 from “3Q2955 Senate Votes”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Prime Minister Elections JUN 2955 (Closed)
@@ -644,15 +644,15 @@ sections:
       May the Stars Always Shine in our Favor!"
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/21/gallery/0/image.jpg
-        alt: Image 1 from “Prime Minister Elections JUN 2955 (Closed)”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/21/gallery/1/image.jpg
-        alt: Image 2 from “Prime Minister Elections JUN 2955 (Closed)”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/21/gallery/2/image.jpg
-        alt: Image 3 from “Prime Minister Elections JUN 2955 (Closed)”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Freedom of Navigation Missions (Peacekeeping Missions) JUL 2955 (Closed)
@@ -689,11 +689,11 @@ sections:
       Do be advised that I will be taking a summer holiday and will be away from my PCs for the next 3 weeks. It is uncertain if I will be able to publish a topic this month.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/22/gallery/0/image.jpg
-        alt: Image 1 from “Freedom of Navigation Missions (Peacekeeping Missions) JUL 2955 (Closed)”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/22/gallery/1/image.jpg
-        alt: Image 2 from “Freedom of Navigation Missions (Peacekeeping Missions) JUL 2955 (Closed)”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Direct or Covert Investigations into Private UEE Enterprises SEPT 2955 (Closed)
@@ -731,11 +731,11 @@ sections:
       
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/24/gallery/0/image.jpg
-        alt: Image 1 from “Ministry Round Up”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/24/gallery/1/image.jpg
-        alt: Image 2 from “Ministry Round Up”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: From The Minister Of Security - MSS
@@ -784,11 +784,11 @@ sections:
       See you in the verse!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/25/gallery/0/image.jpg
-        alt: Image 1 from “From The Minister Of Security - MSS”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/25/gallery/1/image.jpg
-        alt: Image 2 from “From The Minister Of Security - MSS”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: MSS Directors
@@ -797,7 +797,7 @@ sections:
       MSS DIRECTORS ARE SEEKING TO HAVE SEVERAL ROLES FILLED. ARE YOU READY FOR ACTION? SIGN UP TODAY?!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/26/gallery/0/image.jpg
-        alt: Image 1 from “MSS Directors”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Confederation Law Civil Protectorate (CLCP)
@@ -815,7 +815,7 @@ sections:
       - Will ensure that contractual obligations initiated with or between USC Citizen are fulfilled and if needed kept secure and safe.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/27/gallery/0/image.jpg
-        alt: Image 1 from “Confederation Law Civil Protectorate (CLCP)”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Department Marine Corps
@@ -832,7 +832,7 @@ sections:
       - If deemed necessary and appropriate, coordinate with the consul of war on the management of patrol schedules or "Fast Response Unit" Rosters and schedules or similar.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/28/gallery/0/image.jpg
-        alt: Image 1 from “Department Marine Corps”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Fleet Planning
@@ -857,11 +857,11 @@ sections:
       Let’s continue being awesome!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/29/gallery/0/image.jpg
-        alt: Image 1 from “Office Fleet Planning”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/29/gallery/1/image.jpg
-        alt: Image 2 from “Office Fleet Planning”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: From The Minister Of Exploration
@@ -901,7 +901,7 @@ sections:
       MIE DIRECTORS WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE PLANNING TO DO WITHIN THEIR DEPARTMENTS! HERE ARE ONLY A FEW OF THE INTERESTING GOALS AND OBJECTIVES THEY ARE COOKING UP:
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/31/gallery/0/image.jpg
-        alt: Image 1 from “MIE Directors”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Academy of Cosmic Research & Exploration
@@ -918,7 +918,7 @@ sections:
       - Remain up to date with the latest developments in the universe and provide summaries and potential consequences as a pre-patch release (moving to monthly as development picks up) report to the Minister of Intelligence.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/32/gallery/0/image.jpg
-        alt: Image 1 from “Academy of Cosmic Research & Exploration”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Cosmic Survey
@@ -935,7 +935,7 @@ sections:
       - Track participation in the mission types listed above.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/33/gallery/0/image.jpg
-        alt: Image 1 from “Office Cosmic Survey”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Naval Intelligence
@@ -948,15 +948,15 @@ sections:
       - Coordinates with the Office of Diplomatic Support to develop and maintain the USC version of the CIA World Factbook.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/34/gallery/0/image.jpg
-        alt: Image 1 from “Office Naval Intelligence”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/34/gallery/1/image.jpg
-        alt: Image 2 from “Office Naval Intelligence”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/34/gallery/2/image.jpg
-        alt: Image 3 from “Office Naval Intelligence”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: A Word From The Minister Of Commerce
@@ -980,7 +980,7 @@ sections:
       MIC WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE LOOKING FOR MEMBERS THAT ARE INTERESTED IN SIGNING UP!
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/36/gallery/0/image.jpg
-        alt: Image 1 from “MIC Directors”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Department Travel & Hospitality
@@ -998,7 +998,7 @@ sections:
       - Manages event planning with the assistance of other departments as needed.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/37/gallery/0/image.jpg
-        alt: Image 1 from “Department Travel & Hospitality”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Treasury & Fleet Logistics
@@ -1019,7 +1019,7 @@ sections:
       - Manage tax collection.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/38/gallery/0/image.jpg
-        alt: Image 1 from “Office Treasury & Fleet Logistics”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Trade & Commodities
@@ -1036,11 +1036,11 @@ sections:
       - Coordinate with MES for resale of inventory and/or raw resources on the open market.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/39/gallery/0/image.jpg
-        alt: Image 1 from “Office Trade & Commodities”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/39/gallery/1/image.jpg
-        alt: Image 2 from “Office Trade & Commodities”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: A Word From The Minister Of Engineering
@@ -1066,7 +1066,7 @@ sections:
       _Here Are Only A Few Of The Interesting Goals And Objectives They Are Cooking Up:_
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/41/gallery/0/image.jpg
-        alt: Image 1 from “MES Directors”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Confederation Health Services
@@ -1127,11 +1127,11 @@ sections:
       All Apollo-class Medivac and Triage vessels are to maintain an adequate stock of the above compounds as part of their emergency inventory. Field medics are reminded that drug interactions remain a primary cause of treatment failure, administer with precision, and log all dosages to the ship’s medical record system.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/42/gallery/0/image.jpg
-        alt: Image 1 from “Confederation Health Services”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/42/gallery/1/image.jpg
-        alt: Image 2 from “Confederation Health Services”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Department of Industrial Engineering
@@ -1151,7 +1151,7 @@ sections:
       - Oversees the activities that provides the USC with crafted and/or improved vehicles, components & equipment.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/43/gallery/0/image.jpg
-        alt: Image 1 from “Department of Industrial Engineering”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office of Fleet Engineering
@@ -1168,11 +1168,11 @@ sections:
       - Assess USC naval load-out effectiveness & recommend optimizations to navy leadership.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/44/gallery/0/image.jpg
-        alt: Image 1 from “Office of Fleet Engineering”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/44/gallery/1/image.jpg
-        alt: Image 2 from “Office of Fleet Engineering”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: A Word From The Minister Of State Affairs
@@ -1230,7 +1230,7 @@ sections:
       MSA DIRECTORS WOULD LOVE TO SHARE WHAT THEY HAVE DONE, AND ARE PLANNING TO DO WITHIN THEIR DEPARTMENTS! HERE ARE ONLY A FEW OF THE INTERESTING GOALS AND OBJECTIVES THEY ARE COOKING UP:
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/46/gallery/0/image.jpg
-        alt: Image 1 from “MSA Directors”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Confederation Media Network
@@ -1250,7 +1250,7 @@ sections:
       - Showcase our activity and achievements.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/47/gallery/0/image.jpg
-        alt: Image 1 from “Confederation Media Network”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Diplomatic Support
@@ -1268,7 +1268,7 @@ sections:
       - Maintain a presence in any groups you are assigned to as the official USC Envoy.
     gallery:
       - image: ../../assets/images/newsletters/newsletter-q4-2955/sections/48/gallery/0/image.jpg
-        alt: Image 1 from “Office Diplomatic Support”, Newsletter Q4 2955
+        alt: ""
         caption: ""
         credit: ""
   - heading: Office Immigration & Resettlement
