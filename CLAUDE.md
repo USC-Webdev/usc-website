@@ -26,6 +26,7 @@ Rebuild of unitedspaceconfederation.org as a static Astro site with Keystatic, d
 - `npm run check` – `astro check`
 - `npm run build` – production build
 - `npm run check-images` – image size guard
+- `npm run check-names` – fails if an old media team name (CBN, Confederation Broadcast/Broadcasting Network) appears; the team is the Confederation Media Network (CMN)
 
 ## Phase 1 collaboration test (run 23 Nov 2026)
 

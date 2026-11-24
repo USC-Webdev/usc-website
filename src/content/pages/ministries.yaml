@@ -30,4 +30,8 @@ ministriesIntro: |
 
   Our Consul of War is directly responsible for the effective operation of the Navy. The Navy is the equivalent of a 'progression raid team' typical in traditional MMO games. The USC Navy is responsible for gathering information to formulate 'operations' by organizing groups of players qualified to perform specific duties required to successfully complete the operation's objectives and distributing the rewards (loot) from the operation to USC storage and participating members.
 orgChartHeading: The USC Organization Chart
-orgChart: []
+orgChart:
+  - image: ../../assets/images/pages/ministries/orgChart/0/image.svg
+    alt: "USC organization chart v4: the Senate and the Cabinet, the Chancellor, the Prime Minister, the five ministries and the Navy, each with its offices and current holders"
+    caption: USC organization chart v4, January 2955.
+    credit: ""
