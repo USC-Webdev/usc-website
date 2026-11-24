@@ -64,6 +64,9 @@ const siteSettings = defineCollection({
     swagStore: url(),
     galacticSenate: url(),
     affiliates: list(z.object({ label: req(), href: z.url() })),
+    feedChannels: list(z.object({ label: req(), channelId: z.string().min(10) })),
+    feedVideosPerChannel: z.number().int().nullish().transform((v) => v ?? 3),
+    feedLength: z.number().int().nullish().transform((v) => v ?? 6),
   }),
 });
 
@@ -80,6 +83,7 @@ const home = defineCollection({
       philosophyHeading: text(),
       philosophy: titledItems(),
       community: sectionsSchema(),
+      updatesHeading: z.string().nullish().transform((v) => v || 'Latest Updates'),
       ctaHeading: text(),
       ctaText: text(),
       ctaLabel: text(),
@@ -295,6 +299,20 @@ const newsUpdates = defineCollection({
   }),
 });
 
+const updates = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: './src/content/updates' }),
+  schema: ({ image }) =>
+    z.object({
+      title: req(),
+      date: z.coerce.date(),
+      summary: text(),
+      link: url(),
+      image: image().nullish(),
+      alt: text(),
+      visible: z.boolean().default(true),
+    }),
+});
+
 const videos = defineCollection({
   loader: glob({ pattern: '*.yaml', base: './src/content/videos' }),
   schema: ({ image }) =>
@@ -322,5 +340,6 @@ export const collections = {
   ministries,
   newsletters,
   newsUpdates,
+  updates,
   videos,
 };
