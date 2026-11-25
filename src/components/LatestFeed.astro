@@ -20,7 +20,7 @@ interface Props {
   heading: string;
   items: FeedItem[];
   /** Closing card linking onwards, for example to the Media Network page. */
-  more?: { href: string; label: string };
+  more?: { href: string; label: string; source: string; title: string };
   /** Show this many items, picked at random on each page load. */
   pick?: number;
 }
@@ -83,10 +83,18 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
   {
     more && (
       <li class="end">
-        <a class="card more" href={more.href}>
+        <a class="card link more" href={more.href}>
           <span class="pic more-box">
             <span class="more-title">{more.label}</span>
-            <HexArrow size={40} />
+          </span>
+          <span class="meta label">
+            <span>{more.source}</span>
+          </span>
+          <span class="head">
+            <span class="title">{more.title}</span>
+            <span class="go">
+              <HexArrow size={40} />
+            </span>
           </span>
         </a>
       </li>
@@ -223,8 +231,6 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
   /* Closing card: a Blue Zodiac box the size of the other cards' pictures, text centred. */
   .pic.more-box {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 14px;
@@ -237,10 +243,6 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
     font-weight: 900;
     font-size: clamp(1.25rem, 2vw, 1.75rem);
     line-height: 1.15;
-  }
-  .more:hover .more-title {
-    text-decoration: underline;
-    text-underline-offset: 6px;
   }
   .card {
     height: 100%;

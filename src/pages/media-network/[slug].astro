@@ -96,9 +96,9 @@ const sections = n.sections.map((s, i) => ({ ...s, id: `section-${i + 1}`, num: 
     margin-right: 40px;
     padding-right: 24px;
     position: sticky;
-    top: 16px;
+    top: calc(var(--header-h) + 16px);
     align-self: flex-start;
-    max-height: calc(100vh - 32px);
+    max-height: calc(100vh - var(--header-h) - 32px);
     overflow-y: auto;
     font-size: 14px;
     line-height: 1.35;
@@ -150,7 +150,7 @@ const sections = n.sections.map((s, i) => ({ ...s, id: `section-${i + 1}`, num: 
     display: flex;
     flex-direction: column;
     gap: 20px;
-    scroll-margin-top: 16px;
+    scroll-margin-top: calc(var(--header-h) + 16px);
   }
   .issue-heading {
     font-weight: 900;

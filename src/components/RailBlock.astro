@@ -43,7 +43,7 @@ const hasRailSlot = Astro.slots.has('rail');
   }
   .rail.sticky {
     position: sticky;
-    top: 16px;
+    top: calc(var(--header-h) + 16px);
     align-self: flex-start;
   }
   .dark .rail {
