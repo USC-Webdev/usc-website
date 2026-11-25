@@ -1,37 +1,67 @@
 title: Ministries
-description: The ministries of the United Space Confederation and how ministers and consuls lead them.
+description: >-
+  The ministries of the United Space Confederation and how ministers and consuls
+  lead them.
 heroLines:
   - Ministries
 hero:
   image: ../../assets/images/pages/ministries/hero/image.jpg
-  alt: ""
   credit: Hadwin
+  creditStatus: Citizen
 sections:
-  - heading: Why Not Both?
-    railLabel: ""
-    body: |
-      In picturing the role of Ministers in the USC leadership, as opposed to the Consuls, it is worth looking at them as different fields within the larger USC community:
-
-      #### The role of Minister Leaders - What's their difference from Consul Leaders?
   - heading: The Two Pillars of USC Leadership
-    railLabel: ""
-    body: |
-      - The Consuls are your more "traditional" guild leadership, with the Consul of War being the "Raid Leader" and the Consul of Peace being the "Guild Owner" who makes sure permissions are given responsibly and the "Guild Bank" is safe. They set long-term goals related to their respective spheres.
-      - Ministers are a different type of leader but still a familiar archetype to a long-time gamer. They are the Mod Creators or the leaders of teams of Mod Creators. Star Citizen is a sandbox with a heavy sandbox element that relies on players generating their own content in-game. That's where the Ministers come in. It is their job to make sure that content is created. If players seek new mysteries to unlock, the Minister of Intelligence and Exploration will lead their team in ensuring new investigations are opened. If players seek new combat challenges, the Minister of Security Services will lead their team in drafting new missions to push our combat pilots to the limit.
+    body: >
+      - The Consuls are your more "traditional" guild leadership, with the
+      Consul of War being the "Raid Leader" and the Consul of Peace being the
+      "Guild Owner" who makes sure permissions are given responsibly and the
+      "Guild Bank" is safe. They set long-term goals related to their respective
+      spheres.
+
+      - Ministers are a different type of leader but still a familiar archetype
+      to a long-time gamer. They are the Mod Creators or the leaders of teams of
+      Mod Creators. Star Citizen is a sandbox with a heavy sandbox element that
+      relies on players generating their own content in-game. That's where the
+      Ministers come in. It is their job to make sure that content is created.
+      If players seek new mysteries to unlock, the Minister of Intelligence and
+      Exploration will lead their team in ensuring new investigations are
+      opened. If players seek new combat challenges, the Minister of Security
+      Services will lead their team in drafting new missions to push our combat
+      pilots to the limit.
   - heading: The Voice Of The Citizens
-    railLabel: ""
-    body: |
-      - The Prime Minister is unique in that their role is a bit of both. They set goals like the Consul, based on the platform they were elected on, though these are shorter-term goals to be responsive to the community. By their responsive nature, they are also a key voice in ensuring that the content the membership wants to create is being created. If the Ministers are too focused on a specific content type, a member could run on a platform of more content variety, and their election would send a clear signal to the Ministers to adjust their course... presumably with help from the newly elected Prime Minister who ran on promises of that content appearing! In this way, they exist in both spheres of leadership on the Council.
+    body: >
+      - The Prime Minister is unique in that their role is a bit of both. They
+      set goals like the Consul, based on the platform they were elected on,
+      though these are shorter-term goals to be responsive to the community. By
+      their responsive nature, they are also a key voice in ensuring that the
+      content the membership wants to create is being created. If the Ministers
+      are too focused on a specific content type, a member could run on a
+      platform of more content variety, and their election would send a clear
+      signal to the Ministers to adjust their course... presumably with help
+      from the newly elected Prime Minister who ran on promises of that content
+      appearing! In this way, they exist in both spheres of leadership on the
+      Council.
 ministriesHeading: The Ministries
-ministriesIntro: |
-  The United Space Confederation benefits from its flat leadership structure's efforts and hard work. The leadership team has seven (7) positions, which consist of one (1) Prime Minister, two (2) Consuls, and four (4) Ministers. Our Ministers are directly responsible for creating in-game sandbox content.
+ministriesIntro: >
+  The United Space Confederation benefits from its flat leadership structure's
+  efforts and hard work. The leadership team has seven (7) positions, which
+  consist of one (1) Prime Minister, two (2) Consuls, and four (4) Ministers.
+  Our Ministers are directly responsible for creating in-game sandbox content.
 
-  Our Consul of Peace is directly responsible for supporting the organization's membership, its various communication platforms, and the creation of group gameplay content.
 
-  Our Consul of War is directly responsible for the effective operation of the Navy. The Navy is the equivalent of a 'progression raid team' typical in traditional MMO games. The USC Navy is responsible for gathering information to formulate 'operations' by organizing groups of players qualified to perform specific duties required to successfully complete the operation's objectives and distributing the rewards (loot) from the operation to USC storage and participating members.
+  Our Consul of Peace is directly responsible for supporting the organization's
+  membership, its various communication platforms, and the creation of group
+  gameplay content.
+
+
+  Our Consul of War is directly responsible for the effective operation of the
+  Navy. The Navy is the equivalent of a 'progression raid team' typical in
+  traditional MMO games. The USC Navy is responsible for gathering information
+  to formulate 'operations' by organizing groups of players qualified to perform
+  specific duties required to successfully complete the operation's objectives
+  and distributing the rewards (loot) from the operation to USC storage and
+  participating members.
 orgChartHeading: The USC Organization Chart
 orgChart:
   - image: ../../assets/images/pages/ministries/orgChart/0/image.svg
-    alt: ""
     caption: USC organization chart v4, January 2955.
-    credit: ""
+    creditStatus: Citizen
