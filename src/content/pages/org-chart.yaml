@@ -232,14 +232,14 @@ branches:
           Mining, salvage, base building and crafting; tracks USC citizen-owned
           claims.
       - name: Office of Fleet Engineering
-        holder: Mojomonkey
-        status: filled
+        status: open
         description: >-
           Repair and refuelling support, engineering improvements and loadout
           recommendations for the Navy.
   - name: USC Navy
     short: Navy
     role: Consul of War
+    holder: Mojomonkey
     tier: '3'
     description: >-
       The USC’s “progression raid team”: a mission-focused layer where Navy
