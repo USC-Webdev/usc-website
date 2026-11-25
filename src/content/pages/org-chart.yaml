@@ -1,104 +1,131 @@
 version: USC organization chart v4 · January 2955
-bodiesNote: Every citizen sits in the Senate. The Senate elects the Prime Minister and votes on the Chancellor.
+bodiesNote: >-
+  Every citizen sits in the Senate. The Senate elects the Prime Minister and
+  votes on the Chancellor.
 bodies:
   - name: USC Senate
     holder: All citizens
-    description: A voting body that deliberates on policies and provides a context for Roleplay, as well as elects a Prime Minister to the Cabinet, who has the responsibility to break ties in Cabinet votes when the situation demands it, and they vote on the Chancellor.
+    description: >-
+      A voting body that deliberates on policies and provides a context for
+      Roleplay, as well as elects a Prime Minister to the Cabinet, who has the
+      responsibility to break ties in Cabinet votes when the situation demands
+      it, and they vote on the Chancellor.
     duties: []
   - name: Cabinet
     holder: Ministers, Consuls and the Prime Minister
-    description: The Cabinet as a whole is tasked with the strategic leadership of the organization.
+    description: >-
+      The Cabinet as a whole is tasked with the strategic leadership of the
+      organization.
     duties:
       - Strategic leadership of the organization
-      - Ensuring the safety of the group from metagaming threats, and responsible management of organization resources
-      - Ensuring the effective performance of tasks necessary to the success of the organization
-      - Ensuring all members can participate and create at all levels of group gameplay
+      - >-
+        Ensuring the safety of the group from metagaming threats, and
+        responsible management of organization resources
+      - >-
+        Ensuring the effective performance of tasks necessary to the success of
+        the organization
+      - >-
+        Ensuring all members can participate and create at all levels of group
+        gameplay
 branches:
   - name: Chancellorship
     short: Chancellorship
     role: Chancellor
     holder: Caylen Vyshir
-    tier: "1"
-    description: The Chancellor is elected by the Senate every two (2) years to oversee the smooth operation of the Senate and to administer the voting process.
+    tier: '1'
+    description: >-
+      The Chancellor is elected by the Senate every two (2) years to oversee the
+      smooth operation of the Senate and to administer the voting process.
     duties:
-      - Coordinate with the Cabinet to identify topics in need of deliberation and voting
+      - >-
+        Coordinate with the Cabinet to identify topics in need of deliberation
+        and voting
       - Establish the voting schedule and the means of conducting each vote
       - Provide at least one topic monthly for deliberation and discussion
       - Serve as Head Moderator over the USC Spectrum forums and Discord
     offices:
       - name: Library of Congress
         note: Constitution, Bill of Rights, org docs
-        holder: ""
         status: wip
         description: Keeps the USC constitution, Bill of Rights and organization documents.
       - name: Supreme Court
         note: Ban appeals, rules and regulations
-        holder: ""
         status: wip
         description: Hears ban appeals and rules on rules and regulations.
       - name: Senate Administration
         note: Discord admin
-        holder: ""
         status: none
         description: Administers the Senate on Discord.
   - name: Office of the Prime Minister
     short: Prime Minister
     role: Prime Minister
-    holder: ""
-    tier: "1"
-    description: The Prime Minister is elected on a six (6) month term. They have no fixed areas of responsibility; they work with the rest of the Cabinet to achieve the goals set by the wider group during their election.
+    tier: '1'
+    description: >-
+      The Prime Minister is elected on a six (6) month term. They have no fixed
+      areas of responsibility; they work with the rest of the Cabinet to achieve
+      the goals set by the wider group during their election.
     duties:
       - Breaks ties in Cabinet votes
-      - Serves one term; may run again after a six-month cool-down at the Cabinet’s discretion
+      - >-
+        Serves one term; may run again after a six-month cool-down at the
+        Cabinet’s discretion
     offices:
       - name: Department of History & Lore
         note: Role playing
-        holder: ""
         status: wip
         description: Role-playing history and lore of the USC.
       - name: Department of Veteran Affairs
-        note: ""
-        holder: ""
         status: wip
-        description: ""
       - name: Role Play
         note: Content creation
-        holder: ""
         status: wip
         description: Role-play content creation.
   - name: Ministry of State Affairs
     short: State Affairs
     role: Consul of Peace
     holder: Landscaper
-    tier: "1"
-    description: "The Consul of Peace is responsible for the stability and metagaming security of the USC, with primary oversight of out-of-game support: recruitment, diplomacy, org social sites and the media team."
+    tier: '1'
+    description: >-
+      The Consul of Peace is responsible for the stability and metagaming
+      security of the USC, with primary oversight of out-of-game support:
+      recruitment, diplomacy, org social sites and the media team.
     duties:
       - Retain ownership of the organization and its critical assets
-      - Safeguard access to the website, social media accounts and in-game org assets
+      - >-
+        Safeguard access to the website, social media accounts and in-game org
+        assets
       - Lead the Recruitment, Diplomacy and Media teams
       - Keep USC documentation ready for a seamless handover
     offices:
       - name: Confederation Media Network
         note: Media team
-        holder: ""
-        status: open
-        description: "The CMN produces content for the USC’s social media sites and supports recruitment: a video a month, graphics for the website and recruitment threads, and showcases of USC activity."
+        holder: EtowTheSaltyCat
+        status: filled
+        description: >-
+          The CMN produces content for the USC’s social media sites and supports
+          recruitment: a video a month, graphics for the website and recruitment
+          threads, and showcases of USC activity.
       - name: Office of Diplomatic Support
-        note: ""
         holder: Ogi_the_Great
         status: filled
-        description: Builds a “World Factbook” with ONI, recommends organizations and alliances for closer relations, and serves as the official USC envoy.
+        description: >-
+          Builds a “World Factbook” with ONI, recommends organizations and
+          alliances for closer relations, and serves as the official USC envoy.
       - name: Office of Immigration & Resettlement
-        note: ""
         holder: USC_Dekan
         status: filled
-        description: Runs recruitment threads and posts on RSI Spectrum, keeps an active presence in the citizen lobbies, and processes new member applications.
+        description: >-
+          Runs recruitment threads and posts on RSI Spectrum, keeps an active
+          presence in the citizen lobbies, and processes new member
+          applications.
   - name: Ministry of Interstellar Commerce
     short: Interstellar Commerce
     role: Minister of Commerce
     holder: MaxwellStiles
-    tier: "2"
-    description: Monitors the USC’s in-game finances, revenues and expenses, and recommends a quarterly budget to the Cabinet for each Ministry and the Navy.
+    tier: '2'
+    description: >-
+      Monitors the USC’s in-game finances, revenues and expenses, and recommends
+      a quarterly budget to the Cabinet for each Ministry and the Navy.
     duties:
       - Oversee the USC Central Bank (USCCB)
       - Generate Trade Convoy and Commodity Trading missions
@@ -106,26 +133,28 @@ branches:
       - Manage the Ship / Vehicle Replacement Program (SVRP)
     offices:
       - name: Office of Confederation Treasury
-        note: ""
-        holder: ""
         status: open
-        description: Operates the USC Central Bank, tracks finances, manages loans and runs USC warehouses and inventory.
+        description: >-
+          Operates the USC Central Bank, tracks finances, manages loans and runs
+          USC warehouses and inventory.
       - name: Office of Interstellar Commerce
-        note: ""
-        holder: ""
         status: open
-        description: Runs trade markets from ships and bases, generates trade missions and recommends commercial ventures.
+        description: >-
+          Runs trade markets from ships and bases, generates trade missions and
+          recommends commercial ventures.
       - name: Office of Touring and Transport
-        note: ""
-        holder: ""
         status: open
-        description: Creates VIP and economy touring missions, organizes racing and manages the USC racing teams.
+        description: >-
+          Creates VIP and economy touring missions, organizes racing and manages
+          the USC racing teams.
   - name: Ministry of Intelligence and Exploration
     short: Intelligence & Exploration
     role: Minister of Intelligence
     holder: Quintero
-    tier: "2"
-    description: Oversees recon, surveying, scientific and exploration missions, and keeps the USC up to date with developments in the universe.
+    tier: '2'
+    description: >-
+      Oversees recon, surveying, scientific and exploration missions, and keeps
+      the USC up to date with developments in the universe.
     duties:
       - Generate Recon, Surveying, Scientific and Exploration missions
       - Track participation in those missions
@@ -133,94 +162,102 @@ branches:
       - Watch the “big picture” for the USC
     offices:
       - name: Academy of Cosmic Research & Exploration
-        note: ""
-        holder: ""
         status: open
-        description: Generates scientific and exploration missions and reports on universe developments before each patch.
+        description: >-
+          Generates scientific and exploration missions and reports on universe
+          developments before each patch.
       - name: Office of Cosmic Survey
-        note: ""
-        holder: ""
         status: open
         description: Generates surveying and data-running missions.
       - name: Office of Naval Intelligence
-        note: ""
         holder: Jichael Mackson
         status: filled
-        description: Generates recon, covert and search-and-rescue missions, and supports the World Factbook.
+        description: >-
+          Generates recon, covert and search-and-rescue missions, and supports
+          the World Factbook.
   - name: Ministry of Security Services
     short: Security Services
     role: Minister of Security
     holder: Twilly Frost
-    tier: "2"
-    description: Oversees Navy combat missions with the Consul of War, civilian combat missions and threat assessment maps.
+    tier: '2'
+    description: >-
+      Oversees Navy combat missions with the Consul of War, civilian combat
+      missions and threat assessment maps.
     duties:
       - Generate Navy and civilian combat missions
-      - Coordinate patrol schedules and Fast Response Units with the Consul of War
+      - >-
+        Coordinate patrol schedules and Fast Response Units with the Consul of
+        War
       - Maintain threat assessment maps with ONI
     offices:
       - name: Confederation Law and Civil Protectorate
         note: CLCP
-        holder: ""
         status: open
-        description: Bounty hunting, non-lethal apprehension, investigations and contraband enforcement.
+        description: >-
+          Bounty hunting, non-lethal apprehension, investigations and contraband
+          enforcement.
       - name: Department of the Marine Corps
-        note: ""
-        holder: ""
         status: open
-        description: CQB on foot and on planets, breaching, personal security details, mechanized and dropship operations.
+        description: >-
+          CQB on foot and on planets, breaching, personal security details,
+          mechanized and dropship operations.
       - name: Office of Fleet Planning
-        note: ""
-        holder: ""
         status: open
-        description: Naval and civilian contractor flight, capital ship operations and fighter squadrons.
+        description: >-
+          Naval and civilian contractor flight, capital ship operations and
+          fighter squadrons.
   - name: Ministry of Engineering and Support
     short: Engineering & Support
     role: Minister of Engineering
     holder: Dr. Zaen Daesang
-    tier: "2"
-    description: Tracks the readiness of all USC-owned assets and leads mining, salvage, medical, repair, crafting and base-building support.
+    tier: '2'
+    description: >-
+      Tracks the readiness of all USC-owned assets and leads mining, salvage,
+      medical, repair, crafting and base-building support.
     duties:
       - Track operational readiness of USC assets
       - Assess operational effectiveness and loadouts for the Cabinet
       - Generate Mining, Salvage and Medical Support missions
     offices:
       - name: Confederation Health Services
-        note: ""
         holder: Fallon “Siren” Carter
         status: filled
-        description: Medical support and search-and-rescue missions; keeps the USC staffed with medical personnel.
+        description: >-
+          Medical support and search-and-rescue missions; keeps the USC staffed
+          with medical personnel.
       - name: Department of Industrial Engineering
-        note: ""
         holder: RidgeSix
         status: filled
-        description: Mining, salvage, base building and crafting; tracks USC citizen-owned claims.
+        description: >-
+          Mining, salvage, base building and crafting; tracks USC citizen-owned
+          claims.
       - name: Office of Fleet Engineering
-        note: ""
         holder: Mojomonkey
         status: filled
-        description: Repair and refuelling support, engineering improvements and loadout recommendations for the Navy.
+        description: >-
+          Repair and refuelling support, engineering improvements and loadout
+          recommendations for the Navy.
   - name: USC Navy
     short: Navy
     role: Consul of War
-    holder: ""
-    tier: "3"
-    description: "The USC’s “progression raid team”: a mission-focused layer where Navy Officers assemble teams from the Ministries for time-limited operations. All citizens are automatically members of the Navy."
+    tier: '3'
+    description: >-
+      The USC’s “progression raid team”: a mission-focused layer where Navy
+      Officers assemble teams from the Ministries for time-limited operations.
+      All citizens are automatically members of the Navy.
     duties:
       - Department directors are cross-trained as Navy Operations Planners
-      - Internal structure will be set as the requirements for success become clearer
+      - >-
+        Internal structure will be set as the requirements for success become
+        clearer
     offices:
       - name: Operations Planning
-        note: ""
-        holder: ""
         status: open
         description: Directors plan and execute strategic missions for the Navy.
       - name: N-COAT
         note: Training
-        holder: ""
         status: open
         description: Navy Core Operations and Training.
       - name: Navy Reserves
-        note: ""
-        holder: ""
         status: open
         description: Every citizen is a member of the Navy reserves.
