@@ -18,17 +18,21 @@ affiliates:
 feedChannels:
   - label: USC
     channelId: UCR7NViQANVRSMB84wMFCS-A
-    carousel: 'off'
+    show: false
   - label: Farrister
     channelId: UCCWLg4f6GAMe-hdIFQ_Fq2w
-    carousel: creators
+    show: true
   - label: RidgeSix
     channelId: UCbeP-B06WtYsQ_OnDFd3lTw
-    carousel: creators
+    show: true
 creatorFeeds:
   - label: HangarWorks
     rssUrl: https://www.sc-hangarworks.org/blog/rss.xml
     category: Patch notes
     count: 2
+  - label: The Citizen Compass
+    rssUrl: https://thecitizencompass.com/feed/
+    category: ''
+    count: 1
 feedVideosPerChannel: 2
 feedLength: 6

@@ -15,15 +15,14 @@ import LatestFeed from '../components/LatestFeed.astro';
 import { getSingleton } from '../lib/content';
 import { renderMarkdoc } from '../lib/markdoc';
 import { getSite } from '../lib/site';
-import { getFeeds } from '../lib/feed';
+import { getFeed } from '../lib/feed';
 
 const page = await getSingleton('home');
 const { settings } = await getSite();
 const communityStart = 3;
-const feeds = await getFeeds();
+const feed = await getFeed();
 const heroSections = [
-  ...(feeds.latest.length ? [{ href: '#latest', label: page.updatesHeading }] : []),
-  ...(feeds.creators.length ? [{ href: '#creators', label: page.creatorsHeading }] : []),
+  ...(feed.length ? [{ href: '#latest', label: page.updatesHeading }] : []),
   { href: '#s-1', label: `1.0  ${page.introHeading}` },
   { href: '#s-2', label: `2.0  ${page.philosophyHeading}` },
   ...page.community.map((c, i) => ({ href: `#s-${communityStart + i}`, label: `${communityStart + i}.0  ${c.heading}` })),
@@ -42,17 +41,9 @@ const heroSections = [
   />
 
   {
-    feeds.latest.length > 0 && (
+    feed.length > 0 && (
       <section class="wrap block" id="latest">
-        <LatestFeed id="latest-track" heading={page.updatesHeading} items={feeds.latest} />
-      </section>
-    )
-  }
-
-  {
-    feeds.creators.length > 0 && (
-      <section class="wrap block" id="creators">
-        <LatestFeed id="creators-track" heading={page.creatorsHeading} items={feeds.creators} />
+        <LatestFeed id="latest-track" heading={page.updatesHeading} items={feed} more={{ href: '/media-network', label: 'More at Media Network' }} />
       </section>
     )
   }

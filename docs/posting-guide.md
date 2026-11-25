@@ -58,14 +58,14 @@ Signed in to Keystatic as **USC-Webdev**, you skip the branch step: stay on `mai
 
 | In the left menu | What it changes |
 |---|---|
-| Latest updates | Short posts in the **Latest Updates** feed on Home. Give each a title and an in-universe **Date**. Paste a **Link** to an Instagram or X post, a YouTube video, a Discord event or any page: without an **Image**, the card uses the linked page's own picture, and without **Short text**, its description. Newsletters and screenshots from the Screenshot pool join it on their own. The second carousel, **Affiliated Creators**, shows new videos and posts from the channels and feeds in Site settings; the site checks for them once a day. |
-| Screenshot pool | Screenshots that rotate through the **Latest Updates** carousel on Home: two at a time (set in Site settings), a different pair each day. Click **Add**, upload the screenshot (same size rules as section 4), add a **Caption**, the **Image credit** and, if you like, a **Link** such as the newsletter it appeared in. Untick **In the pool** to take one out of rotation. |
+| Latest updates | Short posts in the **Latest Updates** carousel on Home. Give each a title and an in-universe **Date**. Paste a **Link** to an Instagram or X post, a YouTube video, a Discord event or any page: without an **Image**, the card uses the linked page's own picture, and without **Short text**, its description. The carousel always opens with the newest newsletter and ends with a **More at Media Network** card; between them come these posts, new videos and new posts from the channels and feeds in Site settings, newest first. The site checks for new videos and posts once a day. |
+| Screenshot pool | Screenshots for the **USC in the 'Verse** carousel on the Media Network page. Each visit shows 10 of them picked at random (the number is set on the Media Network page in Keystatic). Click **Add**, upload the screenshot (same size rules as section 4), add a **Caption**, the **Image credit** and, if you like, a **Link** such as the newsletter it appeared in. Untick **In the pool** to take one out without deleting it. |
 | News updates | The rows under "1.0 Notable News Updates" on the Media Network page. Untick **Visible** to hide one. Lower **Order** numbers come first. |
 | Videos | Videos of the Month. The two with the newest **Month** are shown. Paste the YouTube ID (the part after `v=`). |
 | Media Network page, The Citizen Compass page | Text on those pages. |
 | Pages | Home, Our Vision, Leadership, Policies, Citizenship, Ministries. |
 | Pages → Organization chart (interactive) | The org chart on the Ministries page: who holds each post, which offices are open, tiers and descriptions. Change a holder or set an office to Open here when people move. |
-| Settings → Site settings | Application form link, contact email, social links, footer affiliates, the YouTube channels on Home (each set to Affiliated Creators, Latest Updates or Not shown), the creators' RSS feeds such as HangarWorks patch notes, and how many items the carousels show. Ask the webdev team first. |
+| Settings → Site settings | Application form link, contact email, social links, footer affiliates, the YouTube channels and RSS feeds (HangarWorks patch notes, The Citizen Compass) that fill Latest Updates, and how many items it shows. Ask the webdev team first. |
 
 ## Copy rules
 

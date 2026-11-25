@@ -68,7 +68,7 @@ const siteSettings = defineCollection({
       z.object({
         label: req(),
         channelId: z.string().min(10),
-        carousel: z.enum(['creators', 'latest', 'off']).nullish().transform((v) => v ?? 'creators'),
+        show: z.boolean().nullish().transform((v) => v ?? true),
       }),
     ),
     creatorFeeds: list(
@@ -81,7 +81,6 @@ const siteSettings = defineCollection({
     ),
     feedVideosPerChannel: z.number().int().nullish().transform((v) => v ?? 3),
     feedLength: z.number().int().nullish().transform((v) => v ?? 6),
-    feedScreenshots: z.number().int().nullish().transform((v) => v ?? 2),
   }),
 });
 
@@ -99,7 +98,6 @@ const home = defineCollection({
       philosophy: titledItems(),
       community: sectionsSchema(),
       updatesHeading: z.string().nullish().transform((v) => v || 'Latest Updates'),
-      creatorsHeading: z.string().nullish().transform((v) => v || 'Affiliated Creators'),
       ctaHeading: text(),
       ctaText: text(),
       ctaLabel: text(),
@@ -223,6 +221,8 @@ const mediaNetwork = defineCollection({
       railItems: lines(),
       statement: prose(),
       statementAside: text(),
+      verseHeading: z.string().nullish().transform((v) => v || "USC in the 'Verse"),
+      verseCount: z.number().int().nullish().transform((v) => v ?? 10),
       newsHeading: text(),
       videosHeading: text(),
       videosAside: text(),

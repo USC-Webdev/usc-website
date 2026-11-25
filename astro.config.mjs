@@ -32,6 +32,7 @@ export default defineConfig({
       { protocol: 'https', hostname: '**.fbcdn.net' },
       { protocol: 'https', hostname: 'pbs.twimg.com' },
       { protocol: 'https', hostname: 'www.sc-hangarworks.org' },
+      { protocol: 'https', hostname: 'thecitizencompass.com' },
     ],
   },
   // Fonts are downloaded at build time and self-hosted from the site.

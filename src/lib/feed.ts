@@ -2,14 +2,11 @@ import type { ImageMetadata } from 'astro';
 import { getCollection } from 'astro:content';
 import { getNewsletters, getSingleton, newsletterHref } from './content';
 
-// The two Home carousels, newest first:
-// - Latest Updates: written updates from Keystatic, newsletters, videos from
-//   channels set to "Latest Updates", and a few screenshots from the
-//   Screenshot pool spread through (a different set each day).
-// - Affiliated Creators: videos from channels set to "Affiliated Creators" and
-//   posts from the creators' RSS feeds (both in Site settings).
-// Everything is fetched at build time; a daily rebuild picks up new videos and
-// posts and rotates the screenshots.
+// Latest Updates on Home: the newest newsletter, then written updates from
+// Keystatic, new videos from the YouTube channels and posts from the RSS feeds
+// in Site settings, newest first. Also the screenshot pool for USC in the
+// 'Verse on the Media Network page. Everything is fetched at build time; a
+// daily rebuild picks up new videos and posts.
 // A network failure never fails the build: that source is just left out.
 
 export interface FeedItem {
@@ -39,7 +36,7 @@ const toInUniverse = (d: Date) => {
 };
 
 /** Hosts whose pictures may be downloaded at build time (must match image.remotePatterns in astro.config.mjs). */
-const IMAGE_HOSTS = [/^i\d?\.ytimg\.com$/, /\.cdninstagram\.com$/, /\.fbcdn\.net$/, /^pbs\.twimg\.com$/, /^www\.sc-hangarworks\.org$/];
+const IMAGE_HOSTS = [/^i\d?\.ytimg\.com$/, /\.cdninstagram\.com$/, /\.fbcdn\.net$/, /^pbs\.twimg\.com$/, /^www\.sc-hangarworks\.org$/, /^thecitizencompass\.com$/];
 const allowedImage = (url: string) => {
   try {
     const { protocol, hostname } = new URL(url);
@@ -223,7 +220,11 @@ async function feedPosts(label: string, rssUrl: string, category: string, count:
         kind: 'post',
         date: toInUniverse(new Date(published)),
         title: decode(title),
-        text: decode(tag(item, 'description') ?? '').replace(/<[^>]+>/g, ''),
+        // WordPress adds "The post X appeared first on Y." to every description.
+        text: decode((tag(item, 'description') ?? '').replace(/<[^>]+>/g, ' '))
+          .replace(/The post .* appeared first on .*$/s, '')
+          .replace(/\s+/g, ' ')
+          .trim(),
         href: link,
         external: true,
         source: label,
@@ -235,28 +236,11 @@ async function feedPosts(label: string, rssUrl: string, category: string, count:
   return items.filter((i): i is FeedItem => !!i);
 }
 
-/** Mulberry32: a small seeded random generator, so one build picks one set. */
-function seeded(seed: number) {
-  return () => {
-    seed = (seed + 0x6d2b79f5) | 0;
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-/** `count` screenshots from the pool, a different pick each UTC day. */
-async function screenshotItems(count: number): Promise<FeedItem[]> {
-  if (count <= 0) return [];
+/** Every screenshot in the pool (USC in the 'Verse picks from these on page load). */
+export async function getScreenshots(): Promise<FeedItem[]> {
   const pool = (await getCollection('screenshots', (s) => s.data.visible)).sort((a, b) => a.id.localeCompare(b.id));
-  const random = seeded(Math.floor(Date.now() / 86_400_000));
-  for (let i = pool.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1));
-    [pool[i], pool[j]] = [pool[j], pool[i]];
-  }
-  return pool.slice(0, count).map((s) => {
+  return pool.map((s) => {
     const d = s.data;
-    const external = /^https?:/.test(d.link);
     return {
       key: `screenshot-${s.id}`,
       kind: 'screenshot',
@@ -264,7 +248,7 @@ async function screenshotItems(count: number): Promise<FeedItem[]> {
       title: d.caption,
       text: '',
       href: d.link || undefined,
-      external,
+      external: /^https?:/.test(d.link),
       source: 'Screenshot',
       image: d.image,
       alt: d.alt,
@@ -273,47 +257,30 @@ async function screenshotItems(count: number): Promise<FeedItem[]> {
   });
 }
 
-/** Spreads `extra` evenly through `items` (first one after the first item). */
-function interleave(items: FeedItem[], extra: FeedItem[]): FeedItem[] {
-  if (!extra.length) return items;
-  const out = [...items];
-  const every = Math.max(1, Math.round((items.length + extra.length) / extra.length));
-  extra.forEach((x, i) => out.splice(Math.min(out.length, 1 + i * every), 0, x));
-  return out;
-}
+let cached: Promise<FeedItem[]> | undefined;
 
-export interface Feeds {
-  latest: FeedItem[];
-  creators: FeedItem[];
-}
-
-const newestFirst = (items: FeedItem[], length: number) => {
-  const seen = new Set<string>();
-  return items
-    .filter((i) => (seen.has(i.key) ? false : (seen.add(i.key), true)))
-    .sort((a, b) => b.date.getTime() - a.date.getTime())
-    .slice(0, length);
-};
-
-let cached: Promise<Feeds> | undefined;
-
-/** Both Home carousels, each cut to the length set in Site settings; Latest Updates gets the day's screenshots spread through. */
-export function getFeeds(): Promise<Feeds> {
+/**
+ * Latest Updates: the newest newsletter first, then written updates, videos
+ * from the channels shown on Home and posts from the RSS feeds, newest first,
+ * cut to the length set in Site settings. The component adds the closing
+ * "More at Media Network" card.
+ */
+export function getFeed(): Promise<FeedItem[]> {
   cached ??= (async () => {
     const settings = await getSingleton('siteSettings');
-    const videos = (carousel: 'latest' | 'creators') =>
-      settings.feedChannels
-        .filter((c) => c.carousel === carousel)
-        .map((c) => channelVideos(c.label, c.channelId, settings.feedVideosPerChannel));
-    const [latest, creators, shots] = await Promise.all([
-      Promise.all([writtenUpdates(), newsletterItems(), ...videos('latest')]),
-      Promise.all([...videos('creators'), ...settings.creatorFeeds.map((f) => feedPosts(f.label, f.rssUrl, f.category, f.count))]),
-      screenshotItems(settings.feedScreenshots),
+    const [newsletters, ...rest] = await Promise.all([
+      newsletterItems(),
+      writtenUpdates(),
+      ...settings.feedChannels.filter((c) => c.show).map((c) => channelVideos(c.label, c.channelId, settings.feedVideosPerChannel)),
+      ...settings.creatorFeeds.map((f) => feedPosts(f.label, f.rssUrl, f.category, f.count)),
     ]);
-    return {
-      latest: interleave(newestFirst(latest.flat(), settings.feedLength), shots),
-      creators: newestFirst(creators.flat(), settings.feedLength),
-    };
+    const seen = new Set<string>();
+    const middle = rest
+      .flat()
+      .filter((i) => (seen.has(i.key) ? false : (seen.add(i.key), true)))
+      .sort((a, b) => b.date.getTime() - a.date.getTime())
+      .slice(0, settings.feedLength);
+    return [...newsletters.slice(0, 1), ...middle];
   })();
   return cached;
 }
