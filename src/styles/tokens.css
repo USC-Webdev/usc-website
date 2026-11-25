@@ -27,6 +27,8 @@
   --gutter: 24px;
   --section: clamp(72px, 9vw, 130px);
   --target-min: 48px;
+  /* Sticky header height; SiteHeader's script sets the exact value. */
+  --header-h: 112px;
 
   --fs-hero: clamp(2.5rem, 12.2vw, 11.2rem);
   --fs-section: clamp(1.9rem, 4.8vw, 4.2rem);

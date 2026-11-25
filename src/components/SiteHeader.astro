@@ -29,6 +29,12 @@ const { nav, settings, currentPath } = Astro.props;
 <script>
   // The menu is a full-screen overlay: opening it locks page scroll and keeps
   // keyboard focus inside; Escape, Close or a click outside the panel closes it.
+  const header = document.querySelector<HTMLElement>('.site-header');
+  if (header) {
+    const publish = () => document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+    new ResizeObserver(publish).observe(header);
+    publish();
+  }
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const menu = document.getElementById('site-menu');
   const close = menu?.querySelector<HTMLButtonElement>('[data-menu-close]');
@@ -57,8 +63,9 @@ const { nav, settings, currentPath } = Astro.props;
       menu.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
       document.documentElement.style.overflow = open ? 'hidden' : '';
-      if (open) close.focus();
-      else toggle.focus();
+      // preventScroll: the header is sticky, so the browser must not scroll to "reveal" it.
+      if (open) close.focus({ preventScroll: true });
+      else toggle.focus({ preventScroll: true });
     };
     toggle.addEventListener('click', () => setOpen(true));
     window.addEventListener('resize', () => {
@@ -93,7 +100,12 @@ const { nav, settings, currentPath } = Astro.props;
 </script>
 
 <style>
+  /* Sticky: Menu and Application stay in reach while scrolling. Its height is
+     published as --header-h so anchors and other sticky parts clear it. */
   .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
     /* Menu and Close share one width so Close can sit exactly over Menu. */
     --menu-btn-w: 140px;
     background: var(--blue-zodiac);

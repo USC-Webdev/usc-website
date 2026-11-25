@@ -43,7 +43,7 @@ const heroSections = [
   {
     feed.length > 0 && (
       <section class="wrap block" id="latest">
-        <LatestFeed id="latest-track" heading={page.updatesHeading} items={feed} more={{ href: '/media-network', label: 'More at Media Network' }} />
+        <LatestFeed id="latest-track" heading={page.updatesHeading} items={feed} more={{ href: '/media-network', label: 'More at Media Network', source: 'Confederation Media Network', title: 'Media Network' }} />
       </section>
     )
   }
@@ -66,3 +66,10 @@ const heroSections = [
   <CapsuleBand seed={2013} />
   <JoinBand links={[{ href: '/our-vision', label: 'Our Vision' }, { href: '/policies', label: 'Policies' }]} />
 </BaseLayout>
+
+<style>
+  /* Less space between the carousel and 1.0. */
+  #latest + .block {
+    padding-top: calc(var(--section) / 2);
+  }
+</style>

@@ -170,8 +170,9 @@ const sections = [
     padding-top: clamp(64px, 9vw, 130px);
     padding-bottom: clamp(64px, 9vw, 130px);
   }
+  /* Less space between the carousel and 1.0. */
   .verse {
-    padding-bottom: var(--section);
+    padding-bottom: calc(var(--section) / 2);
   }
   .news {
     padding-bottom: var(--section);
