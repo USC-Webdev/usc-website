@@ -11,6 +11,7 @@ interface Props {
 const { nav, settings, currentPath } = Astro.props;
 ---
 
+<div class="header-space" aria-hidden="true"></div>
 <div class="site-header on-dark">
   <header class="bar wrap">
     <a href="/home" class="home-link">
@@ -29,11 +30,30 @@ const { nav, settings, currentPath } = Astro.props;
 <script>
   // The menu is a full-screen overlay: opening it locks page scroll and keeps
   // keyboard focus inside; Escape, Close or a click outside the panel closes it.
+  // The header is fixed; .header-space holds its full height in the page so
+  // nothing shifts when it shrinks. --header-full is that full height and
+  // --header-h the current one (jump links and other sticky parts use it).
   const header = document.querySelector<HTMLElement>('.site-header');
   if (header) {
-    const publish = () => document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+    const root = document.documentElement.style;
+    const publish = () => {
+      root.setProperty('--header-h', `${header.offsetHeight}px`);
+      if (!header.classList.contains('compact')) root.setProperty('--header-full', `${header.offsetHeight}px`);
+    };
     new ResizeObserver(publish).observe(header);
     publish();
+    // Slimmer bar once the page is scrolled.
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        header.classList.toggle('compact', window.scrollY > 40);
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
   const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const menu = document.getElementById('site-menu');
@@ -100,11 +120,16 @@ const { nav, settings, currentPath } = Astro.props;
 </script>
 
 <style>
-  /* Sticky: Menu and Application stay in reach while scrolling. Its height is
-     published as --header-h so anchors and other sticky parts clear it. */
+  /* Fixed: Menu and Application stay in reach while scrolling; the bar slims
+     down once the page is scrolled (.compact). */
+  .header-space {
+    height: var(--header-full, 112px);
+  }
   .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 50;
     /* Menu and Close share one width so Close can sit exactly over Menu. */
     --menu-btn-w: 140px;
@@ -114,6 +139,7 @@ const { nav, settings, currentPath } = Astro.props;
   .bar {
     padding-top: 16px;
     padding-bottom: 16px;
+    transition: padding 0.25s ease;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -123,6 +149,28 @@ const { nav, settings, currentPath } = Astro.props;
   .home-link {
     display: block;
     padding: 8px 8px 8px 0;
+    transition: padding 0.25s ease;
+  }
+  .home-link :global(img) {
+    transition: height 0.25s ease;
+  }
+  .compact .bar {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .compact .home-link {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .compact :global(.header-logo) {
+    height: 44px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bar,
+    .home-link,
+    .home-link :global(img) {
+      transition: none;
+    }
   }
   .actions {
     display: flex;
@@ -168,6 +216,16 @@ const { nav, settings, currentPath } = Astro.props;
     outline-color: var(--white);
   }
   @media (max-width: 640px) {
+    .header-space {
+      height: var(--header-full, 74px);
+    }
+    .compact .bar {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    .compact :global(.header-mark) {
+      height: 36px;
+    }
     .site-header {
       --menu-btn-w: clamp(64px, 20vw, 92px);
     }
