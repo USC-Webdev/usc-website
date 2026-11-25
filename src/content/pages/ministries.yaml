@@ -10,7 +10,7 @@ hero:
   creditStatus: Citizen
 sections:
   - heading: The Pillars of USC Leadership
-    railLabel: Why not Both ?
+    railLabel: Consuls & Ministers - Leaders of the USC
     body: >
       - The Consuls are your more "traditional" guild leadership, with the
       Consul of War being the "Raid Leader" and the Consul of Peace being the
@@ -29,6 +29,7 @@ sections:
       Services will lead their team in drafting new missions to push our combat
       pilots to the limit.
   - heading: The Voice Of The Citizens
+    railLabel: USC´s Vox Populi
     body: >
       - The Prime Minister is unique in that their role is a bit of both. They
       set goals like the Consul, based on the platform they were elected on,
