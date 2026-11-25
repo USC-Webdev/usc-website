@@ -98,6 +98,7 @@ const home = defineCollection({
       philosophy: titledItems(),
       community: sectionsSchema(),
       updatesHeading: z.string().nullish().transform((v) => v || 'Latest Updates'),
+      updatesIntro: text(),
       ctaHeading: text(),
       ctaText: text(),
       ctaLabel: text(),

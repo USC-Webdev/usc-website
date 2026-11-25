@@ -18,13 +18,15 @@ interface Props {
   /** Unique per page: the Previous/Next buttons point at it. */
   id: string;
   heading: string;
+  /** Optional line of body text under the heading. */
+  intro?: string;
   items: FeedItem[];
   /** Closing card linking onwards, for example to the Media Network page. */
   more?: { href: string; label: string; source: string; title: string };
   /** Show this many items, picked at random on each page load. */
   pick?: number;
 }
-const { id, heading, items, more, pick } = Astro.props;
+const { id, heading, intro, items, more, pick } = Astro.props;
 const shown = pick ? Math.min(pick, items.length) : items.length;
 const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
 ---
@@ -40,6 +42,7 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
     </button>
   </div>
   </SectionHead>
+  {intro && <p class="intro">{intro}</p>}
 <ul class="feed" id={id} aria-label={heading} tabindex="0">
   {
     items.map((item, i) => {
@@ -154,6 +157,12 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
   /* The last card can't reach the left edge, so it snaps to the right one. */
   .feed > li.end {
     scroll-snap-align: end;
+  }
+  .intro {
+    max-width: 640px;
+    margin: -12px 0 28px;
+    font-size: 19px;
+    line-height: 1.5;
   }
   .controls {
     display: flex;

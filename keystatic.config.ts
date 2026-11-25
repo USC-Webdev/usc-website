@@ -190,6 +190,7 @@ export default config({
         philosophy: titledItems('Philosophy items'),
         community: sections('Community sections'),
         updatesHeading: fields.text({ label: 'Latest updates heading', defaultValue: 'Latest Updates' }),
+        updatesIntro: fields.text({ label: 'Latest updates text', description: 'One line under the heading. Optional.', multiline: true }),
         ctaHeading: fields.text({ label: 'Closing heading' }),
         ctaText: fields.text({ label: 'Closing text', multiline: true }),
         ctaLabel: fields.text({ label: 'Apply button label', defaultValue: 'Apply for citizenship' }),
