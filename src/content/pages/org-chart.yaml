@@ -59,6 +59,7 @@ branches:
   - name: Office of the Prime Minister
     short: Prime Minister
     role: Prime Minister
+    holder: picktrooper
     tier: '1'
     description: >-
       The Prime Minister is elected on a six (6) month term. They have no fixed
