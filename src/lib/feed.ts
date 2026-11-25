@@ -2,14 +2,19 @@ import type { ImageMetadata } from 'astro';
 import { getCollection } from 'astro:content';
 import { getNewsletters, getSingleton, newsletterHref } from './content';
 
-// The "Latest updates" feed: written updates from Keystatic, newsletters and
-// new videos from the YouTube channels set in Site settings, newest first.
-// Everything is fetched at build time; a daily rebuild picks up new videos.
+// The two Home carousels, newest first:
+// - Latest Updates: written updates from Keystatic, newsletters, videos from
+//   channels set to "Latest Updates", and a few screenshots from the
+//   Screenshot pool spread through (a different set each day).
+// - Affiliated Creators: videos from channels set to "Affiliated Creators" and
+//   posts from the creators' RSS feeds (both in Site settings).
+// Everything is fetched at build time; a daily rebuild picks up new videos and
+// posts and rotates the screenshots.
 // A network failure never fails the build: that source is just left out.
 
 export interface FeedItem {
   key: string;
-  kind: 'update' | 'newsletter' | 'video' | 'screenshot';
+  kind: 'update' | 'newsletter' | 'video' | 'post' | 'screenshot';
   /** In-universe date (real year + 930), like every date on the site. */
   date: Date;
   title: string;
@@ -34,7 +39,7 @@ const toInUniverse = (d: Date) => {
 };
 
 /** Hosts whose pictures may be downloaded at build time (must match image.remotePatterns in astro.config.mjs). */
-const IMAGE_HOSTS = [/^i\d?\.ytimg\.com$/, /\.cdninstagram\.com$/, /\.fbcdn\.net$/, /^pbs\.twimg\.com$/];
+const IMAGE_HOSTS = [/^i\d?\.ytimg\.com$/, /\.cdninstagram\.com$/, /\.fbcdn\.net$/, /^pbs\.twimg\.com$/, /^www\.sc-hangarworks\.org$/];
 const allowedImage = (url: string) => {
   try {
     const { protocol, hostname } = new URL(url);
@@ -76,7 +81,12 @@ const decode = (s: string) =>
     .replace(/&gt;/g, '>')
     .replace(/&amp;/g, '&');
 
-const tag = (xml: string, name: string) => xml.match(new RegExp(`<${name}>([^<]*)</${name}>`))?.[1];
+/** Text of the first <name> element, CDATA unwrapped. */
+const tag = (xml: string, name: string) =>
+  xml
+    .match(new RegExp(`<${name}(?:\\s[^>]*)?>([\\s\\S]*?)</${name}>`))?.[1]
+    .replace(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/, '$1')
+    .trim();
 
 function platform(link: string): string {
   try {
@@ -187,6 +197,44 @@ async function channelVideos(label: string, channelId: string, count: number): P
   return items.filter((i): i is FeedItem => !!i);
 }
 
+/** The newest posts from an RSS feed, optionally only those in one <category>. */
+async function feedPosts(label: string, rssUrl: string, category: string, count: number): Promise<FeedItem[]> {
+  const xml = await fetchText(rssUrl);
+  if (!xml) return [];
+  const wanted = category.trim().toLowerCase();
+  const inCategory = (item: string) =>
+    [...item.matchAll(/<category[^>]*>([\s\S]*?)<\/category>/g)].some(
+      (m) => decode(m[1].replace(/<!\[CDATA\[|\]\]>/g, '')).trim().toLowerCase() === wanted,
+    );
+  const entries = xml
+    .split(/<item[\s>]/)
+    .slice(1)
+    .filter((item) => !wanted || inCategory(item))
+    .slice(0, Math.max(0, count));
+  const items = await Promise.all(
+    entries.map(async (item): Promise<FeedItem | undefined> => {
+      const link = tag(item, 'link');
+      const title = tag(item, 'title');
+      const published = tag(item, 'pubDate');
+      if (!link || !title || !published || Number.isNaN(Date.parse(published))) return undefined;
+      const preview = await linkPreview(link);
+      return {
+        key: `post-${link}`,
+        kind: 'post',
+        date: toInUniverse(new Date(published)),
+        title: decode(title),
+        text: decode(tag(item, 'description') ?? '').replace(/<[^>]+>/g, ''),
+        href: link,
+        external: true,
+        source: label,
+        remoteImage: await pictureFor(preview.image),
+        alt: '',
+      };
+    }),
+  );
+  return items.filter((i): i is FeedItem => !!i);
+}
+
 /** Mulberry32: a small seeded random generator, so one build picks one set. */
 function seeded(seed: number) {
   return () => {
@@ -234,24 +282,38 @@ function interleave(items: FeedItem[], extra: FeedItem[]): FeedItem[] {
   return out;
 }
 
-let cached: Promise<FeedItem[]> | undefined;
+export interface Feeds {
+  latest: FeedItem[];
+  creators: FeedItem[];
+}
 
-/** All feed items, newest first, cut to the length set in Site settings, with the day's screenshots spread through. */
-export function getFeed(): Promise<FeedItem[]> {
+const newestFirst = (items: FeedItem[], length: number) => {
+  const seen = new Set<string>();
+  return items
+    .filter((i) => (seen.has(i.key) ? false : (seen.add(i.key), true)))
+    .sort((a, b) => b.date.getTime() - a.date.getTime())
+    .slice(0, length);
+};
+
+let cached: Promise<Feeds> | undefined;
+
+/** Both Home carousels, each cut to the length set in Site settings; Latest Updates gets the day's screenshots spread through. */
+export function getFeeds(): Promise<Feeds> {
   cached ??= (async () => {
     const settings = await getSingleton('siteSettings');
-    const groups = await Promise.all([
-      writtenUpdates(),
-      newsletterItems(),
-      ...settings.feedChannels.map((c) => channelVideos(c.label, c.channelId, settings.feedVideosPerChannel)),
+    const videos = (carousel: 'latest' | 'creators') =>
+      settings.feedChannels
+        .filter((c) => c.carousel === carousel)
+        .map((c) => channelVideos(c.label, c.channelId, settings.feedVideosPerChannel));
+    const [latest, creators, shots] = await Promise.all([
+      Promise.all([writtenUpdates(), newsletterItems(), ...videos('latest')]),
+      Promise.all([...videos('creators'), ...settings.creatorFeeds.map((f) => feedPosts(f.label, f.rssUrl, f.category, f.count))]),
+      screenshotItems(settings.feedScreenshots),
     ]);
-    const seen = new Set<string>();
-    const latest = groups
-      .flat()
-      .filter((i) => (seen.has(i.key) ? false : (seen.add(i.key), true)))
-      .sort((a, b) => b.date.getTime() - a.date.getTime())
-      .slice(0, settings.feedLength);
-    return interleave(latest, await screenshotItems(settings.feedScreenshots));
+    return {
+      latest: interleave(newestFirst(latest.flat(), settings.feedLength), shots),
+      creators: newestFirst(creators.flat(), settings.feedLength),
+    };
   })();
   return cached;
 }

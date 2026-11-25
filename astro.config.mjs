@@ -31,6 +31,7 @@ export default defineConfig({
       { protocol: 'https', hostname: '**.cdninstagram.com' },
       { protocol: 'https', hostname: '**.fbcdn.net' },
       { protocol: 'https', hostname: 'pbs.twimg.com' },
+      { protocol: 'https', hostname: 'www.sc-hangarworks.org' },
     ],
   },
   // Fonts are downloaded at build time and self-hosted from the site.

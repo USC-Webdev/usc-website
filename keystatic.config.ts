@@ -145,14 +145,36 @@ export default config({
               description: 'Starts with UC. On the channel page: More (the "…more" link under the name) → Share channel → Copy channel ID.',
               validation: { length: { min: 10 } },
             }),
+            carousel: fields.select({
+              label: 'Shows in',
+              options: [
+                { label: 'Affiliated Creators', value: 'creators' },
+                { label: 'Latest Updates', value: 'latest' },
+                { label: 'Not shown', value: 'off' },
+              ],
+              defaultValue: 'creators',
+            }),
           }),
           {
-            label: 'Latest updates: YouTube channels',
-            description: 'New videos from these channels appear in the Latest updates feed on Home. The site checks once a day.',
-            itemLabel: (p) => p.fields.label.value || 'Channel',
+            label: 'Home carousels: YouTube channels',
+            description: 'New videos from these channels appear in the carousel chosen for each. The site checks once a day.',
+            itemLabel: (p) => `${p.fields.label.value || 'Channel'} (${p.fields.carousel.value})`,
           },
         ),
-        feedVideosPerChannel: fields.integer({ label: 'Latest updates: videos per channel', defaultValue: 3 }),
+        feedVideosPerChannel: fields.integer({ label: 'Home carousels: videos per channel', defaultValue: 3 }),
+        creatorFeeds: fields.array(
+          fields.object({
+            label: fields.text({ label: 'Name', validation: { length: { min: 1 } } }),
+            rssUrl: fields.url({ label: 'RSS feed address', validation: { isRequired: true } }),
+            category: fields.text({ label: 'Only this category (optional)', description: 'For example "Patch notes". Leave empty for every post.' }),
+            count: fields.integer({ label: 'Posts shown', defaultValue: 2 }),
+          }),
+          {
+            label: 'Affiliated Creators: blogs and news feeds',
+            description: 'The newest posts from these RSS feeds appear in the Affiliated Creators carousel on Home. Pictures come from each post\'s link preview, and only from hosts the webdev team has allowed.',
+            itemLabel: (p) => p.fields.label.value || 'Feed',
+          },
+        ),
         feedLength: fields.integer({ label: 'Latest updates: items shown', defaultValue: 6 }),
         feedScreenshots: fields.integer({
           label: 'Latest updates: screenshots mixed in',
@@ -177,6 +199,7 @@ export default config({
         philosophy: titledItems('Philosophy items'),
         community: sections('Community sections'),
         updatesHeading: fields.text({ label: 'Latest updates heading', defaultValue: 'Latest Updates' }),
+        creatorsHeading: fields.text({ label: 'Affiliated creators heading', defaultValue: 'Affiliated Creators' }),
         ctaHeading: fields.text({ label: 'Closing heading' }),
         ctaText: fields.text({ label: 'Closing text', multiline: true }),
         ctaLabel: fields.text({ label: 'Apply button label', defaultValue: 'Apply for citizenship' }),

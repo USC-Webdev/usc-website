@@ -64,7 +64,21 @@ const siteSettings = defineCollection({
     swagStore: url(),
     galacticSenate: url(),
     affiliates: list(z.object({ label: req(), href: z.url() })),
-    feedChannels: list(z.object({ label: req(), channelId: z.string().min(10) })),
+    feedChannels: list(
+      z.object({
+        label: req(),
+        channelId: z.string().min(10),
+        carousel: z.enum(['creators', 'latest', 'off']).nullish().transform((v) => v ?? 'creators'),
+      }),
+    ),
+    creatorFeeds: list(
+      z.object({
+        label: req(),
+        rssUrl: z.string().url(),
+        category: text(),
+        count: z.number().int().nullish().transform((v) => v ?? 2),
+      }),
+    ),
     feedVideosPerChannel: z.number().int().nullish().transform((v) => v ?? 3),
     feedLength: z.number().int().nullish().transform((v) => v ?? 6),
     feedScreenshots: z.number().int().nullish().transform((v) => v ?? 2),
@@ -85,6 +99,7 @@ const home = defineCollection({
       philosophy: titledItems(),
       community: sectionsSchema(),
       updatesHeading: z.string().nullish().transform((v) => v || 'Latest Updates'),
+      creatorsHeading: z.string().nullish().transform((v) => v || 'Affiliated Creators'),
       ctaHeading: text(),
       ctaText: text(),
       ctaLabel: text(),

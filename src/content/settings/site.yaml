@@ -18,9 +18,17 @@ affiliates:
 feedChannels:
   - label: USC
     channelId: UCR7NViQANVRSMB84wMFCS-A
+    carousel: 'off'
   - label: Farrister
     channelId: UCCWLg4f6GAMe-hdIFQ_Fq2w
+    carousel: creators
   - label: RidgeSix
     channelId: UCbeP-B06WtYsQ_OnDFd3lTw
+    carousel: creators
+creatorFeeds:
+  - label: HangarWorks
+    rssUrl: https://www.sc-hangarworks.org/blog/rss.xml
+    category: Patch notes
+    count: 2
 feedVideosPerChannel: 2
 feedLength: 6

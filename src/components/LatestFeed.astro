@@ -5,33 +5,35 @@ import SectionHead from './SectionHead.astro';
 import { formatDate } from '../lib/content';
 import type { FeedItem } from '../lib/feed';
 
-// "Latest updates" carousel: a row of cards (picture, source and date, title,
+// Home carousel (Latest Updates, Affiliated Creators): a row of cards (picture, source and date, title,
 // short text; screenshots from the pool show their caption and credit instead)
 // that scrolls sideways and snaps card by card. Three cards show on
 // wide screens, two on tablets, one and a peek of the next on phones. Swipe,
 // scroll or use the Previous/Next buttons; without JavaScript the row still
 // scrolls. Items without a picture get a Blue Zodiac tile with the source
-// name. Data comes from getFeed() in src/lib/feed.ts.
+// name. Data comes from getFeeds() in src/lib/feed.ts.
 interface Props {
+  /** Unique per page: the Previous/Next buttons point at it. */
+  id: string;
   heading: string;
   items: FeedItem[];
 }
-const { heading, items } = Astro.props;
+const { id, heading, items } = Astro.props;
 const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
 ---
 
 <div class="carousel" data-carousel>
   <SectionHead title={heading}>
   <div class="controls" hidden data-controls>
-    <button type="button" class="nav" data-prev aria-label="Previous updates" aria-controls="feed-track">
+    <button type="button" class="nav" data-prev aria-label={`Previous: ${heading}`} aria-controls={id}>
       <span aria-hidden="true">←</span>
     </button>
-    <button type="button" class="nav" data-next aria-label="Next updates" aria-controls="feed-track">
+    <button type="button" class="nav" data-next aria-label={`Next: ${heading}`} aria-controls={id}>
       <span aria-hidden="true">→</span>
     </button>
   </div>
   </SectionHead>
-<ul class="feed" id="feed-track" aria-label="Latest updates" tabindex="0">
+<ul class="feed" id={id} aria-label={heading} tabindex="0">
   {
     items.map((item) => {
       const Tag = item.href ? 'a' : 'div';
