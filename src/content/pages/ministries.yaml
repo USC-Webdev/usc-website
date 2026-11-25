@@ -10,6 +10,7 @@ hero:
   creditStatus: Citizen
 sections:
   - heading: The Pillars of USC Leadership
+    railLabel: Why not Both ?
     body: >
       - The Consuls are your more "traditional" guild leadership, with the
       Consul of War being the "Raid Leader" and the Consul of Peace being the
