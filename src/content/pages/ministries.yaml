@@ -9,7 +9,7 @@ hero:
   credit: Hadwin
   creditStatus: Citizen
 sections:
-  - heading: The Two Pillars of USC Leadership
+  - heading: The Pillars of USC Leadership
     body: >
       - The Consuls are your more "traditional" guild leadership, with the
       Consul of War being the "Raid Leader" and the Consul of Peace being the
@@ -60,7 +60,7 @@ ministriesIntro: >
   specific duties required to successfully complete the operation's objectives
   and distributing the rewards (loot) from the operation to USC storage and
   participating members.
-orgChartHeading: The USC Organization Chart
+orgChartHeading: USC Organization Chart
 orgChart:
   - image: ../../assets/images/pages/ministries/orgChart/0/image.svg
     caption: USC organization chart v4, January 2955.
