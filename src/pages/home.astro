@@ -43,7 +43,7 @@ const heroSections = [
   {
     feed.length > 0 && (
       <section class="wrap block" id="latest">
-        <LatestFeed heading={page.updatesHeading} items={feed} />
+        <LatestFeed id="latest-track" heading={page.updatesHeading} items={feed} more={{ href: '/media-network', label: 'More at Media Network' }} />
       </section>
     )
   }

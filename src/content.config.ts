@@ -64,10 +64,23 @@ const siteSettings = defineCollection({
     swagStore: url(),
     galacticSenate: url(),
     affiliates: list(z.object({ label: req(), href: z.url() })),
-    feedChannels: list(z.object({ label: req(), channelId: z.string().min(10) })),
+    feedChannels: list(
+      z.object({
+        label: req(),
+        channelId: z.string().min(10),
+        show: z.boolean().nullish().transform((v) => v ?? true),
+      }),
+    ),
+    creatorFeeds: list(
+      z.object({
+        label: req(),
+        rssUrl: z.string().url(),
+        category: text(),
+        count: z.number().int().nullish().transform((v) => v ?? 2),
+      }),
+    ),
     feedVideosPerChannel: z.number().int().nullish().transform((v) => v ?? 3),
     feedLength: z.number().int().nullish().transform((v) => v ?? 6),
-    feedScreenshots: z.number().int().nullish().transform((v) => v ?? 2),
   }),
 });
 
@@ -208,6 +221,8 @@ const mediaNetwork = defineCollection({
       railItems: lines(),
       statement: prose(),
       statementAside: text(),
+      verseHeading: z.string().nullish().transform((v) => v || "USC in the 'Verse"),
+      verseCount: z.number().int().nullish().transform((v) => v ?? 10),
       newsHeading: text(),
       videosHeading: text(),
       videosAside: text(),

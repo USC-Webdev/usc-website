@@ -5,38 +5,47 @@ import SectionHead from './SectionHead.astro';
 import { formatDate } from '../lib/content';
 import type { FeedItem } from '../lib/feed';
 
-// "Latest updates" carousel: a row of cards (picture, source and date, title,
-// short text; screenshots from the pool show their caption and credit instead)
-// that scrolls sideways and snaps card by card. Three cards show on
-// wide screens, two on tablets, one and a peek of the next on phones. Swipe,
-// scroll or use the Previous/Next buttons; without JavaScript the row still
-// scrolls. Items without a picture get a Blue Zodiac tile with the source
-// name. Data comes from getFeed() in src/lib/feed.ts.
+// Card carousel: Latest Updates on Home, USC in the 'Verse on Media Network.
+// A row of cards (picture, source and date, title, short text; screenshots
+// show their caption and credit instead) that scrolls sideways and snaps card
+// by card. Three cards show on wide screens, two on tablets, one and a peek of
+// the next on phones. Swipe, scroll or use the Previous/Next buttons; without
+// JavaScript the row still scrolls. Items without a picture get a Blue Zodiac
+// tile with the source name. `more` adds a closing link card. `pick` shows
+// that many items chosen at random on each page load (without JavaScript, the
+// first ones). Data comes from src/lib/feed.ts.
 interface Props {
+  /** Unique per page: the Previous/Next buttons point at it. */
+  id: string;
   heading: string;
   items: FeedItem[];
+  /** Closing card linking onwards, for example to the Media Network page. */
+  more?: { href: string; label: string };
+  /** Show this many items, picked at random on each page load. */
+  pick?: number;
 }
-const { heading, items } = Astro.props;
+const { id, heading, items, more, pick } = Astro.props;
+const shown = pick ? Math.min(pick, items.length) : items.length;
 const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
 ---
 
-<div class="carousel" data-carousel>
+<div class="carousel" data-carousel data-pick={pick ? shown : undefined}>
   <SectionHead title={heading}>
   <div class="controls" hidden data-controls>
-    <button type="button" class="nav" data-prev aria-label="Previous updates" aria-controls="feed-track">
+    <button type="button" class="nav" data-prev aria-label={`Previous: ${heading}`} aria-controls={id}>
       <span aria-hidden="true">←</span>
     </button>
-    <button type="button" class="nav" data-next aria-label="Next updates" aria-controls="feed-track">
+    <button type="button" class="nav" data-next aria-label={`Next: ${heading}`} aria-controls={id}>
       <span aria-hidden="true">→</span>
     </button>
   </div>
   </SectionHead>
-<ul class="feed" id="feed-track" aria-label="Latest updates" tabindex="0">
+<ul class="feed" id={id} aria-label={heading} tabindex="0">
   {
-    items.map((item) => {
+    items.map((item, i) => {
       const Tag = item.href ? 'a' : 'div';
       return (
-        <li>
+        <li hidden={i >= shown} class:list={{ end: !more && i === shown - 1 }}>
           <Tag class:list={['card', { link: !!item.href }]} href={item.href} {...(item.external ? { rel: 'noopener' } : {})}>
             <span class="pic">
               {item.image ? (
@@ -67,6 +76,16 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
       );
     })
   }
+  {
+    more && (
+      <li class="end">
+        <a class="card more" href={more.href}>
+          <span class="more-title">{more.label}</span>
+          <HexArrow size={56} />
+        </a>
+      </li>
+    )
+  }
 </ul>
 </div>
 
@@ -77,6 +96,20 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
     const prev = root.querySelector<HTMLButtonElement>('[data-prev]');
     const next = root.querySelector<HTMLButtonElement>('[data-next]');
     if (!track || !controls || !prev || !next) return;
+    // Random pick: shuffle every item, show the first `pick`, mark the last shown one.
+    const pick = Number(root.dataset.pick);
+    if (pick) {
+      const all = [...track.children] as HTMLElement[];
+      for (let i = all.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [all[i], all[j]] = [all[j], all[i]];
+      }
+      all.forEach((li, i) => {
+        li.hidden = i >= pick;
+        li.classList.toggle('end', i === pick - 1);
+        track.append(li);
+      });
+    }
     // One step is one card plus the gap.
     const step = () => {
       const card = track.querySelector('li');
@@ -105,7 +138,7 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
     position: relative;
   }
   /* The last card can't reach the left edge, so it snaps to the right one. */
-  .feed > li:last-child {
+  .feed > li.end {
     scroll-snap-align: end;
   }
   .controls {
@@ -180,6 +213,26 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
     .feed {
       scroll-behavior: auto;
     }
+  }
+  .card.more {
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    min-height: 260px;
+    padding: 32px;
+    border-top: 0;
+    background: var(--blue-zodiac);
+    color: var(--white);
+  }
+  .more-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    line-height: 1.15;
+  }
+  .more:hover .more-title {
+    text-decoration: underline;
+    text-underline-offset: 6px;
   }
   .card {
     height: 100%;
