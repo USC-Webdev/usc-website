@@ -62,15 +62,19 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
               <span>{item.source}</span>
               {item.kind !== 'screenshot' && <time datetime={item.date.toISOString().slice(0, 10)}>{formatDate(item.date)}</time>}
             </span>
-            {item.title && <span class="title">{item.title}</span>}
-            {item.credit && <span class="credit">{item.credit}</span>}
-            {item.text && <span class="text">{item.text}</span>}
-            {item.href && (
-              <span class="go">
-                <HexArrow size={44} />
-                {item.external && <span class="visually-hidden">(opens {item.source.replace(/ ·.*/, '')})</span>}
+            {(item.title || item.href) && (
+              <span class="head">
+                <span class="title">{item.title}</span>
+                {item.href && (
+                  <span class="go">
+                    <HexArrow size={40} />
+                    {item.external && <span class="visually-hidden">(opens {item.source.replace(/ ·.*/, '')})</span>}
+                  </span>
+                )}
               </span>
             )}
+            {item.credit && <span class="credit">{item.credit}</span>}
+            {item.text && <span class="text">{item.text}</span>}
           </Tag>
         </li>
       );
@@ -80,8 +84,10 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
     more && (
       <li class="end">
         <a class="card more" href={more.href}>
-          <span class="more-title">{more.label}</span>
-          <HexArrow size={56} />
+          <span class="pic more-box">
+            <span class="more-title">{more.label}</span>
+            <HexArrow size={40} />
+          </span>
         </a>
       </li>
     )
@@ -214,20 +220,22 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
       scroll-behavior: auto;
     }
   }
-  .card.more {
+  /* Closing card: a Blue Zodiac box the size of the other cards' pictures, text centred. */
+  .pic.more-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    gap: 24px;
-    min-height: 260px;
-    padding: 32px;
-    border-top: 0;
-    background: var(--blue-zodiac);
+    gap: 14px;
+    padding: 16px;
     color: var(--white);
+    text-align: center;
   }
   .more-title {
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
     line-height: 1.15;
   }
   .more:hover .more-title {
@@ -294,8 +302,19 @@ const sizes = '(min-width: 1000px) 30vw, (min-width: 640px) 45vw, 85vw';
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  /* Title and arrow share a line; the arrow sits at the right end. */
+  .head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .head .title {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
   .go {
-    margin-top: auto;
-    padding-top: 4px;
+    flex: none;
+    display: flex;
   }
 </style>
