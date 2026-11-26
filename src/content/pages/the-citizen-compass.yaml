@@ -8,7 +8,9 @@ heroLines:
 hero:
   image: ../../assets/images/pages/the-citizen-compass/hero/image.jpg
   creditStatus: Citizen
-banner: Your trusted Star Citizen news, stories and opinions
+banner: >-
+  Welcome to the Citizen Compass, read about the latest News & Events of the
+  United Space Confederation
 overviewHeading: Citizen Compass Overview
 overview: >
   The Citizen Compass is a new independent news media organization based in the
