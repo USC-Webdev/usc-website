@@ -10,7 +10,7 @@ order: 1
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
-  image: ../../assets/images/ministries/usc-navy/hero/image.jpg
+  image: ../../assets/images/ministries/usc-navy/hero/image.png
   credit: Sir_Duck
   creditStatus: Citizen
 overview: >
