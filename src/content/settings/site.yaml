@@ -32,5 +32,6 @@ creatorFeeds:
     count: 2
   - label: The Citizen Compass
     rssUrl: https://thecitizencompass.com/feed/
+    category: USC News
     count: 2
 feedLength: 6
