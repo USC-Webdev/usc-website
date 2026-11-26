@@ -67,3 +67,6 @@ gallery:
   - image: ../../assets/images/ministries/exploration/gallery/2/image.webp
     credit: BGThompson
     creditStatus: Citizen
+  - image: ../../assets/images/ministries/exploration/gallery/3/image.webp
+    credit: RidgeSix
+    creditStatus: Citizen
