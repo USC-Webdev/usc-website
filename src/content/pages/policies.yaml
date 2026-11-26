@@ -1,78 +1,159 @@
 title: Policies
-description: Internal citizen policies and external policies of the United Space Confederation.
+description: >-
+  Internal citizen policies and external policies of the United Space
+  Confederation.
 heroLines:
   - Policies
 hero:
-  image: ../../assets/images/pages/policies/hero/image.jpg
-  alt: ""
+  image: ../../assets/images/pages/policies/hero/image.png
   credit: Edgy_Socrates
+  creditStatus: Citizen
 internalHeading: Internal Citizen Policies
 internal:
   - heading: Responsibility and Respect
-    railLabel: ""
-    body: |
-      Citizens of the USC are all treated with equality and respect by the leaders, and Citizens are expected to behave the same to each other. The USC acknowledges that gamers come from diverse backgrounds and use games to escape the stresses of real life. Because of this, the USC aims to provide a pleasant, drama-free environment for citizens to enjoy playing Star Citizen. As such, only polite, mature, and responsible candidates must apply for USC Citizenship. It is recommended that applicants be over the age of 18. Exceptions may be made on a case-by-case basis. Overall, you will be judged based on your personality and the treatment of others in the community, not your age. The USC operates on a zero-tolerance policy for needless drama, and Citizens who are found disturbing the peace are subject to immediate loss of USC Citizenship. If you have a direct problem with another member, please get in touch with an admin member on the USC Discord to help deal with the situation.
+    body: >
+      Citizens of the USC are all treated with equality and respect by the
+      leaders, and Citizens are expected to behave the same to each other. The
+      USC acknowledges that gamers come from diverse backgrounds and use games
+      to escape the stresses of real life. Because of this, the USC aims to
+      provide a pleasant, drama-free environment for citizens to enjoy playing
+      Star Citizen. As such, only polite, mature, and responsible candidates
+      must apply for USC Citizenship. It is recommended that applicants be over
+      the age of 18. Exceptions may be made on a case-by-case basis. Overall,
+      you will be judged based on your personality and the treatment of others
+      in the community, not your age. The USC operates on a zero-tolerance
+      policy for needless drama, and Citizens who are found disturbing the peace
+      are subject to immediate loss of USC Citizenship. If you have a direct
+      problem with another member, please get in touch with an admin member on
+      the USC Discord to help deal with the situation.
   - heading: External Representation
-    railLabel: ""
-    body: |
-      USC Citizens are expected to uphold the name of the USC throughout the universe. You are not to do anything to harm the reputation of the USC, in-game or otherwise. Common decency is expected of all Citizens when engaging in both internal and external interactions. Citizens are not allowed to 'multi-flag,' meaning they are not allowed to hold dual citizenship with another org unless explicitly permitted by the Cabinet, i.e., small friend & family groups.
+    body: >
+      USC Citizens are expected to uphold the name of the USC throughout the
+      universe. You are not to do anything to harm the reputation of the USC,
+      in-game or otherwise. Common decency is expected of all Citizens when
+      engaging in both internal and external interactions. Citizens are not
+      allowed to 'multi-flag,' meaning they are not allowed to hold dual
+      citizenship with another org unless explicitly permitted by the Cabinet,
+      i.e., small friend & family groups.
   - heading: Piracy
-    railLabel: ""
-    body: |
-      The USC prides itself on upholding equality and fairness for all beings. As such, all forms of piracy are forbidden for USC Citizens. Any piracy reports will be promptly investigated, and confirmed cases could result in expulsion and termination of USC Citizenship.
+    body: >
+      The USC prides itself on upholding equality and fairness for all beings.
+      As such, all forms of piracy are forbidden for USC Citizens. Any piracy
+      reports will be promptly investigated, and confirmed cases could result in
+      expulsion and termination of USC Citizenship.
   - heading: Gameplay
-    railLabel: ""
-    body: |
-      The USC looks to accommodate everyone’s play styles and time restraints. We understand that everyone has a life outside of Star Citizen, and because of this, we have no set gameplay time requirements per week – your real life comes first. However, to stay an active USC Citizen once Star Citizen launches, we expect all our Citizens to contribute meaningfully. We expect USC Citizens to use their play time, whenever or however long it might be, in a meaningful way that benefits them and the United Space Confederation. We will not tolerate people using group resources for purely personal gain.
+    body: >
+      The USC looks to accommodate everyone’s play styles and time restraints.
+      We understand that everyone has a life outside of Star Citizen, and
+      because of this, we have no set gameplay time requirements per week – your
+      real life comes first. However, to stay an active USC Citizen once Star
+      Citizen launches, we expect all our Citizens to contribute meaningfully.
+      We expect USC Citizens to use their play time, whenever or however long it
+      might be, in a meaningful way that benefits them and the United Space
+      Confederation. We will not tolerate people using group resources for
+      purely personal gain.
   - heading: Officers
-    railLabel: ""
-    body: |
-      Leadership positions in the United Space Confederation are a position of duty, not privilege. These positions are based on need, and candidates will be selected for an Officer position based on several factors, including but not limited to dedication and skill. Having a higher position in the USC does not give the authority to dictate other’s actions, time spent, and/or play style in the game except in specific contexts like military group operations. Leadership positions never allow the person holding office to act in a privileged manner during social interactions with other members. Should you be offered an Officer position in the USC, we expect you to commit more time to Star Citizen and the USC, so please keep that in mind before accepting.
+    body: >
+      Leadership positions in the United Space Confederation are a position of
+      duty, not privilege. These positions are based on need, and candidates
+      will be selected for an Officer position based on several factors,
+      including but not limited to dedication and skill. Having a higher
+      position in the USC does not give the authority to dictate other’s
+      actions, time spent, and/or play style in the game except in specific
+      contexts like military group operations. Leadership positions never allow
+      the person holding office to act in a privileged manner during social
+      interactions with other members. Should you be offered an Officer position
+      in the USC, we expect you to commit more time to Star Citizen and the USC,
+      so please keep that in mind before accepting.
   - heading: Voice Communication
-    railLabel: ""
-    body: |
-      We offer many different ways for USC citizens to communicate and connect. Primary communications in-game will be VoIP using Discord. We understand that not everyone wants to be on the mic all the time during their gaming sessions; as such, VoIP participation is not required for all Citizens, with notable exceptions for circumstances such as Navy group-level raid operations (missions). Voice communications will not be necessary for normal USC activities.
+    body: >
+      We offer many different ways for USC citizens to communicate and connect.
+      Primary communications in-game will be VoIP using Discord. We understand
+      that not everyone wants to be on the mic all the time during their gaming
+      sessions; as such, VoIP participation is not required for all Citizens,
+      with notable exceptions for circumstances such as Navy group-level raid
+      operations (missions). Voice communications will not be necessary for
+      normal USC activities.
   - heading: Nationality and Time Zone Policy
-    railLabel: ""
-    body: |
-      We are open to all English-speaking members, whether native or as a second language, regardless of time zone.
+    body: >
+      We are open to all English-speaking members, whether native or as a second
+      language, regardless of time zone.
   - heading: Summary of Explicit Rules
-    railLabel: ""
-    body: |
+    body: >
       You must be able to abide by these rules to remain a USC Citizen:
 
+
       - Respect all people
+
       - Remain civil during social interaction
+
       - Absolutely no racism, homophobia, sexism, or other prejudices
+
       - No drama; contact the Cabinet for help with dispute resolution
-      - Maintain exclusive membership with the USC unless you fit the exception found in the Dual Citizenship policy
+
+      - Maintain exclusive membership with the USC unless you fit the exception
+      found in the Dual Citizenship policy
+
       - Do not engage in piracy while playing Star Citizen
-      - Respect the alliances, treaties, trade contracts, and other agreements negotiated between the USC and other entities
+
+      - Respect the alliances, treaties, trade contracts, and other agreements
+      negotiated between the USC and other entities
 externalHeading: External Policies
 external:
   - heading: Official USC Communications
-    railLabel: ""
-    body: |
-      Communications by Citizens of the United Space Confederation, electronic or otherwise, made through, but not limited to, forum threads and posts, email, blogs, social media posts, private messages, or videos, are the opinion of that individual and may not represent the views or stance of the United Space Confederation. Communications that represent the views of the United Space Confederation will be clearly marked as such and published through the [Confederation Media Network](/media-network). The USC does not and should not police the actions of our Citizens; they are free to express their own thoughts and opinions. As such, the United Space Confederation cannot be held responsible for its actions.
+    body: >
+      Communications by Citizens of the United Space Confederation, electronic
+      or otherwise, made through, but not limited to, forum threads and posts,
+      email, blogs, social media posts, private messages, or videos, are the
+      opinion of that individual and may not represent the views or stance of
+      the United Space Confederation. Communications that represent the views of
+      the United Space Confederation will be clearly marked as such and
+      published through the [Confederation Media Network](/media-network). The
+      USC does not and should not police the actions of our Citizens; they are
+      free to express their own thoughts and opinions. As such, the United Space
+      Confederation cannot be held responsible for its actions.
 
-      If you represent another organization and are having an issue with a USC citizen, you are free to contact the Consul of Peace to file a complaint. We will take the action we deem necessary to resolve the matter.
+
+      If you represent another organization and are having an issue with a USC
+      citizen, you are free to contact the Consul of Peace to file a complaint.
+      We will take the action we deem necessary to resolve the matter.
   - heading: Neutrality
-    railLabel: ""
-    body: |
-      Despite clashes with the United Earth Empire throughout history, the United Space Confederation does not actively seek the destruction of the UEE or its allies. We wish for social and structural changes in the UEE government and have taken matters into our own hands because of the UEE’s unwillingness to change. We are willing to work and align with other organizations and groups, regardless of their UEE affiliation, as long as both parties can find common ground.
+    body: >
+      Despite clashes with the United Earth Empire throughout history, the
+      United Space Confederation does not actively seek the destruction of the
+      UEE or its allies. We wish for social and structural changes in the UEE
+      government and have taken matters into our own hands because of the UEE’s
+      unwillingness to change. We are willing to work and align with other
+      organizations and groups, regardless of their UEE affiliation, as long as
+      both parties can find common ground.
   - heading: Diplomacy and Alliances
-    railLabel: ""
-    body: |
-      At: At this time, the United Space Confederation is 'lightly' seeking binding agreements with other organizations or entities concerning mutual assistance, military support, trade or business treaties, or any other categories requiring the United Space Confederation to commit any of its resources. In most cases, we believe it is too early in the development process to negotiate and agree on any meaningful terms. Still, we are open to begin establishing lines of communication. We are very open to maintaining friendly relations with other groups interested in working with USC and discussing intentions and ideas for future proposals.
+    body: >
+      At: At this time, the United Space Confederation is 'lightly' seeking
+      binding agreements with other organizations or entities concerning mutual
+      assistance, military support, trade or business treaties, or any other
+      categories requiring the United Space Confederation to commit any of its
+      resources. In most cases, we believe it is too early in the development
+      process to negotiate and agree on any meaningful terms. Still, we are open
+      to begin establishing lines of communication. We are very open to
+      maintaining friendly relations with other groups interested in working
+      with USC and discussing intentions and ideas for future proposals.
   - heading: Piracy
-    railLabel: ""
-    body: |
-      The United Space Confederation does not engage in acts of piracy, extortion, or kidnapping. We ask other groups to report any alleged pirate attacks by USC Citizens to the Office of Diplomacy, Outreach, and Immigration for investigation. The USC is not a “pirate hunting” organization and does not aspire to become one.
+    body: >
+      The United Space Confederation does not engage in acts of piracy,
+      extortion, or kidnapping. We ask other groups to report any alleged pirate
+      attacks by USC Citizens to the Office of Diplomacy, Outreach, and
+      Immigration for investigation. The USC is not a “pirate hunting”
+      organization and does not aspire to become one.
   - heading: Intelligence Gathering
-    railLabel: ""
-    body: |
-      The United Space Confederation does not condone out-of-game intelligence gathering, also known as 'meta-gaming'. The USC does not sanction our citizens from joining other groups, least of all for the purpose of espionage, and actively seeks to prevent this.
+    body: >
+      The United Space Confederation does not condone out-of-game intelligence
+      gathering, also known as 'meta-gaming'. The USC does not sanction our
+      citizens from joining other groups, least of all for the purpose of
+      espionage, and actively seeks to prevent this.
   - heading: Confidentiality
-    railLabel: ""
-    body: |
-      The United Space Confederation agrees to keep any and all information exchanged during diplomatic talks and/or negotiations, for purposes of trade or otherwise, confidential. If other involved parties breach the terms of any agreement, the United Space Confederation holds this confidentiality agreement null and void.
+    body: >
+      The United Space Confederation agrees to keep any and all information
+      exchanged during diplomatic talks and/or negotiations, for purposes of
+      trade or otherwise, confidential. If other involved parties breach the
+      terms of any agreement, the United Space Confederation holds this
+      confidentiality agreement null and void.
