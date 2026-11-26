@@ -56,7 +56,10 @@ offices:
       uses for Fauna or Flora, developing new farming or xeno-breeding methods,
       Studying spatial phenomena/anomalies and documenting any practical
       applications, etc.
-closing: ''
+closing: >
+  The Ministry of Intelligence and Exploration (MIE) is responsible for
+  Research, Intelligence and Discovery. The exploration-centric needs of the USC
+  are fulfilled here.
 gallery:
   - image: ../../assets/images/ministries/exploration/gallery/0/image.webp
     credit: BGThompson
@@ -69,4 +72,7 @@ gallery:
     creditStatus: Citizen
   - image: ../../assets/images/ministries/exploration/gallery/3/image.webp
     credit: RidgeSix
+    creditStatus: Citizen
+  - image: ../../assets/images/ministries/exploration/gallery/4/image.webp
+    credit: Jichael_Macksons
     creditStatus: Citizen
