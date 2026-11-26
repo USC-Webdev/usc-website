@@ -5,7 +5,7 @@ description: >-
 heroLines:
   - Ministries
 hero:
-  image: ../../assets/images/pages/ministries/hero/image.jpg
+  image: ../../assets/images/pages/ministries/hero/image.png
   credit: Hadwin
   creditStatus: Citizen
 sections:
