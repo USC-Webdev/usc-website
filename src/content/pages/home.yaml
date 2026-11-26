@@ -8,7 +8,7 @@ heroLines:
   - Space
   - Confederation
 hero:
-  image: ../../assets/images/pages/home/hero/image.jpg
+  image: ../../assets/images/pages/home/hero/image.png
   credit: Sir_Duck
   creditStatus: Citizen
 introHeading: Who we are
