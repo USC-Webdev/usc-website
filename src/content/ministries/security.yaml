@@ -10,7 +10,7 @@ order: 2
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
-  image: ../../assets/images/ministries/security/hero/image.jpg
+  image: ../../assets/images/ministries/security/hero/image.png
   credit: Hadwin
   creditStatus: Citizen
 overview: >
