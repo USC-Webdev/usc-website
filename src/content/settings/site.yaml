@@ -1,7 +1,6 @@
 applicationUrl: https://forms.gle/LEw1K2o1JVU1cjLo6
 contactEmail: consulofpeace@unitedspaceconfederation.org
 tagline: EQUALITY.PROSPERITY.FREEDOM
-footerText: ""
 youtube: https://www.youtube.com/channel/UCR7NViQANVRSMB84wMFCS-A
 instagram: https://www.instagram.com/theunitedspaceconfederation
 x: https://twitter.com/usc_starcitizen
@@ -25,6 +24,7 @@ feedChannels:
   - label: RidgeSix
     channelId: UCbeP-B06WtYsQ_OnDFd3lTw
     show: true
+feedVideosPerChannel: 2
 creatorFeeds:
   - label: HangarWorks
     rssUrl: https://www.sc-hangarworks.org/blog/rss.xml
@@ -32,7 +32,5 @@ creatorFeeds:
     count: 2
   - label: The Citizen Compass
     rssUrl: https://thecitizencompass.com/feed/
-    category: ''
-    count: 1
-feedVideosPerChannel: 2
+    count: 2
 feedLength: 6
