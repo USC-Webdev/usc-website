@@ -56,3 +56,6 @@ gallery:
   - image: ../../assets/images/ministries/security/gallery/0/image.png
     credit: Yamamoto
     creditStatus: Citizen
+  - image: ../../assets/images/ministries/security/gallery/1/image.png
+    credit: Hadwin
+    creditStatus: Citizen
