@@ -8,7 +8,7 @@ order: 6
 workInProgress: true
 workInProgressNote: More information will be posted as the game develops.
 hero:
-  image: ../../assets/images/ministries/state-affairs/hero/image.jpg
+  image: ../../assets/images/ministries/state-affairs/hero/image.png
   credit: Kil-Roy
   creditStatus: Citizen
 overview: >
