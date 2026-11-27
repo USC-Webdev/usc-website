@@ -24,14 +24,14 @@ feedChannels:
   - label: RidgeSix
     channelId: UCbeP-B06WtYsQ_OnDFd3lTw
     show: true
-feedVideosPerChannel: 2
+feedVideosPerChannel: 1
 creatorFeeds:
   - label: HangarWorks
     rssUrl: https://www.sc-hangarworks.org/blog/rss.xml
     category: Patch notes
-    count: 2
+    count: 1
   - label: The Citizen Compass
     rssUrl: https://thecitizencompass.com/feed/
     category: USC News
-    count: 2
+    count: 1
 feedLength: 6
