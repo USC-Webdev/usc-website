@@ -17,7 +17,7 @@ affiliates:
 feedChannels:
   - label: USC
     channelId: UCR7NViQANVRSMB84wMFCS-A
-    show: false
+    show: true
   - label: Farrister
     channelId: UCCWLg4f6GAMe-hdIFQ_Fq2w
     show: true
