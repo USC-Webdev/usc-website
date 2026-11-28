@@ -17,7 +17,7 @@ affiliates:
 feedChannels:
   - label: USC
     channelId: UCR7NViQANVRSMB84wMFCS-A
-    show: true
+    show: false
   - label: Farrister
     channelId: UCCWLg4f6GAMe-hdIFQ_Fq2w
     show: true
@@ -34,4 +34,4 @@ creatorFeeds:
     rssUrl: https://thecitizencompass.com/feed/
     category: USC News
     count: 2
-feedLength: 8
+feedLength: 7
